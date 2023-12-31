@@ -1,4 +1,4 @@
 plugins {
-    id("multiplatform.tier2")
+    id("multiplatform.tier3")
     id("ink.publishing")
 }
