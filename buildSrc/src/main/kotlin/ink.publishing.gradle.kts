@@ -33,8 +33,8 @@ publishing {
             artifact(javadocJar)
             pom {
                 name.set("Ink UI: ${project.name}")
-                description.set("General purpose application interfaces")
-                url.set("https://github.com/InkApplications/Regolith")
+                description.set("Reusable UI framework used in Ink Apps.")
+                url.set("https://github.com/InkApplications/ink-ui")
                 licenses {
                     license {
                         name.set("MIT")
@@ -49,9 +49,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection.set("scm:git:https://github.com/InkApplications/regolith.git")
-                    developerConnection.set("scm:git:ssh://git@github.com:InkApplications/regolith.git")
-                    url.set("https://github.com/InkApplications/regolith")
+                    connection.set("scm:git:https://github.com/InkApplications/ink-ui.git")
+                    developerConnection.set("scm:git:ssh://git@github.com:InkApplications/ink-ui.git")
+                    url.set("https://github.com/InkApplications/ink-ui")
                 }
             }
         }
