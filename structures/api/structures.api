@@ -1,0 +1,228 @@
+public final class ink/ui/structures/Positioning : java/lang/Enum {
+	public static final field Centered Link/ui/structures/Positioning;
+	public static final field Normal Link/ui/structures/Positioning;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/Positioning;
+	public static fun values ()[Link/ui/structures/Positioning;
+}
+
+public abstract interface class ink/ui/structures/Renderer {
+	public abstract fun render (Link/ui/structures/layouts/UiLayout;)V
+}
+
+public final class ink/ui/structures/Sentiment : java/lang/Enum {
+	public static final field Caution Link/ui/structures/Sentiment;
+	public static final field Idle Link/ui/structures/Sentiment;
+	public static final field Negative Link/ui/structures/Sentiment;
+	public static final field Nominal Link/ui/structures/Sentiment;
+	public static final field Positive Link/ui/structures/Sentiment;
+	public static final field Primary Link/ui/structures/Sentiment;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/Sentiment;
+	public static fun values ()[Link/ui/structures/Sentiment;
+}
+
+public final class ink/ui/structures/TextStyle : java/lang/Enum {
+	public static final field Body Link/ui/structures/TextStyle;
+	public static final field Caption Link/ui/structures/TextStyle;
+	public static final field H1 Link/ui/structures/TextStyle;
+	public static final field H2 Link/ui/structures/TextStyle;
+	public static final field H3 Link/ui/structures/TextStyle;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/TextStyle;
+	public static fun values ()[Link/ui/structures/TextStyle;
+}
+
+public final class ink/ui/structures/elements/ButtonElement : ink/ui/structures/elements/UiElement$Interactive {
+	public fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/Sentiment;ZZ)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/Sentiment;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lkotlin/jvm/functions/Function0;
+	public final fun component3 ()Link/ui/structures/Sentiment;
+	public final fun component4 ()Z
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/Sentiment;ZZ)Link/ui/structures/elements/ButtonElement;
+	public static synthetic fun copy$default (Link/ui/structures/elements/ButtonElement;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/Sentiment;ZZILjava/lang/Object;)Link/ui/structures/elements/ButtonElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEnabled ()Z
+	public final fun getLatchOnPress ()Z
+	public final fun getOnClick ()Lkotlin/jvm/functions/Function0;
+	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public final fun getText ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/ElementList : ink/ui/structures/elements/UiElement$Static {
+	public fun <init> (Ljava/util/List;Link/ui/structures/Positioning;)V
+	public synthetic fun <init> (Ljava/util/List;Link/ui/structures/Positioning;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Link/ui/structures/Positioning;
+	public final fun copy (Ljava/util/List;Link/ui/structures/Positioning;)Link/ui/structures/elements/ElementList;
+	public static synthetic fun copy$default (Link/ui/structures/elements/ElementList;Ljava/util/List;Link/ui/structures/Positioning;ILjava/lang/Object;)Link/ui/structures/elements/ElementList;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getItems ()Ljava/util/List;
+	public final fun getPositioning ()Link/ui/structures/Positioning;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/elements/UiElement {
+	public static final field INSTANCE Link/ui/structures/elements/EmptyElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class ink/ui/structures/elements/ProgressElement : ink/ui/structures/elements/UiElement$Static {
+}
+
+public final class ink/ui/structures/elements/ProgressElement$Determinate : ink/ui/structures/elements/ProgressElement {
+	public fun <init> (FLjava/lang/String;Link/ui/structures/Sentiment;)V
+	public synthetic fun <init> (FLjava/lang/String;Link/ui/structures/Sentiment;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()F
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Link/ui/structures/Sentiment;
+	public final fun copy (FLjava/lang/String;Link/ui/structures/Sentiment;)Link/ui/structures/elements/ProgressElement$Determinate;
+	public static synthetic fun copy$default (Link/ui/structures/elements/ProgressElement$Determinate;FLjava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)Link/ui/structures/elements/ProgressElement$Determinate;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCaption ()Ljava/lang/String;
+	public final fun getProgress ()F
+	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/ProgressElement$Indeterminate : ink/ui/structures/elements/ProgressElement {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;)V
+	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Link/ui/structures/Sentiment;
+	public final fun copy (Ljava/lang/String;Link/ui/structures/Sentiment;)Link/ui/structures/elements/ProgressElement$Indeterminate;
+	public static synthetic fun copy$default (Link/ui/structures/elements/ProgressElement$Indeterminate;Ljava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)Link/ui/structures/elements/ProgressElement$Indeterminate;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCaption ()Ljava/lang/String;
+	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/StatusIndicatorElement : ink/ui/structures/elements/UiElement$Static {
+	public fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Link/ui/structures/Sentiment;
+	public final fun copy (Ljava/lang/String;Link/ui/structures/Sentiment;)Link/ui/structures/elements/StatusIndicatorElement;
+	public static synthetic fun copy$default (Link/ui/structures/elements/StatusIndicatorElement;Ljava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)Link/ui/structures/elements/StatusIndicatorElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public final fun getText ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/TextElement : ink/ui/structures/elements/UiElement$Static {
+	public fun <init> (Ljava/lang/String;Link/ui/structures/TextStyle;)V
+	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/TextStyle;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Link/ui/structures/TextStyle;
+	public final fun copy (Ljava/lang/String;Link/ui/structures/TextStyle;)Link/ui/structures/elements/TextElement;
+	public static synthetic fun copy$default (Link/ui/structures/elements/TextElement;Ljava/lang/String;Link/ui/structures/TextStyle;ILjava/lang/Object;)Link/ui/structures/elements/TextElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getStyle ()Link/ui/structures/TextStyle;
+	public final fun getText ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/ThrobberElement : ink/ui/structures/elements/UiElement$Static {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;)V
+	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Link/ui/structures/Sentiment;
+	public final fun copy (Ljava/lang/String;Link/ui/structures/Sentiment;)Link/ui/structures/elements/ThrobberElement;
+	public static synthetic fun copy$default (Link/ui/structures/elements/ThrobberElement;Ljava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)Link/ui/structures/elements/ThrobberElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCaption ()Ljava/lang/String;
+	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class ink/ui/structures/elements/UiElement {
+}
+
+public abstract interface class ink/ui/structures/elements/UiElement$Interactive : ink/ui/structures/elements/UiElement {
+}
+
+public abstract interface class ink/ui/structures/elements/UiElement$Static : ink/ui/structures/elements/UiElement {
+}
+
+public final class ink/ui/structures/layouts/CenteredElementLayout : ink/ui/structures/layouts/UiLayout {
+	public fun <init> (Link/ui/structures/elements/UiElement;)V
+	public final fun component1 ()Link/ui/structures/elements/UiElement;
+	public final fun copy (Link/ui/structures/elements/UiElement;)Link/ui/structures/layouts/CenteredElementLayout;
+	public static synthetic fun copy$default (Link/ui/structures/layouts/CenteredElementLayout;Link/ui/structures/elements/UiElement;ILjava/lang/Object;)Link/ui/structures/layouts/CenteredElementLayout;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Link/ui/structures/elements/UiElement;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/layouts/FixedGridLayout : ink/ui/structures/layouts/UiLayout {
+	public fun <init> (ILjava/util/List;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (ILjava/util/List;)Link/ui/structures/layouts/FixedGridLayout;
+	public static synthetic fun copy$default (Link/ui/structures/layouts/FixedGridLayout;ILjava/util/List;ILjava/lang/Object;)Link/ui/structures/layouts/FixedGridLayout;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getColumns ()I
+	public final fun getItems ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/layouts/FixedGridLayout$GridItem {
+	public fun <init> (ILink/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/Positioning;)V
+	public synthetic fun <init> (ILink/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/Positioning;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()I
+	public final fun component2 ()Link/ui/structures/elements/UiElement;
+	public final fun component3 ()Link/ui/structures/Positioning;
+	public final fun component4 ()Link/ui/structures/Positioning;
+	public final fun copy (ILink/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/Positioning;)Link/ui/structures/layouts/FixedGridLayout$GridItem;
+	public static synthetic fun copy$default (Link/ui/structures/layouts/FixedGridLayout$GridItem;ILink/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/Positioning;ILjava/lang/Object;)Link/ui/structures/layouts/FixedGridLayout$GridItem;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Link/ui/structures/elements/UiElement;
+	public final fun getHorizontalPositioning ()Link/ui/structures/Positioning;
+	public final fun getSpan ()I
+	public final fun getVerticalPositioning ()Link/ui/structures/Positioning;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/layouts/PageLayout : ink/ui/structures/layouts/UiLayout {
+	public fun <init> (Link/ui/structures/elements/UiElement;)V
+	public final fun component1 ()Link/ui/structures/elements/UiElement;
+	public final fun copy (Link/ui/structures/elements/UiElement;)Link/ui/structures/layouts/PageLayout;
+	public static synthetic fun copy$default (Link/ui/structures/layouts/PageLayout;Link/ui/structures/elements/UiElement;ILjava/lang/Object;)Link/ui/structures/layouts/PageLayout;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Link/ui/structures/elements/UiElement;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/layouts/ScrollingListLayout : ink/ui/structures/layouts/UiLayout {
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Link/ui/structures/layouts/ScrollingListLayout;
+	public static synthetic fun copy$default (Link/ui/structures/layouts/ScrollingListLayout;Ljava/util/List;ILjava/lang/Object;)Link/ui/structures/layouts/ScrollingListLayout;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getItems ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class ink/ui/structures/layouts/UiLayout {
+}
+
