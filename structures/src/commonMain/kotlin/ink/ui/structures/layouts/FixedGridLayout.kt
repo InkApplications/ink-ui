@@ -34,11 +34,11 @@ data class FixedGridLayout(
         /**
          * Position of the element horizontally within its grid square.
          */
-        val horizontalPositioning: Positioning = Positioning.Normal,
+        val horizontalPositioning: Positioning = Positioning.Start,
 
         /**
          * Position of the element vertically within its grid square.
          */
-        val verticalPositioning: Positioning = Positioning.Normal,
+        val verticalPositioning: Positioning = Positioning.Start,
     )
 }

@@ -14,5 +14,5 @@ data class ElementList(
     /**
      * Positioning of each element within its own bounding box in the list.
      */
-    val positioning: Positioning = Positioning.Normal,
+    val positioning: Positioning = Positioning.Start,
 ): UiElement.Static

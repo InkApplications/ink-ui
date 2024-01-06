@@ -1,6 +1,6 @@
 public final class ink/ui/structures/Positioning : java/lang/Enum {
-	public static final field Centered Link/ui/structures/Positioning;
-	public static final field Normal Link/ui/structures/Positioning;
+	public static final field Center Link/ui/structures/Positioning;
+	public static final field Start Link/ui/structures/Positioning;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/Positioning;
 	public static fun values ()[Link/ui/structures/Positioning;
@@ -67,7 +67,7 @@ public final class ink/ui/structures/elements/ElementList : ink/ui/structures/el
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/elements/UiElement {
+public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/elements/UiElement$Static {
 	public static final field INSTANCE Link/ui/structures/elements/EmptyElement;
 	public fun equals (Ljava/lang/Object;)Z
 	public fun hashCode ()I

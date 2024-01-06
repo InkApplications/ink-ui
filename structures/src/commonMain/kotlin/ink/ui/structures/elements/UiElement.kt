@@ -16,4 +16,3 @@ sealed interface UiElement {
      */
     sealed interface Static: UiElement
 }
-

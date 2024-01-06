@@ -53,10 +53,10 @@ class ComposeRenderer(
                 ) { item ->
                     Box(
                         contentAlignment = when {
-                            item.verticalPositioning == Positioning.Centered
-                                && item.horizontalPositioning == Positioning.Centered -> Alignment.Center
-                            item.verticalPositioning == Positioning.Centered -> Alignment.CenterStart
-                            item.horizontalPositioning == Positioning.Centered -> Alignment.TopCenter
+                            item.verticalPositioning == Positioning.Center
+                                && item.horizontalPositioning == Positioning.Center -> Alignment.Center
+                            item.verticalPositioning == Positioning.Center -> Alignment.CenterStart
+                            item.horizontalPositioning == Positioning.Center -> Alignment.TopCenter
                             else -> Alignment.TopStart
                         },
                         modifier = Modifier
@@ -104,8 +104,8 @@ class ComposeRenderer(
             )
             is ElementList -> Column(
                 horizontalAlignment = when (element.positioning) {
-                    Positioning.Normal -> Alignment.Start
-                    Positioning.Centered -> Alignment.CenterHorizontally
+                    Positioning.Start -> Alignment.Start
+                    Positioning.Center -> Alignment.CenterHorizontally
                 },
             ) {
                 element.items.forEachIndexed { index, item ->
