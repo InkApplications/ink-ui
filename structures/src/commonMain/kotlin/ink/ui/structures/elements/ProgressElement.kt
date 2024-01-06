@@ -7,6 +7,16 @@ import ink.ui.structures.Sentiment
  */
 sealed interface ProgressElement: UiElement.Static {
     /**
+     * Optional caption to indicate what work is being done.
+     */
+    val caption: String?
+
+    /**
+     * Signifier of the state of the work being done.
+     */
+    val sentiment: Sentiment
+
+    /**
      * UI element for a progress bar that is currently indeterminate.
      *
      * This differs from a [ThrobberElement] in that it indicates that the work
@@ -14,14 +24,8 @@ sealed interface ProgressElement: UiElement.Static {
      * unknown.
      */
     data class Indeterminate(
-        /**
-         * Optional caption to indicate what work is being done.
-         */
-        val caption: String? = null,
-        /**
-         * Signifier of the state of the work being done.
-         */
-        val sentiment: Sentiment = Sentiment.Nominal,
+        override val caption: String? = null,
+        override val sentiment: Sentiment = Sentiment.Nominal,
     ): ProgressElement
 
     /**
@@ -32,13 +36,7 @@ sealed interface ProgressElement: UiElement.Static {
          * Fractional percentage to indicate the current progress of work.
          */
         val progress: Float,
-        /**
-         * Optional caption to indicate what work is being done.
-         */
-        val caption: String? = null,
-        /**
-         * Signifier of the state of the work being done.
-         */
-        val sentiment: Sentiment = Sentiment.Nominal,
+        override val caption: String? = null,
+        override val sentiment: Sentiment = Sentiment.Nominal,
     ): ProgressElement
 }

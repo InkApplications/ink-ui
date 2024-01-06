@@ -6,10 +6,6 @@ public final class ink/ui/structures/Positioning : java/lang/Enum {
 	public static fun values ()[Link/ui/structures/Positioning;
 }
 
-public abstract interface class ink/ui/structures/Renderer {
-	public abstract fun render (Link/ui/structures/layouts/UiLayout;)V
-}
-
 public final class ink/ui/structures/Sentiment : java/lang/Enum {
 	public static final field Caution Link/ui/structures/Sentiment;
 	public static final field Idle Link/ui/structures/Sentiment;
@@ -75,6 +71,8 @@ public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/e
 }
 
 public abstract interface class ink/ui/structures/elements/ProgressElement : ink/ui/structures/elements/UiElement$Static {
+	public abstract fun getCaption ()Ljava/lang/String;
+	public abstract fun getSentiment ()Link/ui/structures/Sentiment;
 }
 
 public final class ink/ui/structures/elements/ProgressElement$Determinate : ink/ui/structures/elements/ProgressElement {
@@ -86,9 +84,9 @@ public final class ink/ui/structures/elements/ProgressElement$Determinate : ink/
 	public final fun copy (FLjava/lang/String;Link/ui/structures/Sentiment;)Link/ui/structures/elements/ProgressElement$Determinate;
 	public static synthetic fun copy$default (Link/ui/structures/elements/ProgressElement$Determinate;FLjava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)Link/ui/structures/elements/ProgressElement$Determinate;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getCaption ()Ljava/lang/String;
+	public fun getCaption ()Ljava/lang/String;
 	public final fun getProgress ()F
-	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public fun getSentiment ()Link/ui/structures/Sentiment;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
@@ -102,8 +100,8 @@ public final class ink/ui/structures/elements/ProgressElement$Indeterminate : in
 	public final fun copy (Ljava/lang/String;Link/ui/structures/Sentiment;)Link/ui/structures/elements/ProgressElement$Indeterminate;
 	public static synthetic fun copy$default (Link/ui/structures/elements/ProgressElement$Indeterminate;Ljava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)Link/ui/structures/elements/ProgressElement$Indeterminate;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getCaption ()Ljava/lang/String;
-	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public fun getCaption ()Ljava/lang/String;
+	public fun getSentiment ()Link/ui/structures/Sentiment;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }

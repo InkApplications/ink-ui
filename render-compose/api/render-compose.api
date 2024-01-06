@@ -1,8 +1,21 @@
 public final class ink/ui/render/compose/ComposeRenderer {
 	public static final field $stable I
-	public fun <init> (Link/ui/render/compose/theme/ComposeRenderTheme;)V
+	public fun <init> (Link/ui/render/compose/theme/ComposeRenderTheme;Ljava/util/List;)V
+	public synthetic fun <init> (Link/ui/render/compose/theme/ComposeRenderTheme;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun render (Link/ui/structures/layouts/UiLayout;Landroidx/compose/runtime/Composer;I)V
 	public final fun renderElement (Link/ui/structures/elements/UiElement;Landroidx/compose/runtime/Composer;I)V
+}
+
+public abstract interface class ink/ui/render/compose/renderer/ElementRenderer {
+	public abstract fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/render/compose/renderer/RenderResult;
+}
+
+public final class ink/ui/render/compose/renderer/RenderResult : java/lang/Enum {
+	public static final field NotRendered Link/ui/render/compose/renderer/RenderResult;
+	public static final field Rendered Link/ui/render/compose/renderer/RenderResult;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Link/ui/render/compose/renderer/RenderResult;
+	public static fun values ()[Link/ui/render/compose/renderer/RenderResult;
 }
 
 public final class ink/ui/render/compose/theme/ColorVariant {

@@ -20,7 +20,6 @@ internal fun StatusIndicator(
     theme: ComposeRenderTheme = ComposeRenderTheme(),
 ) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-        val color =
         Canvas(
             modifier = Modifier.size(16.dp),
             onDraw = {
