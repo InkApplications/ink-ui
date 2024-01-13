@@ -110,21 +110,23 @@ public final class ink/ui/render/compose/theme/SpacingVariant {
 public final class ink/ui/render/compose/theme/TypographyVariant {
 	public static final field $stable I
 	public fun <init> ()V
-	public fun <init> (Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;)V
-	public synthetic fun <init> (Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;)V
+	public synthetic fun <init> (Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Landroidx/compose/ui/text/TextStyle;
 	public final fun component2 ()Landroidx/compose/ui/text/TextStyle;
 	public final fun component3 ()Landroidx/compose/ui/text/TextStyle;
 	public final fun component4 ()Landroidx/compose/ui/text/TextStyle;
 	public final fun component5 ()Landroidx/compose/ui/text/TextStyle;
-	public final fun copy (Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;)Link/ui/render/compose/theme/TypographyVariant;
-	public static synthetic fun copy$default (Link/ui/render/compose/theme/TypographyVariant;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;ILjava/lang/Object;)Link/ui/render/compose/theme/TypographyVariant;
+	public final fun component6 ()Landroidx/compose/ui/text/TextStyle;
+	public final fun copy (Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;)Link/ui/render/compose/theme/TypographyVariant;
+	public static synthetic fun copy$default (Link/ui/render/compose/theme/TypographyVariant;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;ILjava/lang/Object;)Link/ui/render/compose/theme/TypographyVariant;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getBody ()Landroidx/compose/ui/text/TextStyle;
 	public final fun getCaption ()Landroidx/compose/ui/text/TextStyle;
 	public final fun getH1 ()Landroidx/compose/ui/text/TextStyle;
 	public final fun getH2 ()Landroidx/compose/ui/text/TextStyle;
 	public final fun getH3 ()Landroidx/compose/ui/text/TextStyle;
+	public final fun getUiGlyph ()Landroidx/compose/ui/text/TextStyle;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 	public final fun withFontFamily (Landroidx/compose/ui/text/font/FontFamily;)Link/ui/render/compose/theme/TypographyVariant;

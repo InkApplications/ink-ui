@@ -29,7 +29,7 @@ internal fun Throbber(
     ) {
         BasicText(
             text = chars[index].toString(),
-            style = theme.typography.h2.copy(
+            style = theme.typography.uiGlyph.copy(
                 color = theme.colors.forSentiment(sentiment),
             ),
             modifier = Modifier.padding(

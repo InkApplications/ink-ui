@@ -34,6 +34,11 @@ data class TypographyVariant(
         fontSize = 12.sp,
         letterSpacing = 0.4.sp,
     ),
+    val uiGlyph: TextStyle = TextStyle(
+        fontWeight = FontWeight.Normal,
+        fontSize = 24.sp,
+        letterSpacing = 0.sp,
+    )
 ) {
     fun withFontFamily(fontFamily: FontFamily) = copy(
         h1 = h1.copy(fontFamily = fontFamily),
@@ -41,5 +46,6 @@ data class TypographyVariant(
         h3 = h3.copy(fontFamily = fontFamily),
         body = body.copy(fontFamily = fontFamily),
         caption = caption.copy(fontFamily = fontFamily),
+        uiGlyph = uiGlyph.copy(fontFamily = fontFamily),
     )
 }

@@ -62,7 +62,7 @@ private fun BarText(
         ) {
             BasicText(
                 text = "[",
-                style = theme.typography.h2.copy(
+                style = theme.typography.uiGlyph.copy(
                     color = theme.colors.foreground,
                 ),
                 modifier = Modifier.padding(
@@ -73,7 +73,7 @@ private fun BarText(
             )
             BasicText(
                 text = barString,
-                style = theme.typography.h2.copy(
+                style = theme.typography.uiGlyph.copy(
                     color = theme.colors.forSentiment(sentiment),
                 ),
                 modifier = Modifier.padding(
@@ -82,7 +82,7 @@ private fun BarText(
             )
             BasicText(
                 text = "]",
-                style = theme.typography.h2.copy(
+                style = theme.typography.uiGlyph.copy(
                     color = theme.colors.foreground,
                 ),
                 modifier = Modifier.padding(

@@ -1,6 +1,7 @@
 package ink.ui.structures.elements
 
 import ink.ui.structures.Positioning
+import ink.ui.structures.GroupingStyle
 
 /**
  * UI element that composites multiple elements together.
@@ -15,4 +16,10 @@ data class ElementList(
      * Positioning of each element within its own bounding box in the list.
      */
     val positioning: Positioning = Positioning.Start,
+
+    /**
+     * Signifiers for indicating how the elements are related to each other.
+     */
+    val groupingStyle: GroupingStyle = GroupingStyle.Items,
 ): UiElement.Static
+
