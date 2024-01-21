@@ -146,6 +146,26 @@ public final class ink/ui/structures/elements/ProgressElement$Indeterminate : in
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/elements/SpinnerElement : ink/ui/structures/elements/UiElement$Interactive {
+	public fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZZ)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lkotlin/jvm/functions/Function0;
+	public final fun component3 ()Lkotlin/jvm/functions/Function0;
+	public final fun component4 ()Z
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZZ)Link/ui/structures/elements/SpinnerElement;
+	public static synthetic fun copy$default (Link/ui/structures/elements/SpinnerElement;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZZILjava/lang/Object;)Link/ui/structures/elements/SpinnerElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHasNextValue ()Z
+	public final fun getHasPreviousValue ()Z
+	public final fun getOnNextValue ()Lkotlin/jvm/functions/Function0;
+	public final fun getOnPreviousValue ()Lkotlin/jvm/functions/Function0;
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
 public final class ink/ui/structures/elements/StatusIndicatorElement : ink/ui/structures/elements/UiElement$Static {
 	public fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;)V
 	public final fun component1 ()Ljava/lang/String;
