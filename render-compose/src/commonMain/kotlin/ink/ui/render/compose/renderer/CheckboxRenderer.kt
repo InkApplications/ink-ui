@@ -20,8 +20,9 @@ internal object CheckboxRenderer: ElementRenderer {
         Row(
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(theme.spacing.clickSafety / 2)
+            modifier = Modifier
                 .clickable(onClick = element.onClick)
+                .padding(theme.spacing.clickSafety / 2)
         ) {
             BasicText(
                 text = "[",
