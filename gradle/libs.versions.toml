@@ -18,7 +18,7 @@ version = "8.2.0"
 module = "com.android.tools.build:gradle"
 
 [libraries.compose-gradle]
-version = "1.5.11"
+version = "1.5.12"
 module = "org.jetbrains.compose:compose-gradle-plugin"
 
 [libraries.dokka]
