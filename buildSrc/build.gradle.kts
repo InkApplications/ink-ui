@@ -15,6 +15,7 @@ dependencies {
     implementation(libs.kotlin.gradle)
     implementation(libs.android.gradle)
     implementation(libs.compose.gradle)
+    implementation(libs.compose.compiler)
     implementation(libs.dokka)
     implementation(libs.kotlinx.binary.compatibility)
 }
