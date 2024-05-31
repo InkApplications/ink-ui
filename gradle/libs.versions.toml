@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.9.22"
+kotlin = "2.0.0"
 
 [libraries.kotlin-gradle]
 version.ref = "kotlin"
@@ -18,11 +18,15 @@ version = "8.2.0"
 module = "com.android.tools.build:gradle"
 
 [libraries.compose-gradle]
-version = "1.5.12"
+version = "1.6.10"
 module = "org.jetbrains.compose:compose-gradle-plugin"
 
+[libraries.compose-compiler]
+version.ref = "kotlin"
+module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin"
+
 [libraries.dokka]
-version = "1.9.10"
+version = "1.9.20"
 module = "org.jetbrains.dokka:dokka-gradle-plugin"
 
 [libraries.kotlinx-binary-compatibility]
