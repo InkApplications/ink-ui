@@ -36,7 +36,7 @@ data class ColorVariant(
             positive = Color(0xFF00a600),
             negative = Color(0xFFf92772),
             caution = Color(0xFFfe9720),
-            idle = Color(0xFF9e6efe),
+            idle = Color(0xFF90A4AE),
         )
         val dark = light.copy(
             foreground = Color(0xFFFFFFFF),

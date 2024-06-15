@@ -1,5 +1,6 @@
 [versions]
 kotlin = "2.0.0"
+activity-compose = "1.9.0"
 
 [libraries.kotlin-gradle]
 version.ref = "kotlin"
@@ -32,3 +33,11 @@ module = "org.jetbrains.dokka:dokka-gradle-plugin"
 [libraries.kotlinx-binary-compatibility]
 version = "0.13.2"
 module = "org.jetbrains.kotlinx:binary-compatibility-validator"
+
+[libraries.androidx-activity]
+version = "1.8.2"
+module = "androidx.activity:activity"
+
+[libraries.activity-compose]
+version.ref = "activity-compose"
+module = "androidx.activity:activity-compose"

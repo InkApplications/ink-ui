@@ -4,3 +4,4 @@ rootProject.name = "ink-ui"
 
 include("render-compose")
 include("structures")
+include("sample-android")
