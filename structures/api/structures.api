@@ -7,6 +7,15 @@ public final class ink/ui/structures/GroupingStyle : java/lang/Enum {
 	public static fun values ()[Link/ui/structures/GroupingStyle;
 }
 
+public final class ink/ui/structures/IconSizing : java/lang/Enum {
+	public static final field Large Link/ui/structures/IconSizing;
+	public static final field Medium Link/ui/structures/IconSizing;
+	public static final field Small Link/ui/structures/IconSizing;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/IconSizing;
+	public static fun values ()[Link/ui/structures/IconSizing;
+}
+
 public final class ink/ui/structures/Positioning : java/lang/Enum {
 	public static final field Center Link/ui/structures/Positioning;
 	public static final field Start Link/ui/structures/Positioning;
@@ -25,6 +34,47 @@ public final class ink/ui/structures/Sentiment : java/lang/Enum {
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/Sentiment;
 	public static fun values ()[Link/ui/structures/Sentiment;
+}
+
+public final class ink/ui/structures/Symbol {
+	public static final field Companion Link/ui/structures/Symbol$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Link/ui/structures/Symbol;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/Symbol$Companion {
+	public final fun getAdd-ZR4vNbg ()Ljava/lang/String;
+	public final fun getAlarm-ZR4vNbg ()Ljava/lang/String;
+	public final fun getAlarmOff-ZR4vNbg ()Ljava/lang/String;
+	public final fun getArrowBackward-ZR4vNbg ()Ljava/lang/String;
+	public final fun getArrowForward-ZR4vNbg ()Ljava/lang/String;
+	public final fun getBed-ZR4vNbg ()Ljava/lang/String;
+	public final fun getCaution-ZR4vNbg ()Ljava/lang/String;
+	public final fun getCloud-ZR4vNbg ()Ljava/lang/String;
+	public final fun getDone-ZR4vNbg ()Ljava/lang/String;
+	public final fun getEdit-ZR4vNbg ()Ljava/lang/String;
+	public final fun getError-ZR4vNbg ()Ljava/lang/String;
+	public final fun getGroup-ZR4vNbg ()Ljava/lang/String;
+	public final fun getHouse-ZR4vNbg ()Ljava/lang/String;
+	public final fun getLock-ZR4vNbg ()Ljava/lang/String;
+	public final fun getLockOpen-ZR4vNbg ()Ljava/lang/String;
+	public final fun getMoon-ZR4vNbg ()Ljava/lang/String;
+	public final fun getMovie-ZR4vNbg ()Ljava/lang/String;
+	public final fun getPerson-ZR4vNbg ()Ljava/lang/String;
+	public final fun getRain-ZR4vNbg ()Ljava/lang/String;
+	public final fun getRemove-ZR4vNbg ()Ljava/lang/String;
+	public final fun getSunshine-ZR4vNbg ()Ljava/lang/String;
+	public final fun getTemperature-ZR4vNbg ()Ljava/lang/String;
+	public final fun getWater-ZR4vNbg ()Ljava/lang/String;
 }
 
 public final class ink/ui/structures/TextStyle : java/lang/Enum {
@@ -90,6 +140,20 @@ public final class ink/ui/structures/elements/ElementList : ink/ui/structures/el
 public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/elements/UiElement$Static {
 	public static final field INSTANCE Link/ui/structures/elements/EmptyElement;
 	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/IconElement : ink/ui/structures/elements/UiElement$Static {
+	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-ZR4vNbg ()Ljava/lang/String;
+	public final fun component2 ()Link/ui/structures/Sentiment;
+	public final fun copy-4Y_pBew (Ljava/lang/String;Link/ui/structures/Sentiment;)Link/ui/structures/elements/IconElement;
+	public static synthetic fun copy-4Y_pBew$default (Link/ui/structures/elements/IconElement;Ljava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)Link/ui/structures/elements/IconElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public final fun getSymbol-ZR4vNbg ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }

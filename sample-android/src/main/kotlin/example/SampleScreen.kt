@@ -1,6 +1,7 @@
 package example
 
 import ink.ui.structures.Sentiment
+import ink.ui.structures.Symbol
 import ink.ui.structures.TextStyle
 import ink.ui.structures.elements.*
 import ink.ui.structures.layouts.ScrollingListLayout
@@ -60,6 +61,10 @@ val SampleScreen = ScrollingListLayout(
         ),
         ThrobberElement(
             caption = "Throbber",
+        ),
+        IconElement(
+            symbol = Symbol.House,
+            sentiment = Sentiment.Caution,
         ),
         ButtonElement(
             text = "Button",

@@ -38,6 +38,7 @@ class ComposeRenderer(
         CheckboxRenderer,
         MenuRowRenderer,
         SpinnerRenderer,
+        IconRenderer,
     )
     private val uiRenderer = CompositeElementRenderer(renderers + builtInRenderers)
 
