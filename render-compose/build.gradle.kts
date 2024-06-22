@@ -8,14 +8,16 @@ plugins {
 
 android {
     namespace = "com.inkapplications.ui"
-    compileSdk = 31
+    compileSdk = 34
 }
 
 kotlin {
     // Tier 1 w/o JS:
     jvmToolchain(11)
     jvm()
-    androidTarget()
+    androidTarget {
+        publishAllLibraryVariants()
+    }
     iosX64()
     iosArm64()
     iosSimulatorArm64()
