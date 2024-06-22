@@ -3,10 +3,7 @@ package ink.ui.render.compose
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.GridItemSpan
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -48,13 +45,19 @@ class ComposeRenderer(
             is CenteredElementLayout -> Box(
                 modifier = Modifier.background(theme.colors.background)
                     .fillMaxSize()
-                    .padding(theme.spacing.gutters),
+                    .padding(theme.spacing.gutters)
+                    .windowInsetsPadding(WindowInsets.safeContent),
                 contentAlignment = Alignment.Center,
             ) {
                 renderElement(uiLayout.body)
             }
             is FixedGridLayout -> LazyVerticalGrid(
-                contentPadding = PaddingValues(all = theme.spacing.gutters - theme.spacing.item),
+                contentPadding = WindowInsets(
+                    top = theme.spacing.gutters - theme.spacing.item,
+                    bottom = theme.spacing.gutters - theme.spacing.item,
+                    left = theme.spacing.gutters - theme.spacing.item,
+                    right = theme.spacing.gutters - theme.spacing.item,
+                ).add(WindowInsets.safeContent).asPaddingValues(),
                 columns = GridCells.Fixed(uiLayout.columns),
                 modifier = Modifier.background(theme.colors.background)
                     .fillMaxSize()
@@ -84,12 +87,18 @@ class ComposeRenderer(
             is PageLayout -> Box(
                 modifier = Modifier.background(theme.colors.background)
                     .fillMaxSize()
-                    .padding(theme.spacing.gutters),
+                    .padding(theme.spacing.gutters)
+                    .windowInsetsPadding(WindowInsets.safeContent)
             ){
                 renderElement(uiLayout.body)
             }
             is ScrollingListLayout -> LazyColumn(
-                contentPadding = PaddingValues(all = theme.spacing.gutters - theme.spacing.item),
+                contentPadding = WindowInsets(
+                    top = theme.spacing.gutters - theme.spacing.item,
+                    bottom = theme.spacing.gutters - theme.spacing.item,
+                    left = theme.spacing.gutters - theme.spacing.item,
+                    right = theme.spacing.gutters - theme.spacing.item,
+                ).add(WindowInsets.safeDrawing).asPaddingValues(),
                 modifier = Modifier
                     .background(theme.colors.background)
                     .fillMaxSize()

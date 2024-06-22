@@ -3,7 +3,7 @@
     <application>
         <activity
                 android:label="Ink UI"
-                android:theme="@android:style/Theme.Material.NoActionBar"
+                android:theme="@style/Theme.Sample"
                 android:name="example.MainActivity"
                 android:exported="true">
             <intent-filter>
