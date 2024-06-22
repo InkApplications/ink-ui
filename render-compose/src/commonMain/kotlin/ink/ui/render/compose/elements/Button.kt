@@ -23,6 +23,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import ink.ui.render.compose.renderer.resource
 import ink.ui.render.compose.theme.ComposeRenderTheme
+import ink.ui.render.compose.theme.defaultTheme
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
 import kotlinx.coroutines.Job
@@ -37,7 +38,7 @@ internal fun Button(
     latching: Boolean = false,
     leadingSymbol: Symbol? = null,
     trailingSymbol: Symbol? = null,
-    theme: ComposeRenderTheme = ComposeRenderTheme(),
+    theme: ComposeRenderTheme = defaultTheme(),
     onClick: () -> Unit,
     buttonModifier: Modifier = Modifier,
     contentModifier: Modifier = Modifier,

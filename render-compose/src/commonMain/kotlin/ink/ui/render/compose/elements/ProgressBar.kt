@@ -8,6 +8,7 @@ import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import ink.ui.render.compose.theme.ComposeRenderTheme
+import ink.ui.render.compose.theme.defaultTheme
 import ink.ui.structures.Sentiment
 import ink.ui.structures.elements.ProgressElement
 import kotlinx.coroutines.delay
@@ -16,7 +17,7 @@ import kotlin.math.roundToInt
 @Composable
 internal fun ProgressBar(
     element: ProgressElement,
-    theme: ComposeRenderTheme = ComposeRenderTheme(),
+    theme: ComposeRenderTheme = defaultTheme(),
 ) {
     when (element) {
         is ProgressElement.Determinate -> {

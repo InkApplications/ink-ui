@@ -11,13 +11,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ink.ui.render.compose.theme.ComposeRenderTheme
+import ink.ui.render.compose.theme.defaultTheme
 import ink.ui.structures.Sentiment
 
 @Composable
 internal fun StatusIndicator(
     text: String,
     sentiment: Sentiment,
-    theme: ComposeRenderTheme = ComposeRenderTheme(),
+    theme: ComposeRenderTheme = defaultTheme(),
 ) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Canvas(

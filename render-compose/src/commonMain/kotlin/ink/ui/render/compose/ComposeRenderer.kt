@@ -14,6 +14,7 @@ import ink.ui.render.compose.renderer.CompositeElementRenderer
 import ink.ui.render.compose.renderer.EmptyRenderer
 import ink.ui.render.compose.renderer.TextRenderer
 import ink.ui.render.compose.theme.ComposeRenderTheme
+import ink.ui.render.compose.theme.defaultTheme
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
@@ -22,7 +23,7 @@ import ink.ui.structures.layouts.*
  * Renders UI Layouts and elements using Compose.
  */
 class ComposeRenderer(
-    private val theme: ComposeRenderTheme,
+    private val theme: ComposeRenderTheme = defaultTheme(),
     renderers: List<ElementRenderer> = emptyList(),
 ) {
     private val builtInRenderers = listOf(

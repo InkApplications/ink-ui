@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.max
 import ink.ui.render.compose.theme.ComposeRenderTheme
+import ink.ui.render.compose.theme.defaultTheme
 import ink.ui.structures.Sentiment
 import kotlinx.coroutines.delay
 
@@ -16,7 +17,7 @@ import kotlinx.coroutines.delay
 internal fun Throbber(
     caption: String? = null,
     sentiment: Sentiment = Sentiment.Nominal,
-    theme: ComposeRenderTheme = ComposeRenderTheme(),
+    theme: ComposeRenderTheme = defaultTheme(),
 ) {
     val chars = "⣷⣯⣟⡿⢿⣻⣽⣾"
     var index by remember {  mutableStateOf(0) }
