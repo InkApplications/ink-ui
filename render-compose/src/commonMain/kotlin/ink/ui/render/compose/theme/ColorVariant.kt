@@ -15,6 +15,7 @@ data class ColorVariant(
     val negative: Color,
     val caution: Color,
     val idle: Color,
+    val surfaceInteraction: Color = surface,
 ) {
     val inactive = foreground.copy(alpha = 0.5f)
 
@@ -37,11 +38,20 @@ data class ColorVariant(
             negative = Color(0xFFf92772),
             caution = Color(0xFFfe9720),
             idle = Color(0xFF90A4AE),
-        )
+        ).let {
+            it.copy(
+                surfaceInteraction = it.surface.darken(0.1f),
+            )
+        }
+
         val dark = light.copy(
             foreground = Color(0xFFFFFFFF),
             background = Color(0xFF212121),
             surface = Color(0xFF323232),
-        )
+        ).let {
+            it.copy(
+                surfaceInteraction = it.surface.brighten(0.1f),
+            )
+        }
     }
 }
