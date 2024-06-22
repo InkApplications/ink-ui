@@ -6,6 +6,10 @@ public final class ink/ui/render/compose/ComposeRenderer {
 	public final fun renderElement (Link/ui/structures/elements/UiElement;Landroidx/compose/runtime/Composer;I)V
 }
 
+public final class ink/ui/render/compose/elements/ButtonKt {
+	public static final fun Button-Qe0aG0s (Ljava/lang/String;Link/ui/structures/Sentiment;ZLjava/lang/String;Ljava/lang/String;Link/ui/render/compose/theme/ComposeRenderTheme;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+}
+
 public abstract interface class ink/ui/render/compose/renderer/ElementRenderer {
 	public abstract fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/render/compose/renderer/RenderResult;
 }

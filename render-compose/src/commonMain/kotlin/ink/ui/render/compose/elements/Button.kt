@@ -32,7 +32,7 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
-internal fun Button(
+fun Button(
     text: String,
     sentiment: Sentiment = Sentiment.Nominal,
     latching: Boolean = false,
