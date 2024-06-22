@@ -14,6 +14,8 @@ internal object ButtonRenderer: ElementRenderer {
                 text = element.text,
                 sentiment = element.sentiment,
                 latching = element.latchOnPress,
+                leadingSymbol = element.leadingSymbol,
+                trailingSymbol = element.trailingSymbol,
                 theme = theme,
                 onClick = element.onClick,
             )

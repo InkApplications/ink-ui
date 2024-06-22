@@ -1,6 +1,7 @@
 package ink.ui.structures.elements
 
 import ink.ui.structures.Sentiment
+import ink.ui.structures.Symbol
 
 /**
  * A clickable button not a part of a block of text.
@@ -32,4 +33,14 @@ data class ButtonElement(
      * Whether to disable the button temporarily after pressing.
      */
     val latchOnPress: Boolean = false,
+
+    /**
+     * Symbol displayed at the start of the button.
+     */
+    val leadingSymbol: Symbol? = null,
+
+    /**
+     * Symbol displayed at the end of the button.
+     */
+    val trailingSymbol: Symbol? = null,
 ): UiElement.Interactive

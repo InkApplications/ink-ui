@@ -69,6 +69,8 @@ val SampleScreen = ScrollingListLayout(
         ButtonElement(
             text = "Button",
             onClick = {},
+            leadingSymbol = Symbol.Sunshine,
+            sentiment = Sentiment.Primary,
             latchOnPress = true,
         ),
         MenuRowElement(
