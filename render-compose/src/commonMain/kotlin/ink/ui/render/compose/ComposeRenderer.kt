@@ -23,7 +23,7 @@ import ink.ui.structures.layouts.*
  * Renders UI Layouts and elements using Compose.
  */
 class ComposeRenderer(
-    private val theme: ComposeRenderTheme = defaultTheme(),
+    private val theme: ComposeRenderTheme,
     renderers: List<ElementRenderer> = emptyList(),
 ) {
     private val builtInRenderers = listOf(
