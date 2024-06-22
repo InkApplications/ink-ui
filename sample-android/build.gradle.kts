@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("org.jetbrains.compose")
     id("org.jetbrains.kotlin.plugin.compose")
     kotlin("android")
 }
@@ -29,4 +30,5 @@ dependencies {
     implementation(project(":render-compose"))
     implementation(libs.androidx.activity)
     implementation(libs.activity.compose)
+    implementation(compose.foundation)
 }
