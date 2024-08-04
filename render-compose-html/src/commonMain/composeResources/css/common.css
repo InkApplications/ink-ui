@@ -1,0 +1,728 @@
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,500,500i");
+@import url("atom-one-light.css") (prefers-color-scheme:light);
+@import url("atom-one-dark.css") (prefers-color-scheme:dark);
+
+/* Template Variables */
+:root
+{
+    --color-foreground: #212121;
+    --color-foreground-subtle: #9E9E9E;
+    --filter-foreground: invert(16%) sepia(0%) saturate(1480%) hue-rotate(146deg) brightness(94%) contrast(104%);
+
+    --color-background: #F8F8F8;
+    --color-surface: #fff;
+    --color-surface-depressed: #e0e0e0;
+    --color-surface-item: #f5f5f5;
+    --color-surface-hover: #F5F5F5;
+
+    --color-primary: #008DA9;
+    --filter-primary: invert(42%) sepia(44%) saturate(7311%) hue-rotate(167deg) brightness(93%) contrast(102%);
+    --color-positive: #00a600;
+    --filter-positive: invert(38%) sepia(100%) saturate(964%) hue-rotate(87deg) brightness(92%) contrast(106%);
+    --color-negative: #f92772;
+    --filter-negative: invert(33%) sepia(97%) saturate(4947%) hue-rotate(324deg) brightness(101%) contrast(95%);
+    --color-caution: #fe9720;
+    --filter-caution: invert(69%) sepia(28%) saturate(3785%) hue-rotate(344deg) brightness(103%) contrast(99%);
+    --color-idle: #90A4AE;
+    --filter-idle: invert(68%) sepia(21%) saturate(234%) hue-rotate(155deg) brightness(90%) contrast(88%);
+}
+@media (prefers-color-scheme: dark) {
+    :root
+    {
+        --color-foreground: #fff;
+        --color-foreground-subtle: #bdbdbd;
+        --filter-foreground: invert(100%) sepia(5%) saturate(1250%) hue-rotate(85deg) brightness(104%) contrast(109%);
+
+        --color-background: #212121;
+        --color-surface: #323232;
+        --color-surface-depressed: #2c2c2c;
+        --color-surface-item: #3b3b3b;
+        --color-surface-hover: #393939;
+    }
+}
+
+/* Basic Structures */
+html
+{
+    background-color: var(--color-surface);
+    color: var(--color-foreground);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    font-size: 1rem;
+    height: 100%;
+}
+body
+{
+    padding: 2rem;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+strong
+{
+    font-weight: 500;
+}
+em
+{
+    font-style: italic;
+}
+h1,
+h2,
+h3
+{
+    font-weight: 500;
+    margin-bottom: .75rem;
+}
+h1
+{
+    font-size: 1.5rem;
+}
+h2
+{
+    font-size: 1.25rem;
+}
+section,
+article
+{
+    margin: 2rem 0;
+}
+header > p
+{
+    font-style: italic;
+}
+p
+{
+    line-height: 1.5rem;
+}
+p.caption,
+span.caption
+{
+    font-weight: 300;
+    font-size: .8rem;
+}
+span.glyph
+{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+a
+{
+    text-decoration: none;
+    color: var(--color-primary);
+}
+ul,
+ol
+{
+    margin: .5rem 2rem;
+}
+li
+{
+    line-height: 1.75rem;
+}
+ul > li::before
+{
+    content: " - ";
+}
+pre
+{
+    text-align: start;
+}
+hr
+{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px dashed var(--color-foreground-subtle);
+    margin: 1rem auto;
+    padding: 0;
+}
+pre > code
+{
+    display: block;
+    line-height: 1.25rem;
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+}
+body > header,
+header
+{
+    margin-bottom: 1rem;
+}
+@media print {
+    html
+    {
+        background-color: none;
+        height: fit-content;
+    }
+    body
+    {
+        font-size: .8rem;
+        padding: 0;
+        margin: 0;
+        min-height: fit-content;
+    }
+    p
+    {
+        line-height: 1.4;
+        margin: 0;
+    }
+    h1, h2, h3
+    {
+        margin-bottom: .25rem;
+    }
+    a
+    {
+        color: var(--color-foreground)
+    }
+}
+
+/* Sectioned Page Style Overrides */
+body.sectioned
+{
+    background-color: var(--color-background);
+}
+.sectioned > section
+{
+    background-color: var(--color-surface);
+    border-radius: .25rem;
+    padding: 2rem;
+}
+.sectioned > section
+{
+    border: 1px solid transparent;
+}
+.sectioned > section:has(header > a:target)
+{
+    border: 1px solid var(--color-primary);
+}
+@media print {
+    body.sectioned
+    {
+        background: none;
+    }
+    body.sectioned > section
+    {
+        margin: 0;
+        margin-top: .5rem;
+        max-width: none;
+        padding: 0;
+        background-color: none;
+    }
+}
+
+/* Section Navigation list styles. */
+section nav ul
+{
+    margin: 1.5rem 0;
+}
+section nav ul > li
+{
+    margin: .75rem 0;
+}
+section nav ul > li::before
+{
+    content: none;
+}
+section nav a:not(.button):after
+{
+    content: ' >';
+}
+@media print {
+    section nav
+    {
+        display: none!important;
+    }
+}
+
+/* Layouts */
+.fixed-grid
+{
+    display: grid;
+    gap: .25rem;
+}
+
+.item-list,
+.unified-list,
+.section-list
+{
+    display: flex;
+    flex-direction: column;
+}
+.section-list
+{
+    gap: .5rem;
+}
+.item-list
+{
+    gap: .25rem;
+}
+.element-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Progress Bar */
+.progress-bar
+{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Spinner */
+.spinner
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.spinner > button
+{
+    display: inline-flex;
+    line-height: 0rem
+    font-size: .8rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    justify-content: center;
+    align-items: center;
+}
+.spinner-value
+{
+    padding: 0 .5rem;
+}
+
+/* Menu/Setting Item rows */
+.menu-row
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    background: var(--color-surface-item);
+    border-radius: .25rem;
+}
+.menu-label
+{
+    font-weight: 500;
+}
+
+/* Featured Section Style */
+.featured
+{
+    text-align: center;
+    border: 1px solid var(--color-foreground-subtle);
+    border-radius: .25rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+.featured h1::before,
+.featured h2::before,
+.featured h3::before
+{
+    content: none;
+}
+
+/* Centered content */
+body.sectioned > section,
+.content-break
+{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+@media print {
+    body.sectioned > section,
+    .content-break
+    {
+        max-width: none;
+    }
+}
+
+/* Remove bottom padding from last element of a section */
+body > section > *:last-child
+{
+    margin-bottom: 0;
+}
+
+/* Remove top padding for first header in section */
+body > section > *:first-child,
+body > section header:first-child > h1,
+body > section header:first-child > h2,
+body > section header:first-child > h3
+{
+    margin-top: 0;
+}
+
+/* Override link style for fragment links */
+section > a[href^="#"][name]:not([name=""]),
+article > a[href^="#"][name]:not([name=""]),
+header > a[href^="#"][name]:not([name=""])
+{
+    color: var(--color-foreground);
+    border: none;
+}
+section > a[href^="#"][name]:not([name=""]):hover,
+article > a[href^="#"][name]:not([name=""]):hover,
+header > a[href^="#"][name]:not([name=""]):hover
+{
+    cursor: default;
+}
+section > a[href^="#"][name]:not([name=""]):focus,
+article > a[href^="#"][name]:not([name=""]):focus,
+header > a[href^="#"][name]:not([name=""]):focus
+{
+    outline: none;
+}
+
+/* Code Highlighting styles */
+.hljs,
+code,
+code.grouped > span
+{
+    background-color: var(--color-surface-item);
+    border-radius: .25rem;
+}
+code,
+code.grouped > span
+{
+    padding: .125rem;
+}
+code.grouped > span
+{
+    margin-left: .125rem;
+    margin-right: .125rem;
+}
+code.grouped
+{
+    background-color: unset;
+    border-radius: unset;
+    padding: unset;
+}
+@media(max-width: 800px) {
+    code.grouped {
+        padding: .5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    code.grouped > span {
+        margin: .125rem;
+    }
+}
+@media print {
+    .hljs,
+    code,
+    code.grouped > span
+    {
+        background: none;
+        border: 1px solid var(--color-foreground-subtle);
+        border-radius: .25rem;
+        padding: 0 .125rem;
+    }
+    code.grouped,
+    code.grouped > span
+    {
+        border: none;    
+    }
+}
+
+/** Form Elements */
+button:focus,
+input:focus
+{
+    outline: none;
+}
+input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio]),
+textarea,
+label
+{
+    width: 100%;
+    max-width: 30rem;
+    display: block;
+}
+label > input[type=checkbox],
+label > input[type=radio]
+{
+    margin-bottom: .25rem;
+}
+label
+{
+    margin-top: .5rem;
+    margin-bottom: .25rem;
+    font-size: .75rem;
+}
+button,
+.button,
+input,
+textarea
+{
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    padding: .5rem;
+    color: var(--color-foreground);
+    font-family: 'Roboto Mono';
+    font-weight: 300;
+    font-size: 1rem;
+    display: inline-block;
+}
+textarea
+{
+    border: 1px solid var(--color-primary);
+    min-height: 10rem;
+}
+button,
+.button,
+input[type=submit],
+input[type=button]
+{
+    display: inline-flex;
+    align-items: center;
+    cursor: default;
+    background-color: var(--color-surface);
+    border-radius: .25rem;
+    border: 1px solid var(--color-foreground-subtle);
+}
+button:hover:not(:disabled),
+.button:hover:not(:disabled),
+input[type=submit]:hover:not(:disabled),
+input[type=button]:hover:not(:disabled)
+{
+    transition: background-color .3s;
+    background-color: var(--color-surface-hover);
+}
+button:active:not(:disabled),
+.button:active:not(:disabled),
+input[type=submit]:active:not(:disabled),
+input[type=button]:active:not(:disabled)
+{
+    background-color: var(--color-surface-depressed);
+}
+@media print {
+    form {
+        display: none;
+    }
+}
+button:disabled,
+.button:disabled,
+input[type=submit]:disabled,
+input[type=button]:disabled
+{
+    color: var(--color-idle);
+    border-color: var(--color-idle)
+    background: none;
+}
+
+/* Breadcrumbs */
+header > nav > ul
+{
+    list-style: none;
+    margin: 1rem 0
+}
+header > nav > ul > li::before
+{
+    content: none;
+}
+header > nav > ul > li
+{
+    display: inline-block;
+    font-style: italic;
+}
+header > nav > ul > li+li::before
+{
+    content: " > ";
+}
+
+/* Hidden Elements */
+.hidden,
+.only-darkmode
+{
+    display: none;
+}
+@media not (prefers-color-scheme: dark) {
+    .only-darkmode
+    {
+        display: none;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .only-lightmode
+    {
+        display: none;
+    }
+}
+
+/* Ink Footer */
+body.anchored-footer
+{
+    padding-bottom: 0;
+}
+footer.ink
+{
+    display: flex;
+}
+footer.ink > .signature
+{
+    background: url("https://assets.inkapplications.com/images/tentacle-light.svg");
+    background-repeat: no-repeat;
+    background-size: 5rem;
+    min-height: 5rem;
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 5rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    background-position: bottom left;
+}
+footer.ink > .signature > a
+{
+    color: var(--color-foreground-subtle);
+    letter-spacing: .075rem;
+}
+body.anchored-footer > footer.ink > .signature
+{
+    background-position: bottom -.8rem left;
+}
+@media (prefers-color-scheme: dark) {
+    footer.ink > .signature
+    {
+        background: url("https://assets.inkapplications.com/images/tentacle-dark.svg");
+        background-repeat: no-repeat;
+        background-size: 5rem;
+    }
+}
+@media (max-width: 800px) {
+    footer.ink > .signature
+    {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        background-position: center bottom;
+        padding-bottom: 5.1rem;
+    }
+
+    body.anchored-footer > footer.ink > .signature
+    {
+        background-position: center bottom -.8rem;
+    }
+}
+@media print {
+    footer.ink > .signature {
+        background: none;
+    }
+}
+
+/* Status Indicator */
+.status-indicator
+{
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Icons */
+img.icon
+{
+    margin: .25rem;
+}
+button img.icon,
+.button img.icon
+{
+    margin: 0;
+    margin-right: .25rem;
+}
+
+/* Sentiment Colors */
+img.svg-fill.nominal
+{
+    filter: var(--filter-foreground);
+}
+img.svg-fill.primary
+{
+    filter: var(--filter-primary);
+}
+img.svg-fill.positive
+{
+    filter: var(--filter-positive);
+}
+img.svg-fill.negative
+{
+    filter: var(--filter-negative);
+}
+img.svg-fill.caution
+{
+    filter: var(--filter-caution);
+}
+img.svg-fill.idle
+{
+    filter: var(--filter-idle);
+}
+
+button.nominal,
+.button.nominal,
+input[type=submit].nominal,
+input[type=button].nominal
+{
+    border-color: var(--color-foreground);
+}
+button.primary,
+.button.primary,
+input[type=submit].primary,
+input[type=button].primary
+{
+    border-color: var(--color-primary);
+}
+button.positive,
+.button.positive,
+input[type=submit].positive,
+input[type=button].positive
+{
+    border-color: var(--color-positive);
+}
+button.negative,
+.button.negative,
+input[type=submit].negative,
+input[type=button].negative
+{
+    border-color: var(--color-negative);
+}
+button.caution,
+.button.caution,
+input[type=submit].caution,
+input[type=button].caution
+{
+    border-color: var(--color-caution);
+}
+button.idle,
+.button.idle,
+input[type=submit].idle,
+input[type=button].idle
+{
+    border-color: var(--color-idle);
+}
+
+span.nominal
+{
+    color: var(--color-foreground);
+}
+span.primary
+{
+    color: var(--color-primary);
+}
+span.positive
+{
+    color: var(--color-positive);
+}
+span.negative
+{
+    color: var(--color-negative);
+}
+span.caution
+{
+    color: var(--color-caution);
+}
+span.idle
+{
+    color: var(--color-idle);
+}
