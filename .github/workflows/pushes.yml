@@ -11,6 +11,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -
+                name: Checkout
+                uses: actions/checkout@v4.1.7
+            -
                 name: Build Static Sample
                 run: ./gradlew sample-web:buildStatic sample-web:assemble
             -
