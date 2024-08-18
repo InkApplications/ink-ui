@@ -27,6 +27,7 @@ abstract class InkUiScript {
     var title: String? = null
     var sectioned: Boolean = false
     var contentBreak: Boolean = false
+    var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
 
     fun addPageHeader(element: UiElement) {
         pageHeaders.add(renderer.renderElement(element))
@@ -48,8 +49,10 @@ abstract class InkUiScript {
         styles += stylesheet
     }
 
-    fun useHostedStyles() {
-        styles += "https://assets.inkapplications.com/css/main-v1.3.css"
+    private fun getStyles(): List<String> {
+        return listOf(
+            "$resourceBaseUrl/css/main-2.0.css",
+        ) + styles
     }
 
     internal fun getHtml(): String {
@@ -57,7 +60,7 @@ abstract class InkUiScript {
             pageTitle = title ?: fileName,
             pageHeaders = pageHeaders,
             bodies = bodies,
-            stylesheets = styles,
+            stylesheets = getStyles(),
             sectioned = sectioned,
             contentBreak = contentBreak,
         )

@@ -26,17 +26,10 @@ jobs:
                 name: Build Static Sample
                 run: ./gradlew sample-web:buildStatic sample-web:assemble
             -
-                name: Create Deploy Directory
-                run: |
-                    mkdir -p build/pages
-                    cp -r sample-web/build/static/* build/pages/
-                    cp -r sample-web/build/dist/js/productionExecutable/* build/pages/
-                    mv build/pages/sample.html build/pages/index.html
-            -
                 name: Upload Pages Artifact
                 uses: actions/upload-pages-artifact@v3.0.1
                 with:
-                    path: build/pages
+                    path: sample-web/build/dist/web
             -
                 name: Deploy to GitHub Pages
                 uses: actions/deploy-pages@v4.0.5
