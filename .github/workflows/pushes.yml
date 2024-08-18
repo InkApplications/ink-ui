@@ -24,7 +24,7 @@ jobs:
                     distribution: temurin
             -
                 name: Build Static Sample
-                run: ./gradlew sample-web:buildStatic sample-web:assemble
+                run: ./gradlew sample-web:distWeb
             -
                 name: Upload Pages Artifact
                 uses: actions/upload-pages-artifact@v3.0.1
