@@ -1,5 +1,5 @@
-useHostedStyles()
 title = "Test"
+resourceBaseUrl = "res"
 sectioned = true
 
 addPageHeader(TextElement("Page Header", TextStyle.H1))
