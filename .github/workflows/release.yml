@@ -8,7 +8,7 @@ jobs:
     tests:
         name: Test
         uses: inkapplications/.github/.github/workflows/kmp-checks.yml@1.1.0
-    publish:
+    publish-maven:
         name: Publish to Maven Central
         needs: [tests]
         secrets: inherit

@@ -19,6 +19,22 @@ module = "org.jetbrains.kotlinx:kotlinx-coroutines-core"
 version.ref = "kotlin"
 module = "org.jetbrains.kotlin:kotlin-test-junit"
 
+[libraries.kotlin-scripting-common]
+version.ref = "kotlin"
+module = "org.jetbrains.kotlin:kotlin-scripting-common"
+
+[libraries.kotlin-scripting-jvm-core]
+version.ref = "kotlin"
+module = "org.jetbrains.kotlin:kotlin-scripting-jvm"
+
+[libraries.kotlin-scripting-jvm-host]
+version.ref = "kotlin"
+module = "org.jetbrains.kotlin:kotlin-scripting-jvm-host"
+
+[libraries.kotlinx-html]
+version = "0.11.0"
+module = "org.jetbrains.kotlinx:kotlinx-html-jvm"
+
 [libraries.android-gradle]
 version = "8.2.0"
 module = "com.android.tools.build:gradle"
