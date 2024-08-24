@@ -3,6 +3,7 @@ package ink.ui.render.compose.html
 import androidx.compose.runtime.Composable
 import ink.ui.render.compose.html.renderer.*
 import ink.ui.render.compose.html.renderer.CompositeElementRenderer
+import ink.ui.render.web.gridTemplateColumns
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
@@ -41,7 +42,7 @@ class HtmlComposeRenderer(
                 attrs = {
                     classes("fixed-grid")
                     style {
-                        gridTemplateColumns((0 until uiLayout.columns).joinToString(" ") { "auto" })
+                        gridTemplateColumns(uiLayout.gridTemplateColumns)
                     }
                 }
             ) {
@@ -50,7 +51,6 @@ class HtmlComposeRenderer(
                         attrs = {
                             style {
                                 gridColumn("span ${it.span}")
-                                display(DisplayStyle.Flex)
                                 when (it.horizontalPositioning) {
                                     Positioning.Start -> {
                                         justifyContent(JustifyContent.Start)

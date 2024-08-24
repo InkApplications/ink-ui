@@ -3,6 +3,9 @@ package ink.ui.render.statichtml
 import ink.ui.render.statichtml.renderer.*
 import ink.ui.render.statichtml.renderer.CompositeElementRenderer
 import ink.ui.render.statichtml.renderer.TextRenderer
+import ink.ui.render.web.gridTemplateColumns
+import ink.ui.structures.Positioning
+import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
 import kotlinx.html.*
@@ -25,17 +28,51 @@ class HtmlRenderer {
         )
     }
 
-    fun renderLayout(uiLayout: UiLayout): TagConsumer<*>.() -> Unit = {
+    fun renderLayout(uiLayout: UiLayout): TagConsumer<*>.() -> Unit = consumer@ {
         when (uiLayout) {
-            is CenteredElementLayout -> TODO()
-            is FixedGridLayout -> TODO()
-            is PageLayout -> section {
-                with(renderer) {
-                    render(uiLayout.body, renderer)
+            is CenteredElementLayout -> section("element-center") {
+                renderWith(
+                    element = uiLayout.body,
+                    consumer = consumer,
+                    renderer = renderer,
+                )
+            }
+            is FixedGridLayout -> section("fixed-grid") {
+                attributes["style"] = "grid-template-columns: ${uiLayout.gridTemplateColumns};"
+
+                uiLayout.items.forEach { item ->
+                    div {
+                        val horizontalPosition = when (item.horizontalPositioning) {
+                            Positioning.Start -> "start"
+                            Positioning.Center -> "center"
+                        }
+                        val verticalPosition = when (item.verticalPositioning) {
+                            Positioning.Start -> "start"
+                            Positioning.Center -> "center"
+                        }
+                        attributes["style"] = "grid-column: span ${item.span}; align-items: $verticalPosition; justify-content: $horizontalPosition;"
+                        renderWith(
+                            element = item.body,
+                            consumer = consumer,
+                            renderer = renderer,
+                        )
+                    }
                 }
             }
-
-            is ScrollingListLayout -> TODO()
+            is PageLayout -> section {
+                renderWith(
+                    element = uiLayout.body,
+                    consumer = consumer,
+                    renderer = renderer,
+                )
+            }
+            is ScrollingListLayout -> section {
+                renderWith(
+                    element = ElementList(uiLayout.items),
+                    consumer = consumer,
+                    renderer = renderer,
+                )
+            }
         }
     }
 

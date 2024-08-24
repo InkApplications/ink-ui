@@ -241,6 +241,10 @@ section nav a:not(.button):after
     display: grid;
     gap: .25rem;
 }
+.fixed-grid > *
+{
+    display: flex;
+}
 
 .item-list,
 .unified-list,
