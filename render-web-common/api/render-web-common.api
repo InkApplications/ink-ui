@@ -1,0 +1,4 @@
+public final class ink/ui/render/web/FixedGridLayoutsKt {
+	public static final fun getGridTemplateColumns (Link/ui/structures/layouts/FixedGridLayout;)Ljava/lang/String;
+}
+

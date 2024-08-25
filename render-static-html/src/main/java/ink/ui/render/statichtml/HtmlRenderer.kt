@@ -16,6 +16,7 @@ class HtmlRenderer {
     private val builtInRenderers = listOf(
         ListRenderer,
         TextRenderer,
+        FormattedTextRenderer,
         StatusRenderer(null)
     )
     private val renderer = CompositeElementRenderer(builtInRenderers)

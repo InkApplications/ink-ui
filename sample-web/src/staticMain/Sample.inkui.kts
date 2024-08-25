@@ -14,6 +14,18 @@ addBody(
                 TextElement("Body Text", TextStyle.Body),
                 TextElement("Caption", TextStyle.Caption),
                 StatusIndicatorElement("Nominal Status", Sentiment.Nominal),
+                FormattedText {
+                    link(url="javascript:void(0)") {
+                        text("Formatted")
+                    }
+                    space()
+                    strong {
+                        text("Text")
+                        emphasis {
+                            text("!!!")
+                        }
+                    }
+                }
             )
         )
     )
