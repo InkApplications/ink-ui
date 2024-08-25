@@ -11,6 +11,7 @@ import ink.ui.structures.Positioning
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.render.RenderResult
 
 internal object ListRenderer: ElementRenderer {
     @Composable
@@ -34,7 +35,7 @@ internal object ListRenderer: ElementRenderer {
                     }
                 }
             }
-            else -> return RenderResult.NotRendered
+            else -> return RenderResult.Skipped
         }
         return RenderResult.Rendered
     }

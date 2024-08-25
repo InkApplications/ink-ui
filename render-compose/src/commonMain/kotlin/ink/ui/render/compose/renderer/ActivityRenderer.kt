@@ -7,6 +7,7 @@ import ink.ui.render.compose.theme.ComposeRenderTheme
 import ink.ui.structures.elements.ProgressElement
 import ink.ui.structures.elements.ThrobberElement
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.render.RenderResult
 
 internal object ActivityRenderer: ElementRenderer {
     @Composable
@@ -21,7 +22,7 @@ internal object ActivityRenderer: ElementRenderer {
                 sentiment = element.sentiment,
                 theme = theme
             )
-            else -> return RenderResult.NotRendered
+            else -> return RenderResult.Skipped
         }
         return RenderResult.Rendered
     }

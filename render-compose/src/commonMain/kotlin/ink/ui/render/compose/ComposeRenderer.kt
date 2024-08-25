@@ -18,6 +18,7 @@ import ink.ui.render.compose.theme.defaultTheme
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
+import ink.ui.structures.render.RenderResult
 
 /**
  * Renders UI Layouts and elements using Compose.
@@ -118,8 +119,9 @@ class ComposeRenderer(
 
     @Composable
     fun renderElement(element: UiElement) {
-        when (uiRenderer.render(element, theme, uiRenderer)) {
-            RenderResult.NotRendered -> throw IllegalArgumentException("No renderer registered for ${element::class.simpleName}")
+        when (val result = uiRenderer.render(element, theme, uiRenderer)) {
+            RenderResult.Skipped -> throw IllegalArgumentException("No renderer registered for ${element::class.simpleName}")
+            is RenderResult.Failed -> throw result.exception
             RenderResult.Rendered -> {}
         }
     }

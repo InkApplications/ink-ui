@@ -11,27 +11,7 @@ public final class ink/ui/render/compose/elements/ButtonKt {
 }
 
 public abstract interface class ink/ui/render/compose/renderer/ElementRenderer {
-	public abstract fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/render/compose/renderer/RenderResult;
-}
-
-public final class ink/ui/render/compose/renderer/IconRenderer : ink/ui/render/compose/renderer/ElementRenderer {
-	public static final field $stable I
-	public static final field INSTANCE Link/ui/render/compose/renderer/IconRenderer;
-	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/render/compose/renderer/RenderResult;
-}
-
-public final class ink/ui/render/compose/renderer/RenderResult : java/lang/Enum {
-	public static final field NotRendered Link/ui/render/compose/renderer/RenderResult;
-	public static final field Rendered Link/ui/render/compose/renderer/RenderResult;
-	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Link/ui/render/compose/renderer/RenderResult;
-	public static fun values ()[Link/ui/render/compose/renderer/RenderResult;
-}
-
-public final class ink/ui/render/compose/renderer/SpinnerRenderer : ink/ui/render/compose/renderer/ElementRenderer {
-	public static final field $stable I
-	public static final field INSTANCE Link/ui/render/compose/renderer/SpinnerRenderer;
-	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/render/compose/renderer/RenderResult;
+	public abstract fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/structures/render/RenderResult;
 }
 
 public final class ink/ui/render/compose/renderer/SymbolsKt {
