@@ -2,6 +2,7 @@ package ink.ui.render.statichtml.renderer
 
 import ink.ui.structures.elements.StatusIndicatorElement
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.render.RenderResult
 import kotlinx.html.*
 
 class StatusRenderer(

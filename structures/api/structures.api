@@ -451,3 +451,11 @@ public final class ink/ui/structures/layouts/ScrollingListLayout : ink/ui/struct
 public abstract interface class ink/ui/structures/layouts/UiLayout {
 }
 
+public final class ink/ui/structures/render/RenderResult : java/lang/Enum {
+	public static final field NotRendered Link/ui/structures/render/RenderResult;
+	public static final field Rendered Link/ui/structures/render/RenderResult;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/render/RenderResult;
+	public static fun values ()[Link/ui/structures/render/RenderResult;
+}
+
