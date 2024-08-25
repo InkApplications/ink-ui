@@ -149,6 +149,104 @@ public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/e
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/elements/FormattedText : ink/ui/structures/elements/UiElement$Static {
+	public fun <init> (Ljava/util/List;)V
+	public fun <init> (Lkotlin/jvm/functions/Function1;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Link/ui/structures/elements/FormattedText;
+	public static synthetic fun copy$default (Link/ui/structures/elements/FormattedText;Ljava/util/List;ILjava/lang/Object;)Link/ui/structures/elements/FormattedText;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSpans ()Ljava/util/List;
+	public fun hashCode ()I
+	public final fun toPlainTextElement (Link/ui/structures/TextStyle;)Link/ui/structures/elements/TextElement;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/FormattedText$Builder {
+	public fun <init> ()V
+	public fun <init> (Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Link/ui/structures/elements/FormattedText$Builder;
+	public static synthetic fun copy$default (Link/ui/structures/elements/FormattedText$Builder;Ljava/util/List;ILjava/lang/Object;)Link/ui/structures/elements/FormattedText$Builder;
+	public final fun emphasis (Lkotlin/jvm/functions/Function1;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSpans ()Ljava/util/List;
+	public fun hashCode ()I
+	public final fun link (Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public final fun setSpans (Ljava/util/List;)V
+	public final fun space ()V
+	public final fun strong (Lkotlin/jvm/functions/Function1;)V
+	public final fun text (Ljava/lang/String;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class ink/ui/structures/elements/FormattedText$Span {
+	public abstract fun toPlainString ()Ljava/lang/String;
+}
+
+public abstract interface class ink/ui/structures/elements/FormattedText$Span$Composite : ink/ui/structures/elements/FormattedText$Span {
+	public abstract fun getInner ()Ljava/util/List;
+}
+
+public final class ink/ui/structures/elements/FormattedText$Span$Composite$DefaultImpls {
+	public static fun toPlainString (Link/ui/structures/elements/FormattedText$Span$Composite;)Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/FormattedText$Span$DefaultImpls {
+	public static fun toPlainString (Link/ui/structures/elements/FormattedText$Span;)Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/FormattedText$Span$Emphasis : ink/ui/structures/elements/FormattedText$Span$Composite {
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Link/ui/structures/elements/FormattedText$Span$Emphasis;
+	public static synthetic fun copy$default (Link/ui/structures/elements/FormattedText$Span$Emphasis;Ljava/util/List;ILjava/lang/Object;)Link/ui/structures/elements/FormattedText$Span$Emphasis;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getInner ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toPlainString ()Ljava/lang/String;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/FormattedText$Span$Link : ink/ui/structures/elements/FormattedText$Span$Composite {
+	public fun <init> (Ljava/util/List;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/util/List;Ljava/lang/String;)Link/ui/structures/elements/FormattedText$Span$Link;
+	public static synthetic fun copy$default (Link/ui/structures/elements/FormattedText$Span$Link;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)Link/ui/structures/elements/FormattedText$Span$Link;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getInner ()Ljava/util/List;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toPlainString ()Ljava/lang/String;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/FormattedText$Span$Strong : ink/ui/structures/elements/FormattedText$Span$Composite {
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Link/ui/structures/elements/FormattedText$Span$Strong;
+	public static synthetic fun copy$default (Link/ui/structures/elements/FormattedText$Span$Strong;Ljava/util/List;ILjava/lang/Object;)Link/ui/structures/elements/FormattedText$Span$Strong;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getInner ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toPlainString ()Ljava/lang/String;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/FormattedText$Span$Text : ink/ui/structures/elements/FormattedText$Span {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Link/ui/structures/elements/FormattedText$Span$Text;
+	public static synthetic fun copy$default (Link/ui/structures/elements/FormattedText$Span$Text;Ljava/lang/String;ILjava/lang/Object;)Link/ui/structures/elements/FormattedText$Span$Text;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getText ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toPlainString ()Ljava/lang/String;
+	public fun toString ()Ljava/lang/String;
+}
+
 public final class ink/ui/structures/elements/IconElement : ink/ui/structures/elements/UiElement$Static {
 	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -351,5 +449,37 @@ public final class ink/ui/structures/layouts/ScrollingListLayout : ink/ui/struct
 }
 
 public abstract interface class ink/ui/structures/layouts/UiLayout {
+}
+
+public abstract interface class ink/ui/structures/render/RenderResult {
+}
+
+public final class ink/ui/structures/render/RenderResult$Failed : ink/ui/structures/render/RenderResult {
+	public fun <init> (Ljava/lang/Throwable;)V
+	public final fun component1 ()Ljava/lang/Throwable;
+	public final fun copy (Ljava/lang/Throwable;)Link/ui/structures/render/RenderResult$Failed;
+	public static synthetic fun copy$default (Link/ui/structures/render/RenderResult$Failed;Ljava/lang/Throwable;ILjava/lang/Object;)Link/ui/structures/render/RenderResult$Failed;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getException ()Ljava/lang/Throwable;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/render/RenderResult$Rendered : ink/ui/structures/render/RenderResult {
+	public static final field INSTANCE Link/ui/structures/render/RenderResult$Rendered;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/render/RenderResult$Skipped : ink/ui/structures/render/RenderResult {
+	public static final field INSTANCE Link/ui/structures/render/RenderResult$Skipped;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/render/RenderResultKt {
+	public static final fun renderCatching (Lkotlin/jvm/functions/Function0;)Link/ui/structures/render/RenderResult;
 }
 

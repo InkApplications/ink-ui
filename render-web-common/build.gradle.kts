@@ -4,19 +4,18 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
     id("ink.publishing")
 }
-
 kotlin {
     js {
         browser()
         binaries.executable()
     }
+    jvm()
+
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.html.core)
+            api(libs.kotlinx.coroutines.core)
             implementation(compose.runtime)
-            implementation(libs.kotlinx.coroutines.core)
             api(projects.structures)
-            implementation(projects.renderWebCommon)
         }
     }
 }

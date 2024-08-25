@@ -1,10 +1,12 @@
 package ink.ui.render.compose.html.renderer
 
 import androidx.compose.runtime.*
+import ink.ui.render.web.toCssClass
 import ink.ui.structures.Sentiment
 import ink.ui.structures.elements.ProgressElement
 import ink.ui.structures.elements.ThrobberElement
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.render.RenderResult
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
@@ -18,7 +20,7 @@ object ActivityRenderer: ElementRenderer {
         when (element) {
             is ProgressElement -> ProgressBar(element)
             is ThrobberElement -> Throbber(element.caption, element.sentiment)
-            else -> return RenderResult.NotRendered
+            else -> return RenderResult.Skipped
         }
 
         return RenderResult.Rendered

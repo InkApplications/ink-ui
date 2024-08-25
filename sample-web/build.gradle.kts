@@ -38,7 +38,7 @@ tasks.register("buildStatic") {
         }
         copy {
             staticResDir.createDirectory()
-            from(projects.renderComposeHtml.dependencyProject.layout.projectDirectory.dir("src/commonMain/composeResources"))
+            from(projects.renderWebCommon.dependencyProject.layout.projectDirectory.dir("src/commonMain/composeResources"))
             into(staticResDir)
         }
     }

@@ -13,11 +13,12 @@ import androidx.compose.ui.Modifier
 import ink.ui.render.compose.theme.ComposeRenderTheme
 import ink.ui.structures.elements.MenuRowElement
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.render.RenderResult
 
 internal object MenuRowRenderer: ElementRenderer {
     @Composable
     override fun render(element: UiElement, theme: ComposeRenderTheme, parent: ElementRenderer): RenderResult {
-        if (element !is MenuRowElement) return RenderResult.NotRendered
+        if (element !is MenuRowElement) return RenderResult.Skipped
 
         val onClick = element.onClick
         Row(

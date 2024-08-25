@@ -3,9 +3,11 @@ package ink.ui.render.compose.html
 import androidx.compose.runtime.Composable
 import ink.ui.render.compose.html.renderer.*
 import ink.ui.render.compose.html.renderer.CompositeElementRenderer
+import ink.ui.render.web.gridTemplateColumns
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
+import ink.ui.structures.render.RenderResult
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Section
@@ -41,7 +43,7 @@ class HtmlComposeRenderer(
                 attrs = {
                     classes("fixed-grid")
                     style {
-                        gridTemplateColumns((0 until uiLayout.columns).joinToString(" ") { "auto" })
+                        gridTemplateColumns(uiLayout.gridTemplateColumns)
                     }
                 }
             ) {
@@ -50,7 +52,6 @@ class HtmlComposeRenderer(
                         attrs = {
                             style {
                                 gridColumn("span ${it.span}")
-                                display(DisplayStyle.Flex)
                                 when (it.horizontalPositioning) {
                                     Positioning.Start -> {
                                         justifyContent(JustifyContent.Start)
@@ -95,8 +96,9 @@ class HtmlComposeRenderer(
 
     @Composable
     fun renderElement(element: UiElement) {
-        when (uiRenderer.render(element, uiRenderer)) {
-            RenderResult.NotRendered -> throw IllegalArgumentException("No renderer registered for ${element::class.simpleName}")
+        when (val result = uiRenderer.render(element, uiRenderer)) {
+            RenderResult.Skipped -> throw IllegalArgumentException("No renderer registered for ${element::class.simpleName}")
+            is RenderResult.Failed -> throw result.exception
             RenderResult.Rendered -> {}
         }
     }

@@ -4,11 +4,12 @@ import ink.ui.structures.GroupingStyle
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.render.RenderResult
 import kotlinx.html.*
 
 object ListRenderer: ElementRenderer {
     override fun TagConsumer<*>.render(element: UiElement, parent: ElementRenderer): RenderResult {
-        if (element !is ElementList) return RenderResult.NotRendered
+        if (element !is ElementList) return RenderResult.Skipped
 
         div(
             classes = when (element.groupingStyle) {
