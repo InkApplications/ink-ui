@@ -1,5 +1,6 @@
 package ink.ui.render.compose.html.renderer
 
+import ink.ui.render.web.RESOURCE_SVG_PATH
 import ink.ui.structures.elements.StatusIndicatorElement
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
@@ -16,7 +17,7 @@ val StatusRenderer = renderer<StatusIndicatorElement> { element ->
             attrs = {
                 classes("status-indicator-blip", "svg-fill", element.sentiment.toCssClass())
             },
-            src = "$PATH/blip.svg",
+            src = "$RESOURCE_SVG_PATH/blip.svg",
         )
         Span {
             Text(element.text)

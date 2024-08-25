@@ -1,5 +1,6 @@
 package ink.ui.render.compose.html.renderer
 
+import ink.ui.render.web.svgSrc
 import ink.ui.structures.elements.IconElement
 import org.jetbrains.compose.web.dom.Img
 
