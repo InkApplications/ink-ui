@@ -2,3 +2,12 @@ public final class ink/ui/render/web/FixedGridLayoutsKt {
 	public static final fun getGridTemplateColumns (Link/ui/structures/layouts/FixedGridLayout;)Ljava/lang/String;
 }
 
+public final class ink/ui/render/web/SentimentsKt {
+	public static final fun toCssClass (Link/ui/structures/Sentiment;)Ljava/lang/String;
+}
+
+public final class ink/ui/render/web/SymbolsKt {
+	public static final field RESOURCE_SVG_PATH Ljava/lang/String;
+	public static final fun getSvgSrc-TN8vZ0Q (Ljava/lang/String;)Ljava/lang/String;
+}
+

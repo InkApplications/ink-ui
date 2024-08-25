@@ -1,5 +1,6 @@
 package ink.ui.render.statichtml.renderer
 
+import ink.ui.render.web.toCssClass
 import ink.ui.structures.elements.StatusIndicatorElement
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.RenderResult

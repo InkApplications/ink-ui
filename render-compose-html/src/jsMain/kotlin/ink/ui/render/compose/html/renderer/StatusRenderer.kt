@@ -1,6 +1,7 @@
 package ink.ui.render.compose.html.renderer
 
 import ink.ui.render.web.RESOURCE_SVG_PATH
+import ink.ui.render.web.toCssClass
 import ink.ui.structures.elements.StatusIndicatorElement
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img

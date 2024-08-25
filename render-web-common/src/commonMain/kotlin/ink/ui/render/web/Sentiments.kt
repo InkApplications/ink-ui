@@ -1,4 +1,4 @@
-package ink.ui.render.statichtml.renderer
+package ink.ui.render.web
 
 import ink.ui.structures.Sentiment
 

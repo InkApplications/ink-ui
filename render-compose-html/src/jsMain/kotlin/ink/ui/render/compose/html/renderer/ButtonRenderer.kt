@@ -1,6 +1,7 @@
 package ink.ui.render.compose.html.renderer
 
 import ink.ui.render.web.svgSrc
+import ink.ui.render.web.toCssClass
 import ink.ui.structures.elements.ButtonElement
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Img
