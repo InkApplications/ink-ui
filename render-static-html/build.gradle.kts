@@ -1,6 +1,7 @@
 plugins {
     application
     kotlin("jvm")
+    id("ink.publishing")
 }
 
 application {
