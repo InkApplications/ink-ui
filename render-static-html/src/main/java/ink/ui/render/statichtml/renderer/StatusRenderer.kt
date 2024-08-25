@@ -9,7 +9,7 @@ class StatusRenderer(
     private val iconPath: String?
 ): ElementRenderer {
     override fun TagConsumer<*>.render(element: UiElement, parent: ElementRenderer): RenderResult {
-        if (element !is StatusIndicatorElement) return RenderResult.NotRendered
+        if (element !is StatusIndicatorElement) return RenderResult.Skipped
         div(classes = "status-indicator") {
             if(iconPath != null) {
                 eagerImg(

@@ -9,7 +9,7 @@ import kotlinx.html.*
 
 object ListRenderer: ElementRenderer {
     override fun TagConsumer<*>.render(element: UiElement, parent: ElementRenderer): RenderResult {
-        if (element !is ElementList) return RenderResult.NotRendered
+        if (element !is ElementList) return RenderResult.Skipped
 
         div(
             classes = when (element.groupingStyle) {
