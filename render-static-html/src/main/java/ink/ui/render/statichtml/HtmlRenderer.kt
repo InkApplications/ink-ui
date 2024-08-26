@@ -12,12 +12,16 @@ import kotlinx.html.*
 import kotlinx.html.dom.createHTMLDocument
 import kotlinx.html.dom.serialize
 
-class HtmlRenderer {
+class HtmlRenderer(
+    resourceBaseUrl: String,
+) {
+    private val iconUrl = "$resourceBaseUrl/svg"
     private val builtInRenderers = listOf(
         ListRenderer,
         TextRenderer,
         FormattedTextRenderer,
-        StatusRenderer(null)
+        StatusRenderer(iconUrl),
+        IconRenderer(iconUrl),
     )
     private val renderer = CompositeElementRenderer(builtInRenderers)
 

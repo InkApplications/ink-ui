@@ -1,6 +1,6 @@
 package ink.ui.render.compose.html.renderer
 
-import ink.ui.render.web.svgSrc
+import ink.ui.render.web.composePath
 import ink.ui.render.web.toCssClass
 import ink.ui.structures.elements.ButtonElement
 import org.jetbrains.compose.web.dom.Button
@@ -22,7 +22,7 @@ val ButtonRenderer = renderer<ButtonElement> { element ->
                 attrs = {
                     classes("icon", "svg-fill", element.sentiment.toCssClass())
                 },
-                src = leadingSymbol.svgSrc,
+                src = leadingSymbol.composePath,
             )
         }
         Text(element.text)
