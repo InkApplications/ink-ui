@@ -7,7 +7,33 @@ public final class ink/ui/render/web/SentimentsKt {
 }
 
 public final class ink/ui/render/web/SymbolsKt {
-	public static final field RESOURCE_SVG_PATH Ljava/lang/String;
+	public static final field COMPOSE_RESOURCE_SVG_PATH Ljava/lang/String;
+	public static final fun getComposePath-TN8vZ0Q (Ljava/lang/String;)Ljava/lang/String;
 	public static final fun getSvgSrc-TN8vZ0Q (Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class ink/ui/render/web/elements/LinkButtonElement : ink/ui/structures/elements/UiElement$Interactive {
+	public static final field $stable I
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Link/ui/structures/Sentiment;
+	public final fun component4 ()Z
+	public final fun component5 ()Z
+	public final fun component6-nmxWqHQ ()Ljava/lang/String;
+	public final fun component7-nmxWqHQ ()Ljava/lang/String;
+	public final fun copy-KKJu38w (Ljava/lang/String;Ljava/lang/String;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;)Link/ui/render/web/elements/LinkButtonElement;
+	public static synthetic fun copy-KKJu38w$default (Link/ui/render/web/elements/LinkButtonElement;Ljava/lang/String;Ljava/lang/String;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Link/ui/render/web/elements/LinkButtonElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEnabled ()Z
+	public final fun getLatchOnPress ()Z
+	public final fun getLeadingSymbol-nmxWqHQ ()Ljava/lang/String;
+	public final fun getSentiment ()Link/ui/structures/Sentiment;
+	public final fun getText ()Ljava/lang/String;
+	public final fun getTrailingSymbol-nmxWqHQ ()Ljava/lang/String;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
 }
 

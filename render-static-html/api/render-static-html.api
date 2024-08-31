@@ -1,5 +1,5 @@
 public final class ink/ui/render/statichtml/HtmlRenderer {
-	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
 	public final fun renderDocument (Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;ZZ)Ljava/lang/String;
 	public static synthetic fun renderDocument$default (Link/ui/render/statichtml/HtmlRenderer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;ZZILjava/lang/Object;)Ljava/lang/String;
 	public final fun renderElement (Link/ui/structures/elements/UiElement;)Lkotlin/jvm/functions/Function1;
@@ -46,6 +46,16 @@ public final class ink/ui/render/statichtml/renderer/ElementRendererKt {
 
 public final class ink/ui/render/statichtml/renderer/FormattedTextRendererKt {
 	public static final fun getFormattedTextRenderer ()Link/ui/render/statichtml/renderer/ElementRenderer;
+}
+
+public final class ink/ui/render/statichtml/renderer/IconRenderer : ink/ui/render/statichtml/renderer/ElementRenderer {
+	public fun <init> (Ljava/lang/String;)V
+	public fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
+}
+
+public final class ink/ui/render/statichtml/renderer/LinkButtonRenderer : ink/ui/render/statichtml/renderer/ElementRenderer {
+	public fun <init> (Ljava/lang/String;)V
+	public fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
 }
 
 public final class ink/ui/render/statichtml/renderer/ListRenderer : ink/ui/render/statichtml/renderer/ElementRenderer {
