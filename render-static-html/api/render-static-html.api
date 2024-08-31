@@ -6,22 +6,33 @@ public final class ink/ui/render/statichtml/HtmlRenderer {
 	public final fun renderLayout (Link/ui/structures/layouts/UiLayout;)Lkotlin/jvm/functions/Function1;
 }
 
+public abstract interface class ink/ui/render/statichtml/InkUiBuilder {
+	public abstract fun addBody (Link/ui/structures/layouts/UiLayout;)V
+	public abstract fun addBody (Lkotlin/jvm/functions/Function1;)V
+	public abstract fun addPageHeader (Link/ui/structures/elements/UiElement;)V
+	public abstract fun addPageHeader (Lkotlin/jvm/functions/Function1;)V
+	public abstract fun addStyle (Ljava/lang/String;)V
+	public abstract fun getResourceBaseUrl ()Ljava/lang/String;
+	public abstract fun include (Ljava/lang/String;)V
+}
+
 public final class ink/ui/render/statichtml/InkUiConfig : kotlin/script/experimental/api/ScriptCompilationConfiguration {
 	public static final field INSTANCE Link/ui/render/statichtml/InkUiConfig;
 }
 
-public abstract class ink/ui/render/statichtml/InkUiScript {
+public abstract class ink/ui/render/statichtml/InkUiScript : ink/ui/render/statichtml/InkUiBuilder {
 	public static final field Companion Link/ui/render/statichtml/InkUiScript$Companion;
-	public fun <init> ()V
-	public final fun addBody (Link/ui/structures/layouts/UiLayout;)V
-	public final fun addBody (Lkotlin/jvm/functions/Function1;)V
-	public final fun addPageHeader (Link/ui/structures/elements/UiElement;)V
-	public final fun addPageHeader (Lkotlin/jvm/functions/Function1;)V
-	public final fun addStyle (Ljava/lang/String;)V
+	public fun <init> (Ljava/io/File;)V
+	public fun addBody (Link/ui/structures/layouts/UiLayout;)V
+	public fun addBody (Lkotlin/jvm/functions/Function1;)V
+	public fun addPageHeader (Link/ui/structures/elements/UiElement;)V
+	public fun addPageHeader (Lkotlin/jvm/functions/Function1;)V
+	public fun addStyle (Ljava/lang/String;)V
 	public final fun getContentBreak ()Z
 	public final fun getResourceBaseUrl ()Ljava/lang/String;
 	public final fun getSectioned ()Z
 	public final fun getTitle ()Ljava/lang/String;
+	public fun include (Ljava/lang/String;)V
 	public final fun setContentBreak (Z)V
 	public final fun setResourceBaseUrl (Ljava/lang/String;)V
 	public final fun setSectioned (Z)V
@@ -33,6 +44,17 @@ public final class ink/ui/render/statichtml/InkUiScript$Companion {
 
 public final class ink/ui/render/statichtml/MainKt {
 	public static final fun main ([Ljava/lang/String;)V
+}
+
+public abstract class ink/ui/render/statichtml/PartialScript : ink/ui/render/statichtml/InkUiBuilder {
+	public fun <init> (Link/ui/render/statichtml/InkUiScript;)V
+	public fun addBody (Link/ui/structures/layouts/UiLayout;)V
+	public fun addBody (Lkotlin/jvm/functions/Function1;)V
+	public fun addPageHeader (Link/ui/structures/elements/UiElement;)V
+	public fun addPageHeader (Lkotlin/jvm/functions/Function1;)V
+	public fun addStyle (Ljava/lang/String;)V
+	public fun getResourceBaseUrl ()Ljava/lang/String;
+	public fun include (Ljava/lang/String;)V
 }
 
 public abstract interface class ink/ui/render/statichtml/renderer/ElementRenderer {
