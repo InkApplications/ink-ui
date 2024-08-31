@@ -22,6 +22,7 @@ class HtmlRenderer(
         FormattedTextRenderer,
         StatusRenderer(iconUrl),
         IconRenderer(iconUrl),
+        LinkButtonRenderer(iconUrl)
     )
     private val renderer = CompositeElementRenderer(builtInRenderers)
 

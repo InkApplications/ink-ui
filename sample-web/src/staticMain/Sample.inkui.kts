@@ -53,6 +53,12 @@ addBody(
                     symbol = Symbol.House,
                     sentiment = Sentiment.Caution,
                 ),
+                LinkButtonElement(
+                    url = "https://www.example.com",
+                    text = "Test",
+                    sentiment = Sentiment.Positive,
+                    leadingSymbol = Symbol.Cloud,
+                )
             )
         )
     )
