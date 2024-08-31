@@ -2,8 +2,7 @@ title = "Test"
 resourceBaseUrl = "res"
 sectioned = true
 
-addPageHeader(TextElement("Page Header", TextStyle.H1))
-addPageHeader(TextElement("Subtitle"))
+include("header.inkui.kts")
 addBody(
     PageLayout(
         ElementList(
