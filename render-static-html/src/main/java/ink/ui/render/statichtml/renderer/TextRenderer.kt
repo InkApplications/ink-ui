@@ -10,6 +10,6 @@ internal val TextRenderer = renderer<TextElement> { element ->
         TextStyle.H2 -> h2 { +element.text }
         TextStyle.H3 -> h3 { +element.text }
         TextStyle.Body -> p { +element.text }
-        TextStyle.Caption -> span("caption") { +element.text }
+        TextStyle.Caption -> p("caption") { +element.text }
     }
 }

@@ -22,12 +22,16 @@ abstract class InkUiScript {
     private var bodies: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var styles: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
-    private val renderer = HtmlRenderer()
     internal lateinit var fileName: String
     var title: String? = null
     var sectioned: Boolean = false
     var contentBreak: Boolean = false
     var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
+        set(value) {
+            field = value
+            renderer = HtmlRenderer(value)
+        }
+    private var renderer = HtmlRenderer(resourceBaseUrl)
 
     fun addPageHeader(element: UiElement) {
         pageHeaders.add(renderer.renderElement(element))

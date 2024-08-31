@@ -261,6 +261,11 @@ section nav a:not(.button):after
 {
     gap: .25rem;
 }
+.item-list > *
+{
+    display: flex;
+    align-items: center;
+}
 .element-center
 {
     display: flex;
@@ -623,6 +628,35 @@ body.anchored-footer > footer.ink > .signature
 {
     display: inline-flex;
     align-items: center;
+}
+.status-indicator-blip
+{
+    font-size: 3.5rem;
+    line-height: 1.5rem;
+}
+.status-indicator-blip.nominal
+{
+    color: var(--color-foreground);
+}
+.status-indicator-blip.primary
+{
+    color: var(--color-primary);
+}
+.status-indicator-blip.positive
+{
+    color: var(--color-positive);
+}
+.status-indicator-blip.negative
+{
+    color: var(--color-negative);
+}
+.status-indicator-blip.caution
+{
+    color: var(--color-caution);
+}
+.status-indicator-blip.idle
+{
+    color: var(--color-idle);
 }
 
 /* Icons */

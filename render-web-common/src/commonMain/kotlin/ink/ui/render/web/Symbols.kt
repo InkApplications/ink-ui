@@ -2,7 +2,7 @@ package ink.ui.render.web
 
 import ink.ui.structures.Symbol
 
-const val RESOURCE_SVG_PATH = "composeResources/com.inkapplications.ui.render_web_common.generated.resources/svg"
+const val COMPOSE_RESOURCE_SVG_PATH = "composeResources/com.inkapplications.ui.render_web_common.generated.resources/svg"
 
 val Symbol.svgSrc: String get() = when (this) {
     Symbol.Add -> "add.svg"
@@ -30,4 +30,6 @@ val Symbol.svgSrc: String get() = when (this) {
     Symbol.Temperature -> "temperature.svg"
     Symbol.Water -> "water.svg"
     else -> "unknown.svg"
-}.let { "$RESOURCE_SVG_PATH/$it" }
+}
+
+val Symbol.composePath: String get() = "$COMPOSE_RESOURCE_SVG_PATH/$svgSrc"

@@ -12,5 +12,6 @@ object InkUiConfig: ScriptCompilationConfiguration({
         defaultImports("ink.ui.structures.*")
         defaultImports("ink.ui.structures.layouts.*")
         defaultImports("ink.ui.structures.elements.*")
+        defaultImports("ink.ui.render.web.elements.*")
     }
 })

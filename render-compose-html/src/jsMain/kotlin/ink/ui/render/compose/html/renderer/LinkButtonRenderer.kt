@@ -1,23 +1,21 @@
 package ink.ui.render.compose.html.renderer
 
 import ink.ui.render.web.composePath
+import ink.ui.render.web.elements.LinkButtonElement
 import ink.ui.render.web.toCssClass
-import ink.ui.structures.elements.ButtonElement
-import org.jetbrains.compose.web.dom.Button
+import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 
-val ButtonRenderer = renderer<ButtonElement> { element ->
+val LinkButtonRenderer = renderer<LinkButtonElement> { element ->
     val leadingSymbol = element.leadingSymbol
     val trailingSymbol = element.trailingSymbol
 
-    Button(
+    A(
         attrs = {
-            classes(element.sentiment.toCssClass())
-            onClick {
-                element.onClick()
-            }
-        }
+            classes("button", element.sentiment.toCssClass())
+        },
+        href = element.url
     ) {
         if (leadingSymbol != null) {
             Img(

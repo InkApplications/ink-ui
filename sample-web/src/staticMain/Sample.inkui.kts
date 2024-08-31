@@ -13,7 +13,6 @@ addBody(
                 TextElement("Heading 3", TextStyle.H3),
                 TextElement("Body Text", TextStyle.Body),
                 TextElement("Caption", TextStyle.Caption),
-                StatusIndicatorElement("Nominal Status", Sentiment.Nominal),
                 FormattedText {
                     link(url="javascript:void(0)") {
                         text("Formatted")
@@ -25,7 +24,41 @@ addBody(
                             text("!!!")
                         }
                     }
-                }
+                },
+                StatusIndicatorElement(
+                    text = "Nominal Status",
+                    sentiment = Sentiment.Nominal,
+                ),
+                StatusIndicatorElement(
+                    text = "Primary Status",
+                    sentiment = Sentiment.Primary,
+                ),
+                StatusIndicatorElement(
+                    text = "Positive Status",
+                    sentiment = Sentiment.Positive,
+                ),
+                StatusIndicatorElement(
+                    text = "Negative Status",
+                    sentiment = Sentiment.Negative,
+                ),
+                StatusIndicatorElement(
+                    text = "Caution Status",
+                    sentiment = Sentiment.Caution,
+                ),
+                StatusIndicatorElement(
+                    text = "Idle Status",
+                    sentiment = Sentiment.Idle,
+                ),
+                IconElement(
+                    symbol = Symbol.House,
+                    sentiment = Sentiment.Caution,
+                ),
+                LinkButtonElement(
+                    url = "https://www.example.com",
+                    text = "Test",
+                    sentiment = Sentiment.Positive,
+                    leadingSymbol = Symbol.Cloud,
+                )
             )
         )
     )
