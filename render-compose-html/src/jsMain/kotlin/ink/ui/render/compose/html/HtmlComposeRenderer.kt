@@ -20,6 +20,7 @@ class HtmlComposeRenderer(
         ActivityRenderer,
         TextRenderer,
         ButtonRenderer,
+        LinkButtonRenderer,
         StatusRenderer,
         EmptyRenderer,
         SpinnerRenderer,

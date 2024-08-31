@@ -1,5 +1,6 @@
 package ink.ui.sample.web
 
+import ink.ui.render.web.elements.LinkButtonElement
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
 import ink.ui.structures.TextStyle
@@ -80,6 +81,12 @@ val SampleScreen = ScrollingListLayout(
             leadingSymbol = Symbol("test"),
             sentiment = Sentiment.Caution,
             latchOnPress = true,
+        ),
+        LinkButtonElement(
+            text = "Button",
+            url = "https://www.example.com",
+            leadingSymbol = Symbol.Cloud,
+            sentiment = Sentiment.Caution,
         ),
         MenuRowElement(
             text = "Menu Item",

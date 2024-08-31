@@ -16,7 +16,7 @@ kotlin {
             implementation(compose.runtime)
             implementation(libs.kotlinx.coroutines.core)
             api(projects.structures)
-            implementation(projects.renderWebCommon)
+            api(projects.renderWebCommon)
         }
     }
 }
