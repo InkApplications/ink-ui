@@ -8,6 +8,9 @@ import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 
 val ButtonRenderer = renderer<ButtonElement> { element ->
+    val leadingSymbol = element.leadingSymbol
+    val trailingSymbol = element.trailingSymbol
+
     Button(
         attrs = {
             classes(element.sentiment.toCssClass())
@@ -16,7 +19,6 @@ val ButtonRenderer = renderer<ButtonElement> { element ->
             }
         }
     ) {
-        val leadingSymbol = element.leadingSymbol
         if (leadingSymbol != null) {
             Img(
                 attrs = {
@@ -26,5 +28,13 @@ val ButtonRenderer = renderer<ButtonElement> { element ->
             )
         }
         Text(element.text)
+        if (trailingSymbol != null) {
+            Img(
+                attrs = {
+                    classes("icon", "svg-fill", element.sentiment.toCssClass())
+                },
+                src = trailingSymbol.composePath,
+            )
+        }
     }
 }
