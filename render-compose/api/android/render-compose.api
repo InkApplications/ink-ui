@@ -18,6 +18,10 @@ public final class ink/ui/render/compose/renderer/SymbolsKt {
 	public static final fun getResource-TN8vZ0Q (Ljava/lang/String;)Lorg/jetbrains/compose/resources/DrawableResource;
 }
 
+public final class ink/ui/render/compose/renderer/WeatherRendererKt {
+	public static final fun getWeatherRenderer ()Link/ui/render/compose/renderer/ElementRenderer;
+}
+
 public final class ink/ui/render/compose/theme/ColorVariant {
 	public static final field $stable I
 	public synthetic fun <init> (JJJJJJJJJILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -85,15 +89,19 @@ public final class ink/ui/render/compose/theme/ComposeRenderThemeKt {
 
 public final class ink/ui/render/compose/theme/SizingVariant {
 	public static final field $stable I
-	public synthetic fun <init> (FFILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public synthetic fun <init> (FFLkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (FFFFILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (FFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1-D9Ej5fM ()F
 	public final fun component2-D9Ej5fM ()F
-	public final fun copy-YgX7TsA (FF)Link/ui/render/compose/theme/SizingVariant;
-	public static synthetic fun copy-YgX7TsA$default (Link/ui/render/compose/theme/SizingVariant;FFILjava/lang/Object;)Link/ui/render/compose/theme/SizingVariant;
+	public final fun component3-D9Ej5fM ()F
+	public final fun component4-D9Ej5fM ()F
+	public final fun copy-a9UjIt4 (FFFF)Link/ui/render/compose/theme/SizingVariant;
+	public static synthetic fun copy-a9UjIt4$default (Link/ui/render/compose/theme/SizingVariant;FFFFILjava/lang/Object;)Link/ui/render/compose/theme/SizingVariant;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getBorders-D9Ej5fM ()F
 	public final fun getCorners-D9Ej5fM ()F
+	public final fun getHintIcons-D9Ej5fM ()F
+	public final fun getWidgetIcons-D9Ej5fM ()F
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }

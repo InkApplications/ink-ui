@@ -81,6 +81,16 @@ val SampleScreen = ScrollingListLayout(
             ),
             onClick = {},
         ),
+        WeatherElement(
+            temperature = "72",
+            condition = WeatherElement.Condition.Clear,
+        ),
+        WeatherElement(
+            title = "Sun",
+            temperature = "72",
+            secondaryTemperature = "60",
+            condition = WeatherElement.Condition.Rainy,
+        ),
         SpinnerElement(
             value = "5",
             onNextValue = {},

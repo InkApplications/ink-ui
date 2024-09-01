@@ -4,10 +4,7 @@ import androidx.compose.animation.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.*
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.*
@@ -87,7 +84,9 @@ fun Button(
                     painterResource(leadingSymbol.resource),
                     colorFilter = ColorFilter.tint(theme.colors.forSentiment(sentiment)),
                     contentDescription = null,
-                    modifier = Modifier.padding(end = theme.spacing.item.takeIf { text.isNotEmpty() } ?: 0.dp),
+                    modifier = Modifier
+                        .padding(end = theme.spacing.item.takeIf { text.isNotEmpty() } ?: 0.dp)
+                        .size(theme.sizing.hintIcons),
                 )
             }
             if (latched) {
@@ -115,7 +114,9 @@ fun Button(
                     painterResource(trailingSymbol.resource),
                     colorFilter = ColorFilter.tint(theme.colors.forSentiment(sentiment)),
                     contentDescription = null,
-                    modifier = Modifier.padding(start = theme.spacing.item.takeIf { text.isNotEmpty() } ?: 0.dp),
+                    modifier = Modifier
+                        .padding(start = theme.spacing.item.takeIf { text.isNotEmpty() } ?: 0.dp)
+                        .size(theme.sizing.hintIcons),
                 )
             }
         }
