@@ -1,14 +1,13 @@
 package ink.ui.render.statichtml
 
 import ink.ui.structures.elements.UiElement
-import ink.ui.structures.layouts.*
-import kotlinx.html.*
+import ink.ui.structures.layouts.UiLayout
+import kotlinx.html.TagConsumer
 import kotlinx.html.dom.createHTMLDocument
 import java.io.File
 import kotlin.script.experimental.annotations.KotlinScript
 import kotlin.script.experimental.api.*
 import kotlin.script.experimental.host.toScriptSource
-import kotlin.script.experimental.jvm.util.isError
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 import kotlin.script.experimental.jvmhost.createJvmCompilationConfigurationFromTemplate
 
@@ -17,40 +16,45 @@ import kotlin.script.experimental.jvmhost.createJvmCompilationConfigurationFromT
     compilationConfiguration = InkUiConfig::class
 )
 @Suppress("unused")
-abstract class InkUiScript {
+abstract class InkUiScript(
+    private val scriptFile: File,
+): InkUiBuilder {
     private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var bodies: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var styles: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
-    internal lateinit var fileName: String
     var title: String? = null
     var sectioned: Boolean = false
     var contentBreak: Boolean = false
-    var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
+    final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
             renderer = HtmlRenderer(value)
         }
     private var renderer = HtmlRenderer(resourceBaseUrl)
 
-    fun addPageHeader(element: UiElement) {
+    override fun addPageHeader(element: UiElement) {
         pageHeaders.add(renderer.renderElement(element))
     }
 
-    fun addPageHeader(block: TagConsumer<*>.() -> Unit) {
+    override fun addPageHeader(block: TagConsumer<*>.() -> Unit) {
         pageHeaders.add(block)
     }
 
-    fun addBody(block: TagConsumer<*>.() -> Unit) {
+    override fun addBody(block: TagConsumer<*>.() -> Unit) {
         bodies.add(block)
     }
 
-    fun addBody(layout: UiLayout) {
+    override fun addBody(layout: UiLayout) {
         bodies.add(renderer.renderLayout(layout))
     }
 
-    fun addStyle(stylesheet: String) {
+    override fun addStyle(stylesheet: String) {
         styles += stylesheet
+    }
+
+    override fun include(file: String) {
+        evalPartial(File(scriptFile.parentFile, file), this).valueOrThrow()
     }
 
     private fun getStyles(): List<String> {
@@ -61,7 +65,7 @@ abstract class InkUiScript {
 
     internal fun getHtml(): String {
         return renderer.renderDocument(
-            pageTitle = title ?: fileName,
+            pageTitle = title ?: scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), ""),
             pageHeaders = pageHeaders,
             bodies = bodies,
             stylesheets = getStyles(),
@@ -70,18 +74,31 @@ abstract class InkUiScript {
         )
     }
 
-
     companion object {
         internal fun evalFile(scriptFile: File): ResultWithDiagnostics<EvaluationResult> {
+            val source = scriptFile.toScriptSource()
             val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<InkUiScript>()
-            return BasicJvmScriptingHost()
-                .eval(scriptFile.toScriptSource(), compilationConfiguration, null)
-                .apply {
-                    if (!isError()) {
-                        val script = (valueOrThrow().returnValue.scriptInstance as InkUiScript)
-                        script.fileName = scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), "")
-                    }
-                }
+            val evaluationConfiguration =  ScriptEvaluationConfiguration {
+                constructorArgs(scriptFile)
+            }
+            return BasicJvmScriptingHost().eval(
+                script = source,
+                compilationConfiguration = compilationConfiguration,
+                evaluationConfiguration = evaluationConfiguration
+            )
+        }
+
+        private fun evalPartial(scriptFile: File, parent: InkUiScript): ResultWithDiagnostics<EvaluationResult> {
+            val source = scriptFile.toScriptSource()
+            val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<PartialScript>()
+            val evaluationConfiguration =  ScriptEvaluationConfiguration {
+                constructorArgs(parent)
+            }
+            return BasicJvmScriptingHost().eval(
+                script = source,
+                compilationConfiguration = compilationConfiguration,
+                evaluationConfiguration = evaluationConfiguration
+            )
         }
     }
 }
