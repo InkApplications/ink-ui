@@ -1,7 +1,7 @@
 package ink.ui.structures.elements
 
-import ink.ui.structures.Positioning
 import ink.ui.structures.GroupingStyle
+import ink.ui.structures.Positioning
 
 /**
  * UI element that composites multiple elements together.
@@ -21,5 +21,9 @@ data class ElementList(
      * Signifiers for indicating how the elements are related to each other.
      */
     val groupingStyle: GroupingStyle = GroupingStyle.Items,
-): UiElement.Static
 
+    /**
+     * Direction of flow for the elements.
+     */
+    val orientation: Orientation = Orientation.Vertical,
+): UiElement.Static

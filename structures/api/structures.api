@@ -127,16 +127,18 @@ public final class ink/ui/structures/elements/CheckBoxElement : ink/ui/structure
 }
 
 public final class ink/ui/structures/elements/ElementList : ink/ui/structures/elements/UiElement$Static {
-	public fun <init> (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;)V
-	public synthetic fun <init> (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;)V
+	public synthetic fun <init> (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()Link/ui/structures/Positioning;
 	public final fun component3 ()Link/ui/structures/GroupingStyle;
-	public final fun copy (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;)Link/ui/structures/elements/ElementList;
-	public static synthetic fun copy$default (Link/ui/structures/elements/ElementList;Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;ILjava/lang/Object;)Link/ui/structures/elements/ElementList;
+	public final fun component4 ()Link/ui/structures/elements/Orientation;
+	public final fun copy (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;)Link/ui/structures/elements/ElementList;
+	public static synthetic fun copy$default (Link/ui/structures/elements/ElementList;Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;ILjava/lang/Object;)Link/ui/structures/elements/ElementList;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getGroupingStyle ()Link/ui/structures/GroupingStyle;
 	public final fun getItems ()Ljava/util/List;
+	public final fun getOrientation ()Link/ui/structures/elements/Orientation;
 	public final fun getPositioning ()Link/ui/structures/Positioning;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
@@ -277,6 +279,14 @@ public final class ink/ui/structures/elements/MenuRowElement : ink/ui/structures
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/elements/Orientation : java/lang/Enum {
+	public static final field Horizontal Link/ui/structures/elements/Orientation;
+	public static final field Vertical Link/ui/structures/elements/Orientation;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/elements/Orientation;
+	public static fun values ()[Link/ui/structures/elements/Orientation;
+}
+
 public abstract interface class ink/ui/structures/elements/ProgressElement : ink/ui/structures/elements/UiElement$Static {
 	public abstract fun getCaption ()Ljava/lang/String;
 	public abstract fun getSentiment ()Link/ui/structures/Sentiment;
@@ -382,6 +392,33 @@ public abstract interface class ink/ui/structures/elements/UiElement$Interactive
 }
 
 public abstract interface class ink/ui/structures/elements/UiElement$Static : ink/ui/structures/elements/UiElement {
+}
+
+public final class ink/ui/structures/elements/WeatherElement : ink/ui/structures/elements/UiElement$Static {
+	public fun <init> (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Link/ui/structures/elements/WeatherElement$Condition;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;)Link/ui/structures/elements/WeatherElement;
+	public static synthetic fun copy$default (Link/ui/structures/elements/WeatherElement;Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Link/ui/structures/elements/WeatherElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCondition ()Link/ui/structures/elements/WeatherElement$Condition;
+	public final fun getSecondaryTemperature ()Ljava/lang/String;
+	public final fun getTemperature ()Ljava/lang/String;
+	public final fun getTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/WeatherElement$Condition : java/lang/Enum {
+	public static final field Clear Link/ui/structures/elements/WeatherElement$Condition;
+	public static final field Cloudy Link/ui/structures/elements/WeatherElement$Condition;
+	public static final field Rainy Link/ui/structures/elements/WeatherElement$Condition;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/elements/WeatherElement$Condition;
+	public static fun values ()[Link/ui/structures/elements/WeatherElement$Condition;
 }
 
 public final class ink/ui/structures/layouts/CenteredElementLayout : ink/ui/structures/layouts/UiLayout {

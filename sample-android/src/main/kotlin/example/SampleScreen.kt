@@ -1,5 +1,6 @@
 package example
 
+import ink.ui.structures.Positioning
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
 import ink.ui.structures.TextStyle
@@ -80,6 +81,22 @@ val SampleScreen = ScrollingListLayout(
                 onClick = {},
             ),
             onClick = {},
+        ),
+        ElementList(
+            items = listOf(
+                WeatherElement(
+                    temperature = "72",
+                    condition = WeatherElement.Condition.Clear,
+                ),
+                WeatherElement(
+                    title = "Sun",
+                    temperature = "72",
+                    secondaryTemperature = "60",
+                    condition = WeatherElement.Condition.Rainy,
+                ),
+            ),
+            positioning = Positioning.Center,
+            orientation = Orientation.Horizontal,
         ),
         SpinnerElement(
             value = "5",
