@@ -91,7 +91,7 @@ val SampleScreen = ScrollingListLayout(
                 WeatherElement(
                     title = "Sun",
                     temperature = "72",
-                    secondaryTemperature = "60",
+                    secondaryText = "60",
                     condition = WeatherElement.Condition.Rainy,
                 ),
             ),
