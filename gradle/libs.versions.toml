@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.0.20"
 activity-compose = "1.9.1"
-coroutines = "1.8.1"
+coroutines = "1.9.0"
 
 [libraries.kotlin-gradle]
 version.ref = "kotlin"
