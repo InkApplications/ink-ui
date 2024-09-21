@@ -1,5 +1,6 @@
 package ink.ui.render.statichtml
 
+import ink.ui.render.statichtml.renderer.ElementRenderer
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout
 import kotlinx.html.TagConsumer
@@ -51,6 +52,10 @@ abstract class InkUiScript(
 
     override fun addStyle(stylesheet: String) {
         styles += stylesheet
+    }
+
+    override fun elementRenderer(elementRenderer: ElementRenderer) {
+        renderer = renderer.withRenderer(elementRenderer)
     }
 
     override fun include(file: String) {
