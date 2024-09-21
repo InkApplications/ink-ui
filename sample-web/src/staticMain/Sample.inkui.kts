@@ -75,3 +75,6 @@ addBody(
         )
     )
 )
+addPageFooter(
+    TextElement("Made with love")
+)

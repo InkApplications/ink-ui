@@ -89,6 +89,7 @@ class HtmlRenderer(
     fun renderDocument(
         pageTitle: String,
         pageHeaders: List<TagConsumer<*>.() -> Unit>,
+        pageFooters: List<TagConsumer<*>.() -> Unit>,
         bodies: List<TagConsumer<*>.() -> Unit>,
         stylesheets: List<String>,
         sectioned: Boolean = false,
@@ -114,6 +115,11 @@ class HtmlRenderer(
                     }
                 }
                 bodies.forEach { it(consumer) }
+                if (pageFooters.isNotEmpty()) {
+                    footer("content-break".takeIf { sectioned }) {
+                        pageFooters.forEach { it(consumer) }
+                    }
+                }
             }
         }.serialize(prettyPrint = true)
     }

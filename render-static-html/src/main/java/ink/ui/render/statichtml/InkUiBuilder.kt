@@ -14,4 +14,6 @@ interface InkUiBuilder {
     fun addStyle(stylesheet: String)
     fun include(file: String)
     fun elementRenderer(elementRenderer: ElementRenderer)
+    fun addPageFooter(element: UiElement)
+    fun addPageFooter(block: TagConsumer<*>.() -> Unit)
 }
