@@ -24,11 +24,13 @@ abstract class InkUiScript(
     private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var bodies: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var styles: MutableList<String> = mutableListOf()
+    private var scripts: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
     var title: String? = null
     var sectioned: Boolean = false
     var contentBreak: Boolean = false
     var inkFooter: Boolean = false
+    var codeBlocks: Boolean = false
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
@@ -86,6 +88,11 @@ abstract class InkUiScript(
             inkFooter = inkFooter,
             bodies = bodies,
             stylesheets = getStyles(),
+            scripts = listOfNotNull(
+                *scripts.toTypedArray(),
+                "$resourceBaseUrl/js/highlight.pack.js".takeIf { codeBlocks },
+            ),
+            jsInit = "hljs.initHighlightingOnLoad();".takeIf { codeBlocks },
             sectioned = sectioned,
             contentBreak = contentBreak,
         )

@@ -143,6 +143,7 @@ ul > li::before
 pre
 {
     text-align: start;
+    width: 100%;
 }
 hr
 {

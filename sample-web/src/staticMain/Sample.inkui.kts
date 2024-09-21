@@ -2,6 +2,7 @@ title = "Test"
 resourceBaseUrl = "res"
 sectioned = true
 inkFooter = true
+codeBlocks = true
 
 include("header.inkui.kts")
 addBody(
@@ -71,6 +72,14 @@ addBody(
                     text = "Test",
                     sentiment = Sentiment.Positive,
                     leadingSymbol = Symbol.Cloud,
+                ),
+                CodeBlock(
+                    language = CodeBlock.Language.Kotlin,
+                    code = """
+  fun main() {
+    println("Hello, World!")
+  }
+                    """.trimIndent()
                 )
             )
         )
