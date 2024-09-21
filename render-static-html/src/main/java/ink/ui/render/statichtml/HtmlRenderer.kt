@@ -21,6 +21,7 @@ class HtmlRenderer(
         *customRenderers,
         ListRenderer,
         TextRenderer,
+        CodeBlockRenderer,
         DividerRenderer,
         FormattedTextRenderer,
         BreadcrumbRenderer,
@@ -93,6 +94,8 @@ class HtmlRenderer(
         inkFooter: Boolean,
         bodies: List<TagConsumer<*>.() -> Unit>,
         stylesheets: List<String>,
+        scripts: List<String>,
+        jsInit: String?,
         sectioned: Boolean = false,
         contentBreak: Boolean = false
     ): String {
@@ -103,6 +106,11 @@ class HtmlRenderer(
                     styleLink(it)
                 }
                 meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
+
+                scripts.forEach {
+                    script(src = it) {}
+                }
+
                 title { +pageTitle }
             }
             val bodyClasses = listOfNotNull(
@@ -136,6 +144,11 @@ class HtmlRenderer(
                                 +"Ink Applications"
                             }
                         }
+                    }
+                }
+                if (jsInit != null) {
+                    script {
+                        +jsInit
                     }
                 }
             }
