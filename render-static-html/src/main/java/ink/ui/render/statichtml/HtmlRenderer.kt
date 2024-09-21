@@ -13,10 +13,12 @@ import kotlinx.html.dom.createHTMLDocument
 import kotlinx.html.dom.serialize
 
 class HtmlRenderer(
-    resourceBaseUrl: String,
+    private val resourceBaseUrl: String,
+    private val customRenderers: Array<ElementRenderer> = emptyArray(),
 ) {
     private val iconUrl = "$resourceBaseUrl/svg"
     private val builtInRenderers = listOf(
+        *customRenderers,
         ListRenderer,
         TextRenderer,
         FormattedTextRenderer,
@@ -111,5 +113,9 @@ class HtmlRenderer(
                 bodies.forEach { it(consumer) }
             }
         }.serialize(prettyPrint = true)
+    }
+
+    fun withRenderer(renderer: ElementRenderer): HtmlRenderer {
+        return HtmlRenderer(resourceBaseUrl, arrayOf(renderer, *customRenderers))
     }
 }

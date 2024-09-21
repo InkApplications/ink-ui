@@ -13,5 +13,8 @@ object InkUiConfig: ScriptCompilationConfiguration({
         defaultImports("ink.ui.structures.layouts.*")
         defaultImports("ink.ui.structures.elements.*")
         defaultImports("ink.ui.render.web.elements.*")
+        defaultImports("ink.ui.render.statichtml.renderer.ElementRenderer")
+        defaultImports("ink.ui.render.statichtml.renderer.renderer")
+        defaultImports("ink.ui.structures.render.RenderResult")
     }
 })
