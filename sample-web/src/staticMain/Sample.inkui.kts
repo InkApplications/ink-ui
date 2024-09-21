@@ -24,6 +24,7 @@ addBody(
                         }
                     }
                 },
+                DividerElement,
                 StatusIndicatorElement(
                     text = "Nominal Status",
                     sentiment = Sentiment.Nominal,
