@@ -28,6 +28,7 @@ abstract class InkUiScript(
     var title: String? = null
     var sectioned: Boolean = false
     var contentBreak: Boolean = false
+    var inkFooter: Boolean = false
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
@@ -82,6 +83,7 @@ abstract class InkUiScript(
             pageTitle = title ?: scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), ""),
             pageHeaders = pageHeaders,
             pageFooters = pageFooters,
+            inkFooter = inkFooter,
             bodies = bodies,
             stylesheets = getStyles(),
             sectioned = sectioned,

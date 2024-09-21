@@ -1,6 +1,7 @@
 title = "Test"
 resourceBaseUrl = "res"
 sectioned = true
+inkFooter = true
 
 include("header.inkui.kts")
 addBody(
@@ -74,7 +75,4 @@ addBody(
             )
         )
     )
-)
-addPageFooter(
-    TextElement("Made with love")
 )
