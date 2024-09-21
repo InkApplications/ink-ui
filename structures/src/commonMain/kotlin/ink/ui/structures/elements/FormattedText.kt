@@ -36,6 +36,10 @@ data class FormattedText(
         data class Emphasis(
             override val inner: List<Span>,
         ): Composite
+        data class Code(
+            override val inner: List<Span>,
+            val group: Boolean = false,
+        ): Composite
         data class Link(
             override val inner: List<Span>,
             val url: String,
@@ -63,6 +67,9 @@ data class FormattedText(
         }
         fun link(url: String, builder: Builder.() -> Unit) {
             spans.add(Span.Link(Builder().apply(builder).spans, url))
+        }
+        fun code(group: Boolean = false, builder: Builder.() -> Unit) {
+            spans.add(Span.Code(Builder().apply(builder).spans, group))
         }
         fun space() {
             spans.add(Span.Text(" "))

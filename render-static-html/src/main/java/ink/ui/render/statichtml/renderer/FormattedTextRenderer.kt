@@ -28,6 +28,17 @@ private fun Tag.render(
             is FormattedText.Span.Strong -> consumer.strong {
                 render(consumer, span.inner)
             }
+            is FormattedText.Span.Code -> consumer.code("grouped".takeIf { span.group }) {
+                span.inner.forEach { inner ->
+                    if (span.group) {
+                        span {
+                            render(consumer, listOf(inner))
+                        }
+                    } else {
+                        render(consumer, span.inner)
+                    }
+                }
+            }
         }
     }
 }

@@ -23,6 +23,18 @@ addBody(
                             text("!!!")
                         }
                     }
+                    space()
+                    text("with")
+                    space()
+                    code { text("code") }
+                    space()
+                    text("and")
+                    space()
+                    code(group = true) {
+                        text("grouped")
+                        text("references")
+                    }
+
                 },
                 DividerElement,
                 StatusIndicatorElement(
