@@ -89,6 +89,8 @@ class HtmlRenderer(
     fun renderDocument(
         pageTitle: String,
         pageHeaders: List<TagConsumer<*>.() -> Unit>,
+        pageFooters: List<TagConsumer<*>.() -> Unit>,
+        inkFooter: Boolean,
         bodies: List<TagConsumer<*>.() -> Unit>,
         stylesheets: List<String>,
         sectioned: Boolean = false,
@@ -100,19 +102,42 @@ class HtmlRenderer(
                 stylesheets.forEach {
                     styleLink(it)
                 }
+                meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
                 title { +pageTitle }
             }
-            body(classes = when {
-                sectioned -> "sectioned"
-                contentBreak -> "content-break"
-                else -> ""
-            }) {
+            val bodyClasses = listOfNotNull(
+                when {
+                    sectioned -> "sectioned"
+                    contentBreak -> "content-break"
+                    else -> null
+                },
+                "anchored-footer".takeIf { inkFooter },
+            ).joinToString(" ")
+            body(classes = bodyClasses) {
                 if (pageHeaders.isNotEmpty()) {
                     header("content-break".takeIf { sectioned }) {
                         pageHeaders.forEach { it(consumer) }
                     }
                 }
                 bodies.forEach { it(consumer) }
+                if (pageFooters.isNotEmpty()) {
+                    footer("content-break".takeIf { sectioned }) {
+                        pageFooters.forEach { it(consumer) }
+                    }
+                }
+                if (inkFooter) {
+                    val classes = listOfNotNull(
+                        "content-break".takeIf { sectioned },
+                        "ink"
+                    ).joinToString(" ")
+                    footer(classes) {
+                        div("signature") {
+                            a(href = "https://inkapplications.com") {
+                                +"Ink Applications"
+                            }
+                        }
+                    }
+                }
             }
         }.serialize(prettyPrint = true)
     }

@@ -59,6 +59,22 @@ body
     box-sizing: border-box;
     min-height: 100%;
 }
+body
+{
+    display: flex;
+    flex-direction: column;
+}
+body > *
+{
+    width: 100%;
+}
+body > footer
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
 strong
 {
     font-weight: 500;
@@ -576,7 +592,7 @@ footer.ink
 }
 footer.ink > .signature
 {
-    background: url("https://assets.inkapplications.com/images/tentacle-light.svg");
+    background: url("../svg/tentacle-light.svg");
     background-repeat: no-repeat;
     background-size: 5rem;
     min-height: 5rem;
@@ -599,7 +615,7 @@ body.anchored-footer > footer.ink > .signature
 @media (prefers-color-scheme: dark) {
     footer.ink > .signature
     {
-        background: url("https://assets.inkapplications.com/images/tentacle-dark.svg");
+        background: url("../svg/tentacle-dark.svg");
         background-repeat: no-repeat;
         background-size: 5rem;
     }

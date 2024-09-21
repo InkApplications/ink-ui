@@ -21,12 +21,14 @@ abstract class InkUiScript(
     private val scriptFile: File,
 ): InkUiBuilder {
     private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
+    private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var bodies: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var styles: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
     var title: String? = null
     var sectioned: Boolean = false
     var contentBreak: Boolean = false
+    var inkFooter: Boolean = false
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
@@ -40,6 +42,14 @@ abstract class InkUiScript(
 
     override fun addPageHeader(block: TagConsumer<*>.() -> Unit) {
         pageHeaders.add(block)
+    }
+
+    override fun addPageFooter(element: UiElement) {
+        pageFooters.add(renderer.renderElement(element))
+    }
+
+    override fun addPageFooter(block: TagConsumer<*>.() -> Unit) {
+        pageFooters.add(block)
     }
 
     override fun addBody(block: TagConsumer<*>.() -> Unit) {
@@ -72,6 +82,8 @@ abstract class InkUiScript(
         return renderer.renderDocument(
             pageTitle = title ?: scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), ""),
             pageHeaders = pageHeaders,
+            pageFooters = pageFooters,
+            inkFooter = inkFooter,
             bodies = bodies,
             stylesheets = getStyles(),
             sectioned = sectioned,
