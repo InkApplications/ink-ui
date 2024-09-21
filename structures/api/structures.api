@@ -89,6 +89,30 @@ public final class ink/ui/structures/TextStyle : java/lang/Enum {
 	public static fun values ()[Link/ui/structures/TextStyle;
 }
 
+public final class ink/ui/structures/elements/BreadcrumbElement : ink/ui/structures/elements/UiElement$Static {
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Link/ui/structures/elements/BreadcrumbElement;
+	public static synthetic fun copy$default (Link/ui/structures/elements/BreadcrumbElement;Ljava/util/List;ILjava/lang/Object;)Link/ui/structures/elements/BreadcrumbElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getItems ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/BreadcrumbElement$Breadcrumb {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Link/ui/structures/elements/BreadcrumbElement$Breadcrumb;
+	public static synthetic fun copy$default (Link/ui/structures/elements/BreadcrumbElement$Breadcrumb;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Link/ui/structures/elements/BreadcrumbElement$Breadcrumb;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getText ()Ljava/lang/String;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
 public final class ink/ui/structures/elements/ButtonElement : ink/ui/structures/elements/UiElement$Interactive {
 	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
