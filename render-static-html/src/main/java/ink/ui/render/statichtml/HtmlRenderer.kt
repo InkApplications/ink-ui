@@ -21,6 +21,7 @@ class HtmlRenderer(
         *customRenderers,
         ListRenderer,
         TextRenderer,
+        DividerRenderer,
         FormattedTextRenderer,
         StatusRenderer(iconUrl),
         IconRenderer(iconUrl),

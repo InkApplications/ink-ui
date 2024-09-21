@@ -132,6 +132,7 @@ hr
 {
     display: block;
     height: 1px;
+    width: 100%;
     border: 0;
     border-top: 1px dashed var(--color-foreground-subtle);
     margin: 1rem auto;

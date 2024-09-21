@@ -126,6 +126,10 @@ public final class ink/ui/structures/elements/CheckBoxElement : ink/ui/structure
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/elements/DividerElement : ink/ui/structures/elements/UiElement$Static {
+	public static final field INSTANCE Link/ui/structures/elements/DividerElement;
+}
+
 public final class ink/ui/structures/elements/ElementList : ink/ui/structures/elements/UiElement$Static {
 	public fun <init> (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;)V
 	public synthetic fun <init> (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;ILkotlin/jvm/internal/DefaultConstructorMarker;)V

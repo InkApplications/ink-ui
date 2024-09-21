@@ -62,6 +62,10 @@ public abstract class ink/ui/render/statichtml/PartialScript : ink/ui/render/sta
 	public fun include (Ljava/lang/String;)V
 }
 
+public final class ink/ui/render/statichtml/renderer/DividerRendererKt {
+	public static final fun getDividerRenderer ()Link/ui/render/statichtml/renderer/ElementRenderer;
+}
+
 public abstract interface class ink/ui/render/statichtml/renderer/ElementRenderer {
 	public abstract fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
 }
