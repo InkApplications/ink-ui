@@ -61,3 +61,29 @@ public final class ink/ui/render/web/elements/LinkButtonElement : ink/ui/structu
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/render/web/elements/LinkNavigation : ink/ui/structures/elements/UiElement$Static {
+	public static final field $stable I
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Link/ui/render/web/elements/LinkNavigation;
+	public static synthetic fun copy$default (Link/ui/render/web/elements/LinkNavigation;Ljava/util/List;ILjava/lang/Object;)Link/ui/render/web/elements/LinkNavigation;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getItems ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/render/web/elements/LinkNavigation$NavigationItem {
+	public static final field $stable I
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Link/ui/render/web/elements/LinkNavigation$NavigationItem;
+	public static synthetic fun copy$default (Link/ui/render/web/elements/LinkNavigation$NavigationItem;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Link/ui/render/web/elements/LinkNavigation$NavigationItem;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getText ()Ljava/lang/String;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+

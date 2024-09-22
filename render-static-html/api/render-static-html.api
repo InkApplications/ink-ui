@@ -107,6 +107,10 @@ public final class ink/ui/render/statichtml/renderer/LinkButtonRenderer : ink/ui
 	public fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
 }
 
+public final class ink/ui/render/statichtml/renderer/LinkNavigationRendererKt {
+	public static final fun getLinkNavigationRenderer ()Link/ui/render/statichtml/renderer/ElementRenderer;
+}
+
 public final class ink/ui/render/statichtml/renderer/ListRenderer : ink/ui/render/statichtml/renderer/ElementRenderer {
 	public static final field INSTANCE Link/ui/render/statichtml/renderer/ListRenderer;
 	public fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
