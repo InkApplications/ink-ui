@@ -112,6 +112,10 @@ p
     margin: .5rem 0;
     line-height: 1.5rem;
 }
+.sectioned > section p
+{
+    text-align: justify;
+}
 p.caption,
 span.caption
 {
