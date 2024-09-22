@@ -80,6 +80,18 @@ addBody(
     println("Hello, World!")
   }
                     """.trimIndent()
+                ),
+                LinkNavigation(
+                    items = listOf(
+                        LinkNavigation.NavigationItem(
+                            text = "Link 1",
+                            url = "#",
+                        ),
+                        LinkNavigation.NavigationItem(
+                            text = "Link 2",
+                            url = "#",
+                        ),
+                    )
                 )
             )
         )

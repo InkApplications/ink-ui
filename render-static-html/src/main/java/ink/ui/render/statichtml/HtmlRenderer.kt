@@ -25,6 +25,7 @@ class HtmlRenderer(
         DividerRenderer,
         FormattedTextRenderer,
         BreadcrumbRenderer,
+        LinkNavigationRenderer,
         StatusRenderer(iconUrl),
         IconRenderer(iconUrl),
         LinkButtonRenderer(iconUrl)
