@@ -27,11 +27,11 @@ val webDistDir = project.layout.buildDirectory.get().dir("dist/web").asFile
 val webDistComposeDir = project.layout.buildDirectory.get().dir("dist/web/compose").asFile
 
 tasks.register("buildStatic") {
-    dependsOn(projects.renderStaticHtml.dependencyProject.tasks.named("installDist"))
+    dependsOn(projects.cli.dependencyProject.tasks.named("installDist"))
     doLast {
         staticOutputDir.createDirectory()
         exec {
-            val app = projects.renderStaticHtml.dependencyProject.layout.buildDirectory.get().file("install/render-ui/bin/render-ui")
+            val app = projects.cli.dependencyProject.layout.buildDirectory.get().file("install/inkui/bin/inkui")
             val script = project.layout.projectDirectory.file("src/staticMain/Sample.inkui.kts")
             val output = "${staticOutputDir.path}/index.html"
             commandLine("sh", "-c", "$app $script > $output")

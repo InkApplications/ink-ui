@@ -159,4 +159,8 @@ class HtmlRenderer(
     fun withRenderer(renderer: ElementRenderer): HtmlRenderer {
         return HtmlRenderer(resourceBaseUrl, arrayOf(renderer, *customRenderers))
     }
+
+    fun withResourceBaseUrl(url: String): HtmlRenderer {
+        return HtmlRenderer(url, customRenderers)
+    }
 }
