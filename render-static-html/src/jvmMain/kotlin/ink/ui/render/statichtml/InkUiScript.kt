@@ -19,6 +19,7 @@ import kotlin.script.experimental.jvmhost.createJvmCompilationConfigurationFromT
 @Suppress("unused")
 abstract class InkUiScript(
     private val scriptFile: File,
+    customRenderers: Array<ElementRenderer>,
 ): InkUiBuilder {
     private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
@@ -34,9 +35,9 @@ abstract class InkUiScript(
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
-            renderer = HtmlRenderer(value)
+            renderer = renderer.withResourceBaseUrl(value)
         }
-    private var renderer = HtmlRenderer(resourceBaseUrl)
+    private var renderer = HtmlRenderer(resourceBaseUrl, customRenderers)
 
     override fun addPageHeader(element: UiElement) {
         pageHeaders.add(renderer.renderElement(element))
@@ -80,7 +81,7 @@ abstract class InkUiScript(
         ) + styles
     }
 
-    internal fun getHtml(): String {
+    fun getHtml(): String {
         return renderer.renderDocument(
             pageTitle = title ?: scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), ""),
             pageHeaders = pageHeaders,
@@ -99,11 +100,14 @@ abstract class InkUiScript(
     }
 
     companion object {
-        internal fun evalFile(scriptFile: File): ResultWithDiagnostics<EvaluationResult> {
+        fun evalFile(
+            scriptFile: File,
+            customRenderers: List<ElementRenderer> = emptyList(),
+        ): ResultWithDiagnostics<EvaluationResult> {
             val source = scriptFile.toScriptSource()
             val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<InkUiScript>()
             val evaluationConfiguration =  ScriptEvaluationConfiguration {
-                constructorArgs(scriptFile)
+                constructorArgs(scriptFile, customRenderers.toTypedArray())
             }
             return BasicJvmScriptingHost().eval(
                 script = source,
