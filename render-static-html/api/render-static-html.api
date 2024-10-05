@@ -28,7 +28,7 @@ public final class ink/ui/render/statichtml/InkUiConfig : kotlin/script/experime
 
 public abstract class ink/ui/render/statichtml/InkUiScript : ink/ui/render/statichtml/InkUiBuilder {
 	public static final field Companion Link/ui/render/statichtml/InkUiScript$Companion;
-	public fun <init> (Ljava/io/File;[Link/ui/render/statichtml/renderer/ElementRenderer;)V
+	public fun <init> (Ljava/io/File;[Link/ui/render/statichtml/renderer/ElementRenderer;[Ljava/lang/String;)V
 	public fun addBody (Link/ui/structures/layouts/UiLayout;)V
 	public fun addBody (Lkotlin/jvm/functions/Function1;)V
 	public fun addPageFooter (Link/ui/structures/elements/UiElement;)V
@@ -54,8 +54,8 @@ public abstract class ink/ui/render/statichtml/InkUiScript : ink/ui/render/stati
 }
 
 public final class ink/ui/render/statichtml/InkUiScript$Companion {
-	public final fun evalFile (Ljava/io/File;Ljava/util/List;)Lkotlin/script/experimental/api/ResultWithDiagnostics;
-	public static synthetic fun evalFile$default (Link/ui/render/statichtml/InkUiScript$Companion;Ljava/io/File;Ljava/util/List;ILjava/lang/Object;)Lkotlin/script/experimental/api/ResultWithDiagnostics;
+	public final fun evalFile (Ljava/io/File;[Link/ui/render/statichtml/renderer/ElementRenderer;[Ljava/lang/String;)Lkotlin/script/experimental/api/ResultWithDiagnostics;
+	public static synthetic fun evalFile$default (Link/ui/render/statichtml/InkUiScript$Companion;Ljava/io/File;[Link/ui/render/statichtml/renderer/ElementRenderer;[Ljava/lang/String;ILjava/lang/Object;)Lkotlin/script/experimental/api/ResultWithDiagnostics;
 }
 
 public final class ink/ui/render/statichtml/MainKt {

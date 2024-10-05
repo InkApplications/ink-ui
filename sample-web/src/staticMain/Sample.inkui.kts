@@ -74,7 +74,7 @@ addBody(
                     leadingSymbol = Symbol.Cloud,
                 ),
                 CodeBlock(
-                    language = CodeBlock.Language.Kotlin,
+                    language = Language.Kotlin,
                     code = """
   fun main() {
     println("Hello, World!")
@@ -83,11 +83,11 @@ addBody(
                 ),
                 LinkNavigation(
                     items = listOf(
-                        LinkNavigation.NavigationItem(
+                        NavigationItem(
                             text = "Link 1",
                             url = "#",
                         ),
-                        LinkNavigation.NavigationItem(
+                        NavigationItem(
                             text = "Link 2",
                             url = "#",
                         ),
