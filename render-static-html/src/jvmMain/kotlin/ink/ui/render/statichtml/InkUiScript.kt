@@ -20,6 +20,7 @@ import kotlin.script.experimental.jvmhost.createJvmCompilationConfigurationFromT
 abstract class InkUiScript(
     private val scriptFile: File,
     customRenderers: Array<ElementRenderer>,
+    private val customImports: Array<String>,
 ): InkUiBuilder {
     private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
@@ -72,7 +73,11 @@ abstract class InkUiScript(
     }
 
     override fun include(file: String) {
-        evalPartial(File(scriptFile.parentFile, file), this).valueOrThrow()
+        evalPartial(
+            scriptFile = File(scriptFile.parentFile, file),
+            parent = this,
+            customImports = customImports,
+        ).valueOrThrow()
     }
 
     private fun getStyles(): List<String> {
@@ -102,12 +107,15 @@ abstract class InkUiScript(
     companion object {
         fun evalFile(
             scriptFile: File,
-            customRenderers: List<ElementRenderer> = emptyList(),
+            customRenderers: Array<ElementRenderer> = emptyArray(),
+            customImports: Array<String> = emptyArray(),
         ): ResultWithDiagnostics<EvaluationResult> {
             val source = scriptFile.toScriptSource()
-            val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<InkUiScript>()
+            val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<InkUiScript> {
+                defaultImports(*customImports)
+            }
             val evaluationConfiguration =  ScriptEvaluationConfiguration {
-                constructorArgs(scriptFile, customRenderers.toTypedArray())
+                constructorArgs(scriptFile, customRenderers, customImports)
             }
             return BasicJvmScriptingHost().eval(
                 script = source,
@@ -116,9 +124,15 @@ abstract class InkUiScript(
             )
         }
 
-        private fun evalPartial(scriptFile: File, parent: InkUiScript): ResultWithDiagnostics<EvaluationResult> {
+        private fun evalPartial(
+            scriptFile: File,
+            parent: InkUiScript,
+            customImports: Array<String>,
+        ): ResultWithDiagnostics<EvaluationResult> {
             val source = scriptFile.toScriptSource()
-            val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<PartialScript>()
+            val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<PartialScript> {
+                defaultImports(*customImports)
+            }
             val evaluationConfiguration =  ScriptEvaluationConfiguration {
                 constructorArgs(parent)
             }

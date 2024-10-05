@@ -16,5 +16,7 @@ object InkUiConfig: ScriptCompilationConfiguration({
         defaultImports("ink.ui.render.statichtml.renderer.ElementRenderer")
         defaultImports("ink.ui.render.statichtml.renderer.renderer")
         defaultImports("ink.ui.structures.render.RenderResult")
+        defaultImports("ink.ui.render.web.elements.CodeBlock.Language")
+        defaultImports("ink.ui.render.web.elements.LinkNavigation.NavigationItem")
     }
 })
