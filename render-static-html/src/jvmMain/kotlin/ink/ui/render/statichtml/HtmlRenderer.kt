@@ -4,6 +4,7 @@ import ink.ui.render.statichtml.renderer.*
 import ink.ui.render.statichtml.renderer.CompositeElementRenderer
 import ink.ui.render.statichtml.renderer.TextRenderer
 import ink.ui.render.web.gridTemplateColumns
+import ink.ui.structures.GroupingStyle.*
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.UiElement
@@ -78,12 +79,30 @@ class HtmlRenderer(
                     renderer = renderer,
                 )
             }
-            is ScrollingListLayout -> section {
-                renderWith(
-                    element = ElementList(uiLayout.items),
-                    consumer = consumer,
-                    renderer = renderer,
-                )
+            is ScrollingListLayout -> when (uiLayout.groupingStyle) {
+                Unified -> section {
+                    renderWith(
+                        element = ElementList(uiLayout.items, groupingStyle = Unified),
+                        consumer = consumer,
+                        renderer = renderer,
+                    )
+                }
+                Items -> section {
+                    renderWith(
+                        element = ElementList(uiLayout.items, groupingStyle = Items),
+                        consumer = consumer,
+                        renderer = renderer,
+                    )
+                }
+                Sections -> uiLayout.items.forEach { item ->
+                    section {
+                        renderWith(
+                            element = item,
+                            consumer = consumer,
+                            renderer = renderer,
+                        )
+                    }
+                }
             }
         }
     }
