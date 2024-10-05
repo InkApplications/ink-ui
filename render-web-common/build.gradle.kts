@@ -10,6 +10,7 @@ kotlin {
         binaries.executable()
     }
     jvm()
+    jvmToolchain(11)
 
     sourceSets {
         commonMain.dependencies {

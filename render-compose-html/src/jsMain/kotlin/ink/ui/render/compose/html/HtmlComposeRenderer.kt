@@ -4,7 +4,9 @@ import androidx.compose.runtime.Composable
 import ink.ui.render.compose.html.renderer.*
 import ink.ui.render.compose.html.renderer.CompositeElementRenderer
 import ink.ui.render.web.gridTemplateColumns
+import ink.ui.structures.GroupingStyle.*
 import ink.ui.structures.Positioning
+import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
 import ink.ui.structures.render.RenderResult
@@ -81,13 +83,11 @@ class HtmlComposeRenderer(
                     renderElement(uiLayout.body)
                 }
             }
-            is ScrollingListLayout -> Section(
-                attrs = {
-                    classes("item-list")
-                }
-            ) {
-                uiLayout.items.forEach {
-                    Div {
+            is ScrollingListLayout -> when (uiLayout.groupingStyle) {
+                Unified -> renderElement(ElementList(uiLayout.items, groupingStyle = Unified))
+                Items -> renderElement(ElementList(uiLayout.items, groupingStyle = Items))
+                Sections -> uiLayout.items.forEach {
+                    Section {
                         renderElement(it)
                     }
                 }

@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import ink.ui.render.compose.renderer.*
 import ink.ui.render.compose.renderer.ActivityRenderer
 import ink.ui.render.compose.renderer.CompositeElementRenderer
@@ -15,6 +16,8 @@ import ink.ui.render.compose.renderer.EmptyRenderer
 import ink.ui.render.compose.renderer.TextRenderer
 import ink.ui.render.compose.theme.ComposeRenderTheme
 import ink.ui.render.compose.theme.defaultTheme
+import ink.ui.structures.GroupingStyle
+import ink.ui.structures.GroupingStyle.*
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
@@ -95,23 +98,30 @@ class ComposeRenderer(
             ){
                 renderElement(uiLayout.body)
             }
-            is ScrollingListLayout -> LazyColumn(
-                contentPadding = WindowInsets(
-                    top = theme.spacing.gutters - theme.spacing.item,
-                    bottom = theme.spacing.gutters - theme.spacing.item,
-                    left = theme.spacing.gutters - theme.spacing.item,
-                    right = theme.spacing.gutters - theme.spacing.item,
-                ).add(WindowInsets.safeDrawing).asPaddingValues(),
-                modifier = Modifier
-                    .background(theme.colors.background)
-                    .fillMaxSize()
-            ) {
-                items(uiLayout.items) { item ->
-                    Box(
-                        modifier = Modifier.padding(theme.spacing.item)
-                            .fillMaxWidth(),
-                    ) {
-                        renderElement(item)
+            is ScrollingListLayout -> {
+                val itemSpacing = when (uiLayout.groupingStyle) {
+                    Unified -> 0.dp
+                    Items -> theme.spacing.item
+                    Sections -> theme.spacing.sectionSpacing
+                }
+                LazyColumn(
+                    contentPadding = WindowInsets(
+                        top = theme.spacing.gutters - itemSpacing,
+                        bottom = theme.spacing.gutters - itemSpacing,
+                        left = theme.spacing.gutters - itemSpacing,
+                        right = theme.spacing.gutters - itemSpacing,
+                    ).add(WindowInsets.safeDrawing).asPaddingValues(),
+                    modifier = Modifier
+                        .background(theme.colors.background)
+                        .fillMaxSize()
+                ) {
+                    items(uiLayout.items) { item ->
+                        Box(
+                            modifier = Modifier.padding(itemSpacing)
+                                .fillMaxWidth(),
+                        ) {
+                            renderElement(item)
+                        }
                     }
                 }
             }
