@@ -26,4 +26,16 @@ data class ElementList(
      * Direction of flow for the elements.
      */
     val orientation: Orientation = Orientation.Vertical,
-): UiElement.Static
+): UiElement.Static {
+    constructor(
+        vararg items: UiElement,
+        positioning: Positioning = Positioning.Start,
+        groupingStyle: GroupingStyle = GroupingStyle.Items,
+        orientation: Orientation = Orientation.Vertical,
+    ): this(
+        items = items.toList(),
+        positioning = positioning,
+        groupingStyle = groupingStyle,
+        orientation = orientation,
+    )
+}

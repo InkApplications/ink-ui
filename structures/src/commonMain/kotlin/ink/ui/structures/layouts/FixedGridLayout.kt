@@ -17,6 +17,14 @@ data class FixedGridLayout(
      */
     val items: List<GridItem>,
 ): UiLayout {
+    constructor(
+        vararg items: GridItem,
+        columns: Int,
+    ): this(
+        columns = columns,
+        items = items.toList(),
+    )
+
     /**
      * An individual item to display in the grid.
      */

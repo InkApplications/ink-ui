@@ -16,4 +16,12 @@ data class ScrollingListLayout(
      * Signifiers for indicating how the elements are related to each other.
      */
     val groupingStyle: GroupingStyle = GroupingStyle.Items,
-): UiLayout
+): UiLayout {
+    constructor(
+        vararg items: UiElement,
+        groupingStyle: GroupingStyle = GroupingStyle.Items,
+    ): this(
+        items = items.toList(),
+        groupingStyle = groupingStyle,
+    )
+}
