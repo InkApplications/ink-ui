@@ -39,6 +39,7 @@ private fun Tag.render(
                     }
                 }
             }
+            FormattedText.Span.Break -> br
         }
     }
 }

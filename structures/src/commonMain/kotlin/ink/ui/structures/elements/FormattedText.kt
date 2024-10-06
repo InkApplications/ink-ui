@@ -17,6 +17,7 @@ data class FormattedText(
                 when (span) {
                     is Span.Text -> span.text
                     is Span.Composite -> span.inner.joinToString("") { it.toPlainString() }
+                    Span.Break -> "\n"
                 }
             },
             style = style,
@@ -44,11 +45,13 @@ data class FormattedText(
             override val inner: List<Span>,
             val url: String,
         ): Composite
+        data object Break: Span
 
         fun toPlainString(): String {
             return when (this) {
                 is Text -> text
                 is Composite -> inner.joinToString("") { it.toPlainString() }
+                Break -> "\n"
             }
         }
     }
@@ -73,6 +76,9 @@ data class FormattedText(
         }
         fun space() {
             spans.add(Span.Text(" "))
+        }
+        fun br() {
+            spans.add(Span.Break)
         }
     }
 }
