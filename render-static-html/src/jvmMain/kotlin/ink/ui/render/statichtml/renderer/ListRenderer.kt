@@ -23,8 +23,11 @@ object ListRenderer: ElementRenderer {
                 Positioning.Center -> "justify-content: center"
             }
             element.items.forEach { item ->
-                div {
-                    renderWith(item, consumer, parent)
+                when (element.groupingStyle) {
+                    GroupingStyle.Unified -> renderWith(item, consumer, parent)
+                    else -> div {
+                        renderWith(item, consumer, parent)
+                    }
                 }
             }
         }

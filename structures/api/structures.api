@@ -157,6 +157,8 @@ public final class ink/ui/structures/elements/DividerElement : ink/ui/structures
 public final class ink/ui/structures/elements/ElementList : ink/ui/structures/elements/UiElement$Static {
 	public fun <init> (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;)V
 	public synthetic fun <init> (Ljava/util/List;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> ([Link/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;)V
+	public synthetic fun <init> ([Link/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()Link/ui/structures/Positioning;
 	public final fun component3 ()Link/ui/structures/GroupingStyle;
@@ -483,6 +485,7 @@ public final class ink/ui/structures/layouts/CenteredElementLayout : ink/ui/stru
 
 public final class ink/ui/structures/layouts/FixedGridLayout : ink/ui/structures/layouts/UiLayout {
 	public fun <init> (ILjava/util/List;)V
+	public fun <init> ([Link/ui/structures/layouts/FixedGridLayout$GridItem;I)V
 	public final fun component1 ()I
 	public final fun component2 ()Ljava/util/List;
 	public final fun copy (ILjava/util/List;)Link/ui/structures/layouts/FixedGridLayout;
@@ -526,6 +529,8 @@ public final class ink/ui/structures/layouts/PageLayout : ink/ui/structures/layo
 public final class ink/ui/structures/layouts/ScrollingListLayout : ink/ui/structures/layouts/UiLayout {
 	public fun <init> (Ljava/util/List;Link/ui/structures/GroupingStyle;)V
 	public synthetic fun <init> (Ljava/util/List;Link/ui/structures/GroupingStyle;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> ([Link/ui/structures/elements/UiElement;Link/ui/structures/GroupingStyle;)V
+	public synthetic fun <init> ([Link/ui/structures/elements/UiElement;Link/ui/structures/GroupingStyle;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()Link/ui/structures/GroupingStyle;
 	public final fun copy (Ljava/util/List;Link/ui/structures/GroupingStyle;)Link/ui/structures/layouts/ScrollingListLayout;
