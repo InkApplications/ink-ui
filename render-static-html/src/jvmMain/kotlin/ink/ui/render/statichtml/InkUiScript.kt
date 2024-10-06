@@ -11,6 +11,7 @@ import kotlin.script.experimental.api.*
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 import kotlin.script.experimental.jvmhost.createJvmCompilationConfigurationFromTemplate
+import kotlin.script.experimental.jvmhost.createJvmEvaluationConfigurationFromTemplate
 
 @KotlinScript(
     fileExtension = "inkui.kts",
@@ -121,7 +122,7 @@ abstract class InkUiScript(
             val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<InkUiScript> {
                 defaultImports(*customImports)
             }
-            val evaluationConfiguration =  ScriptEvaluationConfiguration {
+            val evaluationConfiguration = createJvmEvaluationConfigurationFromTemplate<InkUiScript> {
                 constructorArgs(scriptFile, customRenderers, customImports)
             }
             return BasicJvmScriptingHost().eval(
@@ -140,7 +141,7 @@ abstract class InkUiScript(
             val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<PartialScript> {
                 defaultImports(*customImports)
             }
-            val evaluationConfiguration =  ScriptEvaluationConfiguration {
+            val evaluationConfiguration = createJvmEvaluationConfigurationFromTemplate<PartialScript> {
                 constructorArgs(parent)
             }
             return BasicJvmScriptingHost().eval(

@@ -3,7 +3,7 @@ package ink.ui.render.statichtml
 import kotlin.script.experimental.annotations.KotlinScript
 
 @KotlinScript(
-    fileExtension = "inkui.kts",
+    fileExtension = "inkui.part.kts",
     compilationConfiguration = InkUiConfig::class
 )
 abstract class PartialScript(
