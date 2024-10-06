@@ -80,9 +80,16 @@ abstract class InkUiScript(
         ).valueOrThrow()
     }
 
+    override fun resource(name: String): String {
+        if (resourceBaseUrl.isBlank()) {
+            return name
+        }
+        return "$resourceBaseUrl/$name"
+    }
+
     private fun getStyles(): List<String> {
         return listOf(
-            "$resourceBaseUrl/css/main-2.0.css",
+            resource("css/main-2.0.css"),
         ) + styles
     }
 
