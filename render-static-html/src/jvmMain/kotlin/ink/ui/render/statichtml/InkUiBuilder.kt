@@ -6,7 +6,12 @@ import ink.ui.structures.layouts.UiLayout
 import kotlinx.html.TagConsumer
 
 interface InkUiBuilder {
-    val resourceBaseUrl: String
+    var title: String?
+    var sectioned: Boolean
+    var contentBreak: Boolean
+    var inkFooter: Boolean
+    var codeBlocks: Boolean
+    var resourceBaseUrl: String
     fun addPageHeader(element: UiElement)
     fun addPageHeader(block: TagConsumer<*>.() -> Unit)
     fun addBody(block: TagConsumer<*>.() -> Unit)

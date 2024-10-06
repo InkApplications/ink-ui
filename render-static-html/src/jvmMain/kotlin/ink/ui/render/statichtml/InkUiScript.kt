@@ -28,11 +28,11 @@ abstract class InkUiScript(
     private var styles: MutableList<String> = mutableListOf()
     private var scripts: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
-    var title: String? = null
-    var sectioned: Boolean = false
-    var contentBreak: Boolean = false
-    var inkFooter: Boolean = false
-    var codeBlocks: Boolean = false
+    final override var title: String? = null
+    final override var sectioned: Boolean = false
+    final override var contentBreak: Boolean = false
+    final override var inkFooter: Boolean = false
+    final override var codeBlocks: Boolean = false
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
