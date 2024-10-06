@@ -18,8 +18,20 @@ public abstract interface class ink/ui/render/statichtml/InkUiBuilder {
 	public abstract fun addPageHeader (Lkotlin/jvm/functions/Function1;)V
 	public abstract fun addStyle (Ljava/lang/String;)V
 	public abstract fun elementRenderer (Link/ui/render/statichtml/renderer/ElementRenderer;)V
+	public abstract fun getCodeBlocks ()Z
+	public abstract fun getContentBreak ()Z
+	public abstract fun getInkFooter ()Z
 	public abstract fun getResourceBaseUrl ()Ljava/lang/String;
+	public abstract fun getSectioned ()Z
+	public abstract fun getTitle ()Ljava/lang/String;
 	public abstract fun include (Ljava/lang/String;)V
+	public abstract fun resource (Ljava/lang/String;)Ljava/lang/String;
+	public abstract fun setCodeBlocks (Z)V
+	public abstract fun setContentBreak (Z)V
+	public abstract fun setInkFooter (Z)V
+	public abstract fun setResourceBaseUrl (Ljava/lang/String;)V
+	public abstract fun setSectioned (Z)V
+	public abstract fun setTitle (Ljava/lang/String;)V
 }
 
 public final class ink/ui/render/statichtml/InkUiConfig : kotlin/script/experimental/api/ScriptCompilationConfiguration {
@@ -45,6 +57,7 @@ public abstract class ink/ui/render/statichtml/InkUiScript : ink/ui/render/stati
 	public final fun getSectioned ()Z
 	public final fun getTitle ()Ljava/lang/String;
 	public fun include (Ljava/lang/String;)V
+	public fun resource (Ljava/lang/String;)Ljava/lang/String;
 	public final fun setCodeBlocks (Z)V
 	public final fun setContentBreak (Z)V
 	public final fun setInkFooter (Z)V
@@ -58,10 +71,6 @@ public final class ink/ui/render/statichtml/InkUiScript$Companion {
 	public static synthetic fun evalFile$default (Link/ui/render/statichtml/InkUiScript$Companion;Ljava/io/File;[Link/ui/render/statichtml/renderer/ElementRenderer;[Ljava/lang/String;ILjava/lang/Object;)Lkotlin/script/experimental/api/ResultWithDiagnostics;
 }
 
-public final class ink/ui/render/statichtml/MainKt {
-	public static final fun main ([Ljava/lang/String;)V
-}
-
 public abstract class ink/ui/render/statichtml/PartialScript : ink/ui/render/statichtml/InkUiBuilder {
 	public fun <init> (Link/ui/render/statichtml/InkUiScript;)V
 	public fun addBody (Link/ui/structures/layouts/UiLayout;)V
@@ -72,8 +81,20 @@ public abstract class ink/ui/render/statichtml/PartialScript : ink/ui/render/sta
 	public fun addPageHeader (Lkotlin/jvm/functions/Function1;)V
 	public fun addStyle (Ljava/lang/String;)V
 	public fun elementRenderer (Link/ui/render/statichtml/renderer/ElementRenderer;)V
+	public fun getCodeBlocks ()Z
+	public fun getContentBreak ()Z
+	public fun getInkFooter ()Z
 	public fun getResourceBaseUrl ()Ljava/lang/String;
+	public fun getSectioned ()Z
+	public fun getTitle ()Ljava/lang/String;
 	public fun include (Ljava/lang/String;)V
+	public fun resource (Ljava/lang/String;)Ljava/lang/String;
+	public fun setCodeBlocks (Z)V
+	public fun setContentBreak (Z)V
+	public fun setInkFooter (Z)V
+	public fun setResourceBaseUrl (Ljava/lang/String;)V
+	public fun setSectioned (Z)V
+	public fun setTitle (Ljava/lang/String;)V
 }
 
 public final class ink/ui/render/statichtml/renderer/BreadcrumbRendererKt {
