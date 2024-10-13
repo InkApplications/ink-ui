@@ -72,6 +72,7 @@ public final class ink/ui/render/web/elements/LinkButtonElement : ink/ui/structu
 public final class ink/ui/render/web/elements/LinkNavigation : ink/ui/structures/elements/UiElement$Static {
 	public static final field $stable I
 	public fun <init> (Ljava/util/List;)V
+	public fun <init> ([Link/ui/render/web/elements/LinkNavigation$NavigationItem;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun copy (Ljava/util/List;)Link/ui/render/web/elements/LinkNavigation;
 	public static synthetic fun copy$default (Link/ui/render/web/elements/LinkNavigation;Ljava/util/List;ILjava/lang/Object;)Link/ui/render/web/elements/LinkNavigation;
