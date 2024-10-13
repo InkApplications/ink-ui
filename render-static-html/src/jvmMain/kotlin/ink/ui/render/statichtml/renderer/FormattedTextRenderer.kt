@@ -5,18 +5,22 @@ import kotlinx.html.TagConsumer
 import kotlinx.html.*
 
 val FormattedTextRenderer = renderer<FormattedText> { element ->
-    p {
-        render(consumer, element.spans)
+    if (element.paragraph) {
+        p {
+            render(consumer, element.spans)
+        }
+    } else {
+        render(this, element.spans)
     }
 }
 
-private fun Tag.render(
+private fun render(
     consumer: TagConsumer<*>,
     spans: List<FormattedText.Span>,
 ) {
     spans.forEachIndexed { index, span ->
         when (span) {
-            is FormattedText.Span.Text -> +span.text
+            is FormattedText.Span.Text -> consumer.onTagContent(span.text)
             is FormattedText.Span.Emphasis -> consumer.em {
                 render(consumer, span.inner)
             }
@@ -39,7 +43,7 @@ private fun Tag.render(
                     }
                 }
             }
-            FormattedText.Span.Break -> br
+            FormattedText.Span.Break -> consumer.br()
         }
     }
 }
