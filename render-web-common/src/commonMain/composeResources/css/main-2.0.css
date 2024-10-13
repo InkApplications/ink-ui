@@ -372,6 +372,11 @@ body.sectioned > section,
     margin-right: auto;
     box-sizing: border-box;
 }
+body.content-break
+{
+    padding-left: 0;
+    padding-right: 0;
+}
 @media print {
     body.sectioned > section,
     .content-break
