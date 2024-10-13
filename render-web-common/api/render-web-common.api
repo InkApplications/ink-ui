@@ -36,14 +36,6 @@ public final class ink/ui/render/web/elements/CodeBlock$Language : java/lang/Enu
 	public static fun values ()[Link/ui/render/web/elements/CodeBlock$Language;
 }
 
-public final class ink/ui/render/web/elements/HorizontalRule : ink/ui/structures/elements/UiElement$Static {
-	public static final field $stable I
-	public static final field INSTANCE Link/ui/render/web/elements/HorizontalRule;
-	public fun equals (Ljava/lang/Object;)Z
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
-}
-
 public final class ink/ui/render/web/elements/LinkButtonElement : ink/ui/structures/elements/UiElement$Interactive {
 	public static final field $stable I
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
