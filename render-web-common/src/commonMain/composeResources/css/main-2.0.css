@@ -263,6 +263,21 @@ section nav ul > li::before
         display: none!important;
     }
 }
+@media(max-width: 800px) {
+    section nav
+    {
+        width: 100%;
+    }
+    section nav ul > li
+    {
+        display: block;
+    }
+    section nav ul > li > a
+    {
+        display: block;
+        text-align: center;
+    }
+}
 
 /* Layouts */
 .fixed-grid
