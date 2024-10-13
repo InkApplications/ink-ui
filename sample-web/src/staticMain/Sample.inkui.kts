@@ -38,6 +38,18 @@ addBody(
                     }
 
                 },
+                TextListElement(
+                    FormattedText {
+                        text("hello")
+                        space()
+                        strong {
+                            text("world")
+                        }
+                    },
+                    FormattedText {
+                        text("this is an item list")
+                    }
+                ),
                 DividerElement,
                 StatusIndicatorElement(
                     text = "Nominal Status",

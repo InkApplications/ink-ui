@@ -150,3 +150,8 @@ public final class ink/ui/render/statichtml/renderer/StatusRenderer : ink/ui/ren
 	public fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
 }
 
+public final class ink/ui/render/statichtml/renderer/TextListRenderer : ink/ui/render/statichtml/renderer/ElementRenderer {
+	public static final field INSTANCE Link/ui/render/statichtml/renderer/TextListRenderer;
+	public fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
+}
+
