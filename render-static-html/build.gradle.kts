@@ -14,7 +14,7 @@ kotlin {
             implementation(libs.kotlin.scripting.jvm.host)
             implementation(libs.kotlinx.html)
             api(projects.structures)
-            implementation(projects.renderWebCommon)
+            api(projects.renderWebCommon)
         }
     }
 }
