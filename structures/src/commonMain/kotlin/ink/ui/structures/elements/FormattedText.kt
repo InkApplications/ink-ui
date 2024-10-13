@@ -3,10 +3,15 @@ package ink.ui.structures.elements
 import ink.ui.structures.TextStyle
 
 data class FormattedText(
-    val spans: List<Span>
+    val spans: List<Span>,
+    val paragraph: Boolean = true,
 ): UiElement.Static {
-    constructor(builder: FormattedText.Builder.() -> Unit): this(
-        spans = Builder().apply(builder).spans
+    constructor(
+        paragraph: Boolean = true,
+        builder: Builder.() -> Unit,
+    ): this(
+        spans = Builder().apply(builder).spans,
+        paragraph = paragraph,
     )
 
     fun toPlainTextElement(
