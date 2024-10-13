@@ -122,6 +122,10 @@ public final class ink/ui/render/statichtml/renderer/FormattedTextRendererKt {
 	public static final fun getFormattedTextRenderer ()Link/ui/render/statichtml/renderer/ElementRenderer;
 }
 
+public final class ink/ui/render/statichtml/renderer/HorizontalRuleRendererKt {
+	public static final fun getHorizontalRuleRenderer ()Link/ui/render/statichtml/renderer/ElementRenderer;
+}
+
 public final class ink/ui/render/statichtml/renderer/IconRenderer : ink/ui/render/statichtml/renderer/ElementRenderer {
 	public fun <init> (Ljava/lang/String;)V
 	public fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
