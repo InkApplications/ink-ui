@@ -19,7 +19,7 @@ import kotlin.script.experimental.jvmhost.createJvmEvaluationConfigurationFromTe
 )
 @Suppress("unused")
 abstract class InkUiScript(
-    private val scriptFile: File,
+    val scriptFile: File,
     customRenderers: Array<ElementRenderer>,
     private val customImports: Array<String>,
 ): InkUiBuilder {

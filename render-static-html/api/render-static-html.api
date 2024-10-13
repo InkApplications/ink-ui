@@ -54,6 +54,7 @@ public abstract class ink/ui/render/statichtml/InkUiScript : ink/ui/render/stati
 	public final fun getHtml ()Ljava/lang/String;
 	public final fun getInkFooter ()Z
 	public final fun getResourceBaseUrl ()Ljava/lang/String;
+	public final fun getScriptFile ()Ljava/io/File;
 	public final fun getSectioned ()Z
 	public final fun getTitle ()Ljava/lang/String;
 	public fun include (Ljava/lang/String;)V
