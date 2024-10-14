@@ -94,6 +94,10 @@ h1
 {
     font-size: 1.5rem;
 }
+body > header h1
+{
+    font-size: 2rem;
+}
 h2
 {
     font-size: 1.25rem;
@@ -103,14 +107,14 @@ article
 {
     margin: 1rem 0;
 }
-header > p
-{
-    font-style: italic;
-}
 p
 {
     margin: .5rem 0;
     line-height: 1.5rem;
+}
+header p
+{
+    font-style: italic;
 }
 .sectioned > section p
 {
