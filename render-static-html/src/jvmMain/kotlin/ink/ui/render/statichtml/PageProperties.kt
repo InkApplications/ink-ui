@@ -13,5 +13,7 @@ data class PageProperties(
     data class Meta(
         var deviceViewport: Boolean = true,
         var robots: String? = null,
+        var author: String? = null,
+        var keywords: String? = null,
     )
 }

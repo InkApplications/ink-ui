@@ -130,6 +130,12 @@ class HtmlRenderer(
                 if (pageProperties.meta.robots != null) {
                     meta(name = "robots", content = pageProperties.meta.robots)
                 }
+                if (pageProperties.meta.author != null) {
+                    meta(name = "author", content = pageProperties.meta.author)
+                }
+                if (pageProperties.meta.keywords != null) {
+                    meta(name = "keywords", content = pageProperties.meta.keywords)
+                }
 
                 heads.forEach { it() }
 

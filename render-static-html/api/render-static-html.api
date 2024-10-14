@@ -87,17 +87,23 @@ public final class ink/ui/render/statichtml/PageProperties {
 
 public final class ink/ui/render/statichtml/PageProperties$Meta {
 	public fun <init> ()V
-	public fun <init> (ZLjava/lang/String;)V
-	public synthetic fun <init> (ZLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Z
 	public final fun component2 ()Ljava/lang/String;
-	public final fun copy (ZLjava/lang/String;)Link/ui/render/statichtml/PageProperties$Meta;
-	public static synthetic fun copy$default (Link/ui/render/statichtml/PageProperties$Meta;ZLjava/lang/String;ILjava/lang/Object;)Link/ui/render/statichtml/PageProperties$Meta;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Link/ui/render/statichtml/PageProperties$Meta;
+	public static synthetic fun copy$default (Link/ui/render/statichtml/PageProperties$Meta;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Link/ui/render/statichtml/PageProperties$Meta;
 	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAuthor ()Ljava/lang/String;
 	public final fun getDeviceViewport ()Z
+	public final fun getKeywords ()Ljava/lang/String;
 	public final fun getRobots ()Ljava/lang/String;
 	public fun hashCode ()I
+	public final fun setAuthor (Ljava/lang/String;)V
 	public final fun setDeviceViewport (Z)V
+	public final fun setKeywords (Ljava/lang/String;)V
 	public final fun setRobots (Ljava/lang/String;)V
 	public fun toString ()Ljava/lang/String;
 }
