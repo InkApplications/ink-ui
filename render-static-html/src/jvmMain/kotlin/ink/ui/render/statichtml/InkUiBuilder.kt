@@ -6,12 +6,13 @@ import ink.ui.structures.layouts.UiLayout
 import kotlinx.html.*
 
 interface InkUiBuilder {
-    var title: String
-    var sectioned: Boolean
-    var contentBreak: Boolean
-    var inkFooter: Boolean
     var codeBlocks: Boolean
+    var contentBreak: Boolean
+    var deviceViewport: Boolean
+    var inkFooter: Boolean
     var resourceBaseUrl: String
+    var sectioned: Boolean
+    var title: String
     fun addHead(block: HEAD.() -> Unit)
     fun addPageHeader(element: UiElement)
     fun addPageHeader(block: TagConsumer<*>.() -> Unit)

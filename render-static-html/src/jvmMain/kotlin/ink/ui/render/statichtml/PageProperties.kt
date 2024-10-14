@@ -8,4 +8,5 @@ data class PageProperties(
     var inkFooter: Boolean = false,
     var sectioned: Boolean = false,
     var contentBreak: Boolean = false,
+    var deviceViewport: Boolean = true,
 )

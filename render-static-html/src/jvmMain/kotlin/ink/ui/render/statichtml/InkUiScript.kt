@@ -33,10 +33,11 @@ abstract class InkUiScript(
     private var styles: MutableList<String> = mutableListOf()
     private var scripts: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
-    final override var title: String by pageProperties::title
-    final override var sectioned: Boolean by pageProperties::sectioned
     final override var contentBreak: Boolean by pageProperties::contentBreak
+    final override var deviceViewport: Boolean by pageProperties::deviceViewport
     final override var inkFooter: Boolean by pageProperties::inkFooter
+    final override var sectioned: Boolean by pageProperties::sectioned
+    final override var title: String by pageProperties::title
     final override var codeBlocks: Boolean = false
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
