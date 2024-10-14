@@ -127,6 +127,10 @@ class HtmlRenderer(
                 if (pageProperties.deviceViewport) {
                     meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
                 }
+                if (pageProperties.robots != null) {
+                    meta(name = "robots", content = pageProperties.robots)
+                }
+
                 heads.forEach { it() }
 
                 scripts.forEach {

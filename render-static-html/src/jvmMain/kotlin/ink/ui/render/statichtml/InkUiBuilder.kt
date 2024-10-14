@@ -13,6 +13,7 @@ interface InkUiBuilder {
     var resourceBaseUrl: String
     var sectioned: Boolean
     var title: String
+    var robots: String?
     fun addHead(block: HEAD.() -> Unit)
     fun addPageHeader(element: UiElement)
     fun addPageHeader(block: TagConsumer<*>.() -> Unit)

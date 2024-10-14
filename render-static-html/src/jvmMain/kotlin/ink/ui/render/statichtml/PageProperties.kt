@@ -9,4 +9,5 @@ data class PageProperties(
     var sectioned: Boolean = false,
     var contentBreak: Boolean = false,
     var deviceViewport: Boolean = true,
+    var robots: String? = null,
 )

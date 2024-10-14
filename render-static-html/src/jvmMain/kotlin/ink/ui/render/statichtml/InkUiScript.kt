@@ -36,6 +36,7 @@ abstract class InkUiScript(
     final override var contentBreak: Boolean by pageProperties::contentBreak
     final override var deviceViewport: Boolean by pageProperties::deviceViewport
     final override var inkFooter: Boolean by pageProperties::inkFooter
+    final override var robots: String? by pageProperties::robots
     final override var sectioned: Boolean by pageProperties::sectioned
     final override var title: String by pageProperties::title
     final override var codeBlocks: Boolean = false

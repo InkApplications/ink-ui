@@ -23,6 +23,7 @@ public abstract interface class ink/ui/render/statichtml/InkUiBuilder {
 	public abstract fun getDeviceViewport ()Z
 	public abstract fun getInkFooter ()Z
 	public abstract fun getResourceBaseUrl ()Ljava/lang/String;
+	public abstract fun getRobots ()Ljava/lang/String;
 	public abstract fun getSectioned ()Z
 	public abstract fun getTitle ()Ljava/lang/String;
 	public abstract fun include (Ljava/lang/String;)V
@@ -32,6 +33,7 @@ public abstract interface class ink/ui/render/statichtml/InkUiBuilder {
 	public abstract fun setDeviceViewport (Z)V
 	public abstract fun setInkFooter (Z)V
 	public abstract fun setResourceBaseUrl (Ljava/lang/String;)V
+	public abstract fun setRobots (Ljava/lang/String;)V
 	public abstract fun setSectioned (Z)V
 	public abstract fun setTitle (Ljava/lang/String;)V
 }
@@ -58,6 +60,7 @@ public abstract class ink/ui/render/statichtml/InkUiScript : ink/ui/render/stati
 	public final fun getHtml ()Ljava/lang/String;
 	public final fun getInkFooter ()Z
 	public final fun getResourceBaseUrl ()Ljava/lang/String;
+	public final fun getRobots ()Ljava/lang/String;
 	public final fun getScriptFile ()Ljava/io/File;
 	public final fun getSectioned ()Z
 	public final fun getTitle ()Ljava/lang/String;
@@ -68,6 +71,7 @@ public abstract class ink/ui/render/statichtml/InkUiScript : ink/ui/render/stati
 	public final fun setDeviceViewport (Z)V
 	public final fun setInkFooter (Z)V
 	public final fun setResourceBaseUrl (Ljava/lang/String;)V
+	public final fun setRobots (Ljava/lang/String;)V
 	public final fun setSectioned (Z)V
 	public final fun setTitle (Ljava/lang/String;)V
 }
@@ -78,25 +82,28 @@ public final class ink/ui/render/statichtml/InkUiScript$Companion {
 }
 
 public final class ink/ui/render/statichtml/PageProperties {
-	public fun <init> (Ljava/lang/String;ZZZZ)V
-	public synthetic fun <init> (Ljava/lang/String;ZZZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;ZZZZLjava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;ZZZZLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Z
 	public final fun component3 ()Z
 	public final fun component4 ()Z
 	public final fun component5 ()Z
-	public final fun copy (Ljava/lang/String;ZZZZ)Link/ui/render/statichtml/PageProperties;
-	public static synthetic fun copy$default (Link/ui/render/statichtml/PageProperties;Ljava/lang/String;ZZZZILjava/lang/Object;)Link/ui/render/statichtml/PageProperties;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;ZZZZLjava/lang/String;)Link/ui/render/statichtml/PageProperties;
+	public static synthetic fun copy$default (Link/ui/render/statichtml/PageProperties;Ljava/lang/String;ZZZZLjava/lang/String;ILjava/lang/Object;)Link/ui/render/statichtml/PageProperties;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getContentBreak ()Z
 	public final fun getDeviceViewport ()Z
 	public final fun getInkFooter ()Z
+	public final fun getRobots ()Ljava/lang/String;
 	public final fun getSectioned ()Z
 	public final fun getTitle ()Ljava/lang/String;
 	public fun hashCode ()I
 	public final fun setContentBreak (Z)V
 	public final fun setDeviceViewport (Z)V
 	public final fun setInkFooter (Z)V
+	public final fun setRobots (Ljava/lang/String;)V
 	public final fun setSectioned (Z)V
 	public final fun setTitle (Ljava/lang/String;)V
 	public fun toString ()Ljava/lang/String;
@@ -118,6 +125,7 @@ public abstract class ink/ui/render/statichtml/PartialScript : ink/ui/render/sta
 	public fun getDeviceViewport ()Z
 	public fun getInkFooter ()Z
 	public fun getResourceBaseUrl ()Ljava/lang/String;
+	public fun getRobots ()Ljava/lang/String;
 	public fun getSectioned ()Z
 	public fun getTitle ()Ljava/lang/String;
 	public fun include (Ljava/lang/String;)V
@@ -127,6 +135,7 @@ public abstract class ink/ui/render/statichtml/PartialScript : ink/ui/render/sta
 	public fun setDeviceViewport (Z)V
 	public fun setInkFooter (Z)V
 	public fun setResourceBaseUrl (Ljava/lang/String;)V
+	public fun setRobots (Ljava/lang/String;)V
 	public fun setSectioned (Z)V
 	public fun setTitle (Ljava/lang/String;)V
 }
