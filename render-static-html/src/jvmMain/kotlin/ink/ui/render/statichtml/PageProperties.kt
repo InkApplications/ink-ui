@@ -8,6 +8,10 @@ data class PageProperties(
     var inkFooter: Boolean = false,
     var sectioned: Boolean = false,
     var contentBreak: Boolean = false,
-    var deviceViewport: Boolean = true,
-    var robots: String? = null,
-)
+    val meta: Meta = Meta(),
+) {
+    data class Meta(
+        var deviceViewport: Boolean = true,
+        var robots: String? = null,
+    )
+}

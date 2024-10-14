@@ -23,9 +23,10 @@ abstract class InkUiScript(
     customRenderers: Array<ElementRenderer>,
     private val customImports: Array<String>,
 ): InkUiBuilder {
-    private val pageProperties: PageProperties = PageProperties(
+    final override val page: PageProperties = PageProperties(
         title = scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), "")
     )
+    override val meta: PageProperties.Meta = page.meta
     private var heads: MutableList<HEAD.() -> Unit> = mutableListOf()
     private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
@@ -33,13 +34,7 @@ abstract class InkUiScript(
     private var styles: MutableList<String> = mutableListOf()
     private var scripts: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
-    final override var contentBreak: Boolean by pageProperties::contentBreak
-    final override var deviceViewport: Boolean by pageProperties::deviceViewport
-    final override var inkFooter: Boolean by pageProperties::inkFooter
-    final override var robots: String? by pageProperties::robots
-    final override var sectioned: Boolean by pageProperties::sectioned
-    final override var title: String by pageProperties::title
-    final override var codeBlocks: Boolean = false
+    final override var useCodeBlocks: Boolean = false
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
@@ -106,16 +101,16 @@ abstract class InkUiScript(
 
     fun getHtml(): String {
         return renderer.renderDocument(
-            pageProperties = pageProperties,
+            pageProperties = page,
             pageHeaders = pageHeaders,
             pageFooters = pageFooters,
             bodies = bodies,
             stylesheets = getStyles(),
             scripts = listOfNotNull(
                 *scripts.toTypedArray(),
-                "$resourceBaseUrl/js/highlight.pack.js".takeIf { codeBlocks },
+                "$resourceBaseUrl/js/highlight.pack.js".takeIf { useCodeBlocks },
             ),
-            jsInit = "hljs.initHighlightingOnLoad();".takeIf { codeBlocks },
+            jsInit = "hljs.initHighlightingOnLoad();".takeIf { useCodeBlocks },
             heads = heads,
         )
     }

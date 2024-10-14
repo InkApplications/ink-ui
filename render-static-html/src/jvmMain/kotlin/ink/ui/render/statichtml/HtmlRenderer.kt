@@ -124,11 +124,11 @@ class HtmlRenderer(
                 stylesheets.forEach {
                     styleLink(it)
                 }
-                if (pageProperties.deviceViewport) {
+                if (pageProperties.meta.deviceViewport) {
                     meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
                 }
-                if (pageProperties.robots != null) {
-                    meta(name = "robots", content = pageProperties.robots)
+                if (pageProperties.meta.robots != null) {
+                    meta(name = "robots", content = pageProperties.meta.robots)
                 }
 
                 heads.forEach { it() }
