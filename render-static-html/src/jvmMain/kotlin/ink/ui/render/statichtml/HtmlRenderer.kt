@@ -109,17 +109,14 @@ class HtmlRenderer(
     }
 
     fun renderDocument(
-        pageTitle: String,
+        pageProperties: PageProperties,
         heads: List<HEAD.() -> Unit>,
         pageHeaders: List<TagConsumer<*>.() -> Unit>,
         pageFooters: List<TagConsumer<*>.() -> Unit>,
-        inkFooter: Boolean,
         bodies: List<TagConsumer<*>.() -> Unit>,
         stylesheets: List<String>,
         scripts: List<String>,
         jsInit: String?,
-        sectioned: Boolean = false,
-        contentBreak: Boolean = false
     ): String {
         return createHTMLDocument().html {
             attributes["lang"] = "en"
@@ -134,31 +131,31 @@ class HtmlRenderer(
                     script(src = it) {}
                 }
 
-                title { +pageTitle }
+                title { +pageProperties.title }
             }
             val bodyClasses = listOfNotNull(
                 when {
-                    sectioned -> "sectioned"
-                    contentBreak -> "content-break"
+                    pageProperties.sectioned -> "sectioned"
+                    pageProperties.contentBreak -> "content-break"
                     else -> null
                 },
-                "anchored-footer".takeIf { inkFooter },
+                "anchored-footer".takeIf { pageProperties.inkFooter },
             ).joinToString(" ")
             body(classes = bodyClasses) {
                 if (pageHeaders.isNotEmpty()) {
-                    header("content-break".takeIf { sectioned }) {
+                    header("content-break".takeIf { pageProperties.sectioned }) {
                         pageHeaders.forEach { it(consumer) }
                     }
                 }
                 bodies.forEach { it(consumer) }
                 if (pageFooters.isNotEmpty()) {
-                    footer("content-break".takeIf { sectioned }) {
+                    footer("content-break".takeIf { pageProperties.sectioned }) {
                         pageFooters.forEach { it(consumer) }
                     }
                 }
-                if (inkFooter) {
+                if (pageProperties.inkFooter) {
                     val classes = listOfNotNull(
-                        "content-break".takeIf { sectioned },
+                        "content-break".takeIf { pageProperties.sectioned },
                         "ink"
                     ).joinToString(" ")
                     footer(classes) {

@@ -23,6 +23,9 @@ abstract class InkUiScript(
     customRenderers: Array<ElementRenderer>,
     private val customImports: Array<String>,
 ): InkUiBuilder {
+    private val pageProperties: PageProperties = PageProperties(
+        title = scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), "")
+    )
     private var heads: MutableList<HEAD.() -> Unit> = mutableListOf()
     private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
@@ -30,10 +33,10 @@ abstract class InkUiScript(
     private var styles: MutableList<String> = mutableListOf()
     private var scripts: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
-    final override var title: String? = null
-    final override var sectioned: Boolean = false
-    final override var contentBreak: Boolean = false
-    final override var inkFooter: Boolean = false
+    final override var title: String by pageProperties::title
+    final override var sectioned: Boolean by pageProperties::sectioned
+    final override var contentBreak: Boolean by pageProperties::contentBreak
+    final override var inkFooter: Boolean by pageProperties::inkFooter
     final override var codeBlocks: Boolean = false
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
@@ -101,10 +104,9 @@ abstract class InkUiScript(
 
     fun getHtml(): String {
         return renderer.renderDocument(
-            pageTitle = title ?: scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), ""),
+            pageProperties = pageProperties,
             pageHeaders = pageHeaders,
             pageFooters = pageFooters,
-            inkFooter = inkFooter,
             bodies = bodies,
             stylesheets = getStyles(),
             scripts = listOfNotNull(
@@ -112,8 +114,6 @@ abstract class InkUiScript(
                 "$resourceBaseUrl/js/highlight.pack.js".takeIf { codeBlocks },
             ),
             jsInit = "hljs.initHighlightingOnLoad();".takeIf { codeBlocks },
-            sectioned = sectioned,
-            contentBreak = contentBreak,
             heads = heads,
         )
     }

@@ -6,7 +6,7 @@ import ink.ui.structures.layouts.UiLayout
 import kotlinx.html.*
 
 interface InkUiBuilder {
-    var title: String?
+    var title: String
     var sectioned: Boolean
     var contentBreak: Boolean
     var inkFooter: Boolean
@@ -24,3 +24,4 @@ interface InkUiBuilder {
     fun addPageFooter(block: TagConsumer<*>.() -> Unit)
     fun resource(name: String): String
 }
+
