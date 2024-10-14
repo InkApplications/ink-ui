@@ -3,7 +3,7 @@ package ink.ui.render.statichtml
 import ink.ui.render.statichtml.renderer.ElementRenderer
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout
-import kotlinx.html.TagConsumer
+import kotlinx.html.*
 import kotlinx.html.dom.createHTMLDocument
 import java.io.File
 import kotlin.script.experimental.annotations.KotlinScript
@@ -23,6 +23,7 @@ abstract class InkUiScript(
     customRenderers: Array<ElementRenderer>,
     private val customImports: Array<String>,
 ): InkUiBuilder {
+    private var heads: MutableList<HEAD.() -> Unit> = mutableListOf()
     private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var bodies: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
@@ -40,6 +41,10 @@ abstract class InkUiScript(
             renderer = renderer.withResourceBaseUrl(value)
         }
     private var renderer = HtmlRenderer(resourceBaseUrl, customRenderers)
+
+    override fun addHead(block: HEAD.() -> Unit) {
+        heads.add(block)
+    }
 
     override fun addPageHeader(element: UiElement) {
         pageHeaders.add(renderer.renderElement(element))
@@ -109,6 +114,7 @@ abstract class InkUiScript(
             jsInit = "hljs.initHighlightingOnLoad();".takeIf { codeBlocks },
             sectioned = sectioned,
             contentBreak = contentBreak,
+            heads = heads,
         )
     }
 

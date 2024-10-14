@@ -1,8 +1,8 @@
 public final class ink/ui/render/statichtml/HtmlRenderer {
 	public fun <init> (Ljava/lang/String;[Link/ui/render/statichtml/renderer/ElementRenderer;)V
 	public synthetic fun <init> (Ljava/lang/String;[Link/ui/render/statichtml/renderer/ElementRenderer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun renderDocument (Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZLjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;ZZ)Ljava/lang/String;
-	public static synthetic fun renderDocument$default (Link/ui/render/statichtml/HtmlRenderer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZLjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;ZZILjava/lang/Object;)Ljava/lang/String;
+	public final fun renderDocument (Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;ZLjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;ZZ)Ljava/lang/String;
+	public static synthetic fun renderDocument$default (Link/ui/render/statichtml/HtmlRenderer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;ZLjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;ZZILjava/lang/Object;)Ljava/lang/String;
 	public final fun renderElement (Link/ui/structures/elements/UiElement;)Lkotlin/jvm/functions/Function1;
 	public final fun renderLayout (Link/ui/structures/layouts/UiLayout;)Lkotlin/jvm/functions/Function1;
 	public final fun withRenderer (Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/render/statichtml/HtmlRenderer;
@@ -12,6 +12,7 @@ public final class ink/ui/render/statichtml/HtmlRenderer {
 public abstract interface class ink/ui/render/statichtml/InkUiBuilder {
 	public abstract fun addBody (Link/ui/structures/layouts/UiLayout;)V
 	public abstract fun addBody (Lkotlin/jvm/functions/Function1;)V
+	public abstract fun addHead (Lkotlin/jvm/functions/Function1;)V
 	public abstract fun addPageFooter (Link/ui/structures/elements/UiElement;)V
 	public abstract fun addPageFooter (Lkotlin/jvm/functions/Function1;)V
 	public abstract fun addPageHeader (Link/ui/structures/elements/UiElement;)V
@@ -43,6 +44,7 @@ public abstract class ink/ui/render/statichtml/InkUiScript : ink/ui/render/stati
 	public fun <init> (Ljava/io/File;[Link/ui/render/statichtml/renderer/ElementRenderer;[Ljava/lang/String;)V
 	public fun addBody (Link/ui/structures/layouts/UiLayout;)V
 	public fun addBody (Lkotlin/jvm/functions/Function1;)V
+	public fun addHead (Lkotlin/jvm/functions/Function1;)V
 	public fun addPageFooter (Link/ui/structures/elements/UiElement;)V
 	public fun addPageFooter (Lkotlin/jvm/functions/Function1;)V
 	public fun addPageHeader (Link/ui/structures/elements/UiElement;)V
@@ -76,6 +78,7 @@ public abstract class ink/ui/render/statichtml/PartialScript : ink/ui/render/sta
 	public fun <init> (Link/ui/render/statichtml/InkUiScript;)V
 	public fun addBody (Link/ui/structures/layouts/UiLayout;)V
 	public fun addBody (Lkotlin/jvm/functions/Function1;)V
+	public fun addHead (Lkotlin/jvm/functions/Function1;)V
 	public fun addPageFooter (Link/ui/structures/elements/UiElement;)V
 	public fun addPageFooter (Lkotlin/jvm/functions/Function1;)V
 	public fun addPageHeader (Link/ui/structures/elements/UiElement;)V

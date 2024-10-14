@@ -3,7 +3,7 @@ package ink.ui.render.statichtml
 import ink.ui.render.statichtml.renderer.ElementRenderer
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout
-import kotlinx.html.TagConsumer
+import kotlinx.html.*
 
 interface InkUiBuilder {
     var title: String?
@@ -12,6 +12,7 @@ interface InkUiBuilder {
     var inkFooter: Boolean
     var codeBlocks: Boolean
     var resourceBaseUrl: String
+    fun addHead(block: HEAD.() -> Unit)
     fun addPageHeader(element: UiElement)
     fun addPageHeader(block: TagConsumer<*>.() -> Unit)
     fun addBody(block: TagConsumer<*>.() -> Unit)

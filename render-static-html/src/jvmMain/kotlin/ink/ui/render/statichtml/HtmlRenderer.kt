@@ -110,6 +110,7 @@ class HtmlRenderer(
 
     fun renderDocument(
         pageTitle: String,
+        heads: List<HEAD.() -> Unit>,
         pageHeaders: List<TagConsumer<*>.() -> Unit>,
         pageFooters: List<TagConsumer<*>.() -> Unit>,
         inkFooter: Boolean,
@@ -127,6 +128,7 @@ class HtmlRenderer(
                     styleLink(it)
                 }
                 meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
+                heads.forEach { it() }
 
                 scripts.forEach {
                     script(src = it) {}
