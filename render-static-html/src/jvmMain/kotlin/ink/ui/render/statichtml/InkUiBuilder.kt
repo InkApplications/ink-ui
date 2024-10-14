@@ -3,15 +3,14 @@ package ink.ui.render.statichtml
 import ink.ui.render.statichtml.renderer.ElementRenderer
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout
-import kotlinx.html.TagConsumer
+import kotlinx.html.*
 
 interface InkUiBuilder {
-    var title: String?
-    var sectioned: Boolean
-    var contentBreak: Boolean
-    var inkFooter: Boolean
-    var codeBlocks: Boolean
+    var useCodeBlocks: Boolean
     var resourceBaseUrl: String
+    val page: PageProperties
+    val meta: PageProperties.Meta
+    fun addHead(block: HEAD.() -> Unit)
     fun addPageHeader(element: UiElement)
     fun addPageHeader(block: TagConsumer<*>.() -> Unit)
     fun addBody(block: TagConsumer<*>.() -> Unit)
@@ -23,3 +22,4 @@ interface InkUiBuilder {
     fun addPageFooter(block: TagConsumer<*>.() -> Unit)
     fun resource(name: String): String
 }
+

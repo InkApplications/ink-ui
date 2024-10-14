@@ -3,7 +3,7 @@ package ink.ui.render.statichtml
 import ink.ui.render.statichtml.renderer.ElementRenderer
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout
-import kotlinx.html.TagConsumer
+import kotlinx.html.*
 import kotlinx.html.dom.createHTMLDocument
 import java.io.File
 import kotlin.script.experimental.annotations.KotlinScript
@@ -23,23 +23,28 @@ abstract class InkUiScript(
     customRenderers: Array<ElementRenderer>,
     private val customImports: Array<String>,
 ): InkUiBuilder {
+    final override val page: PageProperties = PageProperties(
+        title = scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), "")
+    )
+    override val meta: PageProperties.Meta = page.meta
+    private var heads: MutableList<HEAD.() -> Unit> = mutableListOf()
     private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var bodies: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var styles: MutableList<String> = mutableListOf()
     private var scripts: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
-    final override var title: String? = null
-    final override var sectioned: Boolean = false
-    final override var contentBreak: Boolean = false
-    final override var inkFooter: Boolean = false
-    final override var codeBlocks: Boolean = false
+    final override var useCodeBlocks: Boolean = false
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
             renderer = renderer.withResourceBaseUrl(value)
         }
     private var renderer = HtmlRenderer(resourceBaseUrl, customRenderers)
+
+    override fun addHead(block: HEAD.() -> Unit) {
+        heads.add(block)
+    }
 
     override fun addPageHeader(element: UiElement) {
         pageHeaders.add(renderer.renderElement(element))
@@ -96,19 +101,17 @@ abstract class InkUiScript(
 
     fun getHtml(): String {
         return renderer.renderDocument(
-            pageTitle = title ?: scriptFile.name.replace(Regex("\\.inkui\\.kts$", RegexOption.IGNORE_CASE), ""),
+            pageProperties = page,
             pageHeaders = pageHeaders,
             pageFooters = pageFooters,
-            inkFooter = inkFooter,
             bodies = bodies,
             stylesheets = getStyles(),
             scripts = listOfNotNull(
                 *scripts.toTypedArray(),
-                "$resourceBaseUrl/js/highlight.pack.js".takeIf { codeBlocks },
+                "$resourceBaseUrl/js/highlight.pack.js".takeIf { useCodeBlocks },
             ),
-            jsInit = "hljs.initHighlightingOnLoad();".takeIf { codeBlocks },
-            sectioned = sectioned,
-            contentBreak = contentBreak,
+            jsInit = "hljs.initHighlightingOnLoad();".takeIf { useCodeBlocks },
+            heads = heads,
         )
     }
 

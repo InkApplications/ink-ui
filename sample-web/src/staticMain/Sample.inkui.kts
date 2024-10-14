@@ -1,8 +1,8 @@
-title = "Test"
+useCodeBlocks = true
 resourceBaseUrl = "res"
-sectioned = true
-inkFooter = true
-codeBlocks = true
+page.title = "Test"
+page.sectioned = true
+page.inkFooter = true
 
 include("header.inkui.kts")
 addBody(
