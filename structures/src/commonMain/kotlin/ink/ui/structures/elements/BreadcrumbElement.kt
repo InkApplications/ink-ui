@@ -5,6 +5,6 @@ data class BreadcrumbElement(
 ): UiElement.Static {
     data class Breadcrumb(
         val text: String,
-        val url: String,
+        val url: String? = null,
     )
 }

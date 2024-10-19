@@ -8,7 +8,11 @@ val BreadcrumbRenderer = renderer<BreadcrumbElement> { element ->
         ul {
             element.items.forEach { breadcrumb ->
                 li {
-                    a(href = breadcrumb.url) { +breadcrumb.text }
+                    if (breadcrumb.url != null) {
+                        a(href = breadcrumb.url) { +breadcrumb.text }
+                    } else {
+                        +breadcrumb.text
+                    }
                 }
             }
         }
