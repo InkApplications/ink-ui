@@ -93,18 +93,10 @@ addBody(
   }
                     """.trimIndent()
                 ),
-                LinkNavigation(
-                    items = listOf(
-                        NavigationItem(
-                            text = "Link 1",
-                            url = "#",
-                        ),
-                        NavigationItem(
-                            text = "Link 2",
-                            url = "#",
-                        ),
-                    )
-                )
+                LinkNavigation {
+                    link(text = "Link 1", url = "#")
+                    link(text = "Link 2", url = "#")
+                },
             )
         )
     )
