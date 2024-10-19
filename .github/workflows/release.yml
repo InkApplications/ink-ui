@@ -4,6 +4,7 @@ on:
         tags: ['*']
 env:
     GITHUB_TAG: ${{ github.ref }}
+    GRADLE_OPTS: -Dorg.gradle.parallel=false
 jobs:
     tests:
         name: Test
