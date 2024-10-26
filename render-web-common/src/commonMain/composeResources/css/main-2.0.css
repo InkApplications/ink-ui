@@ -14,8 +14,6 @@
     --item-surround-spacing: .5rem;
     --section-gap-spacing: 2rem;
     --section-surround-spacing: 1rem;
-    --content-break-width: 800px;
-    --smallest-break-width: 600px;
     --corner-radius: .25rem;
 
     --color-background: #fff;
@@ -114,7 +112,7 @@ h3
 {
     font-size: 1.5rem;
 }
-@media(max-width: var(--content-break-width)) {
+@media(max-width: 800px) {
     h1
     {
         font-size: 5vw;
@@ -132,7 +130,7 @@ h3
         font-size: 3vw;
     }
 }
-@media(max-width: var(--smallest-break-width)) {
+@media(max-width: 600px) {
     h1
     {
         font-size: 1.875rem;
@@ -291,7 +289,7 @@ section nav ul > li::before
         display: none!important;
     }
 }
-@media(max-width: var(--smallest-break-width)) {
+@media(max-width: 600px) {
     section nav
     {
         width: 100%;
@@ -409,7 +407,7 @@ section nav ul > li::before
 /* Centered content */
 .content-break
 {
-    max-width: var(--content-break-width);
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -485,7 +483,7 @@ code.grouped
     border-radius: unset;
     padding: unset;
 }
-@media(max-width: var(--content-break-width)) {
+@media(max-width: 800px) {
     code.grouped {
         padding: .5rem 0;
         display: flex;
@@ -681,7 +679,7 @@ body.anchored-footer > footer.ink > .signature
         background-size: 5rem;
     }
 }
-@media (max-width: var(--content-break-width)) {
+@media (max-width: 800px) {
     footer.ink > .signature
     {
         padding-left: 2rem;
