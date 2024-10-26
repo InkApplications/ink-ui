@@ -543,6 +543,7 @@ textarea
     font-weight: 300;
     font-size: 1rem;
     display: inline-block;
+    min-height: 1.5rem;
 }
 textarea
 {
@@ -729,6 +730,7 @@ body.anchored-footer > footer.ink > .signature
 img.icon
 {
     margin: .25rem;
+    height: 1.5rem;
 }
 button img.icon,
 .button img.icon
