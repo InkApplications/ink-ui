@@ -14,5 +14,6 @@ data class PageProperties(
         var robots: String? = null,
         var author: String? = null,
         var keywords: String? = null,
+        var description: String? = null,
     )
 }
