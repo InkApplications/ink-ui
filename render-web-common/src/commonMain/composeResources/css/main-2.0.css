@@ -31,7 +31,7 @@
     :root
     {
         --color-foreground: #fff;
-        --color-foreground-subtle: #bdbdbd;
+        --color-foreground-subtle: #808080;
         --filter-foreground: invert(100%) sepia(5%) saturate(1250%) hue-rotate(85deg) brightness(104%) contrast(109%);
 
         --color-background: #212121;
