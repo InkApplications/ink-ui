@@ -1,5 +1,6 @@
 include("base.inkui.part.kts")
 page.title = "Ink UI - Typography"
+useCodeBlocks = true
 
 addPageHeader(
     inline(
