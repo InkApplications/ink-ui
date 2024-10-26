@@ -109,6 +109,42 @@ h3
 {
     font-size: 1.5rem;
 }
+@media(max-width: 800px) {
+    h1
+    {
+        font-size: 5vw;
+    }
+    body > header h1
+    {
+        font-size: 7vw;
+    }
+    h2
+    {
+        font-size: 4vw;
+    }
+    h3
+    {
+        font-size: 3vw;
+    }
+}
+@media(max-width: 600px) {
+    h1
+    {
+        font-size: 1.875rem;
+    }
+    body > header h1
+    {
+        font-size: 2.626rem;
+    }
+    h2
+    {
+        font-size: 1.5rem;
+    }
+    h3
+    {
+        font-size: 1.125rem;
+    }
+}
 section,
 article
 {
