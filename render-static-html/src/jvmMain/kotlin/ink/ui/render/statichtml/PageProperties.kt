@@ -6,8 +6,7 @@ package ink.ui.render.statichtml
 data class PageProperties(
     var title: String,
     var inkFooter: Boolean = false,
-    var sectioned: Boolean = false,
-    var contentBreak: Boolean = false,
+    var contentBreak: Boolean = true,
     val meta: Meta = Meta(),
 ) {
     data class Meta(

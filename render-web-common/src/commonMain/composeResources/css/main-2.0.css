@@ -10,7 +10,7 @@
     --color-foreground-subtle: #9E9E9E;
     --filter-foreground: invert(16%) sepia(0%) saturate(1480%) hue-rotate(146deg) brightness(94%) contrast(104%);
 
-    --color-background: #F8F8F8;
+    --color-background: #fff;
     --color-surface: #fff;
     --color-surface-depressed: #e0e0e0;
     --color-surface-item: #f5f5f5;
@@ -45,7 +45,7 @@
 /* Basic Structures */
 html
 {
-    background-color: var(--color-surface);
+    background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: 'Roboto Mono', monospace;
     font-weight: 300;
@@ -92,15 +92,20 @@ h3
 }
 h1
 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 body > header h1
 {
-    font-size: 2rem;
+    font-weight: 300;
+    font-size: 3.5rem;
 }
 h2
 {
-    font-size: 1.25rem;
+    font-size: 2rem;
+}
+h3
+{
+    font-size: 1.5rem;
 }
 section,
 article
@@ -115,10 +120,6 @@ p
 header p
 {
     font-style: italic;
-}
-.sectioned > section p
-{
-    text-align: justify;
 }
 p.caption,
 span.caption
@@ -205,37 +206,12 @@ header
 }
 
 /* Sectioned Page Style Overrides */
-body.sectioned
-{
-    background-color: var(--color-background);
+section {
+    margin: 1rem 0;
 }
-.sectioned > section
-{
-    background-color: var(--color-surface);
-    border-radius: .25rem;
-    padding: 2rem;
-}
-.sectioned > section
-{
-    border: 1px solid transparent;
-}
-.sectioned > section:has(header > a:target)
+section:has(header > a:target)
 {
     border: 1px solid var(--color-primary);
-}
-@media print {
-    body.sectioned
-    {
-        background: none;
-    }
-    body.sectioned > section
-    {
-        margin: 0;
-        margin-top: .5rem;
-        max-width: none;
-        padding: 0;
-        background-color: none;
-    }
 }
 
 /* Section Navigation list styles. */
@@ -370,7 +346,7 @@ section nav ul > li::before
 .featured
 {
     text-align: center;
-    border: 1px solid var(--color-foreground-subtle);
+    border: 1px solid var(--color-primary);
     border-radius: .25rem;
     margin: 1rem;
     padding: 1rem;
@@ -383,7 +359,6 @@ section nav ul > li::before
 }
 
 /* Centered content */
-body.sectioned > section,
 .content-break
 {
     max-width: 800px;
@@ -393,11 +368,10 @@ body.sectioned > section,
 }
 body.content-break
 {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
 }
 @media print {
-    body.sectioned > section,
     .content-break
     {
         max-width: none;
@@ -582,7 +556,7 @@ input[type=button]:disabled
 header > nav > ul
 {
     list-style: none;
-    margin: 1rem 0
+    margin: .5rem 0;
 }
 header > nav > ul > li::before
 {
