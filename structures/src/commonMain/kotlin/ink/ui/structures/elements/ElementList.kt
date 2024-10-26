@@ -39,3 +39,20 @@ data class ElementList(
         orientation = orientation,
     )
 }
+
+fun inline(vararg items: UiElement) = ElementList(
+    items = items.toList(),
+    groupingStyle = GroupingStyle.Inline,
+)
+fun unified(vararg items: UiElement) = ElementList(
+    items = items.toList(),
+    groupingStyle = GroupingStyle.Unified,
+)
+fun sections(vararg items: UiElement) = ElementList(
+    items = items.toList(),
+    groupingStyle = GroupingStyle.Sections,
+)
+fun items(vararg items: UiElement) = ElementList(
+    items = items.toList(),
+    groupingStyle = GroupingStyle.Items,
+)

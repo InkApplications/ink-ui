@@ -2,20 +2,19 @@ include("base.inkui.part.kts")
 page.title = "Ink UI - Typography"
 
 addPageHeader(
-    ElementList(
+    inline(
         TextElement("Typography", TextStyle.H1),
         TextElement("Examples of text styles"),
         BreadcrumbElement {
             link("Ink UI", "index.html")
             text("Typography")
         },
-        groupingStyle = GroupingStyle.Inline,
     ),
 )
 
 addBody(
     ScrollingListLayout(
-        ElementList(
+        inline(
             TextElement("Heading 1", TextStyle.H1),
             TextElement("Heading 2", TextStyle.H2),
             TextElement("Heading 3", TextStyle.H3),
@@ -64,7 +63,6 @@ addBody(
                     }
                 """.trimIndent()
             ),
-            groupingStyle = GroupingStyle.Inline,
         ),
         groupingStyle = GroupingStyle.Sections,
     )

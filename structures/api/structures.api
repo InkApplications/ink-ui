@@ -192,6 +192,13 @@ public final class ink/ui/structures/elements/ElementList : ink/ui/structures/el
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/elements/ElementListKt {
+	public static final fun inline ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
+	public static final fun items ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
+	public static final fun sections ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
+	public static final fun unified ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
+}
+
 public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/elements/UiElement$Static {
 	public static final field INSTANCE Link/ui/structures/elements/EmptyElement;
 	public fun equals (Ljava/lang/Object;)Z

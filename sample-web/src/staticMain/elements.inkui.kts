@@ -2,19 +2,18 @@ include("base.inkui.part.kts")
 page.title = "Ink UI - Elements"
 
 addPageHeader(
-    ElementList(
+    inline(
         TextElement("Elements", TextStyle.H1),
         TextElement("Built-in UI elements"),
         BreadcrumbElement {
             link("Ink UI", "index.html")
             text("Elements")
         },
-        groupingStyle = GroupingStyle.Inline,
     ),
 )
 addBody(
     ScrollingListLayout(
-        ElementList(
+        inline(
             TextElement("Status Indicators", TextStyle.H1),
             StatusIndicatorElement(
                 text = "Nominal Status",
@@ -40,9 +39,8 @@ addBody(
                 text = "Idle Status",
                 sentiment = Sentiment.Idle,
             ),
-            groupingStyle = GroupingStyle.Inline,
         ),
-        ElementList(
+        inline(
             TextElement("Symbols", TextStyle.H1),
             IconElement(
                 symbol = Symbol.Add,
@@ -83,10 +81,8 @@ addBody(
             IconElement(Symbol.Sunshine),
             IconElement(Symbol.Temperature),
             IconElement(Symbol.Water),
-
-            groupingStyle = GroupingStyle.Inline,
         ),
-        ElementList(
+        items(
             TextElement("Buttons", TextStyle.H1),
             LinkButtonElement(
                 text = "Button",
@@ -104,13 +100,12 @@ addBody(
                 leadingSymbol = Symbol.Cloud,
             ),
         ),
-        ElementList(
+        inline(
             TextElement("Link Navigation", TextStyle.H1),
             LinkNavigation {
                 link(text = "Link 1", url = "#")
                 link(text = "Link 2", url = "#")
             },
-            groupingStyle = GroupingStyle.Inline,
         ),
         groupingStyle = GroupingStyle.Sections,
     )
