@@ -70,7 +70,10 @@ signing {
     }
 }
 
+tasks.withType<Sign>().configureEach {
+    dependsOn(tasks.withType<Jar>())
+}
+
 tasks.withType<PublishToMavenRepository>().configureEach {
     dependsOn(tasks.withType<Sign>())
-    dependsOn(javadocJar)
 }
