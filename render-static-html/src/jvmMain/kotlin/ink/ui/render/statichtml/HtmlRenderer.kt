@@ -143,6 +143,9 @@ class HtmlRenderer(
                 if (pageProperties.meta.keywords != null) {
                     meta(name = "keywords", content = pageProperties.meta.keywords)
                 }
+                if (pageProperties.meta.description != null) {
+                    meta(name = "description", content = pageProperties.meta.description)
+                }
 
                 heads.forEach { it() }
 
