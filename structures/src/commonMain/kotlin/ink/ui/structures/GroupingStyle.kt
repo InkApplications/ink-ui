@@ -18,4 +18,9 @@ enum class GroupingStyle {
      * Treat the elements as unrelated sections.
      */
     Sections,
+
+    /**
+     * List each element one after another without any container.
+     */
+    Inline,
 }

@@ -91,6 +91,9 @@ class HtmlComposeRenderer(
                         renderElement(it)
                     }
                 }
+                Inline -> uiLayout.items.forEach {
+                    renderElement(it)
+                }
             }
         }
     }

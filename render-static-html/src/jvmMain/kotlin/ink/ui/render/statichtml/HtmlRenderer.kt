@@ -104,6 +104,13 @@ class HtmlRenderer(
                         )
                     }
                 }
+                Inline -> uiLayout.items.forEach { item ->
+                    renderWith(
+                        element = item,
+                        consumer = this,
+                        renderer = renderer,
+                    )
+                }
             }
         }
     }

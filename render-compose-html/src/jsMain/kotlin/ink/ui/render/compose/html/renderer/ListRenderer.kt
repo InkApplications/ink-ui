@@ -15,6 +15,13 @@ object ListRenderer: ElementRenderer {
     override fun render(element: UiElement, parent: ElementRenderer): RenderResult {
         if (element !is ElementList) return RenderResult.Skipped
 
+        if (element.groupingStyle == GroupingStyle.Inline) {
+            element.items.forEach {
+                parent.render(it, parent)
+            }
+            return RenderResult.Rendered
+        }
+
         Div(
             attrs = {
                 when (element.groupingStyle) {
@@ -26,6 +33,9 @@ object ListRenderer: ElementRenderer {
                     }
                     GroupingStyle.Sections -> {
                         classes("section-list")
+                    }
+                    GroupingStyle.Inline -> {
+                        throw IllegalStateException("Inline elements should be rendered without container.")
                     }
                 }
                 style {
