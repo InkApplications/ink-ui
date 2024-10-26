@@ -70,7 +70,7 @@ signing {
     }
 }
 
-val signingTasks: TaskCollection<Sign> = tasks.withType<Sign>()
 tasks.withType<PublishToMavenRepository>().configureEach {
-    mustRunAfter(signingTasks)
+    dependsOn(tasks.withType<Sign>())
+    dependsOn(javadocJar)
 }
