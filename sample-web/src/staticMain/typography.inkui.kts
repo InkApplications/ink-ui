@@ -3,12 +3,12 @@ page.title = "Ink UI - Typography"
 
 addPageHeader(
     inline(
-        TextElement("Typography", TextStyle.H1),
-        TextElement("Examples of text styles"),
         BreadcrumbElement {
             link("Ink UI", "index.html")
             text("Typography")
         },
+        TextElement("Typography", TextStyle.H1),
+        TextElement("Examples of text styles"),
     ),
 )
 

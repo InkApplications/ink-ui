@@ -3,12 +3,12 @@ page.title = "Ink UI - Elements"
 
 addPageHeader(
     inline(
-        TextElement("Elements", TextStyle.H1),
-        TextElement("Built-in UI elements"),
         BreadcrumbElement {
             link("Ink UI", "index.html")
             text("Elements")
         },
+        TextElement("Elements", TextStyle.H1),
+        TextElement("Built-in UI elements"),
     ),
 )
 addBody(
