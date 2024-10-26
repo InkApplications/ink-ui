@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import ink.ui.render.compose.theme.ComposeRenderTheme
 import ink.ui.structures.Positioning
 import ink.ui.structures.GroupingStyle
+import ink.ui.structures.GroupingStyle.*
 import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.Orientation
 import ink.ui.structures.elements.UiElement
@@ -52,11 +53,11 @@ internal object ListRenderer: ElementRenderer {
     ) {
         element.items.forEachIndexed { index, item ->
             parent.render(item, theme, parent)
-            if (element.groupingStyle != GroupingStyle.Unified && index != 0 && index != element.items.size - 1) {
+            if (element.groupingStyle !in setOf(Unified, Inline) && index != 0 && index != element.items.size - 1) {
                 val spacing = when (element.groupingStyle) {
-                    GroupingStyle.Items -> theme.spacing.item
-                    GroupingStyle.Sections -> theme.spacing.sectionSpacing
-                    GroupingStyle.Unified -> throw IllegalStateException()
+                    Items -> theme.spacing.item
+                    Sections -> theme.spacing.sectionSpacing
+                    Unified, Inline -> throw IllegalStateException()
                 }
                 Spacer(modifier = Modifier.height(spacing))
             }

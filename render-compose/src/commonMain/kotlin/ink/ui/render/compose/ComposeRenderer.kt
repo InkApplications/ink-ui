@@ -15,8 +15,6 @@ import ink.ui.render.compose.renderer.CompositeElementRenderer
 import ink.ui.render.compose.renderer.EmptyRenderer
 import ink.ui.render.compose.renderer.TextRenderer
 import ink.ui.render.compose.theme.ComposeRenderTheme
-import ink.ui.render.compose.theme.defaultTheme
-import ink.ui.structures.GroupingStyle
 import ink.ui.structures.GroupingStyle.*
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.UiElement
@@ -100,7 +98,7 @@ class ComposeRenderer(
             }
             is ScrollingListLayout -> {
                 val itemSpacing = when (uiLayout.groupingStyle) {
-                    Unified -> 0.dp
+                    Unified, Inline -> 0.dp
                     Items -> theme.spacing.item
                     Sections -> theme.spacing.sectionSpacing
                 }

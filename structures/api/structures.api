@@ -1,4 +1,5 @@
 public final class ink/ui/structures/GroupingStyle : java/lang/Enum {
+	public static final field Inline Link/ui/structures/GroupingStyle;
 	public static final field Items Link/ui/structures/GroupingStyle;
 	public static final field Sections Link/ui/structures/GroupingStyle;
 	public static final field Unified Link/ui/structures/GroupingStyle;
@@ -189,6 +190,13 @@ public final class ink/ui/structures/elements/ElementList : ink/ui/structures/el
 	public final fun getPositioning ()Link/ui/structures/Positioning;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/ElementListKt {
+	public static final fun inline ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
+	public static final fun items ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
+	public static final fun sections ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
+	public static final fun unified ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
 }
 
 public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/elements/UiElement$Static {

@@ -104,6 +104,13 @@ class HtmlRenderer(
                         )
                     }
                 }
+                Inline -> uiLayout.items.forEach { item ->
+                    renderWith(
+                        element = item,
+                        consumer = this,
+                        renderer = renderer,
+                    )
+                }
             }
         }
     }
@@ -147,7 +154,6 @@ class HtmlRenderer(
             }
             val bodyClasses = listOfNotNull(
                 when {
-                    pageProperties.sectioned -> "sectioned"
                     pageProperties.contentBreak -> "content-break"
                     else -> null
                 },
@@ -155,19 +161,18 @@ class HtmlRenderer(
             ).joinToString(" ")
             body(classes = bodyClasses) {
                 if (pageHeaders.isNotEmpty()) {
-                    header("content-break".takeIf { pageProperties.sectioned }) {
+                    header {
                         pageHeaders.forEach { it(consumer) }
                     }
                 }
                 bodies.forEach { it(consumer) }
                 if (pageFooters.isNotEmpty()) {
-                    footer("content-break".takeIf { pageProperties.sectioned }) {
+                    footer {
                         pageFooters.forEach { it(consumer) }
                     }
                 }
                 if (pageProperties.inkFooter) {
                     val classes = listOfNotNull(
-                        "content-break".takeIf { pageProperties.sectioned },
                         "ink"
                     ).joinToString(" ")
                     footer(classes) {

@@ -11,11 +11,20 @@ object ListRenderer: ElementRenderer {
     override fun TagConsumer<*>.render(element: UiElement, parent: ElementRenderer): RenderResult {
         if (element !is ElementList) return RenderResult.Skipped
 
+        if (element.groupingStyle == GroupingStyle.Inline) {
+            element.items.forEach {
+                renderWith(it, this, parent)
+            }
+
+            return RenderResult.Rendered
+        }
+
         div(
             classes = when (element.groupingStyle) {
                 GroupingStyle.Unified -> "unified-list"
                 GroupingStyle.Items -> "item-list"
                 GroupingStyle.Sections -> "section-list"
+                GroupingStyle.Inline -> throw IllegalStateException("Inline elements should be rendered without container.")
             }
         ) {
             attributes["style"] = when (element.positioning) {
