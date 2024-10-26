@@ -2,9 +2,6 @@ name: Release
 on:
     push:
         tags: ['*']
-env:
-    GITHUB_TAG: ${{ github.ref }}
-    GRADLE_OPTS: -Dorg.gradle.parallel=false
 jobs:
     tests:
         name: Test
@@ -13,7 +10,7 @@ jobs:
         name: Publish to Maven Central
         needs: [tests]
         secrets: inherit
-        uses: inkapplications/.github/.github/workflows/kmp-maven-publish.yml@1.1.0
+        uses: inkapplications/.github/.github/workflows/kmp-maven-publish.yml@1.1.2
         with:
             version: ${{ github.ref_name }}
             publish-android: true
