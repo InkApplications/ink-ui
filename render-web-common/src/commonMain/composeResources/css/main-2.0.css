@@ -424,17 +424,18 @@ body.content-break
     }
 }
 
-/* Remove bottom padding from last element of a section */
-body > section > *:last-child
+/* Remove bottom padding from last element of a section/article */
+section > *:last-child,
+article > *:last-child
 {
     margin-bottom: 0;
 }
 
-/* Remove top padding for first header in section */
-body > section > *:first-child,
-body > section header:first-child > h1,
-body > section header:first-child > h2,
-body > section header:first-child > h3
+/* Remove top padding for first header in section/article */
+article *:first-child,
+article header:first-child > *:first-child,
+section > *:first-child,
+section header:first-child > *:first-child
 {
     margin-top: 0;
 }
@@ -606,7 +607,7 @@ input[type=button]:disabled
 header > nav > ul
 {
     list-style: none;
-    margin: var(--item-surround-spacing) 0;
+    margin: 0;
 }
 header > nav > ul > li::before
 {
@@ -616,6 +617,7 @@ header > nav > ul > li
 {
     display: inline-block;
     font-style: italic;
+    margin: var(--item-surround-spacing) 0;
 }
 header > nav > ul > li+li::before
 {
