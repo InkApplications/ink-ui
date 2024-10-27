@@ -121,6 +121,7 @@ public abstract class ink/ui/render/statichtml/PartialScript : ink/ui/render/sta
 	public fun elementRenderer (Link/ui/render/statichtml/renderer/ElementRenderer;)V
 	public fun getMeta ()Link/ui/render/statichtml/PageProperties$Meta;
 	public fun getPage ()Link/ui/render/statichtml/PageProperties;
+	public final fun getParent ()Link/ui/render/statichtml/InkUiScript;
 	public fun getResourceBaseUrl ()Ljava/lang/String;
 	public fun getUseCodeBlocks ()Z
 	public fun include (Ljava/lang/String;)V
