@@ -7,5 +7,5 @@ import kotlin.script.experimental.annotations.KotlinScript
     compilationConfiguration = InkUiConfig::class
 )
 abstract class PartialScript(
-    private val parent: InkUiScript,
+    val parent: InkUiScript,
 ): InkUiBuilder by parent
