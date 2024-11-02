@@ -704,6 +704,12 @@ header > nav > ul > li+li::before
         display: none;
     }
 }
+@media not print {
+    .only-print
+    {
+        display: none;
+    }
+}
 
 /* Ink Footer */
 body.anchored-footer
