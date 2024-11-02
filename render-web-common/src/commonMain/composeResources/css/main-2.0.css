@@ -14,6 +14,7 @@
     --item-surround-spacing: .5rem;
     --section-gap-spacing: 2rem;
     --section-surround-spacing: 1rem;
+    --heading-leading: 2rem;
     --corner-radius: .25rem;
 
     --color-background: #fff;
@@ -91,9 +92,10 @@ h2,
 h3
 {
     font-weight: 500;
-    margin: var(--section-surround-spacing) 0;
+    margin: var(--heading-leading) 0 var(--section-surround-spacing) 0;
     word-wrap: break-word;
     hyphens: auto;
+    line-height: 1;
 }
 h1
 {
