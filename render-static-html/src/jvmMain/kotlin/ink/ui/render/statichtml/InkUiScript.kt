@@ -95,7 +95,7 @@ abstract class InkUiScript(
 
     private fun getStyles(): List<String> {
         return listOf(
-            resource("css/main-2.0.css"),
+            resource("css/inkui-1.0.css"),
         ) + styles
     }
 
