@@ -50,6 +50,12 @@ data class FormattedText(
             override val inner: List<Span>,
             val url: String,
         ): Composite
+        data class Superscript(
+            override val inner: List<Span>,
+        ): Composite
+        data class Subscript(
+            override val inner: List<Span>,
+        ): Composite
         data object Break: Span
 
         fun toPlainString(): String {
@@ -79,6 +85,17 @@ data class FormattedText(
         fun code(group: Boolean = false, builder: Builder.() -> Unit) {
             spans.add(Span.Code(Builder().apply(builder).spans, group))
         }
+
+        fun sup(builder: Builder.() -> Unit) {
+            spans.add(Span.Superscript(Builder().apply(builder).spans))
+        }
+        fun sup(text: String) = sup { text(text) }
+
+        fun sub(builder: Builder.() -> Unit) {
+            spans.add(Span.Subscript(Builder().apply(builder).spans))
+        }
+        fun sub(text: String) = sub { text(text) }
+
         fun space() {
             spans.add(Span.Text(" "))
         }

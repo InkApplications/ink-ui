@@ -43,6 +43,12 @@ private fun render(
                     }
                 }
             }
+            is FormattedText.Span.Superscript -> consumer.sup {
+                render(consumer, span.inner)
+            }
+            is FormattedText.Span.Subscript -> consumer.sub {
+                render(consumer, span.inner)
+            }
             FormattedText.Span.Break -> consumer.br()
         }
     }

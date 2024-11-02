@@ -121,6 +121,17 @@ h3
 {
     font-size: 1.5rem;
 }
+sup
+{
+    font-size: .8rem;
+    position: relative;
+    top: -.3rem;
+}
+sub
+{
+    font-size: .8rem;
+    position: relative;
+    top: .3rem;
 }
 section,
 article
