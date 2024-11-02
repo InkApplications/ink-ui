@@ -70,21 +70,20 @@ data class FormattedText(
     data class Builder(
         var spans: MutableList<Span> = mutableListOf(),
     ) {
-        fun text(text: String) {
-            spans.add(Span.Text(text))
-        }
         fun strong(builder: Builder.() -> Unit) {
             spans.add(Span.Strong(Builder().apply(builder).spans))
         }
+        fun strong(text: String) = strong { text(text) }
+
         fun emphasis(builder: Builder.() -> Unit) {
             spans.add(Span.Emphasis(Builder().apply(builder).spans))
         }
-        fun link(url: String, builder: Builder.() -> Unit) {
-            spans.add(Span.Link(Builder().apply(builder).spans, url))
-        }
+        fun emphasis(text: String) = emphasis { text(text) }
+
         fun code(group: Boolean = false, builder: Builder.() -> Unit) {
             spans.add(Span.Code(Builder().apply(builder).spans, group))
         }
+        fun code(text: String, group: Boolean = false) = code(group) { text(text) }
 
         fun sup(builder: Builder.() -> Unit) {
             spans.add(Span.Superscript(Builder().apply(builder).spans))
@@ -96,6 +95,12 @@ data class FormattedText(
         }
         fun sub(text: String) = sub { text(text) }
 
+        fun text(text: String) {
+            spans.add(Span.Text(text))
+        }
+        fun link(url: String, builder: Builder.() -> Unit) {
+            spans.add(Span.Link(Builder().apply(builder).spans, url))
+        }
         fun space() {
             spans.add(Span.Text(" "))
         }
