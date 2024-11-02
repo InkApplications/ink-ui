@@ -264,7 +264,7 @@ header
     }
     p
     {
-        line-height: 1.2rem;
+        line-height: 1.25rem;
         margin: .125rem 0;
     }
     h1, h2, h3
@@ -290,6 +290,15 @@ header
     a
     {
         color: var(--color-foreground)
+    }
+    ul,
+    ol
+    {
+        line-height: 1.25rem;
+    }
+    li
+    {
+        margin: 0;
     }
 }
 
