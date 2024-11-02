@@ -205,40 +205,40 @@ header
 {
     margin: var(--section-surround-spacing) 0;
 }
-@media(max-width: 800px) {
+@media(max-width: 840px) {
     h1
     {
-        font-size: 5vw;
+        font-size: 4.76vw;
     }
     header h1
     {
-        font-size: 7vw;
+        font-size: 6.67vw;
     }
     h2
     {
-        font-size: 4vw;
+        font-size: 3.81vw;
     }
     h3
     {
-        font-size: 3vw;
+        font-size: 2.86vw;
     }
 }
 @media(max-width: 600px) {
     h1
     {
-        font-size: 1.875rem;
+        font-size: 1.79rem;
     }
     header h1
     {
-        font-size: 2.626rem;
+        font-size: 2.5rem;
     }
     h2
     {
-        font-size: 1.5rem;
+        font-size: 1.43rem;
     }
     h3
     {
-        font-size: 1.125rem;
+        font-size: 1.07rem;
     }
 }
 @media print {
@@ -477,7 +477,7 @@ section nav ul > li::before
 /* Centered content */
 .content-break
 {
-    max-width: 800px;
+    max-width: 840px;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -555,7 +555,7 @@ code.grouped
     border-radius: unset;
     padding: unset;
 }
-@media(max-width: 800px) {
+@media(max-width: 840px) {
     code.grouped {
         padding: .5rem 0;
         display: flex;
