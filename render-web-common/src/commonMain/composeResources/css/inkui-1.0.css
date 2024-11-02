@@ -1,5 +1,5 @@
-@import url("reset.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,500,500i");
+@import url("meyerweb-reset-2.0.css");
+@import url("roboto-mono-v23.css");
 @import url("atom-one-light.css") (prefers-color-scheme:light);
 @import url("atom-one-dark.css") (prefers-color-scheme:dark);
 
