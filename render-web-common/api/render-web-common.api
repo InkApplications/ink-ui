@@ -14,26 +14,38 @@ public final class ink/ui/render/web/SymbolsKt {
 
 public final class ink/ui/render/web/elements/CodeBlock : ink/ui/structures/elements/UiElement$Static {
 	public static final field $stable I
-	public fun <init> (Ljava/lang/String;Link/ui/render/web/elements/CodeBlock$Language;)V
-	public synthetic fun <init> (Ljava/lang/String;Link/ui/render/web/elements/CodeBlock$Language;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
-	public final fun component2 ()Link/ui/render/web/elements/CodeBlock$Language;
-	public final fun copy (Ljava/lang/String;Link/ui/render/web/elements/CodeBlock$Language;)Link/ui/render/web/elements/CodeBlock;
-	public static synthetic fun copy$default (Link/ui/render/web/elements/CodeBlock;Ljava/lang/String;Link/ui/render/web/elements/CodeBlock$Language;ILjava/lang/Object;)Link/ui/render/web/elements/CodeBlock;
+	public final fun component2-Msa73Xc ()Ljava/lang/String;
+	public final fun copy-WjN1Qtw (Ljava/lang/String;Ljava/lang/String;)Link/ui/render/web/elements/CodeBlock;
+	public static synthetic fun copy-WjN1Qtw$default (Link/ui/render/web/elements/CodeBlock;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Link/ui/render/web/elements/CodeBlock;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getCode ()Ljava/lang/String;
-	public final fun getLanguage ()Link/ui/render/web/elements/CodeBlock$Language;
+	public final fun getLanguage-Msa73Xc ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class ink/ui/render/web/elements/CodeBlock$Language : java/lang/Enum {
-	public static final field Bash Link/ui/render/web/elements/CodeBlock$Language;
-	public static final field Kotlin Link/ui/render/web/elements/CodeBlock$Language;
-	public static final field Shell Link/ui/render/web/elements/CodeBlock$Language;
-	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Link/ui/render/web/elements/CodeBlock$Language;
-	public static fun values ()[Link/ui/render/web/elements/CodeBlock$Language;
+public final class ink/ui/render/web/elements/CodeBlock$Language {
+	public static final field Companion Link/ui/render/web/elements/CodeBlock$Language$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Link/ui/render/web/elements/CodeBlock$Language;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final class ink/ui/render/web/elements/CodeBlock$Language$Companion {
+	public final fun getBash-DBStKoA ()Ljava/lang/String;
+	public final fun getKotlin-DBStKoA ()Ljava/lang/String;
+	public final fun getShell-DBStKoA ()Ljava/lang/String;
 }
 
 public final class ink/ui/render/web/elements/LinkButtonElement : ink/ui/structures/elements/UiElement$Interactive {

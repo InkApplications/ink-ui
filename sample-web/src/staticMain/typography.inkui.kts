@@ -29,14 +29,12 @@ addBody(
                 space()
                 strong {
                     text("Text")
-                    emphasis {
-                        text("!!!")
-                    }
+                    emphasis("!!!")
                 }
                 space()
                 text("with")
                 space()
-                code { text("code") }
+                code("code")
                 space()
                 text("and")
                 space()
@@ -48,9 +46,7 @@ addBody(
             TextListElement(
                 FormattedText {
                     text("This is a ")
-                    strong {
-                        text("text list")
-                    }
+                    strong("text list")
                 },
                 FormattedText {
                     text("with multiple items")

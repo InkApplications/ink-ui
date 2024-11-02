@@ -14,6 +14,7 @@
     --item-surround-spacing: .5rem;
     --section-gap-spacing: 2rem;
     --section-surround-spacing: 1rem;
+    --heading-leading: 2rem;
     --corner-radius: .25rem;
 
     --color-background: #fff;
@@ -66,10 +67,16 @@ body
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    line-height: 1rem;
+    padding-bottom: 5rem;
 }
 body > *
 {
     width: 100%;
+}
+body:has(> footer)
+{
+    padding-bottom: 0;
 }
 body > footer
 {
@@ -77,6 +84,7 @@ body > footer
     display: flex;
     flex-direction: column;
     justify-content: end;
+    margin-top: 5rem;
 }
 strong
 {
@@ -91,9 +99,10 @@ h2,
 h3
 {
     font-weight: 500;
-    margin: var(--section-surround-spacing) 0;
+    margin: var(--heading-leading) 0 var(--section-surround-spacing) 0;
     word-wrap: break-word;
     hyphens: auto;
+    line-height: 1;
 }
 h1
 {
@@ -112,41 +121,17 @@ h3
 {
     font-size: 1.5rem;
 }
-@media(max-width: 800px) {
-    h1
-    {
-        font-size: 5vw;
-    }
-    header h1
-    {
-        font-size: 7vw;
-    }
-    h2
-    {
-        font-size: 4vw;
-    }
-    h3
-    {
-        font-size: 3vw;
-    }
+sup
+{
+    font-size: .8rem;
+    position: relative;
+    top: -.3rem;
 }
-@media(max-width: 600px) {
-    h1
-    {
-        font-size: 1.875rem;
-    }
-    header h1
-    {
-        font-size: 2.626rem;
-    }
-    h2
-    {
-        font-size: 1.5rem;
-    }
-    h3
-    {
-        font-size: 1.125rem;
-    }
+sub
+{
+    font-size: .8rem;
+    position: relative;
+    top: .3rem;
 }
 section,
 article
@@ -162,6 +147,7 @@ header p
 {
     font-style: italic;
 }
+caption,
 p.caption,
 span.caption
 {
@@ -212,12 +198,48 @@ pre > code
 {
     display: block;
     line-height: 1.25rem;
-    margin: 1rem 0;
+    margin: var(--item-surround-spacing) 0;
     padding: .5rem 1rem;
 }
 header
 {
     margin: var(--section-surround-spacing) 0;
+}
+@media(max-width: 800px) {
+    h1
+    {
+        font-size: 5vw;
+    }
+    header h1
+    {
+        font-size: 7vw;
+    }
+    h2
+    {
+        font-size: 4vw;
+    }
+    h3
+    {
+        font-size: 3vw;
+    }
+}
+@media(max-width: 600px) {
+    h1
+    {
+        font-size: 1.875rem;
+    }
+    header h1
+    {
+        font-size: 2.626rem;
+    }
+    h2
+    {
+        font-size: 1.5rem;
+    }
+    h3
+    {
+        font-size: 1.125rem;
+    }
 }
 @media print {
     html
@@ -242,12 +264,28 @@ header
     }
     p
     {
-        line-height: 1.4rem;
-        margin: 0;
+        line-height: 1.2rem;
+        margin: .125rem 0;
     }
     h1, h2, h3
     {
         margin: .25rem 0;
+    }
+    h1
+    {
+        font-size: 1.5rem;
+    }
+    header h1
+    {
+        font-size: 2rem;
+    }
+    h2
+    {
+        font-size: 1.25rem;
+    }
+    h3
+    {
+        font-size: 1.125rem;
     }
     a
     {
@@ -262,6 +300,10 @@ section:has(header > a:target)
 }
 
 /* Section Navigation list styles. */
+section nav
+{
+    margin: var(--item-surround-spacing) 0;
+}
 section nav ul
 {
     margin: 0;
@@ -269,10 +311,19 @@ section nav ul
 section nav ul > li
 {
     display: inline-block;
-    margin: .75rem 0;
+    margin: 0 var(--item-surround-spacing);
+}
+section nav ul > li:first-of-type
+{
+    margin-left: 0;
+}
+section nav ul > li:last-of-type
+{
+    margin-right: 0;
 }
 section nav ul > li > a
 {
+    display: inline-block;
     line-height: 1.25rem;
     border-radius: 1.25rem;
     color: var(--color-foreground);
@@ -298,6 +349,15 @@ section nav ul > li::before
     section nav ul > li
     {
         display: block;
+        margin: var(--item-surround-spacing) 0;
+    }
+    section nav ul > li:first-of-type
+    {
+        margin-top: 0;
+    }
+    section nav ul > li:last-of-type
+    {
+        margin-bottom: 0;
     }
     section nav ul > li > a
     {
@@ -415,7 +475,8 @@ section nav ul > li::before
 }
 body.content-break
 {
-    padding: 0 var(--section-surround-spacing);
+    padding-left: var(--section-surround-spacing);
+    padding-right: var(--section-surround-spacing);
 }
 @media print {
     .content-break
@@ -621,7 +682,8 @@ header > nav > ul > li
 }
 header > nav > ul > li+li::before
 {
-    content: " > ";
+    content: ">";
+    margin: 0 var(--item-surround-spacing);
 }
 
 /* Hidden Elements */
@@ -638,6 +700,12 @@ header > nav > ul > li+li::before
 }
 @media (prefers-color-scheme: dark) {
     .only-lightmode
+    {
+        display: none;
+    }
+}
+@media not print {
+    .only-print
     {
         display: none;
     }
