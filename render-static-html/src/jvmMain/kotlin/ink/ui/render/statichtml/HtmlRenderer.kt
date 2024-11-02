@@ -192,7 +192,7 @@ class HtmlRenderer(
                     }
                 }
             }
-        }.serialize(prettyPrint = true)
+        }.serialize(prettyPrint = false)
     }
 
     fun withRenderer(renderer: ElementRenderer): HtmlRenderer {
