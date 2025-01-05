@@ -108,6 +108,36 @@ val SampleScreen = ScrollingListLayout(
             positioning = Positioning.Center,
             orientation = Orientation.Horizontal,
         ),
+        ElementList(
+            items = listOf(
+                WeatherElement(
+                    temperature = "72",
+                    condition = WeatherElement.Condition.Clear,
+                    compact = true,
+                ),
+                WeatherElement(
+                    title = "Sun",
+                    temperature = "72",
+                    secondaryText = "60",
+                    condition = WeatherElement.Condition.Snowy,
+                    compact = true,
+                ),
+                WeatherElement(
+                    temperature = "72",
+                    condition = WeatherElement.Condition.Cloudy,
+                    compact = true,
+                ),
+                WeatherElement(
+                    title = "Sun",
+                    temperature = "72",
+                    secondaryText = "60",
+                    condition = WeatherElement.Condition.Rainy,
+                    compact = true,
+                ),
+            ),
+            positioning = Positioning.Start,
+            orientation = Orientation.Horizontal,
+        ),
         SpinnerElement(
             value = "5",
             onNextValue = {},
