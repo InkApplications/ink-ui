@@ -8,7 +8,7 @@ data class WeatherElement(
     val secondaryText: String? = null,
     val title: String? = null,
     val daytime: Boolean = true,
-    val sentiment: Sentiment = Sentiment.Nominal,
+    val sentiment: Sentiment? = null,
 ): UiElement.Static {
 
     enum class Condition {

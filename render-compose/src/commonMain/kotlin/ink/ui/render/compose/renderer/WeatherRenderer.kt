@@ -6,6 +6,7 @@ import androidx.compose.foundation.text.BasicText
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
+import ink.ui.render.compose.theme.ColorVariant
 import ink.ui.structures.Symbol
 import ink.ui.structures.elements.WeatherElement
 import org.jetbrains.compose.resources.painterResource
@@ -42,9 +43,18 @@ val WeatherRenderer = renderer<WeatherElement> { theme, element ->
                 WeatherElement.Condition.Snowy -> Symbol.Snow.resource
             }
 
+            val sentiment = element.sentiment
+            val tint = when {
+                sentiment != null -> theme.colors.forSentiment(sentiment)
+                element.condition == WeatherElement.Condition.Rainy -> ColorVariant.Defaults.Colors.BLUE
+                element.condition == WeatherElement.Condition.Clear -> ColorVariant.Defaults.Colors.YELLOW
+                element.condition == WeatherElement.Condition.Cloudy -> ColorVariant.Defaults.Colors.GRAY
+                else -> theme.colors.foreground
+            }.let(ColorFilter::tint)
+
             Image(
                 painterResource(icon),
-                colorFilter = ColorFilter.tint(theme.colors.forSentiment(element.sentiment)),
+                colorFilter = tint,
                 contentDescription = description,
                 modifier = Modifier.size(theme.sizing.widgetIcons).padding(theme.spacing.item)
             )
