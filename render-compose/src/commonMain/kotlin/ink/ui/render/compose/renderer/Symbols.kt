@@ -30,6 +30,7 @@ val Symbol.resource: DrawableResource get() = when (this) {
     Symbol.Person -> Res.drawable.person
     Symbol.Rain -> Res.drawable.rain
     Symbol.Remove -> Res.drawable.remove
+    Symbol.Snow -> Res.drawable.snow
     Symbol.Sunshine -> Res.drawable.sunshine
     Symbol.Temperature -> Res.drawable.temperature
     Symbol.Water -> Res.drawable.water

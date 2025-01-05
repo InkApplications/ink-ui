@@ -60,6 +60,23 @@ public final class ink/ui/render/compose/theme/ColorVariant$Defaults {
 	public final fun getLight ()Link/ui/render/compose/theme/ColorVariant;
 }
 
+public final class ink/ui/render/compose/theme/ColorVariant$Defaults$Colors {
+	public static final field $stable I
+	public static final field INSTANCE Link/ui/render/compose/theme/ColorVariant$Defaults$Colors;
+	public final fun getBLACK-0d7_KjU ()J
+	public final fun getBLUE-0d7_KjU ()J
+	public final fun getGRAY-0d7_KjU ()J
+	public final fun getGREEN-0d7_KjU ()J
+	public final fun getORANGE-0d7_KjU ()J
+	public final fun getPURPLE-0d7_KjU ()J
+	public final fun getRED-0d7_KjU ()J
+	public final fun getSOFT_BLACK-0d7_KjU ()J
+	public final fun getSOFT_GRAY-0d7_KjU ()J
+	public final fun getSOFT_WHITE-0d7_KjU ()J
+	public final fun getWHITE-0d7_KjU ()J
+	public final fun getYELLOW-0d7_KjU ()J
+}
+
 public final class ink/ui/render/compose/theme/ColorsKt {
 	public static final fun brighten-DxMtmZc (JF)J
 	public static final fun darken-DxMtmZc (JF)J

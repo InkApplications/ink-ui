@@ -74,6 +74,7 @@ public final class ink/ui/structures/Symbol$Companion {
 	public final fun getPerson-ZR4vNbg ()Ljava/lang/String;
 	public final fun getRain-ZR4vNbg ()Ljava/lang/String;
 	public final fun getRemove-ZR4vNbg ()Ljava/lang/String;
+	public final fun getSnow-ZR4vNbg ()Ljava/lang/String;
 	public final fun getSunshine-ZR4vNbg ()Ljava/lang/String;
 	public final fun getTemperature-ZR4vNbg ()Ljava/lang/String;
 	public final fun getWater-ZR4vNbg ()Ljava/lang/String;
@@ -527,17 +528,19 @@ public abstract interface class ink/ui/structures/elements/UiElement$Static : in
 }
 
 public final class ink/ui/structures/elements/WeatherElement : ink/ui/structures/elements/UiElement$Static {
-	public fun <init> (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ZLink/ui/structures/Sentiment;)V
-	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ZLink/ui/structures/Sentiment;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ZLink/ui/structures/Sentiment;Z)V
+	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ZLink/ui/structures/Sentiment;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Link/ui/structures/elements/WeatherElement$Condition;
 	public final fun component3 ()Ljava/lang/String;
 	public final fun component4 ()Ljava/lang/String;
 	public final fun component5 ()Z
 	public final fun component6 ()Link/ui/structures/Sentiment;
-	public final fun copy (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ZLink/ui/structures/Sentiment;)Link/ui/structures/elements/WeatherElement;
-	public static synthetic fun copy$default (Link/ui/structures/elements/WeatherElement;Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ZLink/ui/structures/Sentiment;ILjava/lang/Object;)Link/ui/structures/elements/WeatherElement;
+	public final fun component7 ()Z
+	public final fun copy (Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ZLink/ui/structures/Sentiment;Z)Link/ui/structures/elements/WeatherElement;
+	public static synthetic fun copy$default (Link/ui/structures/elements/WeatherElement;Ljava/lang/String;Link/ui/structures/elements/WeatherElement$Condition;Ljava/lang/String;Ljava/lang/String;ZLink/ui/structures/Sentiment;ZILjava/lang/Object;)Link/ui/structures/elements/WeatherElement;
 	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCompact ()Z
 	public final fun getCondition ()Link/ui/structures/elements/WeatherElement$Condition;
 	public final fun getDaytime ()Z
 	public final fun getSecondaryText ()Ljava/lang/String;
@@ -552,6 +555,7 @@ public final class ink/ui/structures/elements/WeatherElement$Condition : java/la
 	public static final field Clear Link/ui/structures/elements/WeatherElement$Condition;
 	public static final field Cloudy Link/ui/structures/elements/WeatherElement$Condition;
 	public static final field Rainy Link/ui/structures/elements/WeatherElement$Condition;
+	public static final field Snowy Link/ui/structures/elements/WeatherElement$Condition;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Link/ui/structures/elements/WeatherElement$Condition;
 	public static fun values ()[Link/ui/structures/elements/WeatherElement$Condition;
