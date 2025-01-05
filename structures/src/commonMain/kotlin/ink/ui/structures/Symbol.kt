@@ -31,6 +31,7 @@ value class Symbol(val key: String) {
         val Movie = Symbol("Movie")
         val Person = Symbol("Person")
         val Rain = Symbol("Rain")
+        val Snow = Symbol("Snow")
         val Remove = Symbol("Remove")
         val Sunshine = Symbol("Sunshine")
         val Temperature = Symbol("Temperature")

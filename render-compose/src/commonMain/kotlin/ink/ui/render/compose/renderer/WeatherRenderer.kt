@@ -29,6 +29,7 @@ val WeatherRenderer = renderer<WeatherElement> { theme, element ->
                 WeatherElement.Condition.Clear -> "Clear"
                 WeatherElement.Condition.Cloudy -> "Cloudy"
                 WeatherElement.Condition.Rainy -> "Rainy"
+                WeatherElement.Condition.Snowy -> "Snowy"
             }
             val icon = when (element.condition) {
                 WeatherElement.Condition.Clear -> if (element.daytime) {
@@ -38,6 +39,7 @@ val WeatherRenderer = renderer<WeatherElement> { theme, element ->
                 }
                 WeatherElement.Condition.Cloudy -> Symbol.Cloud.resource
                 WeatherElement.Condition.Rainy -> Symbol.Rain.resource
+                WeatherElement.Condition.Snowy -> Symbol.Snow.resource
             }
 
             Image(

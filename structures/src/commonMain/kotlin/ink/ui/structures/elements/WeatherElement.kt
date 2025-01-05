@@ -15,5 +15,6 @@ data class WeatherElement(
         Clear,
         Cloudy,
         Rainy,
+        Snowy,
     }
 }
