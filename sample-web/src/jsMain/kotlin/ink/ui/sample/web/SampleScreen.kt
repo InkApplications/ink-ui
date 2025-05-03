@@ -85,14 +85,15 @@ val SampleScreen = ScrollingListLayout(
         ),
         ButtonElement(
             text = "Button",
-            onClick = {},
+            onClick = { println("Clicked") },
             leadingSymbol = Symbol.LockOpen,
             sentiment = Sentiment.Primary,
             latchOnPress = true,
         ),
         ButtonElement(
-            text = "Button",
-            onClick = {},
+            text = "Button w/Context",
+            onClick = { println("Clicked") },
+            onContextClick = { println("Context Clicked") },
             leadingSymbol = Symbol("test"),
             sentiment = Sentiment.Caution,
             latchOnPress = true,

@@ -17,6 +17,12 @@ val ButtonRenderer = renderer<ButtonElement> { element ->
             onClick {
                 element.onClick()
             }
+            onContextMenu {
+                if (element.onContextClick != null) {
+                    it.preventDefault()
+                    element.onContextClick?.invoke()
+                }
+            }
         }
     ) {
         if (leadingSymbol != null) {
