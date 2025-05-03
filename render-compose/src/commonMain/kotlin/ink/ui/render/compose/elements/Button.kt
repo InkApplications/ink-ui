@@ -3,6 +3,7 @@ package ink.ui.render.compose.elements
 import androidx.compose.animation.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.*
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.interaction.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
@@ -37,6 +39,7 @@ fun Button(
     trailingSymbol: Symbol? = null,
     theme: ComposeRenderTheme = defaultTheme(),
     onClick: () -> Unit,
+    onLongClick: (() -> Unit)? = null,
     buttonModifier: Modifier = Modifier,
     contentModifier: Modifier = Modifier,
 ) {
@@ -72,6 +75,25 @@ fun Button(
                     latchingClick()
                 }
             )}
+            .let {
+                if (onLongClick == null) it else {
+                    it.pointerInput(onLongClick) {
+                        detectTapGestures(
+                            onLongPress = {
+                                onLongClick.run {
+                                    animationJob?.cancel()
+                                    animationJob = scope.launch {
+                                        backgroundColor.snapTo(theme.colors.surfaceInteraction)
+                                        backgroundColor.animateTo(theme.colors.surface.copy(), tween(300))
+                                    }
+                                    haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                    invoke()
+                                }
+                            },
+                        )
+                    }
+                }
+            }
             .padding(theme.spacing.clickSafety)
             .then(contentModifier)
     ) {
