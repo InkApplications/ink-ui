@@ -12,5 +12,6 @@ internal val ButtonRenderer = renderer<ButtonElement> { theme, element ->
         trailingSymbol = element.trailingSymbol,
         theme = theme,
         onClick = element.onClick,
+        onLongClick = element.onContextClick,
     )
 }
