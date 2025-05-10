@@ -20,7 +20,7 @@ publishing {
         if (mavenUser != null && mavenPassword != null) {
             maven {
                 name = "MavenCentral"
-                setUrl("https://central.sonatype.com/api/v1/publisher")
+                setUrl("https://ossrh-staging-api.central.sonatype.com")
                 credentials {
                     username = mavenUser
                     password = mavenPassword
