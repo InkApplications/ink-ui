@@ -62,3 +62,7 @@ module = "androidx.activity:activity"
 [libraries.activity-compose]
 version.ref = "activity-compose"
 module = "androidx.activity:activity-compose"
+
+[libraries.mordant]
+version = "3.0.2"
+module = "com.github.ajalt.mordant:mordant"

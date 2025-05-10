@@ -18,6 +18,13 @@ data class ButtonElement(
     val onClick: () -> Unit,
 
     /**
+     * Action to be invoked when the button has an alternate click.
+     *
+     * This may be a long-click or a right click depending on the platform.
+     */
+    val onContextClick: (() -> Unit)? = null,
+
+    /**
      * Signifier of the button's action or current state.
      *
      * This changes the style of the button to indicate its purpose or state.
