@@ -20,7 +20,7 @@ publishing {
         if (mavenUser != null && mavenPassword != null) {
             maven {
                 name = "MavenCentral"
-                setUrl("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+                setUrl("https://central.sonatype.com/api/v1/publisher/upload")
                 credentials {
                     username = mavenUser
                     password = mavenPassword
