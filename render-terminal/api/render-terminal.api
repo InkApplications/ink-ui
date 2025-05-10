@@ -1,0 +1,41 @@
+public final class ink/ui/render/terminal/TerminalRenderer {
+	public fun <init> ()V
+	public fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;)V
+	public synthetic fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getBuiltInRenderers ()Ljava/util/List;
+	public final fun getRenderer ()Link/ui/render/terminal/renderer/CompositeElementRenderer;
+	public final fun render (Link/ui/structures/layouts/UiLayout;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun renderAsync (Link/ui/structures/layouts/UiLayout;)Lkotlinx/coroutines/Job;
+}
+
+public final class ink/ui/render/terminal/renderer/CompositeElementRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
+	public fun <init> ()V
+	public fun <init> (Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class ink/ui/render/terminal/renderer/ElementRenderer {
+	public abstract fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class ink/ui/render/terminal/renderer/ListRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
+	public static final field INSTANCE Link/ui/render/terminal/renderer/ListRenderer;
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class ink/ui/render/terminal/renderer/StackRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
+	public static final field INSTANCE Link/ui/render/terminal/renderer/StackRenderer;
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class ink/ui/render/terminal/renderer/StatusRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
+	public static final field INSTANCE Link/ui/render/terminal/renderer/StatusRenderer;
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class ink/ui/render/terminal/renderer/TextRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
+	public static final field INSTANCE Link/ui/render/terminal/renderer/TextRenderer;
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
