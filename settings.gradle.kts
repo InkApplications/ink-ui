@@ -10,6 +10,7 @@ include("render-terminal")
 include("render-web-common")
 include("structures")
 include("sample-android")
+include("sample-common")
 include("sample-web")
 include("sample-terminal")
 
