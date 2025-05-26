@@ -9,15 +9,19 @@ import ink.ui.structures.Positioning
 import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
+import ink.ui.structures.render.MissingRendererBehavior
+import ink.ui.structures.render.MissingRendererBehavior.Panic.MissingRendererException
 import ink.ui.structures.render.Presenter
 import ink.ui.structures.render.RenderResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Section
+import org.jetbrains.compose.web.dom.Text
 
 class ComposeHtmlPresenter(
     renderers: List<ElementRenderer> = emptyList(),
+    private val missingRendererBehavior: MissingRendererBehavior = MissingRendererBehavior.Placeholder(),
 ): Presenter {
     private val buildInRenderers: List<ElementRenderer> = listOf(
         ListRenderer,
@@ -121,9 +125,25 @@ class ComposeHtmlPresenter(
     }
 
     @Composable
-    internal fun renderElement(element: UiElement) {
+    internal fun renderElement(element: UiElement)
+    {
         when (val result = uiRenderer.render(element, uiRenderer)) {
-            RenderResult.Skipped -> throw IllegalArgumentException("No renderer registered for ${element::class.simpleName}")
+            RenderResult.Skipped -> when (missingRendererBehavior) {
+                is MissingRendererBehavior.Panic -> throw MissingRendererException(element)
+                is MissingRendererBehavior.Placeholder -> {
+                    missingRendererBehavior.log(element)
+                    Div(
+                        attrs = {
+                            classes("error-box")
+                        },
+                    ) {
+                        Text("{{ ${element::class.simpleName} }}")
+                    }
+                }
+                is MissingRendererBehavior.Ignore -> {
+                    missingRendererBehavior.log(element)
+                }
+            }
             is RenderResult.Failed -> throw result.exception
             RenderResult.Rendered -> {}
         }

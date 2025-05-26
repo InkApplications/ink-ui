@@ -5,8 +5,12 @@ import ink.ui.render.web.gridTemplateColumns
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.ElementList
+import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
+import ink.ui.structures.render.MissingRendererBehavior
+import ink.ui.structures.render.MissingRendererBehavior.Panic.MissingRendererException
 import ink.ui.structures.render.Presenter
+import ink.ui.structures.render.RenderResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.html.*
 
@@ -16,6 +20,7 @@ import kotlinx.html.*
 class HtmlPartialPresenter(
     resourceBaseUrl: String,
     customRenderers: Array<ElementRenderer> = emptyArray(),
+    private val missingRendererBehavior: MissingRendererBehavior = MissingRendererBehavior.Placeholder(),
 ): Presenter {
     private val iconUrl = "$resourceBaseUrl/svg"
     private val builtInRenderers = listOf(
@@ -44,12 +49,11 @@ class HtmlPartialPresenter(
     fun getPartialRenderer(): TagConsumer<*>.() -> Unit = render(currentLayout.value)
 
     internal fun render(uiLayout: UiLayout): TagConsumer<*>.() -> Unit = {
-        when (uiLayout) {
+        val result = when (uiLayout) {
             is CenteredElementLayout -> section("element-center") {
-                renderWith(
+                renderElement(
                     element = uiLayout.body,
                     consumer = consumer,
-                    renderer = renderer,
                 )
             }
             is FixedGridLayout -> section("fixed-grid") {
@@ -66,54 +70,77 @@ class HtmlPartialPresenter(
                             Positioning.Center -> "center"
                         }
                         attributes["style"] = "grid-column: span ${item.span}; align-items: $verticalPosition; justify-content: $horizontalPosition;"
-                        renderWith(
+                        renderElement(
                             element = item.body,
                             consumer = consumer,
-                            renderer = renderer,
                         )
                     }
                 }
             }
             is ScrollingListLayout -> when (uiLayout.groupingStyle) {
                 GroupingStyle.Unified -> section {
-                    renderWith(
+                    renderElement(
                         element = ElementList(uiLayout.items, groupingStyle = GroupingStyle.Unified),
                         consumer = consumer,
-                        renderer = renderer,
                     )
                 }
                 GroupingStyle.Items -> section {
-                    renderWith(
+                    renderElement(
                         element = ElementList(uiLayout.items, groupingStyle = GroupingStyle.Items),
                         consumer = consumer,
-                        renderer = renderer,
                     )
                 }
                 GroupingStyle.Sections -> uiLayout.items.forEach { item ->
                     section {
-                        renderWith(
+                        renderElement(
                             element = item,
                             consumer = consumer,
-                            renderer = renderer,
                         )
                     }
                 }
                 GroupingStyle.Inline -> uiLayout.items.forEach { item ->
-                    renderWith(
+                    renderElement(
                         element = item,
                         consumer = this,
-                        renderer = renderer,
                     )
                 }
             }
             is EmptyLayout -> {}
             is PageLayout -> section {
-                renderWith(
+                renderElement(
                     element = uiLayout.body,
                     consumer = consumer,
-                    renderer = renderer,
                 )
             }
+        }
+    }
+
+    private fun renderElement(
+        element: UiElement,
+        consumer: TagConsumer<*>,
+    ) {
+        val renderResult = renderWith(
+            element = element,
+            consumer = consumer,
+            renderer = renderer,
+        )
+        when (renderResult) {
+            is RenderResult.Skipped -> {
+                when (missingRendererBehavior) {
+                    is MissingRendererBehavior.Placeholder -> {
+                        missingRendererBehavior.log(element)
+                        consumer.div("error-box") {
+                            +"{{ ${element::class.simpleName} }}"
+                        }
+                    }
+                    is MissingRendererBehavior.Ignore -> {
+                        missingRendererBehavior.log(element)
+                    }
+                    is MissingRendererBehavior.Panic -> throw MissingRendererException(element)
+                }
+            }
+            is RenderResult.Failed -> throw renderResult.exception
+            is RenderResult.Rendered -> {}
         }
     }
 }
