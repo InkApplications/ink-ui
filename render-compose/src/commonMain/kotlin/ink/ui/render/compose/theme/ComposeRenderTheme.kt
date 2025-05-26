@@ -4,9 +4,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import com.inkapplications.ui.render_compose.generated.resources.Res
-import com.inkapplications.ui.render_compose.generated.resources.roboto_mono_light
-import com.inkapplications.ui.render_compose.generated.resources.roboto_mono_medium
+import com.inkapplications.ui.render_compose.generated.resources.*
 import org.jetbrains.compose.resources.Font
 
 /**

@@ -1,7 +1,6 @@
 package ink.ui.render.statichtml.renderer
 
 import ink.ui.structures.elements.FormattedText
-import kotlinx.html.TagConsumer
 import kotlinx.html.*
 
 val FormattedTextRenderer = renderer<FormattedText> { element ->

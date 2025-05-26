@@ -1,20 +1,12 @@
 package ink.ui.render.terminal
 
-import ink.ui.render.terminal.renderer.CompositeElementRenderer
-import ink.ui.render.terminal.renderer.ElementRenderer
-import ink.ui.render.terminal.renderer.ListRenderer
-import ink.ui.render.terminal.renderer.StackRenderer
-import ink.ui.render.terminal.renderer.StatusRenderer
-import ink.ui.render.terminal.renderer.TextRenderer
+import ink.ui.render.terminal.renderer.*
 import ink.ui.structures.layouts.ScrollingListLayout
 import ink.ui.structures.layouts.UiLayout
 import ink.ui.structures.render.Presenter
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.consumeEach
-import kotlinx.coroutines.launch
 
 class TerminalPresenter(
     renderers: List<ElementRenderer> = emptyList(),

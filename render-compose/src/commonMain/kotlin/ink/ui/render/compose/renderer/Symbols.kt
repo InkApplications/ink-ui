@@ -1,6 +1,5 @@
 package ink.ui.render.compose.renderer
 
-import com.inkapplications.ui.render_compose.generated.resources.Res
 import com.inkapplications.ui.render_compose.generated.resources.*
 import ink.ui.structures.Symbol
 import org.jetbrains.compose.resources.DrawableResource

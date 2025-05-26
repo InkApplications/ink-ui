@@ -1,10 +1,7 @@
 package ink.ui.sample.web
 
 import ink.ui.render.web.elements.LinkButtonElement
-import ink.ui.structures.GroupingStyle
-import ink.ui.structures.Sentiment
-import ink.ui.structures.Symbol
-import ink.ui.structures.TextStyle
+import ink.ui.structures.*
 import ink.ui.structures.elements.*
 import ink.ui.structures.layouts.ScrollingListLayout
 

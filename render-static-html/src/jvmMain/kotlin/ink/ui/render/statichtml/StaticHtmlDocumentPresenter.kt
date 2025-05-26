@@ -3,21 +3,8 @@ package ink.ui.render.statichtml
 import ink.ui.render.statichtml.renderer.ElementRenderer
 import ink.ui.structures.layouts.UiLayout
 import ink.ui.structures.render.Presenter
-import kotlinx.html.HEAD
-import kotlinx.html.TagConsumer
-import kotlinx.html.a
-import kotlinx.html.body
-import kotlinx.html.div
-import kotlinx.html.dom.createHTMLDocument
-import kotlinx.html.dom.serialize
-import kotlinx.html.footer
-import kotlinx.html.head
-import kotlinx.html.header
-import kotlinx.html.html
-import kotlinx.html.meta
-import kotlinx.html.script
-import kotlinx.html.styleLink
-import kotlinx.html.title
+import kotlinx.html.*
+import kotlinx.html.dom.*
 
 class StaticHtmlDocumentPresenter(
     private val resourceBaseUrl: String,

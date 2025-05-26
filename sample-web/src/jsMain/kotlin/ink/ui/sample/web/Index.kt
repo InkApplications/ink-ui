@@ -2,9 +2,7 @@ package ink.ui.sample.web
 
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.TextStyle
-import ink.ui.structures.elements.ButtonElement
-import ink.ui.structures.elements.TextElement
-import ink.ui.structures.elements.inline
+import ink.ui.structures.elements.*
 import ink.ui.structures.layouts.ScrollingListLayout
 import ink.ui.structures.layouts.UiLayout
 

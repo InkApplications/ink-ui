@@ -2,9 +2,7 @@ package ink.ui.cli
 
 import ink.ui.render.statichtml.InkUiScript
 import java.io.File
-import kotlin.script.experimental.api.ScriptDiagnostic
-import kotlin.script.experimental.api.onFailure
-import kotlin.script.experimental.api.valueOrThrow
+import kotlin.script.experimental.api.*
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {

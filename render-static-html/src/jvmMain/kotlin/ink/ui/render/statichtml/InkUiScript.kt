@@ -6,14 +6,12 @@ import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.ScrollingListLayout
 import ink.ui.structures.layouts.UiLayout
 import kotlinx.html.*
-import kotlinx.html.dom.createHTMLDocument
+import kotlinx.html.dom.*
 import java.io.File
 import kotlin.script.experimental.annotations.KotlinScript
 import kotlin.script.experimental.api.*
 import kotlin.script.experimental.host.toScriptSource
-import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
-import kotlin.script.experimental.jvmhost.createJvmCompilationConfigurationFromTemplate
-import kotlin.script.experimental.jvmhost.createJvmEvaluationConfigurationFromTemplate
+import kotlin.script.experimental.jvmhost.*
 
 @KotlinScript(
     fileExtension = "inkui.kts",
