@@ -1,8 +1,6 @@
 package ink.ui.render.statichtml
 
 import ink.ui.render.statichtml.renderer.*
-import ink.ui.render.statichtml.renderer.CompositeElementRenderer
-import ink.ui.render.statichtml.renderer.TextRenderer
 import ink.ui.render.web.gridTemplateColumns
 import ink.ui.structures.GroupingStyle.*
 import ink.ui.structures.Positioning
@@ -10,8 +8,7 @@ import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
 import kotlinx.html.*
-import kotlinx.html.dom.createHTMLDocument
-import kotlinx.html.dom.serialize
+import kotlinx.html.dom.*
 
 @Deprecated("Use StaticHtmlPresenter instead")
 class HtmlRenderer(

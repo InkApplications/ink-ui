@@ -1,9 +1,6 @@
 package example
 
-import ink.ui.structures.Positioning
-import ink.ui.structures.Sentiment
-import ink.ui.structures.Symbol
-import ink.ui.structures.TextStyle
+import ink.ui.structures.*
 import ink.ui.structures.elements.*
 import ink.ui.structures.layouts.ScrollingListLayout
 

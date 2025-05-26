@@ -3,9 +3,7 @@ package ink.ui.render.compose.html.renderer
 import ink.ui.render.web.composePath
 import ink.ui.render.web.toCssClass
 import ink.ui.structures.elements.ButtonElement
-import org.jetbrains.compose.web.dom.Button
-import org.jetbrains.compose.web.dom.Img
-import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.*
 
 val ButtonRenderer = renderer<ButtonElement> { element ->
     val leadingSymbol = element.leadingSymbol

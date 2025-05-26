@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+gradlew distWeb || exit 1
+echo file://$(pwd)/sample-web/build/dist/web/index.html || exit 2

@@ -1,7 +1,6 @@
 package ink.ui.render.terminal.renderer
 
 import com.github.ajalt.mordant.rendering.TextColors
-import com.github.ajalt.mordant.terminal.Terminal
 import ink.ui.structures.Sentiment
 import ink.ui.structures.elements.StatusIndicatorElement
 import ink.ui.structures.elements.UiElement

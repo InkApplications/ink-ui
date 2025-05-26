@@ -1,9 +1,9 @@
 package ink.ui.render.compose.html
 
 import androidx.compose.runtime.Composable
-import ink.ui.render.compose.html.renderer.*
+import ink.ui.render.compose.html.renderer.ElementRenderer
 import ink.ui.structures.elements.UiElement
-import ink.ui.structures.layouts.*
+import ink.ui.structures.layouts.UiLayout
 
 @Deprecated("Use ComposeHtmlPresenter instead")
 class HtmlComposeRenderer(

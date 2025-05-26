@@ -5,8 +5,7 @@ import ink.ui.render.web.toCssClass
 import ink.ui.structures.elements.IconElement
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.RenderResult
-import kotlinx.html.TagConsumer
-import kotlinx.html.img
+import kotlinx.html.*
 
 class IconRenderer(
     private val iconPath: String?
