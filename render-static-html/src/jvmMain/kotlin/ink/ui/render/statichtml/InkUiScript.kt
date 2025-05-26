@@ -1,7 +1,9 @@
 package ink.ui.render.statichtml
 
 import ink.ui.render.statichtml.renderer.ElementRenderer
+import ink.ui.structures.GroupingStyle
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.layouts.ScrollingListLayout
 import ink.ui.structures.layouts.UiLayout
 import kotlinx.html.*
 import kotlinx.html.dom.createHTMLDocument
@@ -28,9 +30,10 @@ abstract class InkUiScript(
     )
     override val meta: PageProperties.Meta = page.meta
     private var heads: MutableList<HEAD.() -> Unit> = mutableListOf()
-    private var pageHeaders: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
-    private var pageFooters: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
-    private var bodies: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
+    // TODO: These compat fields are just here to support the cumulative rendering API, remove in 2.x
+    private var pageHeadersCompat: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
+    private var pageFootersCompat: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
+    private var bodiesCompat: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var styles: MutableList<String> = mutableListOf()
     private var scripts: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
@@ -38,47 +41,81 @@ abstract class InkUiScript(
     final override var resourceBaseUrl: String = "https://ui.inkapplications.com/res"
         set(value) {
             field = value
-            renderer = renderer.withResourceBaseUrl(value)
+            presenter = presenter.withResourceBaseUrl(value)
         }
-    private var renderer = HtmlRenderer(resourceBaseUrl, customRenderers)
+    private var presenter = StaticHtmlDocumentPresenter(resourceBaseUrl, customRenderers)
 
-    override fun addHead(block: HEAD.() -> Unit) {
+    override fun addHead(block: HEAD.() -> Unit)
+    {
         heads.add(block)
     }
 
-    override fun addPageHeader(element: UiElement) {
-        pageHeaders.add(renderer.renderElement(element))
+    override fun setHeader(layout: UiLayout)
+    {
+        presenter.presentHeader(layout)
     }
 
-    override fun addPageHeader(block: TagConsumer<*>.() -> Unit) {
-        pageHeaders.add(block)
+    @Deprecated("Use setHeader(layout: UiLayout) instead")
+    override fun addPageHeader(element: UiElement)
+    {
+        pageHeadersCompat.add(
+            presenter.headerPresenter.render(
+                uiLayout = ScrollingListLayout(element, groupingStyle = GroupingStyle.Inline)
+            )
+        )
     }
 
-    override fun addPageFooter(element: UiElement) {
-        pageFooters.add(renderer.renderElement(element))
+    @Deprecated("Use setHeader(layout: UiLayout) instead")
+    override fun addPageHeader(block: TagConsumer<*>.() -> Unit)
+    {
+        pageHeadersCompat.add(block)
     }
 
-    override fun addPageFooter(block: TagConsumer<*>.() -> Unit) {
-        pageFooters.add(block)
+    override fun setFooter(layout: UiLayout)
+    {
+        presenter.presentFooter(layout)
     }
 
-    override fun addBody(block: TagConsumer<*>.() -> Unit) {
-        bodies.add(block)
+    override fun setBody(layout: UiLayout) {
+        presenter.presentBody(layout)
     }
 
-    override fun addBody(layout: UiLayout) {
-        bodies.add(renderer.renderLayout(layout))
+    @Deprecated("Use setFooter(layout: UiLayout) instead")
+    override fun addPageFooter(element: UiElement)
+    {
+        pageFootersCompat.add(
+            presenter.footerPresenter.render(
+                uiLayout = ScrollingListLayout(element, groupingStyle = GroupingStyle.Inline)
+            )
+        )
     }
+
+    @Deprecated("Use setFooter(layout: UiLayout) instead")
+    override fun addPageFooter(block: TagConsumer<*>.() -> Unit)
+    {
+        pageFootersCompat.add(block)
+    }
+
+    @Deprecated("Use setBody(element: UiElement) instead")
+    override fun addBody(block: TagConsumer<*>.() -> Unit)
+    {
+        bodiesCompat.add(block)
+    }
+
+    @Deprecated("Use setBody(element: UiElement) instead", replaceWith = ReplaceWith("setBody(layout)"))
+    override fun addBody(layout: UiLayout) = setBody(layout)
 
     override fun addStyle(stylesheet: String) {
         styles += stylesheet
     }
 
-    override fun elementRenderer(elementRenderer: ElementRenderer) {
-        renderer = renderer.withRenderer(elementRenderer)
+    override fun elementRenderer(elementRenderer: ElementRenderer)
+    {
+        presenter = presenter.withRenderer(elementRenderer)
     }
 
-    override fun include(file: String) {
+    override fun include(file: String)
+    {
         evalPartial(
             scriptFile = File(scriptFile.parentFile, file),
             parent = this,
@@ -86,25 +123,25 @@ abstract class InkUiScript(
         ).valueOrThrow()
     }
 
-    override fun resource(name: String): String {
+    override fun resource(name: String): String
+    {
         if (resourceBaseUrl.isBlank()) {
             return name
         }
         return "$resourceBaseUrl/$name"
     }
 
-    private fun getStyles(): List<String> {
+    private fun getStyles(): List<String>
+    {
         return listOf(
             resource("css/inkui-1.0.css"),
         ) + styles
     }
 
-    fun getHtml(): String {
-        return renderer.renderDocument(
+    fun getHtml(): String
+    {
+        return presenter.renderDocument(
             pageProperties = page,
-            pageHeaders = pageHeaders,
-            pageFooters = pageFooters,
-            bodies = bodies,
             stylesheets = getStyles(),
             scripts = listOfNotNull(
                 *scripts.toTypedArray(),
@@ -112,6 +149,10 @@ abstract class InkUiScript(
             ),
             jsInit = "hljs.initHighlightingOnLoad();".takeIf { useCodeBlocks },
             heads = heads,
+            // TODO: Remove these in 2.x
+            pageHeaderCompat = pageHeadersCompat,
+            pageFooterCompat = pageFootersCompat,
+            bodyCompat = bodiesCompat,
         )
     }
 

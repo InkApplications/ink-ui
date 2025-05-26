@@ -1,3 +1,17 @@
+public final class ink/ui/render/terminal/TerminalPresenter : ink/ui/structures/render/Presenter {
+	public fun <init> ()V
+	public fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;)V
+	public synthetic fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun bind ()Lkotlinx/coroutines/Job;
+	public final fun getBuiltInRenderers ()Ljava/util/List;
+	public final fun getRenderer ()Link/ui/render/terminal/renderer/CompositeElementRenderer;
+	public fun presentLayout (Link/ui/structures/layouts/UiLayout;)V
+}
+
+public final class ink/ui/render/terminal/TerminalPresenterKt {
+	public static final fun bindAndPresent (Link/ui/render/terminal/TerminalPresenter;Link/ui/structures/layouts/UiLayout;)Lkotlinx/coroutines/Job;
+}
+
 public final class ink/ui/render/terminal/TerminalRenderer {
 	public fun <init> ()V
 	public fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;)V

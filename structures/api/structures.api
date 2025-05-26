@@ -586,6 +586,10 @@ public final class ink/ui/structures/layouts/CenteredElementLayout : ink/ui/stru
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/layouts/EmptyLayout : ink/ui/structures/layouts/UiLayout {
+	public static final field INSTANCE Link/ui/structures/layouts/EmptyLayout;
+}
+
 public final class ink/ui/structures/layouts/FixedGridLayout : ink/ui/structures/layouts/UiLayout {
 	public fun <init> (ILjava/util/List;)V
 	public fun <init> ([Link/ui/structures/layouts/FixedGridLayout$GridItem;I)V
@@ -646,6 +650,10 @@ public final class ink/ui/structures/layouts/ScrollingListLayout : ink/ui/struct
 }
 
 public abstract interface class ink/ui/structures/layouts/UiLayout {
+}
+
+public abstract interface class ink/ui/structures/render/Presenter {
+	public abstract fun presentLayout (Link/ui/structures/layouts/UiLayout;)V
 }
 
 public abstract interface class ink/ui/structures/render/RenderResult {
