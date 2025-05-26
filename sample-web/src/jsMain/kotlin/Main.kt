@@ -4,8 +4,8 @@ import ink.ui.sample.web.SampleScreen
 import org.jetbrains.compose.web.renderComposable
 
 fun main() {
-    val renderer = ComposeHtmlPresenter()
+    val presenter = ComposeHtmlPresenter()
     renderComposable(rootElementId = "compose-root") {
-        renderer.bindAndPresent(SampleScreen)
+        presenter.bindAndPresent(SampleScreen)
     }
 }
