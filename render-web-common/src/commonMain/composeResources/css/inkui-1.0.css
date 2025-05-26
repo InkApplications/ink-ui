@@ -695,6 +695,16 @@ header > nav > ul > li+li::before
     margin: 0 var(--item-surround-spacing);
 }
 
+/* Error Box */
+.error-box
+{
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-surface-item);
+    border-radius: var(--corner-radius);
+    border: 1px solid var(--color-negative);
+}
+
 /* Hidden Elements */
 .hidden,
 .only-darkmode

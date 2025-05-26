@@ -652,6 +652,46 @@ public final class ink/ui/structures/layouts/ScrollingListLayout : ink/ui/struct
 public abstract interface class ink/ui/structures/layouts/UiLayout {
 }
 
+public abstract interface class ink/ui/structures/render/MissingRendererBehavior {
+}
+
+public final class ink/ui/structures/render/MissingRendererBehavior$Ignore : ink/ui/structures/render/MissingRendererBehavior {
+	public fun <init> ()V
+	public fun <init> (Lkotlin/jvm/functions/Function1;)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lkotlin/jvm/functions/Function1;
+	public final fun copy (Lkotlin/jvm/functions/Function1;)Link/ui/structures/render/MissingRendererBehavior$Ignore;
+	public static synthetic fun copy$default (Link/ui/structures/render/MissingRendererBehavior$Ignore;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Link/ui/structures/render/MissingRendererBehavior$Ignore;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLog ()Lkotlin/jvm/functions/Function1;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/render/MissingRendererBehavior$Panic : ink/ui/structures/render/MissingRendererBehavior {
+	public static final field INSTANCE Link/ui/structures/render/MissingRendererBehavior$Panic;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/render/MissingRendererBehavior$Panic$MissingRendererException : java/lang/Exception {
+	public fun <init> (Link/ui/structures/elements/UiElement;)V
+}
+
+public final class ink/ui/structures/render/MissingRendererBehavior$Placeholder : ink/ui/structures/render/MissingRendererBehavior {
+	public fun <init> ()V
+	public fun <init> (Lkotlin/jvm/functions/Function1;)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lkotlin/jvm/functions/Function1;
+	public final fun copy (Lkotlin/jvm/functions/Function1;)Link/ui/structures/render/MissingRendererBehavior$Placeholder;
+	public static synthetic fun copy$default (Link/ui/structures/render/MissingRendererBehavior$Placeholder;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Link/ui/structures/render/MissingRendererBehavior$Placeholder;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLog ()Lkotlin/jvm/functions/Function1;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
 public abstract interface class ink/ui/structures/render/Presenter {
 	public abstract fun presentLayout (Link/ui/structures/layouts/UiLayout;)V
 }

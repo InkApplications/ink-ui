@@ -1,10 +1,13 @@
 package ink.ui.render.compose
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -16,6 +19,8 @@ import ink.ui.structures.GroupingStyle
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
+import ink.ui.structures.render.MissingRendererBehavior
+import ink.ui.structures.render.MissingRendererBehavior.Panic.MissingRendererException
 import ink.ui.structures.render.Presenter
 import ink.ui.structures.render.RenderResult
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,6 +28,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 class ComposePresenter(
     private val theme: ComposeRenderTheme,
     renderers: List<ElementRenderer> = emptyList(),
+    private val missingRendererBehavior: MissingRendererBehavior = MissingRendererBehavior.Placeholder(),
 ): Presenter {
     private val builtInRenderers = listOf(
         ActivityRenderer,
@@ -135,7 +141,27 @@ class ComposePresenter(
     internal fun renderElement(element: UiElement)
     {
         when (val result = uiRenderer.render(element, theme, uiRenderer)) {
-            RenderResult.Skipped -> throw IllegalArgumentException("No renderer registered for ${element::class.simpleName}")
+            RenderResult.Skipped -> when (missingRendererBehavior) {
+                is MissingRendererBehavior.Placeholder -> {
+                    missingRendererBehavior.log(element)
+                    Box(
+                        modifier = Modifier.Companion.fillMaxSize()
+                            .background(theme.colors.surface)
+                            .border(theme.sizing.borders, theme.colors.negative, RoundedCornerShape(theme.sizing.corners))
+                            .padding(theme.spacing.item),
+                        contentAlignment = Alignment.Companion.Center,
+                    ) {
+                        BasicText(
+                            text = "{{ ${element::class.simpleName} }}",
+                            style = theme.typography.caption,
+                        )
+                    }
+                }
+                is MissingRendererBehavior.Ignore -> {
+                    missingRendererBehavior.log(element)
+                }
+                is MissingRendererBehavior.Panic -> throw MissingRendererException(element)
+            }
             is RenderResult.Failed -> throw result.exception
             RenderResult.Rendered -> {}
         }

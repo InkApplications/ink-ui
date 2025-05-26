@@ -1,7 +1,7 @@
 public final class ink/ui/render/terminal/TerminalPresenter : ink/ui/structures/render/Presenter {
 	public fun <init> ()V
-	public fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;)V
-	public synthetic fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;Link/ui/structures/render/MissingRendererBehavior;)V
+	public synthetic fun <init> (Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;Link/ui/structures/render/MissingRendererBehavior;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun bind ()Lkotlinx/coroutines/Job;
 	public final fun getBuiltInRenderers ()Ljava/util/List;
 	public final fun getRenderer ()Link/ui/render/terminal/renderer/CompositeElementRenderer;
