@@ -14,43 +14,42 @@ import ink.ui.render.compose.theme.ComposeRenderTheme
 import ink.ui.structures.elements.MenuRowElement
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.RenderResult
+import ink.ui.structures.render.renderWithType
 
 internal object MenuRowRenderer: ElementRenderer {
     @Composable
     override fun render(element: UiElement, theme: ComposeRenderTheme, parent: ElementRenderer): RenderResult {
-        if (element !is MenuRowElement) return RenderResult.Skipped
+        return element.renderWithType<MenuRowElement> {
+            val onClick = onClick
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .let {
+                        if (onClick == null) it
+                        else it.clickable(
+                            onClick = onClick,
+                            interactionSource = MutableInteractionSource(),
+                            indication = null,
+                        )
+                    }
+            ) {
+                BasicText(
+                    text = text,
+                    style = theme.typography.body.copy(
+                        color = theme.colors.foreground,
+                    ),
+                    modifier = Modifier.padding(
+                        end = theme.spacing.item,
+                    ),
+                )
 
-        val onClick = element.onClick
-        Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .fillMaxWidth()
-                .let {
-                    if (onClick == null) it
-                    else it.clickable(
-                        onClick = onClick,
-                        interactionSource = MutableInteractionSource(),
-                        indication = null,
-                    )
+                val rightElement = rightElement
+                if (rightElement != null) {
+                    parent.render(rightElement, theme, parent)
                 }
-        ) {
-            BasicText(
-                text = element.text,
-                style = theme.typography.body.copy(
-                    color = theme.colors.foreground,
-                ),
-                modifier = Modifier.padding(
-                    end = theme.spacing.item,
-                ),
-            )
-
-            val rightElement = element.rightElement
-            if (rightElement != null) {
-                parent.render(rightElement, theme, parent)
             }
         }
-
-        return RenderResult.Rendered
     }
 }

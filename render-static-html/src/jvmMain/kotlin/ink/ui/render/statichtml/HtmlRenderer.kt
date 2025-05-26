@@ -13,6 +13,7 @@ import kotlinx.html.*
 import kotlinx.html.dom.createHTMLDocument
 import kotlinx.html.dom.serialize
 
+@Deprecated("Use StaticHtmlPresenter instead")
 class HtmlRenderer(
     private val resourceBaseUrl: String,
     private val customRenderers: Array<ElementRenderer> = emptyArray(),
@@ -34,6 +35,7 @@ class HtmlRenderer(
     )
     private val renderer = CompositeElementRenderer(builtInRenderers)
 
+    @Deprecated("Use StaticHtmlPresenter instead")
     fun renderElement(element: UiElement): TagConsumer<*>.() -> Unit = {
         renderWith(
             element = element,
@@ -42,7 +44,8 @@ class HtmlRenderer(
         )
     }
 
-    fun renderLayout(uiLayout: UiLayout): TagConsumer<*>.() -> Unit = consumer@ {
+    @Deprecated("Use StaticHtmlPresenter instead")
+    fun renderLayout(uiLayout: UiLayout): TagConsumer<*>.() -> Unit = {
         when (uiLayout) {
             is CenteredElementLayout -> section("element-center") {
                 renderWith(
@@ -112,6 +115,7 @@ class HtmlRenderer(
                     )
                 }
             }
+            is EmptyLayout -> {}
         }
     }
 

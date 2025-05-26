@@ -1,6 +1,7 @@
 package example
 
-import ink.ui.render.terminal.TerminalRenderer
+import ink.ui.render.terminal.TerminalPresenter
+import ink.ui.render.terminal.bindAndPresent
 import ink.ui.structures.Sentiment
 import ink.ui.structures.TextStyle
 import ink.ui.structures.elements.StackElement
@@ -14,15 +15,13 @@ import kotlinx.coroutines.runBlocking
 
 fun main()
 {
-    val renderer = TerminalRenderer()
+    val presenter = TerminalPresenter()
     val stack = StackElement()
 
-    val job = renderer.renderAsync(
-        ScrollingListLayout(
-            TextElement("Terminal Renderer", style = TextStyle.H1),
-            stack
-        )
-    )
+    val job = presenter.bindAndPresent(ScrollingListLayout(
+        TextElement("Terminal Renderer", style = TextStyle.H1),
+        stack
+    ))
 
     runBlocking {
         stack.print(TextElement("Heading 2", TextStyle.H2))

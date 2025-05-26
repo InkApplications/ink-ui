@@ -8,16 +8,18 @@ import ink.ui.render.terminal.renderer.StatusRenderer
 import ink.ui.render.terminal.renderer.TextRenderer
 import ink.ui.structures.layouts.ScrollingListLayout
 import ink.ui.structures.layouts.UiLayout
+import ink.ui.structures.render.Presenter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.launch
 
-@Deprecated("Use TerminalPresenter instead")
-class TerminalRenderer(
+class TerminalPresenter(
     renderers: List<ElementRenderer> = emptyList(),
-    private val backgroundScope: CoroutineScope = CoroutineScope(Dispatchers.Default)
-) {
+    private val renderScope: CoroutineScope = CoroutineScope(Dispatchers.Default)
+): Presenter {
     val builtInRenderers: List<ElementRenderer> = listOf(
         ListRenderer,
         StackRenderer,
@@ -25,24 +27,33 @@ class TerminalRenderer(
         StatusRenderer,
     )
     val renderer = CompositeElementRenderer(renderers + builtInRenderers)
+    private val renderQueue = Channel<UiLayout>()
 
-    @Deprecated("Use TerminalPresenter instead")
-    suspend fun render(layout: UiLayout)
+    fun bind(): Job
     {
-        when (layout) {
-            is ScrollingListLayout -> layout.items.forEach { item ->
-                renderer.render(item, renderer)
+        return renderScope.launch {
+            renderQueue.consumeEach { layout ->
+                when (layout) {
+                    is ScrollingListLayout -> layout.items.forEach { item ->
+                        renderer.render(item, renderer)
+                    }
+                    else -> TODO("Layout not implemented")
+                }
             }
-
-            else -> TODO("Layout not implemented")
         }
     }
 
-    @Deprecated("Use TerminalPresenter instead")
-    fun renderAsync(layout: UiLayout): Job
+    override fun presentLayout(layout: UiLayout)
     {
-        return backgroundScope.launch {
-            render(layout)
+        renderScope.launch {
+            renderQueue.send(layout)
         }
+    }
+}
+
+fun TerminalPresenter.bindAndPresent(layout: UiLayout): Job
+{
+    return bind().also {
+        presentLayout(layout)
     }
 }

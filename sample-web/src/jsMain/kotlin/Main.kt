@@ -1,10 +1,11 @@
-import ink.ui.render.compose.html.HtmlComposeRenderer
+import ink.ui.render.compose.html.ComposeHtmlPresenter
+import ink.ui.render.compose.html.bindAndPresent
 import ink.ui.sample.web.SampleScreen
 import org.jetbrains.compose.web.renderComposable
 
 fun main() {
-    val renderer = HtmlComposeRenderer()
+    val renderer = ComposeHtmlPresenter()
     renderComposable(rootElementId = "compose-root") {
-        renderer.render(SampleScreen)
+        renderer.bindAndPresent(SampleScreen)
     }
 }

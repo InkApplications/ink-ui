@@ -6,43 +6,42 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import ink.ui.render.compose.theme.ComposeRenderTheme
 import ink.ui.structures.Positioning
-import ink.ui.structures.GroupingStyle
 import ink.ui.structures.GroupingStyle.*
 import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.Orientation
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.RenderResult
+import ink.ui.structures.render.renderWithType
 
 internal object ListRenderer: ElementRenderer {
     @Composable
     override fun render(element: UiElement, theme: ComposeRenderTheme, parent: ElementRenderer): RenderResult {
-        if (element !is ElementList) return RenderResult.Skipped
-
-        when (element.orientation) {
-            Orientation.Vertical -> Column(
-                horizontalAlignment = when (element.positioning) {
-                    Positioning.Start -> Alignment.Start
-                    Positioning.Center -> Alignment.CenterHorizontally
-                },
-            ) {
-                renderElements(element, theme, parent)
-            }
-            Orientation.Horizontal -> Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = when (element.positioning) {
-                    Positioning.Start -> Arrangement.Start
-                    Positioning.Center -> Arrangement.Center
-                },
-                modifier = Modifier.let {
-                    if (element.positioning == Positioning.Center) {
-                        it.fillMaxWidth()
-                    } else it
+        return element.renderWithType<ElementList> {
+            when (orientation) {
+                Orientation.Vertical -> Column(
+                    horizontalAlignment = when (positioning) {
+                        Positioning.Start -> Alignment.Start
+                        Positioning.Center -> Alignment.CenterHorizontally
+                    },
+                ) {
+                    renderElements(this@renderWithType, theme, parent)
                 }
-            ) {
-                renderElements(element, theme, parent)
+                Orientation.Horizontal -> Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = when (positioning) {
+                        Positioning.Start -> Arrangement.Start
+                        Positioning.Center -> Arrangement.Center
+                    },
+                    modifier = Modifier.let {
+                        if (positioning == Positioning.Center) {
+                            it.fillMaxWidth()
+                        } else it
+                    }
+                ) {
+                    renderElements(this@renderWithType, theme, parent)
+                }
             }
         }
-        return RenderResult.Rendered
     }
 
     @Composable
