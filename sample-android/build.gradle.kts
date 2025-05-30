@@ -31,4 +31,5 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.activity.compose)
     implementation(compose.foundation)
+    implementation(projects.sampleCommon)
 }

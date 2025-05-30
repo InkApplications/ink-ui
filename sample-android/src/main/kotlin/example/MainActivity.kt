@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import ink.ui.render.compose.ComposePresenter
-import ink.ui.render.compose.bindAndPresent
 import ink.ui.render.compose.theme.defaultTheme
 
 class MainActivity: ComponentActivity() {
@@ -12,8 +11,9 @@ class MainActivity: ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val presenter = ComposePresenter(defaultTheme())
+            presenter.bind()
 
-            presenter.bindAndPresent(SampleScreen)
+            presenter.presentLayout(Examples.Defaults.layout)
         }
     }
 }
