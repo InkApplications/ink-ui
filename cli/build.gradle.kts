@@ -10,4 +10,5 @@ application {
 
 dependencies {
     implementation(projects.renderStaticHtml)
+    implementation(projects.sampleCommon)
 }

@@ -13,6 +13,7 @@ kotlin {
     }
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.sampleCommon)
             implementation(compose.html.core)
             implementation(compose.runtime)
             implementation(projects.renderComposeHtml)

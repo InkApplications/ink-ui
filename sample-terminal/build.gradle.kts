@@ -9,5 +9,6 @@ application {
 }
 
 dependencies {
+    implementation(projects.sampleCommon)
     implementation(projects.renderTerminal)
 }
