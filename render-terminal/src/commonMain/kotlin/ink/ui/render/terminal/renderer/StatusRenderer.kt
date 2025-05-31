@@ -5,24 +5,25 @@ import ink.ui.structures.Sentiment
 import ink.ui.structures.elements.StatusIndicatorElement
 
 val StatusRenderer = renderer<StatusIndicatorElement> {
+    val glyph = " ■ "
     when (element.sentiment) {
         Sentiment.Positive -> println(
-            "${TextColors.green("•")} ${element.text}"
+            "${TextColors.green(glyph)} ${element.text}"
         )
         Sentiment.Nominal -> println(
-            "• ${element.text}"
+            "$glyph ${element.text}"
         )
         Sentiment.Negative -> println(
-            "${TextColors.red("•")} ${element.text}"
+            "${TextColors.red(glyph)} ${element.text}"
         )
         Sentiment.Primary -> println(
-            "${TextColors.magenta("•")} ${element.text}"
+            "${TextColors.magenta(glyph)} ${element.text}"
         )
         Sentiment.Caution -> println(
-            "${TextColors.yellow("•")} ${element.text}"
+            "${TextColors.yellow(glyph)} ${element.text}"
         )
         Sentiment.Idle -> println(
-            "${TextColors.gray("•")} ${element.text}"
+            "${TextColors.gray(glyph)} ${element.text}"
         )
     }
 }
