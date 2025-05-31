@@ -1,6 +1,7 @@
 package example
 
 import ink.ui.render.terminal.TerminalPresenter
+import ink.ui.render.terminal.bindAndPresent
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.runBlocking
 
@@ -10,8 +11,7 @@ fun main()
 
     runBlocking {
         val job = presenter.bind()
-        val examples = Examples.Defaults
-        presenter.presentLayout(examples.layout)
+        presenter.bindAndPresent(Examples.Defaults.layout)
         job.cancelAndJoin()
     }
 }
