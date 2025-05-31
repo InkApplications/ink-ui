@@ -22,4 +22,3 @@ val TextRenderer = renderer<TextElement> {
         TextStyle.Body -> println(element.text)
     }
 }
-
