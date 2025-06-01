@@ -32,14 +32,14 @@ private fun render(
                 render(consumer, span.inner)
             }
             is FormattedText.Span.Code -> consumer.code("grouped".takeIf { span.group }) {
-                span.inner.forEach { inner ->
-                    if (span.group) {
+                if (span.group) {
+                    span.inner.forEach { inner ->
                         span {
                             render(consumer, listOf(inner))
                         }
-                    } else {
-                        render(consumer, span.inner)
                     }
+                } else {
+                    render(consumer, span.inner)
                 }
             }
             is FormattedText.Span.Superscript -> consumer.sup {
