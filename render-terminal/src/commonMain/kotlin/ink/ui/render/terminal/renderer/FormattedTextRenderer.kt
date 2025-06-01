@@ -1,6 +1,7 @@
 package ink.ui.render.terminal.renderer
 
 import com.github.ajalt.mordant.rendering.TextColors
+import com.github.ajalt.mordant.rendering.TextStyle
 import com.github.ajalt.mordant.rendering.TextStyles
 import ink.ui.structures.elements.FormattedText
 
@@ -14,7 +15,13 @@ private fun getSpanOutput(span: FormattedText.Span): String
         FormattedText.Span.Break -> "\n"
         is FormattedText.Span.Code -> TextColors.cyan(getSpanOutput(span.inner, separate = span.group))
         is FormattedText.Span.Emphasis -> TextStyles.italic(getSpanOutput(span.inner))
-        is FormattedText.Span.Link -> "[${getSpanOutput(span.inner)}](${TextColors.blue(span.url)})"
+        is FormattedText.Span.Link -> {
+            val link = TextStyle(
+                color = TextColors.blue.color,
+                hyperlink = span.url,
+            )
+            "[${getSpanOutput(span.inner)}](${link(span.url)})"
+        }
         is FormattedText.Span.Strong -> TextStyles.bold(getSpanOutput(span.inner))
         is FormattedText.Span.Subscript -> "~[${getSpanOutput(span.inner)}]"
         is FormattedText.Span.Superscript -> "^[${getSpanOutput(span.inner)}]"
