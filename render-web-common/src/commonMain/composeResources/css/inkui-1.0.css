@@ -393,6 +393,13 @@ section nav ul > li::before
     display: flex;
     flex-direction: column;
 }
+.item-list.horizontal,
+.unified-list.horizontal,
+.section-list.horizontal
+{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .section-list
 {
     gap: var(--section-gap-spacing);
@@ -405,6 +412,12 @@ section nav ul > li::before
 {
     display: flex;
     align-items: center;
+}
+.item-list > div > h1,
+.item-list > div > h2,
+.item-list > div > h3
+{
+    margin: 0;
 }
 .element-center
 {
@@ -798,7 +811,6 @@ body.anchored-footer > footer.ink > .signature
 .status-indicator-blip
 {
     font-size: 3.5rem;
-    padding: var(--item-surround-spacing) 0;
 }
 .status-indicator-blip.nominal
 {
@@ -828,7 +840,6 @@ body.anchored-footer > footer.ink > .signature
 /* Icons */
 img.icon
 {
-    margin: var(--item-surround-spacing);
     height: var(--icon-size);
 }
 button img.icon,

@@ -8,13 +8,13 @@ import ink.ui.structures.elements.TextElement
 val TextRenderer = renderer<TextElement> {
     when (element.style) {
         TextStyle.H1 -> print(
-            TextStyles.bold("# ${element.text}")
+            TextStyles.bold("# ${element.text} #")
         )
         TextStyle.H2 -> print(
-            TextColors.blue(TextStyles.bold("## ${element.text}"))
+            TextColors.blue(TextStyles.bold("## ${element.text} ##"))
         )
         TextStyle.H3 -> print(
-            TextColors.blue("### ${element.text}")
+            TextColors.blue("### ${element.text} ###")
         )
         TextStyle.Caption -> print(
             TextColors.gray("(${element.text})")

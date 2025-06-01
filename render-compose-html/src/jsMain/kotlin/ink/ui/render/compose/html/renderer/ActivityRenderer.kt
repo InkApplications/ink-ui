@@ -73,7 +73,7 @@ private fun BarText(
             Text("[")
             Span(
                 attrs = {
-                    classes("glyph", sentiment.toCssClass())
+                    classes(sentiment.toCssClass())
                 }
             ) {
                 Text(barString)

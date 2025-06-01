@@ -10,8 +10,9 @@ import kotlin.coroutines.resume
 /**
  * Element that buffers UI elements into its own layout dynamically.
  */
-class StackElement: UiElement.Interactive
-{
+data class StackElement(
+    val requireDistinct: Boolean = true,
+): UiElement.Interactive {
     private val renderRequests = Channel<UiElement>()
     val queue: Flow<UiElement> = renderRequests.consumeAsFlow()
 

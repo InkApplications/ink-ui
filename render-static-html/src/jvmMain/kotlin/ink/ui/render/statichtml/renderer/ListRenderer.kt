@@ -3,6 +3,7 @@ package ink.ui.render.statichtml.renderer
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.ElementList
+import ink.ui.structures.elements.Orientation
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.RenderResult
 import kotlinx.html.*
@@ -19,13 +20,20 @@ object ListRenderer: ElementRenderer {
             return RenderResult.Rendered
         }
 
+        val listStyle = when (element.groupingStyle) {
+            GroupingStyle.Unified -> "unified-list"
+            GroupingStyle.Items -> "item-list"
+            GroupingStyle.Sections -> "section-list"
+            GroupingStyle.Inline -> throw IllegalStateException("Inline elements should be rendered without container.")
+        }
+
+        val orientation = when (element.orientation) {
+            Orientation.Horizontal -> "horizontal"
+            Orientation.Vertical -> "vertical"
+        }
+
         div(
-            classes = when (element.groupingStyle) {
-                GroupingStyle.Unified -> "unified-list"
-                GroupingStyle.Items -> "item-list"
-                GroupingStyle.Sections -> "section-list"
-                GroupingStyle.Inline -> throw IllegalStateException("Inline elements should be rendered without container.")
-            }
+            classes = setOf(listStyle, orientation).joinToString(" "),
         ) {
             attributes["style"] = when (element.positioning) {
                 Positioning.Start -> "justify-content: start"
