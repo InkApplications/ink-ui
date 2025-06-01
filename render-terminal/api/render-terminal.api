@@ -36,12 +36,21 @@ public abstract interface class ink/ui/render/terminal/renderer/ElementRenderer 
 	public abstract fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
+public final class ink/ui/render/terminal/renderer/FormattedTextRendererKt {
+	public static final fun getFormattedTextRenderer ()Link/ui/render/terminal/renderer/ElementRenderer;
+}
+
 public final class ink/ui/render/terminal/renderer/IconRendererKt {
 	public static final fun getIconRenderer ()Link/ui/render/terminal/renderer/ElementRenderer;
 }
 
 public final class ink/ui/render/terminal/renderer/ListRendererKt {
 	public static final fun getListRenderer ()Link/ui/render/terminal/renderer/ElementRenderer;
+}
+
+public final class ink/ui/render/terminal/renderer/ProgressRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
+	public static final field INSTANCE Link/ui/render/terminal/renderer/ProgressRenderer;
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class ink/ui/render/terminal/renderer/RenderArgs {
@@ -63,6 +72,14 @@ public final class ink/ui/render/terminal/renderer/StackRendererKt {
 
 public final class ink/ui/render/terminal/renderer/StatusRendererKt {
 	public static final fun getStatusRenderer ()Link/ui/render/terminal/renderer/ElementRenderer;
+}
+
+public final class ink/ui/render/terminal/renderer/TerminalColorsKt {
+	public static final fun formatAnsi (Link/ui/structures/Sentiment;Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class ink/ui/render/terminal/renderer/TextListRendererKt {
+	public static final fun getTextListRenderer ()Link/ui/render/terminal/renderer/ElementRenderer;
 }
 
 public final class ink/ui/render/terminal/renderer/TextRendererKt {
