@@ -1,5 +1,6 @@
 package ink.ui.render.terminal.renderer
 
+import com.github.ajalt.mordant.rendering.TextColors
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.elements.Orientation
 
@@ -18,7 +19,7 @@ internal fun spacing(
             GroupingStyle.Sections -> {
                 if (!isLast) {
                     print("\n")
-                    println("=".repeat(80))
+                    println(TextColors.gray("=".repeat(80)))
                 }
             }
             GroupingStyle.Items, GroupingStyle.Unified -> if (!isLast) print("\n")
