@@ -57,8 +57,11 @@ object ListRenderer: ElementRenderer {
             }
         ) {
             element.items.forEach {
-                Div {
-                    parent.render(it, parent)
+                when (element.groupingStyle) {
+                    GroupingStyle.Unified -> parent.render(it, parent)
+                    else -> Div {
+                        parent.render(it, parent)
+                    }
                 }
             }
         }
