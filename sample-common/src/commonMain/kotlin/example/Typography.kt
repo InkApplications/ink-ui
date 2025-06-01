@@ -5,8 +5,9 @@ import ink.ui.structures.elements.DividerElement
 import ink.ui.structures.elements.FormattedText
 import ink.ui.structures.elements.TextElement
 import ink.ui.structures.elements.TextListElement
+import ink.ui.structures.elements.items
 
-val Typography = listOf(
+val Typography = items(
     TextElement("Heading 1", TextStyle.H1),
     TextElement("Heading 2", TextStyle.H2),
     TextElement("Heading 3", TextStyle.H3),

@@ -1,12 +1,11 @@
 package example
 
 import ink.ui.structures.Sentiment
-import ink.ui.structures.TextStyle
 import ink.ui.structures.elements.ProgressElement
-import ink.ui.structures.elements.TextElement
 import ink.ui.structures.elements.ThrobberElement
+import ink.ui.structures.elements.items
 
-val ProgressIndicators = listOf(
+val ProgressIndicators = items(
     ProgressElement.Determinate(
         progress = 0.5f,
         caption = "Progress",
