@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.ElementList
+import ink.ui.structures.elements.Orientation
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.RenderResult
 import org.jetbrains.compose.web.css.JustifyContent
@@ -22,17 +23,22 @@ object ListRenderer: ElementRenderer {
             return RenderResult.Rendered
         }
 
+        val orientation = when (element.orientation) {
+            Orientation.Horizontal -> "horizontal"
+            Orientation.Vertical -> "vertical"
+        }
+
         Div(
             attrs = {
                 when (element.groupingStyle) {
                     GroupingStyle.Unified -> {
-                        classes("unified-list")
+                        classes("unified-list", orientation)
                     }
                     GroupingStyle.Items -> {
-                        classes("item-list")
+                        classes("item-list", orientation)
                     }
                     GroupingStyle.Sections -> {
-                        classes("section-list")
+                        classes("section-list", orientation)
                     }
                     GroupingStyle.Inline -> {
                         throw IllegalStateException("Inline elements should be rendered without container.")
