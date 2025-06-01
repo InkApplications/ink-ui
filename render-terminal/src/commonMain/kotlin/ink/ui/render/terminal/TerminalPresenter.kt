@@ -1,7 +1,6 @@
 package ink.ui.render.terminal
 
 import ink.ui.render.terminal.renderer.*
-import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.Orientation
 import ink.ui.structures.layouts.ScrollingListLayout
 import ink.ui.structures.layouts.UiLayout
@@ -24,6 +23,7 @@ class TerminalPresenter(
         StatusRenderer,
         DividerRenderer,
         IconRenderer,
+        FormattedTextRenderer,
     )
     private val renderQueue = Channel<UiLayout>()
     private val compositeRenderer = CompositeElementRenderer(renderers + builtInRenderers, missingRendererBehavior)
