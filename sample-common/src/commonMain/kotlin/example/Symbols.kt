@@ -2,10 +2,11 @@ package example
 
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
+import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.IconElement
-import ink.ui.structures.elements.inline
+import ink.ui.structures.elements.Orientation
 
-val Symbols = inline(
+val Symbols = ElementList(
     IconElement(
         symbol = Symbol.Add,
         sentiment = Sentiment.Primary,
@@ -45,4 +46,5 @@ val Symbols = inline(
     IconElement(Symbol.Sunshine),
     IconElement(Symbol.Temperature),
     IconElement(Symbol.Water),
+    orientation = Orientation.Horizontal,
 )
