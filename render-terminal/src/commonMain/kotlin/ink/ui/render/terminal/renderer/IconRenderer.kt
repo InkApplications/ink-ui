@@ -58,7 +58,7 @@ val IconRenderer = renderer<IconElement> {
         Sunshine -> "(#)"
         Temperature -> " T° "
         Water -> " ~~ "
-        else -> "█"
+        else -> "███"
     }
 
     val style = when (element.sentiment) {
