@@ -14,7 +14,15 @@ val ProgressIndicators = items(
     ProgressElement.Indeterminate(
         caption = "Indeterminate Progress",
     ),
+    ProgressElement.Indeterminate(
+        caption = "Indeterminate Caution",
+        sentiment = Sentiment.Caution
+    ),
     ThrobberElement(
         caption = "Throbber",
+    ),
+    ThrobberElement(
+        caption = "Error Throbber",
+        sentiment = Sentiment.Negative,
     ),
 )
