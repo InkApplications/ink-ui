@@ -1,6 +1,8 @@
 package ink.ui.render.terminal
 
 import ink.ui.render.terminal.renderer.*
+import ink.ui.structures.elements.ElementList
+import ink.ui.structures.elements.Orientation
 import ink.ui.structures.layouts.ScrollingListLayout
 import ink.ui.structures.layouts.UiLayout
 import ink.ui.structures.render.MissingRendererBehavior
@@ -31,9 +33,14 @@ class TerminalPresenter(
         return renderScope.launch {
             renderQueue.consumeEach { layout ->
                 when (layout) {
-                    is ScrollingListLayout -> layout.items.forEach { item ->
+                    is ScrollingListLayout -> layout.items.forEachIndexed { index, item ->
                         compositeRenderer.render(item, compositeRenderer)
-                    }
+                        spacing(
+                            orientation = Orientation.Vertical,
+                            groupingStyle = layout.groupingStyle,
+                            isLast = index == layout.items.lastIndex
+                        )
+                    }.also { print("\n") }
                     else -> TODO("Layout not implemented")
                 }
             }

@@ -6,15 +6,15 @@ import ink.ui.structures.elements.*
 import ink.ui.structures.layouts.ScrollingListLayout
 
 data class Examples(
-    val elements: List<Pair<ElementCategory, List<UiElement>>>
-)
-{
+    val elements: List<Pair<ElementCategory, UiElement>>
+) {
     val layout get() = ScrollingListLayout(
-        items = elements.flatMap { (category, elements) ->
-            listOf(
-                TextElement(category.name, TextStyle.H1),
-            ) + elements
-        },
+        items = elements
+            .groupBy { it.first }
+            .map { it.key to it.value.map { it.second } }
+            .map { (category, elements) ->
+                items(TextElement(category.name, TextStyle.H1), *elements.toTypedArray())
+            },
         groupingStyle = GroupingStyle.Sections,
     )
 

@@ -2,8 +2,9 @@ package example
 
 import ink.ui.structures.Sentiment
 import ink.ui.structures.elements.StatusIndicatorElement
+import ink.ui.structures.elements.items
 
-val StatusIndicators = listOf(
+val StatusIndicators = items(
     StatusIndicatorElement(
         text = "Nominal Status",
         sentiment = Sentiment.Nominal,

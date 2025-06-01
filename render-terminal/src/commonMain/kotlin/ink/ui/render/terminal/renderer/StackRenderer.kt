@@ -7,6 +7,7 @@ val StackRenderer = renderer<StackElement> {
     try {
         element.queue.collect { element ->
             parent.render(element, parent)
+            print("\n")
         }
     } catch (e: CancellationException) {
         element.close()

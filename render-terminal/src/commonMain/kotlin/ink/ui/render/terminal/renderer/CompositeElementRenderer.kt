@@ -24,7 +24,7 @@ class CompositeElementRenderer(
 
         when (missingRendererBehavior) {
             is MissingRendererBehavior.Placeholder -> {
-                println(TextStyles.bold(TextColors.red("{{ ${element::class.simpleName} }}")))
+                print(TextStyles.bold(TextColors.red("{{ ${element::class.simpleName} }}")))
             }
             is MissingRendererBehavior.Ignore -> {
                 missingRendererBehavior.log(element)
