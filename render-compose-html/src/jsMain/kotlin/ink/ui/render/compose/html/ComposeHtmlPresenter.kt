@@ -36,6 +36,7 @@ class ComposeHtmlPresenter(
         CheckBoxRenderer,
         MenuRowRenderer,
         DividerRenderer,
+        FormattedTextRenderer,
     )
     private val uiRenderer = CompositeElementRenderer(renderers + buildInRenderers)
     private val current = MutableStateFlow<UiLayout>(EmptyLayout)
