@@ -15,13 +15,13 @@ object ProgressRenderer: ElementRenderer {
             is ProgressElement.Determinate -> {
                 val filled = "=".repeat((element.progress * 10).roundToInt())
                 val empty = " ".repeat(10 - filled.length)
-                print("[${element.sentiment.color(filled)}$empty] ${element.progress.times(100).roundToInt()}% ${element.caption.orEmpty()}...")
+                print("[${element.sentiment.formatAnsi(filled)}$empty] ${element.progress.times(100).roundToInt()}% ${element.caption.orEmpty()}...")
             }
             is ProgressElement.Indeterminate -> {
-                print("[${element.sentiment.color("-  -  -  -")}] ${element.caption ?: "Loading"}...")
+                print("[${element.sentiment.formatAnsi("-  -  -  -")}] ${element.caption ?: "Loading"}...")
             }
             is ThrobberElement -> {
-                print("${element.sentiment.color("%%")} ${element.caption.orEmpty()}...")
+                print("${element.sentiment.formatAnsi("%%")} ${element.caption.orEmpty()}...")
             }
             else -> {
                 return RenderResult.Skipped
