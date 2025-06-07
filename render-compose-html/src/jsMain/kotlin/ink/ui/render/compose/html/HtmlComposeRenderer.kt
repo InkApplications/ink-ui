@@ -21,6 +21,6 @@ class HtmlComposeRenderer(
     @Deprecated("Use ComposeHtmlPresenter instead")
     @Composable
     fun renderElement(element: UiElement) {
-        presenter.renderElement(element)
+        presenter.compositeRenderer.render(element, presenter.compositeRenderer)
     }
 }

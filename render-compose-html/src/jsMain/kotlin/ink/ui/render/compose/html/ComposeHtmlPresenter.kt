@@ -7,21 +7,17 @@ import ink.ui.render.web.gridTemplateColumns
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.ElementList
-import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.*
 import ink.ui.structures.render.MissingRendererBehavior
-import ink.ui.structures.render.MissingRendererBehavior.Panic.MissingRendererException
 import ink.ui.structures.render.Presenter
-import ink.ui.structures.render.RenderResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Section
-import org.jetbrains.compose.web.dom.Text
 
 class ComposeHtmlPresenter(
     renderers: List<ElementRenderer> = emptyList(),
-    private val missingRendererBehavior: MissingRendererBehavior = MissingRendererBehavior.Placeholder(),
+    missingRendererBehavior: MissingRendererBehavior = MissingRendererBehavior.Placeholder(),
 ): Presenter {
     private val buildInRenderers: List<ElementRenderer> = listOf(
         ListRenderer,
@@ -39,7 +35,7 @@ class ComposeHtmlPresenter(
         FormattedTextRenderer,
         TextListRenderer,
     )
-    private val uiRenderer = CompositeElementRenderer(renderers + buildInRenderers)
+    internal val compositeRenderer = CompositeElementRenderer(renderers + buildInRenderers, missingRendererBehavior)
     private val current = MutableStateFlow<UiLayout>(EmptyLayout)
 
     override fun presentLayout(layout: UiLayout) {
@@ -61,7 +57,7 @@ class ComposeHtmlPresenter(
                     classes("element-center")
                 }
             ) {
-                renderElement(uiLayout.body)
+                compositeRenderer.render(uiLayout.body, compositeRenderer)
             }
             is FixedGridLayout -> Section(
                 attrs = {
@@ -97,58 +93,34 @@ class ComposeHtmlPresenter(
                             }
                         }
                     ) {
-                        renderElement(it.body)
+                        compositeRenderer.render(it.body, compositeRenderer)
                     }
                 }
             }
             is ScrollingListLayout -> when (uiLayout.groupingStyle) {
-                GroupingStyle.Unified -> renderElement(
+                GroupingStyle.Unified -> compositeRenderer.render(
                     ElementList(
                         uiLayout.items,
                         groupingStyle = GroupingStyle.Unified
-                    )
+                    ),
+                    compositeRenderer
                 )
-                GroupingStyle.Items -> renderElement(ElementList(uiLayout.items, groupingStyle = GroupingStyle.Items))
+                GroupingStyle.Items -> compositeRenderer.render(ElementList(uiLayout.items, groupingStyle = GroupingStyle.Items), compositeRenderer)
                 GroupingStyle.Sections -> uiLayout.items.forEach {
                     Section {
-                        renderElement(it)
+                        compositeRenderer.render(it, compositeRenderer)
                     }
                 }
                 GroupingStyle.Inline -> uiLayout.items.forEach {
-                    renderElement(it)
+                    compositeRenderer.render(it, compositeRenderer)
                 }
             }
             is EmptyLayout -> {}
             is PageLayout -> {
                 Section {
-                    renderElement(uiLayout.body)
+                    compositeRenderer.render(uiLayout.body, compositeRenderer)
                 }
             }
-        }
-    }
-
-    @Composable
-    internal fun renderElement(element: UiElement)
-    {
-        when (val result = uiRenderer.render(element, uiRenderer)) {
-            RenderResult.Skipped -> when (missingRendererBehavior) {
-                is MissingRendererBehavior.Panic -> throw MissingRendererException(element)
-                is MissingRendererBehavior.Placeholder -> {
-                    missingRendererBehavior.log(element)
-                    Div(
-                        attrs = {
-                            classes("error-box")
-                        },
-                    ) {
-                        Text("{{ ${element::class.simpleName} }}")
-                    }
-                }
-                is MissingRendererBehavior.Ignore -> {
-                    missingRendererBehavior.log(element)
-                }
-            }
-            is RenderResult.Failed -> throw result.exception
-            RenderResult.Rendered -> {}
         }
     }
 }
