@@ -25,6 +25,6 @@ class ComposeRenderer(
     @Composable
     @Deprecated("Use presenter interface instead")
     fun renderElement(element: UiElement) {
-        presenter.renderElement(element)
+        presenter.uiRenderer.render(element, presenter.theme, presenter.uiRenderer)
     }
 }
