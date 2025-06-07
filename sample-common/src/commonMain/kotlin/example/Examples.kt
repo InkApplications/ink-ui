@@ -27,6 +27,7 @@ data class Examples(
                 Pair(ElementCategory.ProgressIndicators, ProgressIndicators),
                 Pair(ElementCategory.StatusIndicators, StatusIndicators),
                 Pair(ElementCategory.Symbols, Symbols),
+                Pair(ElementCategory.Forms, Forms),
             )
         )
     }

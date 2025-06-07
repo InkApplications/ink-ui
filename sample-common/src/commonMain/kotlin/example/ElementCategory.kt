@@ -12,5 +12,6 @@ value class ElementCategory(val name: String)
         val ProgressIndicators = ElementCategory("Progress Indicators")
         val Symbols = ElementCategory("Symbols")
         val Buttons = ElementCategory("Buttons")
+        val Forms = ElementCategory("Forms")
     }
 }
