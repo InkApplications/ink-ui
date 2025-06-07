@@ -37,6 +37,8 @@ class ComposePresenter(
         IconRenderer,
         WeatherRenderer,
         DividerRenderer,
+        TextListRenderer,
+        FormattedTextRenderer(),
     )
     internal val uiRenderer = CompositeElementRenderer(renderers + builtInRenderers, missingRendererBehavior)
     private val currentLayout = MutableStateFlow<UiLayout>(EmptyLayout)

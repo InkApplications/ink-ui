@@ -15,7 +15,7 @@ val Typography = items(
     TextElement("This is a caption", TextStyle.Caption),
     DividerElement,
     FormattedText {
-        link(url = "javascript:void(0)") {
+        link(url = "https://inkapplications.com") {
             text("Formatted")
         }
         space()
