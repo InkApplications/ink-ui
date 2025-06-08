@@ -22,12 +22,30 @@ public final class ink/ui/render/compose/elements/ButtonKt {
 	public static final fun Button-0U5bT0o (Ljava/lang/String;Link/ui/structures/Sentiment;ZLjava/lang/String;Ljava/lang/String;Link/ui/render/compose/theme/ComposeRenderTheme;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
 }
 
+public final class ink/ui/render/compose/renderer/DividerRendererKt {
+	public static final fun getDividerRenderer ()Link/ui/render/compose/renderer/ElementRenderer;
+}
+
 public abstract interface class ink/ui/render/compose/renderer/ElementRenderer {
 	public abstract fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/structures/render/RenderResult;
 }
 
+public final class ink/ui/render/compose/renderer/FormattedTextRenderer : ink/ui/render/compose/renderer/ElementRenderer {
+	public static final field $stable I
+	public fun <init> ()V
+	public fun <init> (Lkotlin/jvm/functions/Function1;)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/structures/render/RenderResult;
+}
+
 public final class ink/ui/render/compose/renderer/SymbolsKt {
 	public static final fun getResource-TN8vZ0Q (Ljava/lang/String;)Lorg/jetbrains/compose/resources/DrawableResource;
+}
+
+public final class ink/ui/render/compose/renderer/TextListRenderer : ink/ui/render/compose/renderer/ElementRenderer {
+	public static final field $stable I
+	public static final field INSTANCE Link/ui/render/compose/renderer/TextListRenderer;
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/compose/theme/ComposeRenderTheme;Link/ui/render/compose/renderer/ElementRenderer;Landroidx/compose/runtime/Composer;I)Link/ui/structures/render/RenderResult;
 }
 
 public final class ink/ui/render/compose/renderer/WeatherRendererKt {

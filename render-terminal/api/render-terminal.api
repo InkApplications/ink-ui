@@ -21,6 +21,10 @@ public final class ink/ui/render/terminal/TerminalRenderer {
 	public final fun renderAsync (Link/ui/structures/layouts/UiLayout;)Lkotlinx/coroutines/Job;
 }
 
+public final class ink/ui/render/terminal/renderer/BreadcrumbRendererKt {
+	public static final fun getBreadCrumbRenderer ()Link/ui/render/terminal/renderer/ElementRenderer;
+}
+
 public final class ink/ui/render/terminal/renderer/CompositeElementRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
 	public fun <init> ()V
 	public fun <init> (Ljava/util/List;Link/ui/structures/render/MissingRendererBehavior;)V

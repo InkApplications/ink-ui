@@ -26,6 +26,7 @@ class TerminalPresenter(
         FormattedTextRenderer,
         TextListRenderer,
         ProgressRenderer,
+        BreadCrumbRenderer,
     )
     private val renderQueue = Channel<UiLayout>()
     private val compositeRenderer = CompositeElementRenderer(renderers + builtInRenderers, missingRendererBehavior)
