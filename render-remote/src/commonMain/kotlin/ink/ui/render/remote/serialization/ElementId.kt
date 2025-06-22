@@ -28,7 +28,7 @@ internal class ElementIdSerializer: KSerializer<ElementId>
 
     override fun serialize(encoder: Encoder, value: ElementId)
     {
-        encoder.encodeString(value.uuid.toHexString())
+        encoder.encodeString(value.uuid.toString())
     }
 
     override fun deserialize(decoder: Decoder): ElementId
