@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.incremental.createDirectory
-
 plugins {
     id("org.jetbrains.compose")
     id("org.jetbrains.kotlin.plugin.compose")
@@ -38,12 +36,12 @@ private fun renderTo(input: String, output: String) {
 tasks.register("buildStatic") {
     dependsOn(projects.cli.dependencyProject.tasks.named("installDist"))
     doLast {
-        staticOutputDir.createDirectory()
+        staticOutputDir.mkdirs()
         renderTo("src/staticMain/index.inkui.kts", "${staticOutputDir.path}/index.html")
         renderTo("src/staticMain/typography.inkui.kts", "${staticOutputDir.path}/typography.html")
         renderTo("src/staticMain/elements.inkui.kts", "${staticOutputDir.path}/elements.html")
         copy {
-            staticResDir.createDirectory()
+            staticResDir.mkdirs()
             from(projects.renderWebCommon.dependencyProject.layout.projectDirectory.dir("src/commonMain/composeResources"))
             into(staticResDir)
         }
@@ -58,8 +56,8 @@ tasks.register("distWeb") {
     dependsOn("assemble")
 
     doLast {
-        webDistDir.createDirectory()
-        webDistComposeDir.createDirectory()
+        webDistDir.mkdirs()
+        webDistComposeDir.mkdirs()
 
         copy {
             from(staticOutputDir)
