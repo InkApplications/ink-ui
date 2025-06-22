@@ -2,6 +2,7 @@ package ink.ui.render.remote
 
 import ink.ui.render.remote.serialization.ElementId
 import ink.ui.render.remote.serialization.LayoutMessage
+import ink.ui.render.remote.serialization.OnClickEvent
 import ink.ui.render.remote.serialization.UiEvent
 import ink.ui.render.remote.serialization.UiEvents
 import ink.ui.structures.elements.ButtonElement
@@ -79,7 +80,11 @@ internal class WebForwarder(
 
             launch {
                 bindCallbacks { uiEvent ->
-                    (pairs.value[uiEvent.id] as? ButtonElement)?.onClick()
+                    when (uiEvent) {
+                        is OnClickEvent -> {
+                            (pairs.value[uiEvent.id] as? ButtonElement)?.onClick()
+                        }
+                    }
                 }
             }
         }

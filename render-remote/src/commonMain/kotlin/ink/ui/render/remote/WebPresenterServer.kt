@@ -14,6 +14,7 @@ import io.ktor.server.routing.routing
 import io.ktor.server.websocket.WebSockets
 import io.ktor.server.websocket.webSocket
 import io.ktor.websocket.send
+import kotlinx.serialization.PolymorphicSerializer
 import kotlinx.serialization.json.Json
 
 /**
@@ -44,7 +45,7 @@ internal class WebPresenterServer(
                 webSocket("/events") {
                     try {
                         uiEvents.events.collect {
-                            send(serializer.encodeToString(UiEvent.serializer(), it))
+                            send(serializer.encodeToString(PolymorphicSerializer(UiEvent::class), it))
                         }
                     } catch (e: Throwable) {
                         e.printStackTrace()

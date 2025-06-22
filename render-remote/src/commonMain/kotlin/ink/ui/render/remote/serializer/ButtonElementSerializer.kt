@@ -1,8 +1,7 @@
 package ink.ui.render.remote.serializer
 
 import ink.ui.render.remote.serialization.ElementId
-import ink.ui.render.remote.serialization.EventType
-import ink.ui.render.remote.serialization.UiEvent
+import ink.ui.render.remote.serialization.OnClickEvent
 import ink.ui.render.remote.serialization.UiEvents
 import ink.ui.structures.elements.ButtonElement
 import kotlinx.serialization.KSerializer
@@ -35,7 +34,7 @@ internal class ButtonElementSerializer(
         return ButtonElement(
             text = surrogate.text,
             onClick = {
-                events.onEvent(UiEvent(surrogate.id, EventType.Companion.OnClick))
+                events.onEvent(OnClickEvent(surrogate.id))
             }
         )
     }

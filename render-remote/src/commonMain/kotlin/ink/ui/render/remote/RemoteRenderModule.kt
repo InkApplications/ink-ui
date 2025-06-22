@@ -3,6 +3,8 @@ package ink.ui.render.remote
 import ink.ui.render.remote.serializer.ButtonElementSerializer
 import ink.ui.render.remote.serialization.ElementSerializerConfigContext
 import ink.ui.render.remote.serialization.LayoutSerializer
+import ink.ui.render.remote.serialization.OnClickEvent
+import ink.ui.render.remote.serialization.UiEvent
 import ink.ui.render.remote.serialization.UiEvents
 import ink.ui.structures.elements.ButtonElement
 import ink.ui.structures.elements.UiElement
@@ -12,6 +14,7 @@ import io.ktor.http.URLProtocol
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
+import kotlinx.serialization.modules.subclass
 
 class RemoteRenderModule(
     serializerConfig: ElementSerializerConfigContext.() -> Unit = {},
@@ -32,6 +35,9 @@ class RemoteRenderModule(
                     uiEvents = uiEvents,
                 )
                 allSerializerConfig.invoke(context)
+            }
+            polymorphic(UiEvent::class) {
+                subclass(OnClickEvent::class)
             }
         }
     }
