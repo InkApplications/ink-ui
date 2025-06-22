@@ -3,9 +3,9 @@ package ink.ui.render.remote
 import ink.ui.render.remote.serializer.ButtonElementSerializer
 import ink.ui.render.remote.serialization.ElementSerializerConfigContext
 import ink.ui.render.remote.serialization.LayoutSerializer
-import ink.ui.render.remote.serialization.OnClickEvent
-import ink.ui.render.remote.serialization.UiEvent
-import ink.ui.render.remote.serialization.UiEvents
+import ink.ui.render.remote.serialization.event.OnClickEvent
+import ink.ui.render.remote.serialization.event.UiEvent
+import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.structures.elements.ButtonElement
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout

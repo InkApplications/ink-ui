@@ -1,8 +1,8 @@
 package ink.ui.render.remote.serializer
 
 import ink.ui.render.remote.serialization.ElementId
-import ink.ui.render.remote.serialization.OnClickEvent
-import ink.ui.render.remote.serialization.UiEvents
+import ink.ui.render.remote.serialization.event.OnClickEvent
+import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.structures.elements.ButtonElement
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SerialName

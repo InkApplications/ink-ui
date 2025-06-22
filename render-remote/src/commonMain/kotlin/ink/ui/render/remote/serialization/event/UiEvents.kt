@@ -1,5 +1,6 @@
-package ink.ui.render.remote.serialization
+package ink.ui.render.remote.serialization.event
 
+import ink.ui.render.remote.serialization.ElementId
 import ink.ui.structures.elements.UiElement
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel

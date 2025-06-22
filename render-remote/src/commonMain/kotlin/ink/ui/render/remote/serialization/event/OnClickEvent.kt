@@ -1,5 +1,6 @@
-package ink.ui.render.remote.serialization
+package ink.ui.render.remote.serialization.event
 
+import ink.ui.render.remote.serialization.ElementId
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

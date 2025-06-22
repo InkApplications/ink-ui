@@ -1,8 +1,8 @@
 package ink.ui.render.remote
 
 import ink.ui.render.remote.serialization.LayoutMessage
-import ink.ui.render.remote.serialization.UiEvent
-import ink.ui.render.remote.serialization.UiEvents
+import ink.ui.render.remote.serialization.event.UiEvent
+import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.structures.render.Presenter
 import io.ktor.http.HttpMethod
 import io.ktor.server.application.install

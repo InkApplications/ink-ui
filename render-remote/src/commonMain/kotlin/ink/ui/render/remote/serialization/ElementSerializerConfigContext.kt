@@ -1,5 +1,6 @@
 package ink.ui.render.remote.serialization
 
+import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.structures.elements.UiElement
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.modules.PolymorphicModuleBuilder
