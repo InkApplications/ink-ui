@@ -4,6 +4,7 @@ import ink.ui.render.remote.serialization.ElementId
 import ink.ui.render.remote.serialization.event.OnClickEvent
 import ink.ui.render.remote.serialization.event.OnContextClickEvent
 import ink.ui.render.remote.serialization.event.UiEvents
+import ink.ui.render.remote.serialization.event.typedListener
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
 import ink.ui.structures.elements.ButtonElement
@@ -65,4 +66,14 @@ internal class ButtonElementSerializer(
         @Contextual
         val trailingSymbol: Symbol?,
     )
+
+    object Listeners
+    {
+        val OnClickListener = typedListener<ButtonElement, OnClickEvent> { element, event ->
+            element.onClick()
+        }
+        val OnContextClickListener = typedListener<ButtonElement, OnContextClickEvent> { element, event ->
+            element.onContextClick?.invoke()
+        }
+    }
 }

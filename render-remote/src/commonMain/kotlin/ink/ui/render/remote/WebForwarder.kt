@@ -5,6 +5,7 @@ import ink.ui.render.remote.serialization.LayoutMessage
 import ink.ui.render.remote.serialization.event.OnClickEvent
 import ink.ui.render.remote.serialization.event.OnContextClickEvent
 import ink.ui.render.remote.serialization.event.UiEvent
+import ink.ui.render.remote.serialization.event.UiEventListener
 import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.structures.elements.ButtonElement
 import ink.ui.structures.elements.UiElement
@@ -35,6 +36,7 @@ import kotlinx.serialization.json.Json
  */
 internal class WebForwarder(
     private val uiEvents: UiEvents,
+    private val uiEventListener: UiEventListener,
     private val serializer: Json,
     private val host: String,
     private val port: Int = 8080,
@@ -81,13 +83,9 @@ internal class WebForwarder(
 
             launch {
                 bindCallbacks { uiEvent ->
-                    when (uiEvent) {
-                        is OnClickEvent -> {
-                            (pairs.value[uiEvent.id] as? ButtonElement)?.onClick()
-                        }
-                        is OnContextClickEvent -> {
-                            (pairs.value[uiEvent.id] as? ButtonElement)?.onContextClick?.invoke()
-                        }
+                    val element = pairs.value[uiEvent.id]
+                    if (element != null) {
+                        uiEventListener.handleEvent(element, uiEvent)
                     }
                 }
             }
@@ -95,7 +93,7 @@ internal class WebForwarder(
 
     }
 
-    private suspend fun bindCallbacks(onEvent: (UiEvent) -> Unit)
+    private suspend fun bindCallbacks(onEvent: suspend (UiEvent) -> Unit)
     {
         if (!forwardEvents) return
         httpClient.webSocket(

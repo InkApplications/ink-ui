@@ -3,9 +3,13 @@ package ink.ui.render.remote
 import ink.ui.render.remote.serializer.ButtonElementSerializer
 import ink.ui.render.remote.serialization.ElementSerializerConfigContext
 import ink.ui.render.remote.serialization.LayoutSerializer
+import ink.ui.render.remote.serialization.event.CompositeEventListener
+import ink.ui.render.remote.serialization.event.EmptyUiEventListener
 import ink.ui.render.remote.serialization.event.OnClickEvent
 import ink.ui.render.remote.serialization.event.UiEvent
+import ink.ui.render.remote.serialization.event.UiEventListener
 import ink.ui.render.remote.serialization.event.UiEvents
+import ink.ui.render.remote.serialization.event.plus
 import ink.ui.structures.elements.ButtonElement
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout
@@ -18,8 +22,15 @@ import kotlinx.serialization.modules.subclass
 
 class RemoteRenderModule(
     serializerConfig: ElementSerializerConfigContext.() -> Unit = {},
+    private val uiEventListener: UiEventListener = EmptyUiEventListener,
 ) {
     private val uiEvents: UiEvents = UiEvents()
+    private val builtInListener = CompositeEventListener(
+        listOf(
+            ButtonElementSerializer.Listeners.OnClickListener,
+            ButtonElementSerializer.Listeners.OnContextClickListener,
+        )
+    )
     private val allSerializerConfig: ElementSerializerConfigContext.() -> Unit = {
         serializerConfig.invoke(this)
         addSerializer(ButtonElement::class, ButtonElementSerializer(uiEvents))
@@ -67,6 +78,7 @@ class RemoteRenderModule(
             protocol = protocol,
             serializer = serializer,
             uiEvents = uiEvents,
+            uiEventListener = uiEventListener + builtInListener,
         )
     }
 }
