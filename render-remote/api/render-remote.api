@@ -10,8 +10,8 @@ public final class ink/ui/render/remote/RemotePresenter : ink/ui/structures/rend
 
 public final class ink/ui/render/remote/RemoteRenderModule {
 	public fun <init> ()V
-	public fun <init> (Lkotlin/jvm/functions/Function1;)V
-	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Lkotlin/jvm/functions/Function1;Link/ui/render/remote/serialization/event/UiEventListener;)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;Link/ui/render/remote/serialization/event/UiEventListener;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun createForwarder (Ljava/lang/String;ILjava/lang/String;Lio/ktor/http/URLProtocol;)Link/ui/render/remote/UiForwarder;
 	public static synthetic fun createForwarder$default (Link/ui/render/remote/RemoteRenderModule;Ljava/lang/String;ILjava/lang/String;Lio/ktor/http/URLProtocol;ILjava/lang/Object;)Link/ui/render/remote/UiForwarder;
 	public final fun createServer (Link/ui/structures/render/Presenter;I)Link/ui/render/remote/LayoutServer;
@@ -43,13 +43,13 @@ public final class ink/ui/render/remote/serialization/ElementId$Companion {
 }
 
 public final class ink/ui/render/remote/serialization/ElementSerializerConfigContext {
-	public fun <init> (Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/UiEvents;)V
+	public fun <init> (Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/event/UiEvents;)V
 	public final fun addSerializer (Lkotlin/reflect/KClass;Lkotlinx/serialization/KSerializer;)V
-	public final fun component2 ()Link/ui/render/remote/serialization/UiEvents;
-	public final fun copy (Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/UiEvents;)Link/ui/render/remote/serialization/ElementSerializerConfigContext;
-	public static synthetic fun copy$default (Link/ui/render/remote/serialization/ElementSerializerConfigContext;Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/UiEvents;ILjava/lang/Object;)Link/ui/render/remote/serialization/ElementSerializerConfigContext;
+	public final fun component2 ()Link/ui/render/remote/serialization/event/UiEvents;
+	public final fun copy (Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/event/UiEvents;)Link/ui/render/remote/serialization/ElementSerializerConfigContext;
+	public static synthetic fun copy$default (Link/ui/render/remote/serialization/ElementSerializerConfigContext;Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/event/UiEvents;ILjava/lang/Object;)Link/ui/render/remote/serialization/ElementSerializerConfigContext;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getUiEvents ()Link/ui/render/remote/serialization/UiEvents;
+	public final fun getUiEvents ()Link/ui/render/remote/serialization/event/UiEvents;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
@@ -143,39 +143,127 @@ public final class ink/ui/render/remote/serialization/LayoutMessage$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class ink/ui/render/remote/serialization/UiEvent {
-	public static final field Companion Link/ui/render/remote/serialization/UiEvent$Companion;
-	public synthetic fun <init> (Lkotlin/uuid/Uuid;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun component1-bzQd_Lo ()Lkotlin/uuid/Uuid;
-	public final fun component2-cu1SwlE ()Ljava/lang/String;
-	public final fun copy-YfrkEPU (Lkotlin/uuid/Uuid;Ljava/lang/String;)Link/ui/render/remote/serialization/UiEvent;
-	public static synthetic fun copy-YfrkEPU$default (Link/ui/render/remote/serialization/UiEvent;Lkotlin/uuid/Uuid;Ljava/lang/String;ILjava/lang/Object;)Link/ui/render/remote/serialization/UiEvent;
+public final class ink/ui/render/remote/serialization/event/CompositeEventListener : ink/ui/render/remote/serialization/event/UiEventListener {
+	public static final synthetic fun box-impl (Ljava/util/List;)Link/ui/render/remote/serialization/event/CompositeEventListener;
+	public static fun constructor-impl (Ljava/util/List;)Ljava/util/List;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getId-bzQd_Lo ()Lkotlin/uuid/Uuid;
-	public final fun getType-cu1SwlE ()Ljava/lang/String;
+	public static fun equals-impl (Ljava/util/List;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/util/List;Ljava/util/List;)Z
+	public final fun getListeners ()Ljava/util/List;
+	public fun handleEvent (Link/ui/structures/elements/UiElement;Link/ui/render/remote/serialization/event/UiEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static fun handleEvent-impl (Ljava/util/List;Link/ui/structures/elements/UiElement;Link/ui/render/remote/serialization/event/UiEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/util/List;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/util/List;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/util/List;
+}
+
+public final class ink/ui/render/remote/serialization/event/CompositeEventListenerKt {
+	public static final fun plus (Link/ui/render/remote/serialization/event/UiEventListener;Link/ui/render/remote/serialization/event/UiEventListener;)Link/ui/render/remote/serialization/event/UiEventListener;
+}
+
+public final class ink/ui/render/remote/serialization/event/EmptyUiEventListener : ink/ui/render/remote/serialization/event/UiEventListener {
+	public static final field INSTANCE Link/ui/render/remote/serialization/event/EmptyUiEventListener;
+	public fun handleEvent (Link/ui/structures/elements/UiElement;Link/ui/render/remote/serialization/event/UiEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class ink/ui/render/remote/serialization/event/EventResult {
+}
+
+public final class ink/ui/render/remote/serialization/event/EventResult$Consume : ink/ui/render/remote/serialization/event/EventResult {
+	public static final field INSTANCE Link/ui/render/remote/serialization/event/EventResult$Consume;
+	public fun equals (Ljava/lang/Object;)Z
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public synthetic class ink/ui/render/remote/serialization/UiEvent$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Link/ui/render/remote/serialization/UiEvent$$serializer;
+public final class ink/ui/render/remote/serialization/event/EventResult$Continue : ink/ui/render/remote/serialization/event/EventResult {
+	public static final field INSTANCE Link/ui/render/remote/serialization/event/EventResult$Continue;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/render/remote/serialization/event/OnClickEvent : ink/ui/render/remote/serialization/event/UiEvent {
+	public static final field Companion Link/ui/render/remote/serialization/event/OnClickEvent$Companion;
+	public synthetic fun <init> (Lkotlin/uuid/Uuid;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-bzQd_Lo ()Lkotlin/uuid/Uuid;
+	public final fun copy-jbM0D7U (Lkotlin/uuid/Uuid;)Link/ui/render/remote/serialization/event/OnClickEvent;
+	public static synthetic fun copy-jbM0D7U$default (Link/ui/render/remote/serialization/event/OnClickEvent;Lkotlin/uuid/Uuid;ILjava/lang/Object;)Link/ui/render/remote/serialization/event/OnClickEvent;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getId-bzQd_Lo ()Lkotlin/uuid/Uuid;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public synthetic class ink/ui/render/remote/serialization/event/OnClickEvent$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Link/ui/render/remote/serialization/event/OnClickEvent$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/render/remote/serialization/UiEvent;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/render/remote/serialization/event/OnClickEvent;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/render/remote/serialization/UiEvent;)V
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/render/remote/serialization/event/OnClickEvent;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
 }
 
-public final class ink/ui/render/remote/serialization/UiEvent$Companion {
+public final class ink/ui/render/remote/serialization/event/OnClickEvent$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class ink/ui/render/remote/serialization/UiEvents {
+public final class ink/ui/render/remote/serialization/event/OnContextClickEvent : ink/ui/render/remote/serialization/event/UiEvent {
+	public static final field Companion Link/ui/render/remote/serialization/event/OnContextClickEvent$Companion;
+	public synthetic fun <init> (Lkotlin/uuid/Uuid;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-bzQd_Lo ()Lkotlin/uuid/Uuid;
+	public final fun copy-jbM0D7U (Lkotlin/uuid/Uuid;)Link/ui/render/remote/serialization/event/OnContextClickEvent;
+	public static synthetic fun copy-jbM0D7U$default (Link/ui/render/remote/serialization/event/OnContextClickEvent;Lkotlin/uuid/Uuid;ILjava/lang/Object;)Link/ui/render/remote/serialization/event/OnContextClickEvent;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getId-bzQd_Lo ()Lkotlin/uuid/Uuid;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public synthetic class ink/ui/render/remote/serialization/event/OnContextClickEvent$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Link/ui/render/remote/serialization/event/OnContextClickEvent$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/render/remote/serialization/event/OnContextClickEvent;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/render/remote/serialization/event/OnContextClickEvent;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+}
+
+public final class ink/ui/render/remote/serialization/event/OnContextClickEvent$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class ink/ui/render/remote/serialization/event/UiEvent {
+	public abstract fun getId-bzQd_Lo ()Lkotlin/uuid/Uuid;
+}
+
+public abstract interface class ink/ui/render/remote/serialization/event/UiEventListener {
+	public abstract fun handleEvent (Link/ui/structures/elements/UiElement;Link/ui/render/remote/serialization/event/UiEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class ink/ui/render/remote/serialization/event/UiEventListenerKt {
+	public static final fun consume (Link/ui/render/remote/serialization/event/UiEventListener;Lkotlin/jvm/functions/Function0;)Link/ui/render/remote/serialization/event/EventResult;
+	public static final fun continueAfter (Link/ui/render/remote/serialization/event/UiEventListener;Lkotlin/jvm/functions/Function0;)Link/ui/render/remote/serialization/event/EventResult;
+}
+
+public final class ink/ui/render/remote/serialization/event/UiEvents {
 	public fun <init> ()V
 	public final fun associateElementEvents-qcYlPOU (Lkotlin/uuid/Uuid;Link/ui/structures/elements/UiElement;)V
 	public final fun getEvents ()Lkotlinx/coroutines/flow/Flow;
 	public final fun getMappings ()Lkotlinx/coroutines/channels/ReceiveChannel;
-	public final fun onEvent (Link/ui/render/remote/serialization/UiEvent;)V
+	public final fun onEvent (Link/ui/render/remote/serialization/event/UiEvent;)V
+}
+
+public final class ink/ui/render/remote/serializer/SymbolSerializer : kotlinx/serialization/KSerializer {
+	public fun <init> ()V
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun deserialize-DdfDXiE (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun serialize-Dg9OlmY (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
 }
 
