@@ -259,7 +259,7 @@ public final class ink/ui/render/remote/serialization/event/UiEvents {
 }
 
 public final class ink/ui/render/remote/serializer/SymbolSerializer : kotlinx/serialization/KSerializer {
-	public fun <init> ()V
+	public static final field INSTANCE Link/ui/render/remote/serializer/SymbolSerializer;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
 	public fun deserialize-DdfDXiE (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
 	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;

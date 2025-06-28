@@ -10,6 +10,8 @@ import ink.ui.render.remote.serialization.event.UiEvent
 import ink.ui.render.remote.serialization.event.UiEventListener
 import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.render.remote.serialization.event.plus
+import ink.ui.render.remote.serializer.SymbolSerializer
+import ink.ui.structures.Symbol
 import ink.ui.structures.elements.ButtonElement
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout
@@ -40,6 +42,7 @@ class RemoteRenderModule(
         ignoreUnknownKeys = true
         serializersModule = SerializersModule {
             contextual(UiLayout::class, LayoutSerializer)
+            contextual(Symbol::class, SymbolSerializer)
             polymorphic(UiElement::class) {
                 val context = ElementSerializerConfigContext(
                     moduleBuilder = this,

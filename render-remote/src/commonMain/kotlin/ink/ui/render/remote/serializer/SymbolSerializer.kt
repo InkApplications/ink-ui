@@ -8,7 +8,7 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 
-class SymbolSerializer: KSerializer<Symbol>
+object SymbolSerializer: KSerializer<Symbol>
 {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor(
         serialName = "Symbol",
