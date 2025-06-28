@@ -10,8 +10,8 @@ public final class ink/ui/render/remote/RemotePresenter : ink/ui/structures/rend
 
 public final class ink/ui/render/remote/RemoteRenderModule {
 	public fun <init> ()V
-	public fun <init> (Lkotlin/jvm/functions/Function1;Link/ui/render/remote/serialization/event/UiEventListener;)V
-	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;Link/ui/render/remote/serialization/event/UiEventListener;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Lkotlin/jvm/functions/Function1;)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun createForwarder (Ljava/lang/String;ILjava/lang/String;Lio/ktor/http/URLProtocol;)Link/ui/render/remote/UiForwarder;
 	public static synthetic fun createForwarder$default (Link/ui/render/remote/RemoteRenderModule;Ljava/lang/String;ILjava/lang/String;Lio/ktor/http/URLProtocol;ILjava/lang/Object;)Link/ui/render/remote/UiForwarder;
 	public final fun createServer (Link/ui/structures/render/Presenter;I)Link/ui/render/remote/LayoutServer;
@@ -43,11 +43,12 @@ public final class ink/ui/render/remote/serialization/ElementId$Companion {
 }
 
 public final class ink/ui/render/remote/serialization/ElementSerializerConfigContext {
-	public fun <init> (Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/event/UiEvents;)V
-	public final fun addSerializer (Lkotlin/reflect/KClass;Lkotlinx/serialization/KSerializer;)V
-	public final fun component2 ()Link/ui/render/remote/serialization/event/UiEvents;
-	public final fun copy (Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/event/UiEvents;)Link/ui/render/remote/serialization/ElementSerializerConfigContext;
-	public static synthetic fun copy$default (Link/ui/render/remote/serialization/ElementSerializerConfigContext;Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Link/ui/render/remote/serialization/event/UiEvents;ILjava/lang/Object;)Link/ui/render/remote/serialization/ElementSerializerConfigContext;
+	public fun <init> (Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Lkotlin/jvm/functions/Function1;Link/ui/render/remote/serialization/event/UiEvents;)V
+	public final fun addElementSerializer (Lkotlin/reflect/KClass;Lkotlinx/serialization/KSerializer;)V
+	public final fun addEventSerializer (Lkotlin/reflect/KClass;Lkotlinx/serialization/KSerializer;Link/ui/render/remote/serialization/event/UiEventListener;)V
+	public final fun component4 ()Link/ui/render/remote/serialization/event/UiEvents;
+	public final fun copy (Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Lkotlin/jvm/functions/Function1;Link/ui/render/remote/serialization/event/UiEvents;)Link/ui/render/remote/serialization/ElementSerializerConfigContext;
+	public static synthetic fun copy$default (Link/ui/render/remote/serialization/ElementSerializerConfigContext;Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Lkotlinx/serialization/modules/PolymorphicModuleBuilder;Lkotlin/jvm/functions/Function1;Link/ui/render/remote/serialization/event/UiEvents;ILjava/lang/Object;)Link/ui/render/remote/serialization/ElementSerializerConfigContext;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getUiEvents ()Link/ui/render/remote/serialization/event/UiEvents;
 	public fun hashCode ()I

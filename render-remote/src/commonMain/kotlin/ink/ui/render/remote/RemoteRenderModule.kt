@@ -3,9 +3,9 @@ package ink.ui.render.remote
 import ink.ui.render.remote.serializer.ButtonElementSerializer
 import ink.ui.render.remote.serialization.ElementSerializerConfigContext
 import ink.ui.render.remote.serialization.LayoutSerializer
-import ink.ui.render.remote.serialization.event.CompositeEventListener
 import ink.ui.render.remote.serialization.event.EmptyUiEventListener
 import ink.ui.render.remote.serialization.event.OnClickEvent
+import ink.ui.render.remote.serialization.event.OnContextClickEvent
 import ink.ui.render.remote.serialization.event.UiEvent
 import ink.ui.render.remote.serialization.event.UiEventListener
 import ink.ui.render.remote.serialization.event.UiEvents
@@ -17,25 +17,23 @@ import ink.ui.structures.elements.UiElement
 import ink.ui.structures.layouts.UiLayout
 import ink.ui.structures.render.Presenter
 import io.ktor.http.URLProtocol
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.getAndUpdate
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
 
 class RemoteRenderModule(
-    serializerConfig: ElementSerializerConfigContext.() -> Unit = {},
-    private val uiEventListener: UiEventListener = EmptyUiEventListener,
+    serializationConfig: ElementSerializerConfigContext.() -> Unit = {},
 ) {
     private val uiEvents: UiEvents = UiEvents()
-    private val builtInListener = CompositeEventListener(
-        listOf(
-            ButtonElementSerializer.Listeners.OnClickListener,
-            ButtonElementSerializer.Listeners.OnContextClickListener,
-        )
-    )
+    private val uiListener: MutableStateFlow<UiEventListener> = MutableStateFlow(EmptyUiEventListener)
     private val allSerializerConfig: ElementSerializerConfigContext.() -> Unit = {
-        serializerConfig.invoke(this)
-        addSerializer(ButtonElement::class, ButtonElementSerializer(uiEvents))
+        serializationConfig.invoke(this)
+        addElementSerializer(ButtonElement::class, ButtonElementSerializer(uiEvents))
+        addEventSerializer(OnClickEvent::class, ButtonElementSerializer.Listeners.OnClickListener)
+        addEventSerializer(OnContextClickEvent::class, ButtonElementSerializer.Listeners.OnContextClickListener)
     }
     private val serializer = Json {
         prettyPrint = true
@@ -43,15 +41,19 @@ class RemoteRenderModule(
         serializersModule = SerializersModule {
             contextual(UiLayout::class, LayoutSerializer)
             contextual(Symbol::class, SymbolSerializer)
-            polymorphic(UiElement::class) {
-                val context = ElementSerializerConfigContext(
-                    moduleBuilder = this,
-                    uiEvents = uiEvents,
-                )
-                allSerializerConfig.invoke(context)
-            }
-            polymorphic(UiEvent::class) {
-                subclass(OnClickEvent::class)
+            polymorphic(UiElement::class) elementModule@ {
+                polymorphic(UiEvent::class) eventModule@ {
+                    this@eventModule.subclass(OnClickEvent::class)
+                    val context = ElementSerializerConfigContext(
+                        elementModuleBuilder = this@elementModule,
+                        eventModuleBuilder = this@eventModule,
+                        listenerBuilder = { listener ->
+                            uiListener.getAndUpdate { listener + it }
+                        },
+                        uiEvents = uiEvents,
+                    )
+                    allSerializerConfig.invoke(context)
+                }
             }
         }
     }
@@ -81,7 +83,7 @@ class RemoteRenderModule(
             protocol = protocol,
             serializer = serializer,
             uiEvents = uiEvents,
-            uiEventListener = uiEventListener + builtInListener,
+            uiEventListener = uiListener.value,
             forwardEvents = true,
         )
     }
