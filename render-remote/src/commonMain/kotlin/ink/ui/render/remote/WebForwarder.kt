@@ -39,10 +39,10 @@ internal class WebForwarder(
     private val uiEventListener: UiEventListener,
     private val serializer: Json,
     private val host: String,
-    private val port: Int = 8080,
-    private val basePath: String? = null,
-    private val protocol: URLProtocol = URLProtocol.Companion.HTTPS,
-    private val forwardEvents: Boolean = true,
+    private val port: Int,
+    private val basePath: String?,
+    private val protocol: URLProtocol,
+    private val forwardEvents: Boolean,
 ): UiForwarder {
     private val baseUrl = URLBuilder(
         protocol = protocol,

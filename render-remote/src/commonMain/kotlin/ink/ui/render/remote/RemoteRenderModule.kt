@@ -79,6 +79,7 @@ class RemoteRenderModule(
             serializer = serializer,
             uiEvents = uiEvents,
             uiEventListener = uiEventListener + builtInListener,
+            forwardEvents = true,
         )
     }
 }

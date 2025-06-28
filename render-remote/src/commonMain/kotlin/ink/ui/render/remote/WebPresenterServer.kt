@@ -23,7 +23,7 @@ import kotlinx.serialization.json.Json
 internal class WebPresenterServer(
     private val presenter: Presenter,
     private val uiEvents: UiEvents,
-    private val port: Int = 8080,
+    private val port: Int,
     private val serializer: Json,
 ): LayoutServer {
     override suspend fun bind()
