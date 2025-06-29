@@ -43,13 +43,17 @@ internal class ButtonElementSerializer(
         val surrogate = surrogateSerializer.deserialize(decoder)
         return ButtonElement(
             text = surrogate.text,
+            sentiment = surrogate.sentiment,
+            enabled = surrogate.enabled,
+            latchOnPress = surrogate.latchOnPress,
+            leadingSymbol = surrogate.leadingSymbol,
+            trailingSymbol = surrogate.trailingSymbol,
             onClick = {
                 events.onEvent(OnClickEvent(surrogate.id))
             },
             onContextClick = {
                 events.onEvent(OnContextClickEvent(surrogate.id))
             },
-            sentiment = surrogate.sentiment,
         )
     }
 
