@@ -34,7 +34,7 @@ internal class WebPresenterServer(
                 route("/layout", method = HttpMethod.Companion.Put) {
                     handle {
                         val layout = try {
-                            serializer.decodeFromString<LayoutMessage>(call.receiveText())
+                            serializer.decodeFromString<LayoutMessage>(call.receiveText().also { println("Received: $it") })
                         } catch (e: Throwable) {
                             e.printStackTrace()
                             throw e
