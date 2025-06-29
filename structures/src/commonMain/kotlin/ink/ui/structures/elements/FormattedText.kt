@@ -1,7 +1,11 @@
 package ink.ui.structures.elements
 
 import ink.ui.structures.TextStyle
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
+@SerialName("formatted-text")
 data class FormattedText(
     val spans: List<Span>,
     val paragraph: Boolean = true,
@@ -14,9 +18,8 @@ data class FormattedText(
         paragraph = paragraph,
     )
 
-    fun toPlainTextElement(
-        style: TextStyle,
-    ): TextElement {
+    fun toPlainTextElement(style: TextStyle, ): TextElement
+    {
         return TextElement(
             text = spans.joinToString("") { span ->
                 when (span) {
@@ -29,36 +32,64 @@ data class FormattedText(
         )
     }
 
-    sealed interface Span {
-        sealed interface Composite: Span {
+    @Serializable
+    sealed interface Span
+    {
+        sealed interface Composite: Span
+        {
             val inner: List<Span>
         }
+
+        @Serializable
+        @SerialName("text")
         data class Text(
             val text: String,
         ): Span
+
+        @Serializable
+        @SerialName("strong")
         data class Strong(
             override val inner: List<Span>,
         ): Composite
+
+        @Serializable
+        @SerialName("emphasis")
         data class Emphasis(
             override val inner: List<Span>,
         ): Composite
+
+        @Serializable
+        @SerialName("code")
         data class Code(
             override val inner: List<Span>,
             val group: Boolean = false,
         ): Composite
+
+        @Serializable
+        @SerialName("link")
         data class Link(
             override val inner: List<Span>,
             val url: String,
         ): Composite
+
+        @Serializable
+        @SerialName("superscript")
         data class Superscript(
             override val inner: List<Span>,
         ): Composite
+
+        @Serializable
+        @SerialName("subscript")
         data class Subscript(
             override val inner: List<Span>,
         ): Composite
+
+        @Serializable
+        @SerialName("break")
         data object Break: Span
 
-        fun toPlainString(): String {
+        fun toPlainString(): String
+        {
             return when (this) {
                 is Text -> text
                 is Composite -> inner.joinToString("") { it.toPlainString() }

@@ -1,5 +1,10 @@
 package ink.ui.structures.elements
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+@SerialName("breadcrumb")
 data class BreadcrumbElement(
     val items: List<Breadcrumb>,
 ): UiElement.Static {
@@ -9,6 +14,7 @@ data class BreadcrumbElement(
         items = Builder().apply(builder).breadcrumbs,
     )
 
+    @Serializable
     data class Breadcrumb(
         val text: String,
         val url: String? = null,

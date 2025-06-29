@@ -22,4 +22,5 @@ dependencies {
     implementation(libs.compose.compiler)
     implementation(libs.dokka)
     implementation(libs.kotlinx.binary.compatibility)
+    implementation(libs.kotlinx.serialization.gradle)
 }

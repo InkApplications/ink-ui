@@ -2,15 +2,20 @@ package ink.ui.structures.elements
 
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.Positioning
+import kotlinx.serialization.Contextual
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
 /**
  * UI element that composites multiple elements together.
  */
+@Serializable
+@SerialName("element-list")
 data class ElementList(
     /**
      * Elements to be displayed in order.
      */
-    val items: List<UiElement>,
+    val items: List<@Contextual UiElement>,
 
     /**
      * Positioning of each element within its own bounding box in the list.
