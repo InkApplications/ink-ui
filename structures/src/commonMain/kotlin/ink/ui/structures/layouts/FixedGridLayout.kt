@@ -2,10 +2,15 @@ package ink.ui.structures.layouts
 
 import ink.ui.structures.Positioning
 import ink.ui.structures.elements.UiElement
+import kotlinx.serialization.Contextual
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
 /**
  * Simple Grid of UI elements.
  */
+@Serializable
+@SerialName("fixed-grid")
 data class FixedGridLayout(
     /**
      * Number of columns in the grid.
@@ -28,6 +33,7 @@ data class FixedGridLayout(
     /**
      * An individual item to display in the grid.
      */
+    @Serializable
     data class GridItem(
         /**
          * Number of columns this item should take up.
@@ -37,6 +43,7 @@ data class FixedGridLayout(
         /**
          * UI element to display in the grid area.
          */
+        @Contextual
         val body: UiElement,
 
         /**

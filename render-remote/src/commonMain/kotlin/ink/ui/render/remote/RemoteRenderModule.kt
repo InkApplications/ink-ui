@@ -2,21 +2,28 @@ package ink.ui.render.remote
 
 import ink.ui.render.remote.serializer.ButtonElementSerializer
 import ink.ui.render.remote.serialization.ElementSerializerConfigContext
-import ink.ui.render.remote.serialization.LayoutSerializer
 import ink.ui.render.remote.serialization.event.EmptyUiEventListener
 import ink.ui.render.remote.serialization.event.OnClickEvent
 import ink.ui.render.remote.serialization.event.OnContextClickEvent
+import ink.ui.render.remote.serialization.event.OnNextValue
+import ink.ui.render.remote.serialization.event.OnPreviousValue
 import ink.ui.render.remote.serialization.event.UiEvent
 import ink.ui.render.remote.serialization.event.UiEventListener
 import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.render.remote.serialization.event.plus
-import ink.ui.render.remote.serializer.FormattedTextSerializer
-import ink.ui.render.remote.serializer.SymbolSerializer
-import ink.ui.structures.Symbol
-import ink.ui.structures.elements.ButtonElement
+import ink.ui.render.remote.serializer.CheckBoxElementSerializer
+import ink.ui.render.remote.serializer.MenuRowElementSerializer
+import ink.ui.render.remote.serializer.SpinnerElementSerializer
+import ink.ui.structures.elements.BreadcrumbElement
+import ink.ui.structures.elements.DividerElement
+import ink.ui.structures.elements.ElementList
 import ink.ui.structures.elements.FormattedText
+import ink.ui.structures.elements.IconElement
+import ink.ui.structures.elements.StatusIndicatorElement
+import ink.ui.structures.elements.TextElement
+import ink.ui.structures.elements.TextListElement
+import ink.ui.structures.elements.ThrobberElement
 import ink.ui.structures.elements.UiElement
-import ink.ui.structures.layouts.UiLayout
 import ink.ui.structures.render.Presenter
 import io.ktor.http.URLProtocol
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -33,17 +40,33 @@ class RemoteRenderModule(
     private val uiListener: MutableStateFlow<UiEventListener> = MutableStateFlow(EmptyUiEventListener)
     private val allSerializerConfig: ElementSerializerConfigContext.() -> Unit = {
         serializationConfig.invoke(this)
-        addElementSerializer(ButtonElement::class, ButtonElementSerializer(uiEvents))
-        addElementSerializer(FormattedText::class, FormattedTextSerializer())
-        addEventSerializer(OnClickEvent::class, ButtonElementSerializer.Listeners.OnClickListener)
+        addElementSerializer(BreadcrumbElement.serializer())
+        addElementSerializer(ButtonElementSerializer(uiEvents))
+        addElementSerializer(CheckBoxElementSerializer(uiEvents))
+        addElementSerializer(DividerElement.serializer())
+        addElementSerializer(ElementList.serializer())
+        addElementSerializer(FormattedText.serializer())
+        addElementSerializer(IconElement.serializer())
+        addElementSerializer(MenuRowElementSerializer(uiEvents))
+        addElementSerializer(SpinnerElementSerializer(uiEvents))
+        addElementSerializer(StatusIndicatorElement.serializer())
+        addElementSerializer(TextElement.serializer())
+        addElementSerializer(TextListElement.serializer())
+        addElementSerializer(ThrobberElement.serializer())
+
+        addEventSerializer(
+            subclass = OnClickEvent::class,
+            listener = ButtonElementSerializer.Listeners.OnClickListener
+                .plus(CheckBoxElementSerializer.Listeners.OnClickListener)
+        )
         addEventSerializer(OnContextClickEvent::class, ButtonElementSerializer.Listeners.OnContextClickListener)
+        addEventSerializer(OnNextValue::class, SpinnerElementSerializer.Listeners.OnNextValueListener)
+        addEventSerializer(OnPreviousValue::class, SpinnerElementSerializer.Listeners.OnPreviousValueListener)
     }
     private val serializer = Json {
         prettyPrint = true
         ignoreUnknownKeys = true
         serializersModule = SerializersModule {
-            contextual(UiLayout::class, LayoutSerializer)
-            contextual(Symbol::class, SymbolSerializer)
             polymorphic(UiElement::class) elementModule@ {
                 polymorphic(UiEvent::class) eventModule@ {
                     this@eventModule.subclass(OnClickEvent::class)

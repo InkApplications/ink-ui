@@ -43,4 +43,9 @@ data class ElementSerializerConfigContext(
     {
         addEventSerializer(subclass, serializer(), listener)
     }
+
+    fun addEventListener(listener: UiEventListener)
+    {
+        listenerBuilder(listener)
+    }
 }

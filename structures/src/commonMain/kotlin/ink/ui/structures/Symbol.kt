@@ -1,5 +1,6 @@
 package ink.ui.structures
 
+import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline
 
 /**
@@ -8,6 +9,7 @@ import kotlin.jvm.JvmInline
  * This is an unstable collection, so unknown symbols should be handled by
  * the renderer gracefully.
  */
+@Serializable
 @JvmInline
 value class Symbol(val key: String) {
     companion object {
