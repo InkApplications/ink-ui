@@ -64,10 +64,13 @@ internal class ButtonElementSerializer(
         val text: String,
         val sentiment: Sentiment,
         val enabled: Boolean,
+        @SerialName("latch-on-press")
         val latchOnPress: Boolean,
         @Contextual
+        @SerialName("leading-symbol")
         val leadingSymbol: Symbol?,
         @Contextual
+        @SerialName("trailing-symbol")
         val trailingSymbol: Symbol?,
     )
 

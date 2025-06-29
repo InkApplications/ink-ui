@@ -56,7 +56,9 @@ class SpinnerElementSerializer(private val uiEvents: UiEvents): KSerializer<Spin
     private data class SpinnerSurrogate(
         val id: ElementId,
         val value: String,
+        @SerialName("has-previous-value")
         val hasPreviousValue: Boolean = true,
+        @SerialName("has-next-value")
         val hasNextValue: Boolean = true,
     )
 

@@ -45,7 +45,7 @@ class MenuRowElementSerializer(private val uiEvents: UiEvents): KSerializer<Menu
     data class MenuRowSurrogate(
         val id: ElementId,
         val text: String,
-        @SerialName("right-elemment")
+        @SerialName("right-element")
         val rightElement: UiElement? = null,
     )
 }
