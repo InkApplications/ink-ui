@@ -1092,6 +1092,11 @@ public final class ink/ui/structures/layouts/UiLayout$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class ink/ui/structures/render/CompositePresenterKt {
+	public static final fun onUpdate (Link/ui/structures/render/Presenter;Lkotlin/jvm/functions/Function1;)Link/ui/structures/render/Presenter;
+	public static final fun then (Link/ui/structures/render/Presenter;Link/ui/structures/render/Presenter;)Link/ui/structures/render/Presenter;
+}
+
 public abstract interface class ink/ui/structures/render/MissingRendererBehavior {
 }
 
