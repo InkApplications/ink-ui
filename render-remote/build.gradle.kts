@@ -1,6 +1,6 @@
 plugins {
     kotlin("plugin.serialization")
-    id("multiplatform.tier1")
+    id("multiplatform.tier3")
     id("ink.publishing")
 }
 
