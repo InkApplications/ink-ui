@@ -20,7 +20,6 @@ import ink.ui.structures.render.Presenter
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class ComposePresenter(
-    internal val theme: ComposeRenderTheme,
     renderers: List<ElementRenderer> = emptyList(),
     missingRendererBehavior: MissingRendererBehavior = MissingRendererBehavior.Placeholder(),
 ): Presenter {
@@ -44,11 +43,11 @@ class ComposePresenter(
     private val currentLayout = MutableStateFlow<UiLayout>(EmptyLayout)
 
     @Composable
-    fun bind()
+    fun bind(theme: ComposeRenderTheme)
     {
         val state = currentLayout.collectAsState()
 
-        render(state.value)
+        render(state.value, theme)
     }
 
     override fun presentLayout(layout: UiLayout)
@@ -57,7 +56,7 @@ class ComposePresenter(
     }
 
     @Composable
-    internal fun render(uiLayout: UiLayout)
+    internal fun render(uiLayout: UiLayout, theme: ComposeRenderTheme)
     {
         when (uiLayout) {
             is CenteredElementLayout -> Box(
@@ -137,8 +136,9 @@ class ComposePresenter(
 
 @Composable
 fun ComposePresenter.bindAndPresent(
+    theme: ComposeRenderTheme,
     layout: UiLayout,
 ) {
-    bind()
+    bind(theme)
     presentLayout(layout)
 }

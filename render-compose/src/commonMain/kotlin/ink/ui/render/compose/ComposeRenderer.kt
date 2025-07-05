@@ -11,20 +11,20 @@ import ink.ui.structures.layouts.UiLayout
  */
 @Deprecated("Use Presenter interface instead")
 class ComposeRenderer(
-    theme: ComposeRenderTheme,
+    private val theme: ComposeRenderTheme,
     renderers: List<ElementRenderer> = emptyList(),
 ) {
-    private val presenter = ComposePresenter(theme, renderers)
+    private val presenter = ComposePresenter(renderers)
 
     @Deprecated("Use Presenter interface instead")
     @Composable
     fun render(uiLayout: UiLayout) {
-        presenter.render(uiLayout)
+        presenter.render(uiLayout, theme)
     }
 
     @Composable
     @Deprecated("Use presenter interface instead")
     fun renderElement(element: UiElement) {
-        presenter.uiRenderer.render(element, presenter.theme, presenter.uiRenderer)
+        presenter.uiRenderer.render(element, theme, presenter.uiRenderer)
     }
 }
