@@ -5,10 +5,12 @@ import ink.ui.render.remote.serialization.event.UiEvent
 import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.structures.render.Presenter
 import io.ktor.http.HttpMethod
+import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.install
 import io.ktor.server.cio.CIO
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.request.receiveText
+import io.ktor.server.response.respond
 import io.ktor.server.routing.route
 import io.ktor.server.routing.routing
 import io.ktor.server.websocket.WebSockets
@@ -40,6 +42,7 @@ internal class WebPresenterServer(
                             throw e
                         }
                         presenter.presentLayout(layout.layout!!)
+                        call.respond(HttpStatusCode.NoContent)
                     }
                 }
                 webSocket("/events") {

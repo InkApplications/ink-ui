@@ -14,7 +14,6 @@ class MainActivity: ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val presenter = ComposePresenter(
-                theme = defaultTheme(),
                 renderers = listOf(
                     FormattedTextRenderer(
                         onClickUrl = { url ->
@@ -24,7 +23,7 @@ class MainActivity: ComponentActivity() {
                     )
                 )
             )
-            presenter.bind()
+            presenter.bind(defaultTheme())
 
             presenter.presentLayout(Examples.Defaults.layout)
         }

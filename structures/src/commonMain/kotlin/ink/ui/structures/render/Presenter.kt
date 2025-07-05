@@ -6,4 +6,3 @@ interface Presenter
 {
     fun presentLayout(layout: UiLayout)
 }
-
