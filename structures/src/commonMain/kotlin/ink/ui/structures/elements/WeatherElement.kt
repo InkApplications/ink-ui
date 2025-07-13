@@ -2,6 +2,7 @@ package ink.ui.structures.elements
 
 import ink.ui.structures.Sentiment
 
+@Deprecated("Will be removed from core UI library")
 data class WeatherElement(
     val temperature: String,
     val condition: Condition,
