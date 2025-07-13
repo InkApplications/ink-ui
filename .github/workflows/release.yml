@@ -59,7 +59,7 @@ jobs:
                     distribution: temurin
             -
                 name: Create CLI Distribution
-                run: bin/gradlew cli:distZip
+                run: bin/gradlew cli:distZip -Pversion=${{ github.ref_name }}
             -
                 name: Create Wrapper
                 run: bin/create-wrapper ${{ github.ref_name }} $(sha256sum cli/build/distributions/inkui-${{ github.ref_name }}.zip | cut -d' ' -f1)
