@@ -14,6 +14,7 @@ import ink.ui.structures.elements.WeatherElement
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
+@Deprecated("Will be removed from core UI library")
 val WeatherRenderer = renderer<WeatherElement> { theme, element ->
     val description = when (element.condition) {
         WeatherElement.Condition.Clear -> "Clear"
