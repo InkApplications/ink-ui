@@ -16,8 +16,8 @@ if [ ! -f "$INKUI_BIN" ]; then
         echo "Checksum verification failed!"
         exit 1
     fi
-    mkdir -p "${INSTALL_DIR}/${VERSION}"
-    unzip $ZIP_FILE -d "${INSTALL_DIR}/"
+    mkdir -p "$INSTALL_DIR"
+    unzip "$ZIP_FILE" -d "${INSTALL_DIR}"
     mv "${INSTALL_DIR}/inkui-${VERSION}" "${INSTALL_DIR}/${VERSION}"
 fi
 
