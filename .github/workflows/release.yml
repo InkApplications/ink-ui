@@ -14,3 +14,55 @@ jobs:
         with:
             version: ${{ github.ref_name }}
             publish-android: true
+            draft-release: false
+    build-cli:
+        name: Build CLI
+        needs: [tests]
+        runs-on: ubuntu-latest
+        steps:
+            -
+                name: Checkout
+                uses: actions/checkout@v4.2.2
+            -
+                name: Configure Java
+                uses: actions/setup-java@v4.5.0
+                with:
+                    java-version: 23
+                    distribution: temurin
+            -
+                name: Create CLI Distribution
+                run: bin/gradlew cli:distZip
+            -
+                name: Create Wrapper
+                run: bin/create-wrapper ${{ github.ref_name }} $(sha256sum cli/build/distributions/inkui-${{ github.ref_name }}.zip | cut -d' ' -f1)
+            -
+                name: Create Release
+                id: create_release
+                uses: actions/create-release@v1.1.4
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                with:
+                    tag_name: ${{ github.ref }}
+                    release_name: ${{ github.ref_name }}
+                    draft: true
+                    prerelease: false
+            -
+                name: Upload CLI Asset
+                uses: actions/upload-release-asset@v1.0.2
+                with:
+                    upload_url: ${{ steps.create_release.outputs.upload_url }}
+                    asset_path: cli/build/distributions/inkui-${{ github.ref_name }}.zip
+                    asset_name: inkui-${{ github.ref_name }}.zip
+                    asset_content_type: application/zip
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            -
+                name: Upload Wrapper Asset
+                uses: actions/upload-release-asset@v1.0.2
+                with:
+                    upload_url: ${{ steps.create_release.outputs.upload_url }}
+                    asset_path: cli/build/distributions/inkui-wrapper
+                    asset_name: inkui-wrapper
+                    asset_content_type: text/x-shellscript
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
