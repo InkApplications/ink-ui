@@ -1,6 +1,6 @@
 plugins {
     application
-    kotlin("jvm")
+    alias(libs.plugins.kotlin.jvm)
 }
 
 application {
@@ -8,7 +8,18 @@ application {
     mainClass.set("ink.ui.cli.MainKt")
 }
 
+kotlin {
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+        vendor = JvmVendorSpec.ADOPTIUM
+    }
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
+
 dependencies {
-    implementation(projects.renderStaticHtml)
-    implementation(projects.sampleCommon)
+    implementation(libs.inkui.render.web.static)
 }

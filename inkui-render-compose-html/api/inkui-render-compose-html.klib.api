@@ -1,0 +1,72 @@
+// Klib ABI Dump
+// Targets: [js]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <com.inkapplications.ui:inkui-render-compose-html>
+abstract interface ink.ui.render.compose.html.renderer/ElementRenderer { // ink.ui.render.compose.html.renderer/ElementRenderer|null[0]
+    abstract fun render(ink.ui.structures.elements/UiElement, ink.ui.render.compose.html.renderer/ElementRenderer, androidx.compose.runtime/Composer?, kotlin/Int): ink.ui.structures.render/RenderResult // ink.ui.render.compose.html.renderer/ElementRenderer.render|render(ink.ui.structures.elements.UiElement;ink.ui.render.compose.html.renderer.ElementRenderer;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+}
+
+final class ink.ui.render.compose.html/ComposeHtmlPresenter : ink.ui.structures.render/Presenter { // ink.ui.render.compose.html/ComposeHtmlPresenter|null[0]
+    constructor <init>(kotlin.collections/List<ink.ui.render.compose.html.renderer/ElementRenderer> = ..., ink.ui.structures.render/MissingRendererBehavior = ...) // ink.ui.render.compose.html/ComposeHtmlPresenter.<init>|<init>(kotlin.collections.List<ink.ui.render.compose.html.renderer.ElementRenderer>;ink.ui.structures.render.MissingRendererBehavior){}[0]
+
+    final fun bind(androidx.compose.runtime/Composer?, kotlin/Int) // ink.ui.render.compose.html/ComposeHtmlPresenter.bind|bind(androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+    final fun presentLayout(ink.ui.structures.layouts/UiLayout) // ink.ui.render.compose.html/ComposeHtmlPresenter.presentLayout|presentLayout(ink.ui.structures.layouts.UiLayout){}[0]
+}
+
+final object ink.ui.render.compose.html.renderer/ActivityRenderer : ink.ui.render.compose.html.renderer/ElementRenderer { // ink.ui.render.compose.html.renderer/ActivityRenderer|null[0]
+    final fun render(ink.ui.structures.elements/UiElement, ink.ui.render.compose.html.renderer/ElementRenderer, androidx.compose.runtime/Composer?, kotlin/Int): ink.ui.structures.render/RenderResult // ink.ui.render.compose.html.renderer/ActivityRenderer.render|render(ink.ui.structures.elements.UiElement;ink.ui.render.compose.html.renderer.ElementRenderer;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+}
+
+final object ink.ui.render.compose.html.renderer/EmptyRenderer : ink.ui.render.compose.html.renderer/ElementRenderer { // ink.ui.render.compose.html.renderer/EmptyRenderer|null[0]
+    final fun render(ink.ui.structures.elements/UiElement, ink.ui.render.compose.html.renderer/ElementRenderer, androidx.compose.runtime/Composer?, kotlin/Int): ink.ui.structures.render/RenderResult // ink.ui.render.compose.html.renderer/EmptyRenderer.render|render(ink.ui.structures.elements.UiElement;ink.ui.render.compose.html.renderer.ElementRenderer;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+}
+
+final object ink.ui.render.compose.html.renderer/ListRenderer : ink.ui.render.compose.html.renderer/ElementRenderer { // ink.ui.render.compose.html.renderer/ListRenderer|null[0]
+    final fun render(ink.ui.structures.elements/UiElement, ink.ui.render.compose.html.renderer/ElementRenderer, androidx.compose.runtime/Composer?, kotlin/Int): ink.ui.structures.render/RenderResult // ink.ui.render.compose.html.renderer/ListRenderer.render|render(ink.ui.structures.elements.UiElement;ink.ui.render.compose.html.renderer.ElementRenderer;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+}
+
+final object ink.ui.render.compose.html.renderer/MenuRowRenderer : ink.ui.render.compose.html.renderer/ElementRenderer { // ink.ui.render.compose.html.renderer/MenuRowRenderer|null[0]
+    final fun render(ink.ui.structures.elements/UiElement, ink.ui.render.compose.html.renderer/ElementRenderer, androidx.compose.runtime/Composer?, kotlin/Int): ink.ui.structures.render/RenderResult // ink.ui.render.compose.html.renderer/MenuRowRenderer.render|render(ink.ui.structures.elements.UiElement;ink.ui.render.compose.html.renderer.ElementRenderer;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+}
+
+final object ink.ui.render.compose.html.renderer/TextListRenderer : ink.ui.render.compose.html.renderer/ElementRenderer { // ink.ui.render.compose.html.renderer/TextListRenderer|null[0]
+    final fun render(ink.ui.structures.elements/UiElement, ink.ui.render.compose.html.renderer/ElementRenderer, androidx.compose.runtime/Composer?, kotlin/Int): ink.ui.structures.render/RenderResult // ink.ui.render.compose.html.renderer/TextListRenderer.render|render(ink.ui.structures.elements.UiElement;ink.ui.render.compose.html.renderer.ElementRenderer;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+}
+
+final val ink.ui.render.compose.html.renderer/ButtonRenderer // ink.ui.render.compose.html.renderer/ButtonRenderer|{}ButtonRenderer[0]
+    final fun <get-ButtonRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/ButtonRenderer.<get-ButtonRenderer>|<get-ButtonRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/CheckBoxRenderer // ink.ui.render.compose.html.renderer/CheckBoxRenderer|{}CheckBoxRenderer[0]
+    final fun <get-CheckBoxRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/CheckBoxRenderer.<get-CheckBoxRenderer>|<get-CheckBoxRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/DividerRenderer // ink.ui.render.compose.html.renderer/DividerRenderer|{}DividerRenderer[0]
+    final fun <get-DividerRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/DividerRenderer.<get-DividerRenderer>|<get-DividerRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/FormattedTextRenderer // ink.ui.render.compose.html.renderer/FormattedTextRenderer|{}FormattedTextRenderer[0]
+    final fun <get-FormattedTextRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/FormattedTextRenderer.<get-FormattedTextRenderer>|<get-FormattedTextRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/IconRenderer // ink.ui.render.compose.html.renderer/IconRenderer|{}IconRenderer[0]
+    final fun <get-IconRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/IconRenderer.<get-IconRenderer>|<get-IconRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/LinkButtonRenderer // ink.ui.render.compose.html.renderer/LinkButtonRenderer|{}LinkButtonRenderer[0]
+    final fun <get-LinkButtonRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/LinkButtonRenderer.<get-LinkButtonRenderer>|<get-LinkButtonRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/SpinnerRenderer // ink.ui.render.compose.html.renderer/SpinnerRenderer|{}SpinnerRenderer[0]
+    final fun <get-SpinnerRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/SpinnerRenderer.<get-SpinnerRenderer>|<get-SpinnerRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/StatusRenderer // ink.ui.render.compose.html.renderer/StatusRenderer|{}StatusRenderer[0]
+    final fun <get-StatusRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/StatusRenderer.<get-StatusRenderer>|<get-StatusRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/TextRenderer // ink.ui.render.compose.html.renderer/TextRenderer|{}TextRenderer[0]
+    final fun <get-TextRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/TextRenderer.<get-TextRenderer>|<get-TextRenderer>(){}[0]
+final val ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop|#static{}ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop[0]
+final val ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop|#static{}ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop[0]
+final val ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ListRenderer$stableprop // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ListRenderer$stableprop|#static{}ink_ui_render_compose_html_renderer_ListRenderer$stableprop[0]
+final val ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_MenuRowRenderer$stableprop // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_MenuRowRenderer$stableprop|#static{}ink_ui_render_compose_html_renderer_MenuRowRenderer$stableprop[0]
+final val ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_TextListRenderer$stableprop // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_TextListRenderer$stableprop|#static{}ink_ui_render_compose_html_renderer_TextListRenderer$stableprop[0]
+final val ink.ui.render.compose.html/ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop // ink.ui.render.compose.html/ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop|#static{}ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop[0]
+
+final fun (ink.ui.render.compose.html/ComposeHtmlPresenter).ink.ui.render.compose.html/bindAndPresent(ink.ui.structures.layouts/UiLayout, androidx.compose.runtime/Composer?, kotlin/Int) // ink.ui.render.compose.html/bindAndPresent|bindAndPresent@ink.ui.render.compose.html.ComposeHtmlPresenter(ink.ui.structures.layouts.UiLayout;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+final fun ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop_getter|ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop_getter(){}[0]
+final fun ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop_getter|ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop_getter(){}[0]
+final fun ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ListRenderer$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ListRenderer$stableprop_getter|ink_ui_render_compose_html_renderer_ListRenderer$stableprop_getter(){}[0]
+final fun ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_MenuRowRenderer$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_MenuRowRenderer$stableprop_getter|ink_ui_render_compose_html_renderer_MenuRowRenderer$stableprop_getter(){}[0]
+final fun ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_TextListRenderer$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_TextListRenderer$stableprop_getter|ink_ui_render_compose_html_renderer_TextListRenderer$stableprop_getter(){}[0]
+final fun ink.ui.render.compose.html/ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html/ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop_getter|ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop_getter(){}[0]
+final inline fun <#A: reified ink.ui.structures.elements/UiElement> ink.ui.render.compose.html.renderer/renderer(crossinline kotlin/Function3<#A, androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/renderer|renderer(kotlin.Function3<0:0,androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>){0§<ink.ui.structures.elements.UiElement>}[0]

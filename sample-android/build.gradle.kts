@@ -1,18 +1,20 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.compose")
-    id("org.jetbrains.kotlin.plugin.compose")
-    kotlin("android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.inkapplications.ui.example"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.inkapplications.ui.example"
-        minSdk = 21
-        targetSdk = 34
+        minSdk = 23
+        targetSdk = 36
     }
     buildFeatures {
         compose = true
@@ -21,15 +23,33 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_1_8)
+    }
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+        vendor = JvmVendorSpec.ADOPTIUM
     }
 }
 
+repositories {
+    mavenCentral()
+    google()
+}
+
 dependencies {
-    implementation(project(":render-compose"))
+    implementation(libs.inkui.render.compose.core)
     implementation(libs.androidx.activity)
     implementation(libs.activity.compose)
-    implementation(compose.foundation)
-    implementation(projects.sampleCommon)
+    implementation(libs.compose.foundation)
+    implementation(libs.inkui.sample.common)
+}
+
+tasks.configureEach {
+    if (name.startsWith("lint")) {
+        enabled = false
+    }
 }

@@ -1,17 +1,17 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "ink-ui"
+rootProject.name = "inkui"
 
-include("cli")
-include("render-compose")
-include("render-compose-html")
-include("render-remote")
-include("render-static-html")
-include("render-terminal")
-include("render-web-common")
-include("structures")
-include("sample-android")
-include("sample-common")
-include("sample-web")
-include("sample-terminal")
-
+includeBuild("gradle-plugins")
+includeBuild("cli")
+includeBuild("inkui-render-compose")
+includeBuild("inkui-render-web-common")
+includeBuild("inkui-render-compose-html")
+includeBuild("inkui-render-remote")
+includeBuild("inkui-render-web-static")
+includeBuild("inkui-render-terminal")
+includeBuild("inkui-structures")
+includeBuild("sample-android")
+includeBuild("sample-common")
+includeBuild("sample-terminal")
+includeBuild("sample-web")

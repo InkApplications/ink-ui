@@ -1,7 +1,12 @@
 plugins {
-    id("org.jetbrains.compose")
-    id("org.jetbrains.kotlin.plugin.compose")
-    kotlin("multiplatform")
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.compose)
+    alias(libs.plugins.compose.compiler)
+}
+
+repositories {
+    mavenCentral()
+    google()
 }
 
 kotlin {
@@ -9,12 +14,18 @@ kotlin {
         browser()
         binaries.executable()
     }
+
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+        vendor = JvmVendorSpec.ADOPTIUM
+    }
+
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.sampleCommon)
-            implementation(compose.html.core)
-            implementation(compose.runtime)
-            implementation(projects.renderComposeHtml)
+            implementation(libs.inkui.sample.common)
+            implementation(libs.compose.html.core)
+            implementation(libs.compose.runtime)
+            implementation(libs.inkui.render.compose.html)
         }
     }
 }
@@ -26,15 +37,16 @@ val webDistDir = project.layout.buildDirectory.get().dir("dist/web").asFile
 val webDistComposeDir = project.layout.buildDirectory.get().dir("dist/web/compose").asFile
 
 private fun renderTo(input: String, output: String) {
-    exec {
-        val app = projects.cli.dependencyProject.layout.buildDirectory.get().file("install/inkui/bin/inkui")
-        val script = project.layout.projectDirectory.file(input)
-        commandLine("sh", "-c", "$app $script > $output")
-    }
+    val app = gradle.includedBuild("cli").projectDir.resolve("build/install/inkui/bin/inkui")
+    val script = project.layout.projectDirectory.file(input)
+    val process = ProcessBuilder("sh", "-c", "$app $script > \"$output\"")
+        .inheritIO()
+        .start()
+    process.waitFor()
 }
 
 tasks.register("buildStatic") {
-    dependsOn(projects.cli.dependencyProject.tasks.named("installDist"))
+    dependsOn(gradle.includedBuild("cli").task(":installDist"))
     doLast {
         staticOutputDir.mkdirs()
         renderTo("src/staticMain/index.inkui.kts", "${staticOutputDir.path}/index.html")
@@ -42,7 +54,7 @@ tasks.register("buildStatic") {
         renderTo("src/staticMain/elements.inkui.kts", "${staticOutputDir.path}/elements.html")
         copy {
             staticResDir.mkdirs()
-            from(projects.renderWebCommon.dependencyProject.layout.projectDirectory.dir("src/commonMain/composeResources"))
+            from(gradle.includedBuild("inkui-render-web-common").projectDir.resolve("src/commonMain/composeResources"))
             into(staticResDir)
         }
     }

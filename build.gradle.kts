@@ -1,18 +1,49 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-
-gradle.startParameter.excludedTaskNames.add("lint")
-
-repositories {
-    mavenCentral()
-    google()
+tasks.register("clean") {
+    dependsOn(gradle.includedBuild("gradle-plugins").task(":clean"))
+    dependsOn(gradle.includedBuild("cli").task(":clean"))
+    dependsOn(gradle.includedBuild("inkui-render-compose").task(":clean"))
+    dependsOn(gradle.includedBuild("inkui-render-web-common").task(":clean"))
+    dependsOn(gradle.includedBuild("inkui-render-compose-html").task(":clean"))
+    dependsOn(gradle.includedBuild("inkui-render-remote").task(":clean"))
+    dependsOn(gradle.includedBuild("inkui-render-web-static").task(":clean"))
+    dependsOn(gradle.includedBuild("inkui-render-terminal").task(":clean"))
+    dependsOn(gradle.includedBuild("inkui-structures").task(":clean"))
+    dependsOn(gradle.includedBuild("sample-android").task(":clean"))
+    dependsOn(gradle.includedBuild("sample-common").task(":clean"))
+    dependsOn(gradle.includedBuild("sample-terminal").task(":clean"))
+    dependsOn(gradle.includedBuild("sample-web").task(":clean"))
 }
-
-allprojects {
-    repositories {
-        mavenCentral()
-        google()
-    }
-    tasks.withType(Test::class) {
-        testLogging.exceptionFormat = TestExceptionFormat.FULL
-    }
+tasks.register("check") {
+    dependsOn("checkAbi")
+    dependsOn(gradle.includedBuild("gradle-plugins").task(":check"))
+    dependsOn(gradle.includedBuild("cli").task(":check"))
+    dependsOn(gradle.includedBuild("inkui-render-compose").task(":check"))
+    dependsOn(gradle.includedBuild("inkui-render-web-common").task(":check"))
+    dependsOn(gradle.includedBuild("inkui-render-compose-html").task(":check"))
+    dependsOn(gradle.includedBuild("inkui-render-remote").task(":check"))
+    dependsOn(gradle.includedBuild("inkui-render-web-static").task(":check"))
+    dependsOn(gradle.includedBuild("inkui-render-terminal").task(":check"))
+    dependsOn(gradle.includedBuild("inkui-structures").task(":check"))
+    dependsOn(gradle.includedBuild("sample-android").task(":check"))
+    dependsOn(gradle.includedBuild("sample-common").task(":check"))
+    dependsOn(gradle.includedBuild("sample-terminal").task(":check"))
+    dependsOn(gradle.includedBuild("sample-web").task(":check"))
+}
+tasks.register("checkAbi") {
+    dependsOn(gradle.includedBuild("inkui-render-compose").task(":checkLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-web-common").task(":checkLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-compose-html").task(":checkLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-remote").task(":checkLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-web-static").task(":checkLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-terminal").task(":checkLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-structures").task(":checkLegacyAbi"))
+}
+tasks.register("updateAbi") {
+    dependsOn(gradle.includedBuild("inkui-render-compose").task(":updateLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-web-common").task(":updateLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-compose-html").task(":updateLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-remote").task(":updateLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-web-static").task(":updateLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-render-terminal").task(":updateLegacyAbi"))
+    dependsOn(gradle.includedBuild("inkui-structures").task(":updateLegacyAbi"))
 }

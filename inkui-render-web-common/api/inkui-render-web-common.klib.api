@@ -1,0 +1,141 @@
+// Klib ABI Dump
+// Targets: [js]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <com.inkapplications.ui:inkui-render-web-common>
+final class ink.ui.render.web.elements/CodeBlock : ink.ui.structures.elements/UiElement.Static { // ink.ui.render.web.elements/CodeBlock|null[0]
+    constructor <init>(kotlin/String, ink.ui.render.web.elements/CodeBlock.Language? = ...) // ink.ui.render.web.elements/CodeBlock.<init>|<init>(kotlin.String;ink.ui.render.web.elements.CodeBlock.Language?){}[0]
+
+    final val code // ink.ui.render.web.elements/CodeBlock.code|{}code[0]
+        final fun <get-code>(): kotlin/String // ink.ui.render.web.elements/CodeBlock.code.<get-code>|<get-code>(){}[0]
+    final val language // ink.ui.render.web.elements/CodeBlock.language|{}language[0]
+        final fun <get-language>(): ink.ui.render.web.elements/CodeBlock.Language? // ink.ui.render.web.elements/CodeBlock.language.<get-language>|<get-language>(){}[0]
+
+    final fun component1(): kotlin/String // ink.ui.render.web.elements/CodeBlock.component1|component1(){}[0]
+    final fun component2(): ink.ui.render.web.elements/CodeBlock.Language? // ink.ui.render.web.elements/CodeBlock.component2|component2(){}[0]
+    final fun copy(kotlin/String = ..., ink.ui.render.web.elements/CodeBlock.Language? = ...): ink.ui.render.web.elements/CodeBlock // ink.ui.render.web.elements/CodeBlock.copy|copy(kotlin.String;ink.ui.render.web.elements.CodeBlock.Language?){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.render.web.elements/CodeBlock.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.render.web.elements/CodeBlock.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.render.web.elements/CodeBlock.toString|toString(){}[0]
+
+    final value class Language { // ink.ui.render.web.elements/CodeBlock.Language|null[0]
+        constructor <init>(kotlin/String) // ink.ui.render.web.elements/CodeBlock.Language.<init>|<init>(kotlin.String){}[0]
+
+        final val key // ink.ui.render.web.elements/CodeBlock.Language.key|{}key[0]
+            final fun <get-key>(): kotlin/String // ink.ui.render.web.elements/CodeBlock.Language.key.<get-key>|<get-key>(){}[0]
+
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.render.web.elements/CodeBlock.Language.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.render.web.elements/CodeBlock.Language.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.render.web.elements/CodeBlock.Language.toString|toString(){}[0]
+
+        final object Companion { // ink.ui.render.web.elements/CodeBlock.Language.Companion|null[0]
+            final val Bash // ink.ui.render.web.elements/CodeBlock.Language.Companion.Bash|{}Bash[0]
+                final fun <get-Bash>(): ink.ui.render.web.elements/CodeBlock.Language // ink.ui.render.web.elements/CodeBlock.Language.Companion.Bash.<get-Bash>|<get-Bash>(){}[0]
+            final val Kotlin // ink.ui.render.web.elements/CodeBlock.Language.Companion.Kotlin|{}Kotlin[0]
+                final fun <get-Kotlin>(): ink.ui.render.web.elements/CodeBlock.Language // ink.ui.render.web.elements/CodeBlock.Language.Companion.Kotlin.<get-Kotlin>|<get-Kotlin>(){}[0]
+            final val Shell // ink.ui.render.web.elements/CodeBlock.Language.Companion.Shell|{}Shell[0]
+                final fun <get-Shell>(): ink.ui.render.web.elements/CodeBlock.Language // ink.ui.render.web.elements/CodeBlock.Language.Companion.Shell.<get-Shell>|<get-Shell>(){}[0]
+        }
+    }
+}
+
+final class ink.ui.render.web.elements/LinkButtonElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.render.web.elements/LinkButtonElement|null[0]
+    constructor <init>(kotlin/String, kotlin/String, ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...) // ink.ui.render.web.elements/LinkButtonElement.<init>|<init>(kotlin.String;kotlin.String;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
+
+    final val enabled // ink.ui.render.web.elements/LinkButtonElement.enabled|{}enabled[0]
+        final fun <get-enabled>(): kotlin/Boolean // ink.ui.render.web.elements/LinkButtonElement.enabled.<get-enabled>|<get-enabled>(){}[0]
+    final val latchOnPress // ink.ui.render.web.elements/LinkButtonElement.latchOnPress|{}latchOnPress[0]
+        final fun <get-latchOnPress>(): kotlin/Boolean // ink.ui.render.web.elements/LinkButtonElement.latchOnPress.<get-latchOnPress>|<get-latchOnPress>(){}[0]
+    final val leadingSymbol // ink.ui.render.web.elements/LinkButtonElement.leadingSymbol|{}leadingSymbol[0]
+        final fun <get-leadingSymbol>(): ink.ui.structures/Symbol? // ink.ui.render.web.elements/LinkButtonElement.leadingSymbol.<get-leadingSymbol>|<get-leadingSymbol>(){}[0]
+    final val sentiment // ink.ui.render.web.elements/LinkButtonElement.sentiment|{}sentiment[0]
+        final fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.render.web.elements/LinkButtonElement.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
+    final val text // ink.ui.render.web.elements/LinkButtonElement.text|{}text[0]
+        final fun <get-text>(): kotlin/String // ink.ui.render.web.elements/LinkButtonElement.text.<get-text>|<get-text>(){}[0]
+    final val trailingSymbol // ink.ui.render.web.elements/LinkButtonElement.trailingSymbol|{}trailingSymbol[0]
+        final fun <get-trailingSymbol>(): ink.ui.structures/Symbol? // ink.ui.render.web.elements/LinkButtonElement.trailingSymbol.<get-trailingSymbol>|<get-trailingSymbol>(){}[0]
+    final val url // ink.ui.render.web.elements/LinkButtonElement.url|{}url[0]
+        final fun <get-url>(): kotlin/String // ink.ui.render.web.elements/LinkButtonElement.url.<get-url>|<get-url>(){}[0]
+
+    final fun component1(): kotlin/String // ink.ui.render.web.elements/LinkButtonElement.component1|component1(){}[0]
+    final fun component2(): kotlin/String // ink.ui.render.web.elements/LinkButtonElement.component2|component2(){}[0]
+    final fun component3(): ink.ui.structures/Sentiment // ink.ui.render.web.elements/LinkButtonElement.component3|component3(){}[0]
+    final fun component4(): kotlin/Boolean // ink.ui.render.web.elements/LinkButtonElement.component4|component4(){}[0]
+    final fun component5(): kotlin/Boolean // ink.ui.render.web.elements/LinkButtonElement.component5|component5(){}[0]
+    final fun component6(): ink.ui.structures/Symbol? // ink.ui.render.web.elements/LinkButtonElement.component6|component6(){}[0]
+    final fun component7(): ink.ui.structures/Symbol? // ink.ui.render.web.elements/LinkButtonElement.component7|component7(){}[0]
+    final fun copy(kotlin/String = ..., kotlin/String = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...): ink.ui.render.web.elements/LinkButtonElement // ink.ui.render.web.elements/LinkButtonElement.copy|copy(kotlin.String;kotlin.String;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.render.web.elements/LinkButtonElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.render.web.elements/LinkButtonElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.render.web.elements/LinkButtonElement.toString|toString(){}[0]
+}
+
+final class ink.ui.render.web.elements/LinkNavigation : ink.ui.structures.elements/UiElement.Static { // ink.ui.render.web.elements/LinkNavigation|null[0]
+    constructor <init>(kotlin.collections/List<ink.ui.render.web.elements/LinkNavigation.NavigationItem>) // ink.ui.render.web.elements/LinkNavigation.<init>|<init>(kotlin.collections.List<ink.ui.render.web.elements.LinkNavigation.NavigationItem>){}[0]
+    constructor <init>(kotlin/Array<out ink.ui.render.web.elements/LinkNavigation.NavigationItem>...) // ink.ui.render.web.elements/LinkNavigation.<init>|<init>(kotlin.Array<out|ink.ui.render.web.elements.LinkNavigation.NavigationItem>...){}[0]
+    constructor <init>(kotlin/Function1<ink.ui.render.web.elements/LinkNavigation.Builder, kotlin/Unit>) // ink.ui.render.web.elements/LinkNavigation.<init>|<init>(kotlin.Function1<ink.ui.render.web.elements.LinkNavigation.Builder,kotlin.Unit>){}[0]
+
+    final val items // ink.ui.render.web.elements/LinkNavigation.items|{}items[0]
+        final fun <get-items>(): kotlin.collections/List<ink.ui.render.web.elements/LinkNavigation.NavigationItem> // ink.ui.render.web.elements/LinkNavigation.items.<get-items>|<get-items>(){}[0]
+
+    final fun component1(): kotlin.collections/List<ink.ui.render.web.elements/LinkNavigation.NavigationItem> // ink.ui.render.web.elements/LinkNavigation.component1|component1(){}[0]
+    final fun copy(kotlin.collections/List<ink.ui.render.web.elements/LinkNavigation.NavigationItem> = ...): ink.ui.render.web.elements/LinkNavigation // ink.ui.render.web.elements/LinkNavigation.copy|copy(kotlin.collections.List<ink.ui.render.web.elements.LinkNavigation.NavigationItem>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.render.web.elements/LinkNavigation.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.render.web.elements/LinkNavigation.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.render.web.elements/LinkNavigation.toString|toString(){}[0]
+
+    final class Builder { // ink.ui.render.web.elements/LinkNavigation.Builder|null[0]
+        constructor <init>(kotlin.collections/MutableList<ink.ui.render.web.elements/LinkNavigation.NavigationItem> = ...) // ink.ui.render.web.elements/LinkNavigation.Builder.<init>|<init>(kotlin.collections.MutableList<ink.ui.render.web.elements.LinkNavigation.NavigationItem>){}[0]
+
+        final val items // ink.ui.render.web.elements/LinkNavigation.Builder.items|{}items[0]
+            final fun <get-items>(): kotlin.collections/MutableList<ink.ui.render.web.elements/LinkNavigation.NavigationItem> // ink.ui.render.web.elements/LinkNavigation.Builder.items.<get-items>|<get-items>(){}[0]
+
+        final fun component1(): kotlin.collections/MutableList<ink.ui.render.web.elements/LinkNavigation.NavigationItem> // ink.ui.render.web.elements/LinkNavigation.Builder.component1|component1(){}[0]
+        final fun copy(kotlin.collections/MutableList<ink.ui.render.web.elements/LinkNavigation.NavigationItem> = ...): ink.ui.render.web.elements/LinkNavigation.Builder // ink.ui.render.web.elements/LinkNavigation.Builder.copy|copy(kotlin.collections.MutableList<ink.ui.render.web.elements.LinkNavigation.NavigationItem>){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.render.web.elements/LinkNavigation.Builder.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.render.web.elements/LinkNavigation.Builder.hashCode|hashCode(){}[0]
+        final fun link(kotlin/String, kotlin/String) // ink.ui.render.web.elements/LinkNavigation.Builder.link|link(kotlin.String;kotlin.String){}[0]
+        final fun toString(): kotlin/String // ink.ui.render.web.elements/LinkNavigation.Builder.toString|toString(){}[0]
+    }
+
+    final class NavigationItem { // ink.ui.render.web.elements/LinkNavigation.NavigationItem|null[0]
+        constructor <init>(kotlin/String, kotlin/String) // ink.ui.render.web.elements/LinkNavigation.NavigationItem.<init>|<init>(kotlin.String;kotlin.String){}[0]
+
+        final val text // ink.ui.render.web.elements/LinkNavigation.NavigationItem.text|{}text[0]
+            final fun <get-text>(): kotlin/String // ink.ui.render.web.elements/LinkNavigation.NavigationItem.text.<get-text>|<get-text>(){}[0]
+        final val url // ink.ui.render.web.elements/LinkNavigation.NavigationItem.url|{}url[0]
+            final fun <get-url>(): kotlin/String // ink.ui.render.web.elements/LinkNavigation.NavigationItem.url.<get-url>|<get-url>(){}[0]
+
+        final fun component1(): kotlin/String // ink.ui.render.web.elements/LinkNavigation.NavigationItem.component1|component1(){}[0]
+        final fun component2(): kotlin/String // ink.ui.render.web.elements/LinkNavigation.NavigationItem.component2|component2(){}[0]
+        final fun copy(kotlin/String = ..., kotlin/String = ...): ink.ui.render.web.elements/LinkNavigation.NavigationItem // ink.ui.render.web.elements/LinkNavigation.NavigationItem.copy|copy(kotlin.String;kotlin.String){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.render.web.elements/LinkNavigation.NavigationItem.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.render.web.elements/LinkNavigation.NavigationItem.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.render.web.elements/LinkNavigation.NavigationItem.toString|toString(){}[0]
+    }
+}
+
+final const val ink.ui.render.web/COMPOSE_RESOURCE_SVG_PATH // ink.ui.render.web/COMPOSE_RESOURCE_SVG_PATH|{}COMPOSE_RESOURCE_SVG_PATH[0]
+    final fun <get-COMPOSE_RESOURCE_SVG_PATH>(): kotlin/String // ink.ui.render.web/COMPOSE_RESOURCE_SVG_PATH.<get-COMPOSE_RESOURCE_SVG_PATH>|<get-COMPOSE_RESOURCE_SVG_PATH>(){}[0]
+
+final val ink.ui.render.web.elements/ink_ui_render_web_elements_CodeBlock$stableprop // ink.ui.render.web.elements/ink_ui_render_web_elements_CodeBlock$stableprop|#static{}ink_ui_render_web_elements_CodeBlock$stableprop[0]
+final val ink.ui.render.web.elements/ink_ui_render_web_elements_LinkButtonElement$stableprop // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkButtonElement$stableprop|#static{}ink_ui_render_web_elements_LinkButtonElement$stableprop[0]
+final val ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation$stableprop // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation$stableprop|#static{}ink_ui_render_web_elements_LinkNavigation$stableprop[0]
+final val ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_Builder$stableprop // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_Builder$stableprop|#static{}ink_ui_render_web_elements_LinkNavigation_Builder$stableprop[0]
+final val ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop|#static{}ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop[0]
+final val ink.ui.render.web/composePath // ink.ui.render.web/composePath|@ink.ui.structures.Symbol{}composePath[0]
+    final fun (ink.ui.structures/Symbol).<get-composePath>(): kotlin/String // ink.ui.render.web/composePath.<get-composePath>|<get-composePath>@ink.ui.structures.Symbol(){}[0]
+final val ink.ui.render.web/gridTemplateColumns // ink.ui.render.web/gridTemplateColumns|@ink.ui.structures.layouts.FixedGridLayout{}gridTemplateColumns[0]
+    final fun (ink.ui.structures.layouts/FixedGridLayout).<get-gridTemplateColumns>(): kotlin/String // ink.ui.render.web/gridTemplateColumns.<get-gridTemplateColumns>|<get-gridTemplateColumns>@ink.ui.structures.layouts.FixedGridLayout(){}[0]
+final val ink.ui.render.web/svgSrc // ink.ui.render.web/svgSrc|@ink.ui.structures.Symbol{}svgSrc[0]
+    final fun (ink.ui.structures/Symbol).<get-svgSrc>(): kotlin/String // ink.ui.render.web/svgSrc.<get-svgSrc>|<get-svgSrc>@ink.ui.structures.Symbol(){}[0]
+
+final fun (ink.ui.structures/Sentiment).ink.ui.render.web/toCssClass(): kotlin/String // ink.ui.render.web/toCssClass|toCssClass@ink.ui.structures.Sentiment(){}[0]
+final fun ink.ui.render.web.elements/ink_ui_render_web_elements_CodeBlock$stableprop_getter(): kotlin/Int // ink.ui.render.web.elements/ink_ui_render_web_elements_CodeBlock$stableprop_getter|ink_ui_render_web_elements_CodeBlock$stableprop_getter(){}[0]
+final fun ink.ui.render.web.elements/ink_ui_render_web_elements_LinkButtonElement$stableprop_getter(): kotlin/Int // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkButtonElement$stableprop_getter|ink_ui_render_web_elements_LinkButtonElement$stableprop_getter(){}[0]
+final fun ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation$stableprop_getter(): kotlin/Int // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation$stableprop_getter|ink_ui_render_web_elements_LinkNavigation$stableprop_getter(){}[0]
+final fun ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_Builder$stableprop_getter(): kotlin/Int // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_Builder$stableprop_getter|ink_ui_render_web_elements_LinkNavigation_Builder$stableprop_getter(){}[0]
+final fun ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop_getter(): kotlin/Int // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop_getter|ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop_getter(){}[0]

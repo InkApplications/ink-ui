@@ -1,0 +1,1168 @@
+// Klib ABI Dump
+// Targets: [js]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <com.inkapplications.ui:inkui-structures>
+final enum class ink.ui.structures.elements/Orientation : kotlin/Enum<ink.ui.structures.elements/Orientation> { // ink.ui.structures.elements/Orientation|null[0]
+    enum entry Horizontal // ink.ui.structures.elements/Orientation.Horizontal|null[0]
+    enum entry Vertical // ink.ui.structures.elements/Orientation.Vertical|null[0]
+
+    final val entries // ink.ui.structures.elements/Orientation.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<ink.ui.structures.elements/Orientation> // ink.ui.structures.elements/Orientation.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): ink.ui.structures.elements/Orientation // ink.ui.structures.elements/Orientation.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<ink.ui.structures.elements/Orientation> // ink.ui.structures.elements/Orientation.values|values#static(){}[0]
+
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures.elements/Orientation.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/Orientation> // ink.ui.structures.elements/Orientation.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures.elements/Orientation.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+final enum class ink.ui.structures/GroupingStyle : kotlin/Enum<ink.ui.structures/GroupingStyle> { // ink.ui.structures/GroupingStyle|null[0]
+    enum entry Inline // ink.ui.structures/GroupingStyle.Inline|null[0]
+    enum entry Items // ink.ui.structures/GroupingStyle.Items|null[0]
+    enum entry Sections // ink.ui.structures/GroupingStyle.Sections|null[0]
+    enum entry Unified // ink.ui.structures/GroupingStyle.Unified|null[0]
+
+    final val entries // ink.ui.structures/GroupingStyle.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<ink.ui.structures/GroupingStyle> // ink.ui.structures/GroupingStyle.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): ink.ui.structures/GroupingStyle // ink.ui.structures/GroupingStyle.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<ink.ui.structures/GroupingStyle> // ink.ui.structures/GroupingStyle.values|values#static(){}[0]
+
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures/GroupingStyle.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures/GroupingStyle> // ink.ui.structures/GroupingStyle.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures/GroupingStyle.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+final enum class ink.ui.structures/IconSizing : kotlin/Enum<ink.ui.structures/IconSizing> { // ink.ui.structures/IconSizing|null[0]
+    enum entry Large // ink.ui.structures/IconSizing.Large|null[0]
+    enum entry Medium // ink.ui.structures/IconSizing.Medium|null[0]
+    enum entry Small // ink.ui.structures/IconSizing.Small|null[0]
+
+    final val entries // ink.ui.structures/IconSizing.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<ink.ui.structures/IconSizing> // ink.ui.structures/IconSizing.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): ink.ui.structures/IconSizing // ink.ui.structures/IconSizing.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<ink.ui.structures/IconSizing> // ink.ui.structures/IconSizing.values|values#static(){}[0]
+
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures/IconSizing.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures/IconSizing> // ink.ui.structures/IconSizing.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures/IconSizing.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+final enum class ink.ui.structures/Positioning : kotlin/Enum<ink.ui.structures/Positioning> { // ink.ui.structures/Positioning|null[0]
+    enum entry Center // ink.ui.structures/Positioning.Center|null[0]
+    enum entry Start // ink.ui.structures/Positioning.Start|null[0]
+
+    final val entries // ink.ui.structures/Positioning.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<ink.ui.structures/Positioning> // ink.ui.structures/Positioning.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): ink.ui.structures/Positioning // ink.ui.structures/Positioning.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<ink.ui.structures/Positioning> // ink.ui.structures/Positioning.values|values#static(){}[0]
+
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures/Positioning.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures/Positioning> // ink.ui.structures/Positioning.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures/Positioning.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+final enum class ink.ui.structures/Sentiment : kotlin/Enum<ink.ui.structures/Sentiment> { // ink.ui.structures/Sentiment|null[0]
+    enum entry Caution // ink.ui.structures/Sentiment.Caution|null[0]
+    enum entry Idle // ink.ui.structures/Sentiment.Idle|null[0]
+    enum entry Negative // ink.ui.structures/Sentiment.Negative|null[0]
+    enum entry Nominal // ink.ui.structures/Sentiment.Nominal|null[0]
+    enum entry Positive // ink.ui.structures/Sentiment.Positive|null[0]
+    enum entry Primary // ink.ui.structures/Sentiment.Primary|null[0]
+
+    final val entries // ink.ui.structures/Sentiment.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<ink.ui.structures/Sentiment> // ink.ui.structures/Sentiment.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): ink.ui.structures/Sentiment // ink.ui.structures/Sentiment.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<ink.ui.structures/Sentiment> // ink.ui.structures/Sentiment.values|values#static(){}[0]
+
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures/Sentiment.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures/Sentiment> // ink.ui.structures/Sentiment.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures/Sentiment.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+final enum class ink.ui.structures/TextStyle : kotlin/Enum<ink.ui.structures/TextStyle> { // ink.ui.structures/TextStyle|null[0]
+    enum entry Body // ink.ui.structures/TextStyle.Body|null[0]
+    enum entry Caption // ink.ui.structures/TextStyle.Caption|null[0]
+    enum entry H1 // ink.ui.structures/TextStyle.H1|null[0]
+    enum entry H2 // ink.ui.structures/TextStyle.H2|null[0]
+    enum entry H3 // ink.ui.structures/TextStyle.H3|null[0]
+
+    final val entries // ink.ui.structures/TextStyle.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<ink.ui.structures/TextStyle> // ink.ui.structures/TextStyle.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): ink.ui.structures/TextStyle // ink.ui.structures/TextStyle.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<ink.ui.structures/TextStyle> // ink.ui.structures/TextStyle.values|values#static(){}[0]
+
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures/TextStyle.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures/TextStyle> // ink.ui.structures/TextStyle.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures/TextStyle.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+abstract interface ink.ui.structures.render/Presenter { // ink.ui.structures.render/Presenter|null[0]
+    abstract fun presentLayout(ink.ui.structures.layouts/UiLayout) // ink.ui.structures.render/Presenter.presentLayout|presentLayout(ink.ui.structures.layouts.UiLayout){}[0]
+}
+
+sealed interface ink.ui.structures.elements/ProgressElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/ProgressElement|null[0]
+    abstract val caption // ink.ui.structures.elements/ProgressElement.caption|{}caption[0]
+        abstract fun <get-caption>(): kotlin/String? // ink.ui.structures.elements/ProgressElement.caption.<get-caption>|<get-caption>(){}[0]
+    abstract val sentiment // ink.ui.structures.elements/ProgressElement.sentiment|{}sentiment[0]
+        abstract fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ProgressElement.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
+
+    final class Determinate : ink.ui.structures.elements/ProgressElement { // ink.ui.structures.elements/ProgressElement.Determinate|null[0]
+        constructor <init>(kotlin/Float, kotlin/String? = ..., ink.ui.structures/Sentiment = ...) // ink.ui.structures.elements/ProgressElement.Determinate.<init>|<init>(kotlin.Float;kotlin.String?;ink.ui.structures.Sentiment){}[0]
+
+        final val caption // ink.ui.structures.elements/ProgressElement.Determinate.caption|{}caption[0]
+            final fun <get-caption>(): kotlin/String? // ink.ui.structures.elements/ProgressElement.Determinate.caption.<get-caption>|<get-caption>(){}[0]
+        final val progress // ink.ui.structures.elements/ProgressElement.Determinate.progress|{}progress[0]
+            final fun <get-progress>(): kotlin/Float // ink.ui.structures.elements/ProgressElement.Determinate.progress.<get-progress>|<get-progress>(){}[0]
+        final val sentiment // ink.ui.structures.elements/ProgressElement.Determinate.sentiment|{}sentiment[0]
+            final fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ProgressElement.Determinate.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
+
+        final fun component1(): kotlin/Float // ink.ui.structures.elements/ProgressElement.Determinate.component1|component1(){}[0]
+        final fun component2(): kotlin/String? // ink.ui.structures.elements/ProgressElement.Determinate.component2|component2(){}[0]
+        final fun component3(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ProgressElement.Determinate.component3|component3(){}[0]
+        final fun copy(kotlin/Float = ..., kotlin/String? = ..., ink.ui.structures/Sentiment = ...): ink.ui.structures.elements/ProgressElement.Determinate // ink.ui.structures.elements/ProgressElement.Determinate.copy|copy(kotlin.Float;kotlin.String?;ink.ui.structures.Sentiment){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/ProgressElement.Determinate.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/ProgressElement.Determinate.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/ProgressElement.Determinate.toString|toString(){}[0]
+
+        final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/ProgressElement.Determinate> { // ink.ui.structures.elements/ProgressElement.Determinate.$serializer|null[0]
+            final val descriptor // ink.ui.structures.elements/ProgressElement.Determinate.$serializer.descriptor|{}descriptor[0]
+                final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/ProgressElement.Determinate.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+            final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/ProgressElement.Determinate.$serializer.childSerializers|childSerializers(){}[0]
+            final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/ProgressElement.Determinate // ink.ui.structures.elements/ProgressElement.Determinate.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+            final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/ProgressElement.Determinate) // ink.ui.structures.elements/ProgressElement.Determinate.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.ProgressElement.Determinate){}[0]
+        }
+
+        final object Companion { // ink.ui.structures.elements/ProgressElement.Determinate.Companion|null[0]
+            final val $childSerializers // ink.ui.structures.elements/ProgressElement.Determinate.Companion.$childSerializers|{}$childSerializers[0]
+
+            final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/ProgressElement.Determinate> // ink.ui.structures.elements/ProgressElement.Determinate.Companion.serializer|serializer(){}[0]
+        }
+    }
+
+    final class Indeterminate : ink.ui.structures.elements/ProgressElement { // ink.ui.structures.elements/ProgressElement.Indeterminate|null[0]
+        constructor <init>(kotlin/String? = ..., ink.ui.structures/Sentiment = ...) // ink.ui.structures.elements/ProgressElement.Indeterminate.<init>|<init>(kotlin.String?;ink.ui.structures.Sentiment){}[0]
+
+        final val caption // ink.ui.structures.elements/ProgressElement.Indeterminate.caption|{}caption[0]
+            final fun <get-caption>(): kotlin/String? // ink.ui.structures.elements/ProgressElement.Indeterminate.caption.<get-caption>|<get-caption>(){}[0]
+        final val sentiment // ink.ui.structures.elements/ProgressElement.Indeterminate.sentiment|{}sentiment[0]
+            final fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ProgressElement.Indeterminate.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
+
+        final fun component1(): kotlin/String? // ink.ui.structures.elements/ProgressElement.Indeterminate.component1|component1(){}[0]
+        final fun component2(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ProgressElement.Indeterminate.component2|component2(){}[0]
+        final fun copy(kotlin/String? = ..., ink.ui.structures/Sentiment = ...): ink.ui.structures.elements/ProgressElement.Indeterminate // ink.ui.structures.elements/ProgressElement.Indeterminate.copy|copy(kotlin.String?;ink.ui.structures.Sentiment){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/ProgressElement.Indeterminate.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/ProgressElement.Indeterminate.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/ProgressElement.Indeterminate.toString|toString(){}[0]
+
+        final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/ProgressElement.Indeterminate> { // ink.ui.structures.elements/ProgressElement.Indeterminate.$serializer|null[0]
+            final val descriptor // ink.ui.structures.elements/ProgressElement.Indeterminate.$serializer.descriptor|{}descriptor[0]
+                final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/ProgressElement.Indeterminate.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+            final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/ProgressElement.Indeterminate.$serializer.childSerializers|childSerializers(){}[0]
+            final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/ProgressElement.Indeterminate // ink.ui.structures.elements/ProgressElement.Indeterminate.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+            final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/ProgressElement.Indeterminate) // ink.ui.structures.elements/ProgressElement.Indeterminate.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.ProgressElement.Indeterminate){}[0]
+        }
+
+        final object Companion { // ink.ui.structures.elements/ProgressElement.Indeterminate.Companion|null[0]
+            final val $childSerializers // ink.ui.structures.elements/ProgressElement.Indeterminate.Companion.$childSerializers|{}$childSerializers[0]
+
+            final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/ProgressElement.Indeterminate> // ink.ui.structures.elements/ProgressElement.Indeterminate.Companion.serializer|serializer(){}[0]
+        }
+    }
+
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures.elements/ProgressElement.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/ProgressElement> // ink.ui.structures.elements/ProgressElement.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures.elements/ProgressElement.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+sealed interface ink.ui.structures.elements/UiElement { // ink.ui.structures.elements/UiElement|null[0]
+    abstract interface Interactive : ink.ui.structures.elements/UiElement // ink.ui.structures.elements/UiElement.Interactive|null[0]
+
+    abstract interface Static : ink.ui.structures.elements/UiElement // ink.ui.structures.elements/UiElement.Static|null[0]
+}
+
+sealed interface ink.ui.structures.layouts/UiLayout { // ink.ui.structures.layouts/UiLayout|null[0]
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures.layouts/UiLayout.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.layouts/UiLayout> // ink.ui.structures.layouts/UiLayout.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures.layouts/UiLayout.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+sealed interface ink.ui.structures.render/MissingRendererBehavior { // ink.ui.structures.render/MissingRendererBehavior|null[0]
+    final class Ignore : ink.ui.structures.render/MissingRendererBehavior { // ink.ui.structures.render/MissingRendererBehavior.Ignore|null[0]
+        constructor <init>(kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit> = ...) // ink.ui.structures.render/MissingRendererBehavior.Ignore.<init>|<init>(kotlin.Function1<ink.ui.structures.elements.UiElement,kotlin.Unit>){}[0]
+
+        final val log // ink.ui.structures.render/MissingRendererBehavior.Ignore.log|{}log[0]
+            final fun <get-log>(): kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit> // ink.ui.structures.render/MissingRendererBehavior.Ignore.log.<get-log>|<get-log>(){}[0]
+
+        final fun component1(): kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit> // ink.ui.structures.render/MissingRendererBehavior.Ignore.component1|component1(){}[0]
+        final fun copy(kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit> = ...): ink.ui.structures.render/MissingRendererBehavior.Ignore // ink.ui.structures.render/MissingRendererBehavior.Ignore.copy|copy(kotlin.Function1<ink.ui.structures.elements.UiElement,kotlin.Unit>){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.render/MissingRendererBehavior.Ignore.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.render/MissingRendererBehavior.Ignore.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.render/MissingRendererBehavior.Ignore.toString|toString(){}[0]
+    }
+
+    final class Placeholder : ink.ui.structures.render/MissingRendererBehavior { // ink.ui.structures.render/MissingRendererBehavior.Placeholder|null[0]
+        constructor <init>(kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit> = ...) // ink.ui.structures.render/MissingRendererBehavior.Placeholder.<init>|<init>(kotlin.Function1<ink.ui.structures.elements.UiElement,kotlin.Unit>){}[0]
+
+        final val log // ink.ui.structures.render/MissingRendererBehavior.Placeholder.log|{}log[0]
+            final fun <get-log>(): kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit> // ink.ui.structures.render/MissingRendererBehavior.Placeholder.log.<get-log>|<get-log>(){}[0]
+
+        final fun component1(): kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit> // ink.ui.structures.render/MissingRendererBehavior.Placeholder.component1|component1(){}[0]
+        final fun copy(kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit> = ...): ink.ui.structures.render/MissingRendererBehavior.Placeholder // ink.ui.structures.render/MissingRendererBehavior.Placeholder.copy|copy(kotlin.Function1<ink.ui.structures.elements.UiElement,kotlin.Unit>){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.render/MissingRendererBehavior.Placeholder.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.render/MissingRendererBehavior.Placeholder.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.render/MissingRendererBehavior.Placeholder.toString|toString(){}[0]
+    }
+
+    final object Panic : ink.ui.structures.render/MissingRendererBehavior { // ink.ui.structures.render/MissingRendererBehavior.Panic|null[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.render/MissingRendererBehavior.Panic.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.render/MissingRendererBehavior.Panic.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.render/MissingRendererBehavior.Panic.toString|toString(){}[0]
+
+        final class MissingRendererException : kotlin/Exception { // ink.ui.structures.render/MissingRendererBehavior.Panic.MissingRendererException|null[0]
+            constructor <init>(ink.ui.structures.elements/UiElement) // ink.ui.structures.render/MissingRendererBehavior.Panic.MissingRendererException.<init>|<init>(ink.ui.structures.elements.UiElement){}[0]
+        }
+    }
+}
+
+sealed interface ink.ui.structures.render/RenderResult { // ink.ui.structures.render/RenderResult|null[0]
+    final class Failed : ink.ui.structures.render/RenderResult { // ink.ui.structures.render/RenderResult.Failed|null[0]
+        constructor <init>(kotlin/Throwable) // ink.ui.structures.render/RenderResult.Failed.<init>|<init>(kotlin.Throwable){}[0]
+
+        final val exception // ink.ui.structures.render/RenderResult.Failed.exception|{}exception[0]
+            final fun <get-exception>(): kotlin/Throwable // ink.ui.structures.render/RenderResult.Failed.exception.<get-exception>|<get-exception>(){}[0]
+
+        final fun component1(): kotlin/Throwable // ink.ui.structures.render/RenderResult.Failed.component1|component1(){}[0]
+        final fun copy(kotlin/Throwable = ...): ink.ui.structures.render/RenderResult.Failed // ink.ui.structures.render/RenderResult.Failed.copy|copy(kotlin.Throwable){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.render/RenderResult.Failed.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.render/RenderResult.Failed.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.render/RenderResult.Failed.toString|toString(){}[0]
+    }
+
+    final object Rendered : ink.ui.structures.render/RenderResult { // ink.ui.structures.render/RenderResult.Rendered|null[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.render/RenderResult.Rendered.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.render/RenderResult.Rendered.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.render/RenderResult.Rendered.toString|toString(){}[0]
+    }
+
+    final object Skipped : ink.ui.structures.render/RenderResult { // ink.ui.structures.render/RenderResult.Skipped|null[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.render/RenderResult.Skipped.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.render/RenderResult.Skipped.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.render/RenderResult.Skipped.toString|toString(){}[0]
+    }
+}
+
+final class ink.ui.structures.elements/BreadcrumbElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/BreadcrumbElement|null[0]
+    constructor <init>(kotlin.collections/List<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb>) // ink.ui.structures.elements/BreadcrumbElement.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.BreadcrumbElement.Breadcrumb>){}[0]
+    constructor <init>(kotlin/Function1<ink.ui.structures.elements/BreadcrumbElement.Builder, kotlin/Unit>) // ink.ui.structures.elements/BreadcrumbElement.<init>|<init>(kotlin.Function1<ink.ui.structures.elements.BreadcrumbElement.Builder,kotlin.Unit>){}[0]
+
+    final val items // ink.ui.structures.elements/BreadcrumbElement.items|{}items[0]
+        final fun <get-items>(): kotlin.collections/List<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> // ink.ui.structures.elements/BreadcrumbElement.items.<get-items>|<get-items>(){}[0]
+
+    final fun component1(): kotlin.collections/List<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> // ink.ui.structures.elements/BreadcrumbElement.component1|component1(){}[0]
+    final fun copy(kotlin.collections/List<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> = ...): ink.ui.structures.elements/BreadcrumbElement // ink.ui.structures.elements/BreadcrumbElement.copy|copy(kotlin.collections.List<ink.ui.structures.elements.BreadcrumbElement.Breadcrumb>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/BreadcrumbElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/BreadcrumbElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/BreadcrumbElement.toString|toString(){}[0]
+
+    final class Breadcrumb { // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb|null[0]
+        constructor <init>(kotlin/String, kotlin/String? = ...) // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.<init>|<init>(kotlin.String;kotlin.String?){}[0]
+
+        final val text // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.text|{}text[0]
+            final fun <get-text>(): kotlin/String // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.text.<get-text>|<get-text>(){}[0]
+        final val url // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.url|{}url[0]
+            final fun <get-url>(): kotlin/String? // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.url.<get-url>|<get-url>(){}[0]
+
+        final fun component1(): kotlin/String // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.component1|component1(){}[0]
+        final fun component2(): kotlin/String? // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.component2|component2(){}[0]
+        final fun copy(kotlin/String = ..., kotlin/String? = ...): ink.ui.structures.elements/BreadcrumbElement.Breadcrumb // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.copy|copy(kotlin.String;kotlin.String?){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.toString|toString(){}[0]
+
+        final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> { // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.$serializer|null[0]
+            final val descriptor // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.$serializer.descriptor|{}descriptor[0]
+                final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+            final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.$serializer.childSerializers|childSerializers(){}[0]
+            final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/BreadcrumbElement.Breadcrumb // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+            final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/BreadcrumbElement.Breadcrumb) // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.BreadcrumbElement.Breadcrumb){}[0]
+        }
+
+        final object Companion { // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.Companion|null[0]
+            final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> // ink.ui.structures.elements/BreadcrumbElement.Breadcrumb.Companion.serializer|serializer(){}[0]
+        }
+    }
+
+    final class Builder { // ink.ui.structures.elements/BreadcrumbElement.Builder|null[0]
+        constructor <init>(kotlin.collections/MutableList<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> = ...) // ink.ui.structures.elements/BreadcrumbElement.Builder.<init>|<init>(kotlin.collections.MutableList<ink.ui.structures.elements.BreadcrumbElement.Breadcrumb>){}[0]
+
+        final val breadcrumbs // ink.ui.structures.elements/BreadcrumbElement.Builder.breadcrumbs|{}breadcrumbs[0]
+            final fun <get-breadcrumbs>(): kotlin.collections/MutableList<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> // ink.ui.structures.elements/BreadcrumbElement.Builder.breadcrumbs.<get-breadcrumbs>|<get-breadcrumbs>(){}[0]
+
+        final fun component1(): kotlin.collections/MutableList<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> // ink.ui.structures.elements/BreadcrumbElement.Builder.component1|component1(){}[0]
+        final fun copy(kotlin.collections/MutableList<ink.ui.structures.elements/BreadcrumbElement.Breadcrumb> = ...): ink.ui.structures.elements/BreadcrumbElement.Builder // ink.ui.structures.elements/BreadcrumbElement.Builder.copy|copy(kotlin.collections.MutableList<ink.ui.structures.elements.BreadcrumbElement.Breadcrumb>){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/BreadcrumbElement.Builder.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/BreadcrumbElement.Builder.hashCode|hashCode(){}[0]
+        final fun link(kotlin/String, kotlin/String) // ink.ui.structures.elements/BreadcrumbElement.Builder.link|link(kotlin.String;kotlin.String){}[0]
+        final fun text(kotlin/String) // ink.ui.structures.elements/BreadcrumbElement.Builder.text|text(kotlin.String){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/BreadcrumbElement.Builder.toString|toString(){}[0]
+    }
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/BreadcrumbElement> { // ink.ui.structures.elements/BreadcrumbElement.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/BreadcrumbElement.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/BreadcrumbElement.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/BreadcrumbElement.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/BreadcrumbElement // ink.ui.structures.elements/BreadcrumbElement.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/BreadcrumbElement) // ink.ui.structures.elements/BreadcrumbElement.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.BreadcrumbElement){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/BreadcrumbElement.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/BreadcrumbElement.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/BreadcrumbElement> // ink.ui.structures.elements/BreadcrumbElement.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.elements/ButtonElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/ButtonElement|null[0]
+    constructor <init>(kotlin/String, kotlin/Function0<kotlin/Unit>, kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...) // ink.ui.structures.elements/ButtonElement.<init>|<init>(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
+
+    final val enabled // ink.ui.structures.elements/ButtonElement.enabled|{}enabled[0]
+        final fun <get-enabled>(): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.enabled.<get-enabled>|<get-enabled>(){}[0]
+    final val latchOnPress // ink.ui.structures.elements/ButtonElement.latchOnPress|{}latchOnPress[0]
+        final fun <get-latchOnPress>(): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.latchOnPress.<get-latchOnPress>|<get-latchOnPress>(){}[0]
+    final val leadingSymbol // ink.ui.structures.elements/ButtonElement.leadingSymbol|{}leadingSymbol[0]
+        final fun <get-leadingSymbol>(): ink.ui.structures/Symbol? // ink.ui.structures.elements/ButtonElement.leadingSymbol.<get-leadingSymbol>|<get-leadingSymbol>(){}[0]
+    final val onClick // ink.ui.structures.elements/ButtonElement.onClick|{}onClick[0]
+        final fun <get-onClick>(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/ButtonElement.onClick.<get-onClick>|<get-onClick>(){}[0]
+    final val onContextClick // ink.ui.structures.elements/ButtonElement.onContextClick|{}onContextClick[0]
+        final fun <get-onContextClick>(): kotlin/Function0<kotlin/Unit>? // ink.ui.structures.elements/ButtonElement.onContextClick.<get-onContextClick>|<get-onContextClick>(){}[0]
+    final val sentiment // ink.ui.structures.elements/ButtonElement.sentiment|{}sentiment[0]
+        final fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ButtonElement.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
+    final val text // ink.ui.structures.elements/ButtonElement.text|{}text[0]
+        final fun <get-text>(): kotlin/String // ink.ui.structures.elements/ButtonElement.text.<get-text>|<get-text>(){}[0]
+    final val trailingSymbol // ink.ui.structures.elements/ButtonElement.trailingSymbol|{}trailingSymbol[0]
+        final fun <get-trailingSymbol>(): ink.ui.structures/Symbol? // ink.ui.structures.elements/ButtonElement.trailingSymbol.<get-trailingSymbol>|<get-trailingSymbol>(){}[0]
+
+    final fun component1(): kotlin/String // ink.ui.structures.elements/ButtonElement.component1|component1(){}[0]
+    final fun component2(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/ButtonElement.component2|component2(){}[0]
+    final fun component3(): kotlin/Function0<kotlin/Unit>? // ink.ui.structures.elements/ButtonElement.component3|component3(){}[0]
+    final fun component4(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ButtonElement.component4|component4(){}[0]
+    final fun component5(): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.component5|component5(){}[0]
+    final fun component6(): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.component6|component6(){}[0]
+    final fun component7(): ink.ui.structures/Symbol? // ink.ui.structures.elements/ButtonElement.component7|component7(){}[0]
+    final fun component8(): ink.ui.structures/Symbol? // ink.ui.structures.elements/ButtonElement.component8|component8(){}[0]
+    final fun copy(kotlin/String = ..., kotlin/Function0<kotlin/Unit> = ..., kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...): ink.ui.structures.elements/ButtonElement // ink.ui.structures.elements/ButtonElement.copy|copy(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/ButtonElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/ButtonElement.toString|toString(){}[0]
+}
+
+final class ink.ui.structures.elements/CheckBoxElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/CheckBoxElement|null[0]
+    constructor <init>(kotlin/Boolean, kotlin/Function0<kotlin/Unit>) // ink.ui.structures.elements/CheckBoxElement.<init>|<init>(kotlin.Boolean;kotlin.Function0<kotlin.Unit>){}[0]
+
+    final val checked // ink.ui.structures.elements/CheckBoxElement.checked|{}checked[0]
+        final fun <get-checked>(): kotlin/Boolean // ink.ui.structures.elements/CheckBoxElement.checked.<get-checked>|<get-checked>(){}[0]
+    final val onClick // ink.ui.structures.elements/CheckBoxElement.onClick|{}onClick[0]
+        final fun <get-onClick>(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/CheckBoxElement.onClick.<get-onClick>|<get-onClick>(){}[0]
+
+    final fun component1(): kotlin/Boolean // ink.ui.structures.elements/CheckBoxElement.component1|component1(){}[0]
+    final fun component2(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/CheckBoxElement.component2|component2(){}[0]
+    final fun copy(kotlin/Boolean = ..., kotlin/Function0<kotlin/Unit> = ...): ink.ui.structures.elements/CheckBoxElement // ink.ui.structures.elements/CheckBoxElement.copy|copy(kotlin.Boolean;kotlin.Function0<kotlin.Unit>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/CheckBoxElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/CheckBoxElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/CheckBoxElement.toString|toString(){}[0]
+}
+
+final class ink.ui.structures.elements/ElementList : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/ElementList|null[0]
+    constructor <init>(kotlin.collections/List<ink.ui.structures.elements/UiElement>, ink.ui.structures/Positioning = ..., ink.ui.structures/GroupingStyle = ..., ink.ui.structures.elements/Orientation = ...) // ink.ui.structures.elements/ElementList.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.UiElement>;ink.ui.structures.Positioning;ink.ui.structures.GroupingStyle;ink.ui.structures.elements.Orientation){}[0]
+    constructor <init>(kotlin/Array<out ink.ui.structures.elements/UiElement>..., ink.ui.structures/Positioning = ..., ink.ui.structures/GroupingStyle = ..., ink.ui.structures.elements/Orientation = ...) // ink.ui.structures.elements/ElementList.<init>|<init>(kotlin.Array<out|ink.ui.structures.elements.UiElement>...;ink.ui.structures.Positioning;ink.ui.structures.GroupingStyle;ink.ui.structures.elements.Orientation){}[0]
+
+    final val groupingStyle // ink.ui.structures.elements/ElementList.groupingStyle|{}groupingStyle[0]
+        final fun <get-groupingStyle>(): ink.ui.structures/GroupingStyle // ink.ui.structures.elements/ElementList.groupingStyle.<get-groupingStyle>|<get-groupingStyle>(){}[0]
+    final val items // ink.ui.structures.elements/ElementList.items|{}items[0]
+        final fun <get-items>(): kotlin.collections/List<ink.ui.structures.elements/UiElement> // ink.ui.structures.elements/ElementList.items.<get-items>|<get-items>(){}[0]
+    final val orientation // ink.ui.structures.elements/ElementList.orientation|{}orientation[0]
+        final fun <get-orientation>(): ink.ui.structures.elements/Orientation // ink.ui.structures.elements/ElementList.orientation.<get-orientation>|<get-orientation>(){}[0]
+    final val positioning // ink.ui.structures.elements/ElementList.positioning|{}positioning[0]
+        final fun <get-positioning>(): ink.ui.structures/Positioning // ink.ui.structures.elements/ElementList.positioning.<get-positioning>|<get-positioning>(){}[0]
+
+    final fun component1(): kotlin.collections/List<ink.ui.structures.elements/UiElement> // ink.ui.structures.elements/ElementList.component1|component1(){}[0]
+    final fun component2(): ink.ui.structures/Positioning // ink.ui.structures.elements/ElementList.component2|component2(){}[0]
+    final fun component3(): ink.ui.structures/GroupingStyle // ink.ui.structures.elements/ElementList.component3|component3(){}[0]
+    final fun component4(): ink.ui.structures.elements/Orientation // ink.ui.structures.elements/ElementList.component4|component4(){}[0]
+    final fun copy(kotlin.collections/List<ink.ui.structures.elements/UiElement> = ..., ink.ui.structures/Positioning = ..., ink.ui.structures/GroupingStyle = ..., ink.ui.structures.elements/Orientation = ...): ink.ui.structures.elements/ElementList // ink.ui.structures.elements/ElementList.copy|copy(kotlin.collections.List<ink.ui.structures.elements.UiElement>;ink.ui.structures.Positioning;ink.ui.structures.GroupingStyle;ink.ui.structures.elements.Orientation){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/ElementList.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/ElementList.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/ElementList.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/ElementList> { // ink.ui.structures.elements/ElementList.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/ElementList.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/ElementList.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/ElementList.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/ElementList // ink.ui.structures.elements/ElementList.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/ElementList) // ink.ui.structures.elements/ElementList.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.ElementList){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/ElementList.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/ElementList.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/ElementList> // ink.ui.structures.elements/ElementList.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.elements/FormattedText : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/FormattedText|null[0]
+    constructor <init>(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span>, kotlin/Boolean = ...) // ink.ui.structures.elements/FormattedText.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>;kotlin.Boolean){}[0]
+    constructor <init>(kotlin/Boolean = ..., kotlin/Function1<ink.ui.structures.elements/FormattedText.Builder, kotlin/Unit>) // ink.ui.structures.elements/FormattedText.<init>|<init>(kotlin.Boolean;kotlin.Function1<ink.ui.structures.elements.FormattedText.Builder,kotlin.Unit>){}[0]
+
+    final val paragraph // ink.ui.structures.elements/FormattedText.paragraph|{}paragraph[0]
+        final fun <get-paragraph>(): kotlin/Boolean // ink.ui.structures.elements/FormattedText.paragraph.<get-paragraph>|<get-paragraph>(){}[0]
+    final val spans // ink.ui.structures.elements/FormattedText.spans|{}spans[0]
+        final fun <get-spans>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.spans.<get-spans>|<get-spans>(){}[0]
+
+    final fun component1(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.component1|component1(){}[0]
+    final fun component2(): kotlin/Boolean // ink.ui.structures.elements/FormattedText.component2|component2(){}[0]
+    final fun copy(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> = ..., kotlin/Boolean = ...): ink.ui.structures.elements/FormattedText // ink.ui.structures.elements/FormattedText.copy|copy(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>;kotlin.Boolean){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.hashCode|hashCode(){}[0]
+    final fun toPlainTextElement(ink.ui.structures/TextStyle): ink.ui.structures.elements/TextElement // ink.ui.structures.elements/FormattedText.toPlainTextElement|toPlainTextElement(ink.ui.structures.TextStyle){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.toString|toString(){}[0]
+
+    sealed interface Span { // ink.ui.structures.elements/FormattedText.Span|null[0]
+        open fun toPlainString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.toPlainString|toPlainString(){}[0]
+
+        sealed interface Composite : ink.ui.structures.elements/FormattedText.Span { // ink.ui.structures.elements/FormattedText.Span.Composite|null[0]
+            abstract val inner // ink.ui.structures.elements/FormattedText.Span.Composite.inner|{}inner[0]
+                abstract fun <get-inner>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Composite.inner.<get-inner>|<get-inner>(){}[0]
+        }
+
+        final class Code : ink.ui.structures.elements/FormattedText.Span.Composite { // ink.ui.structures.elements/FormattedText.Span.Code|null[0]
+            constructor <init>(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span>, kotlin/Boolean = ...) // ink.ui.structures.elements/FormattedText.Span.Code.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>;kotlin.Boolean){}[0]
+
+            final val group // ink.ui.structures.elements/FormattedText.Span.Code.group|{}group[0]
+                final fun <get-group>(): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Code.group.<get-group>|<get-group>(){}[0]
+            final val inner // ink.ui.structures.elements/FormattedText.Span.Code.inner|{}inner[0]
+                final fun <get-inner>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Code.inner.<get-inner>|<get-inner>(){}[0]
+
+            final fun component1(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Code.component1|component1(){}[0]
+            final fun component2(): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Code.component2|component2(){}[0]
+            final fun copy(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> = ..., kotlin/Boolean = ...): ink.ui.structures.elements/FormattedText.Span.Code // ink.ui.structures.elements/FormattedText.Span.Code.copy|copy(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>;kotlin.Boolean){}[0]
+            final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Code.equals|equals(kotlin.Any?){}[0]
+            final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Span.Code.hashCode|hashCode(){}[0]
+            final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Code.toString|toString(){}[0]
+
+            final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/FormattedText.Span.Code> { // ink.ui.structures.elements/FormattedText.Span.Code.$serializer|null[0]
+                final val descriptor // ink.ui.structures.elements/FormattedText.Span.Code.$serializer.descriptor|{}descriptor[0]
+                    final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/FormattedText.Span.Code.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+                final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/FormattedText.Span.Code.$serializer.childSerializers|childSerializers(){}[0]
+                final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/FormattedText.Span.Code // ink.ui.structures.elements/FormattedText.Span.Code.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+                final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/FormattedText.Span.Code) // ink.ui.structures.elements/FormattedText.Span.Code.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.FormattedText.Span.Code){}[0]
+            }
+
+            final object Companion { // ink.ui.structures.elements/FormattedText.Span.Code.Companion|null[0]
+                final val $childSerializers // ink.ui.structures.elements/FormattedText.Span.Code.Companion.$childSerializers|{}$childSerializers[0]
+
+                final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span.Code> // ink.ui.structures.elements/FormattedText.Span.Code.Companion.serializer|serializer(){}[0]
+            }
+        }
+
+        final class Emphasis : ink.ui.structures.elements/FormattedText.Span.Composite { // ink.ui.structures.elements/FormattedText.Span.Emphasis|null[0]
+            constructor <init>(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span>) // ink.ui.structures.elements/FormattedText.Span.Emphasis.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>){}[0]
+
+            final val inner // ink.ui.structures.elements/FormattedText.Span.Emphasis.inner|{}inner[0]
+                final fun <get-inner>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Emphasis.inner.<get-inner>|<get-inner>(){}[0]
+
+            final fun component1(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Emphasis.component1|component1(){}[0]
+            final fun copy(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> = ...): ink.ui.structures.elements/FormattedText.Span.Emphasis // ink.ui.structures.elements/FormattedText.Span.Emphasis.copy|copy(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>){}[0]
+            final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Emphasis.equals|equals(kotlin.Any?){}[0]
+            final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Span.Emphasis.hashCode|hashCode(){}[0]
+            final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Emphasis.toString|toString(){}[0]
+
+            final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/FormattedText.Span.Emphasis> { // ink.ui.structures.elements/FormattedText.Span.Emphasis.$serializer|null[0]
+                final val descriptor // ink.ui.structures.elements/FormattedText.Span.Emphasis.$serializer.descriptor|{}descriptor[0]
+                    final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/FormattedText.Span.Emphasis.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+                final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/FormattedText.Span.Emphasis.$serializer.childSerializers|childSerializers(){}[0]
+                final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/FormattedText.Span.Emphasis // ink.ui.structures.elements/FormattedText.Span.Emphasis.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+                final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/FormattedText.Span.Emphasis) // ink.ui.structures.elements/FormattedText.Span.Emphasis.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.FormattedText.Span.Emphasis){}[0]
+            }
+
+            final object Companion { // ink.ui.structures.elements/FormattedText.Span.Emphasis.Companion|null[0]
+                final val $childSerializers // ink.ui.structures.elements/FormattedText.Span.Emphasis.Companion.$childSerializers|{}$childSerializers[0]
+
+                final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span.Emphasis> // ink.ui.structures.elements/FormattedText.Span.Emphasis.Companion.serializer|serializer(){}[0]
+            }
+        }
+
+        final class Link : ink.ui.structures.elements/FormattedText.Span.Composite { // ink.ui.structures.elements/FormattedText.Span.Link|null[0]
+            constructor <init>(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span>, kotlin/String) // ink.ui.structures.elements/FormattedText.Span.Link.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>;kotlin.String){}[0]
+
+            final val inner // ink.ui.structures.elements/FormattedText.Span.Link.inner|{}inner[0]
+                final fun <get-inner>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Link.inner.<get-inner>|<get-inner>(){}[0]
+            final val url // ink.ui.structures.elements/FormattedText.Span.Link.url|{}url[0]
+                final fun <get-url>(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Link.url.<get-url>|<get-url>(){}[0]
+
+            final fun component1(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Link.component1|component1(){}[0]
+            final fun component2(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Link.component2|component2(){}[0]
+            final fun copy(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> = ..., kotlin/String = ...): ink.ui.structures.elements/FormattedText.Span.Link // ink.ui.structures.elements/FormattedText.Span.Link.copy|copy(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>;kotlin.String){}[0]
+            final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Link.equals|equals(kotlin.Any?){}[0]
+            final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Span.Link.hashCode|hashCode(){}[0]
+            final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Link.toString|toString(){}[0]
+
+            final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/FormattedText.Span.Link> { // ink.ui.structures.elements/FormattedText.Span.Link.$serializer|null[0]
+                final val descriptor // ink.ui.structures.elements/FormattedText.Span.Link.$serializer.descriptor|{}descriptor[0]
+                    final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/FormattedText.Span.Link.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+                final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/FormattedText.Span.Link.$serializer.childSerializers|childSerializers(){}[0]
+                final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/FormattedText.Span.Link // ink.ui.structures.elements/FormattedText.Span.Link.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+                final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/FormattedText.Span.Link) // ink.ui.structures.elements/FormattedText.Span.Link.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.FormattedText.Span.Link){}[0]
+            }
+
+            final object Companion { // ink.ui.structures.elements/FormattedText.Span.Link.Companion|null[0]
+                final val $childSerializers // ink.ui.structures.elements/FormattedText.Span.Link.Companion.$childSerializers|{}$childSerializers[0]
+
+                final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span.Link> // ink.ui.structures.elements/FormattedText.Span.Link.Companion.serializer|serializer(){}[0]
+            }
+        }
+
+        final class Strong : ink.ui.structures.elements/FormattedText.Span.Composite { // ink.ui.structures.elements/FormattedText.Span.Strong|null[0]
+            constructor <init>(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span>) // ink.ui.structures.elements/FormattedText.Span.Strong.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>){}[0]
+
+            final val inner // ink.ui.structures.elements/FormattedText.Span.Strong.inner|{}inner[0]
+                final fun <get-inner>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Strong.inner.<get-inner>|<get-inner>(){}[0]
+
+            final fun component1(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Strong.component1|component1(){}[0]
+            final fun copy(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> = ...): ink.ui.structures.elements/FormattedText.Span.Strong // ink.ui.structures.elements/FormattedText.Span.Strong.copy|copy(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>){}[0]
+            final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Strong.equals|equals(kotlin.Any?){}[0]
+            final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Span.Strong.hashCode|hashCode(){}[0]
+            final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Strong.toString|toString(){}[0]
+
+            final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/FormattedText.Span.Strong> { // ink.ui.structures.elements/FormattedText.Span.Strong.$serializer|null[0]
+                final val descriptor // ink.ui.structures.elements/FormattedText.Span.Strong.$serializer.descriptor|{}descriptor[0]
+                    final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/FormattedText.Span.Strong.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+                final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/FormattedText.Span.Strong.$serializer.childSerializers|childSerializers(){}[0]
+                final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/FormattedText.Span.Strong // ink.ui.structures.elements/FormattedText.Span.Strong.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+                final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/FormattedText.Span.Strong) // ink.ui.structures.elements/FormattedText.Span.Strong.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.FormattedText.Span.Strong){}[0]
+            }
+
+            final object Companion { // ink.ui.structures.elements/FormattedText.Span.Strong.Companion|null[0]
+                final val $childSerializers // ink.ui.structures.elements/FormattedText.Span.Strong.Companion.$childSerializers|{}$childSerializers[0]
+
+                final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span.Strong> // ink.ui.structures.elements/FormattedText.Span.Strong.Companion.serializer|serializer(){}[0]
+            }
+        }
+
+        final class Subscript : ink.ui.structures.elements/FormattedText.Span.Composite { // ink.ui.structures.elements/FormattedText.Span.Subscript|null[0]
+            constructor <init>(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span>) // ink.ui.structures.elements/FormattedText.Span.Subscript.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>){}[0]
+
+            final val inner // ink.ui.structures.elements/FormattedText.Span.Subscript.inner|{}inner[0]
+                final fun <get-inner>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Subscript.inner.<get-inner>|<get-inner>(){}[0]
+
+            final fun component1(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Subscript.component1|component1(){}[0]
+            final fun copy(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> = ...): ink.ui.structures.elements/FormattedText.Span.Subscript // ink.ui.structures.elements/FormattedText.Span.Subscript.copy|copy(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>){}[0]
+            final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Subscript.equals|equals(kotlin.Any?){}[0]
+            final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Span.Subscript.hashCode|hashCode(){}[0]
+            final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Subscript.toString|toString(){}[0]
+
+            final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/FormattedText.Span.Subscript> { // ink.ui.structures.elements/FormattedText.Span.Subscript.$serializer|null[0]
+                final val descriptor // ink.ui.structures.elements/FormattedText.Span.Subscript.$serializer.descriptor|{}descriptor[0]
+                    final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/FormattedText.Span.Subscript.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+                final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/FormattedText.Span.Subscript.$serializer.childSerializers|childSerializers(){}[0]
+                final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/FormattedText.Span.Subscript // ink.ui.structures.elements/FormattedText.Span.Subscript.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+                final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/FormattedText.Span.Subscript) // ink.ui.structures.elements/FormattedText.Span.Subscript.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.FormattedText.Span.Subscript){}[0]
+            }
+
+            final object Companion { // ink.ui.structures.elements/FormattedText.Span.Subscript.Companion|null[0]
+                final val $childSerializers // ink.ui.structures.elements/FormattedText.Span.Subscript.Companion.$childSerializers|{}$childSerializers[0]
+
+                final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span.Subscript> // ink.ui.structures.elements/FormattedText.Span.Subscript.Companion.serializer|serializer(){}[0]
+            }
+        }
+
+        final class Superscript : ink.ui.structures.elements/FormattedText.Span.Composite { // ink.ui.structures.elements/FormattedText.Span.Superscript|null[0]
+            constructor <init>(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span>) // ink.ui.structures.elements/FormattedText.Span.Superscript.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>){}[0]
+
+            final val inner // ink.ui.structures.elements/FormattedText.Span.Superscript.inner|{}inner[0]
+                final fun <get-inner>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Superscript.inner.<get-inner>|<get-inner>(){}[0]
+
+            final fun component1(): kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Superscript.component1|component1(){}[0]
+            final fun copy(kotlin.collections/List<ink.ui.structures.elements/FormattedText.Span> = ...): ink.ui.structures.elements/FormattedText.Span.Superscript // ink.ui.structures.elements/FormattedText.Span.Superscript.copy|copy(kotlin.collections.List<ink.ui.structures.elements.FormattedText.Span>){}[0]
+            final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Superscript.equals|equals(kotlin.Any?){}[0]
+            final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Span.Superscript.hashCode|hashCode(){}[0]
+            final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Superscript.toString|toString(){}[0]
+
+            final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/FormattedText.Span.Superscript> { // ink.ui.structures.elements/FormattedText.Span.Superscript.$serializer|null[0]
+                final val descriptor // ink.ui.structures.elements/FormattedText.Span.Superscript.$serializer.descriptor|{}descriptor[0]
+                    final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/FormattedText.Span.Superscript.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+                final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/FormattedText.Span.Superscript.$serializer.childSerializers|childSerializers(){}[0]
+                final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/FormattedText.Span.Superscript // ink.ui.structures.elements/FormattedText.Span.Superscript.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+                final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/FormattedText.Span.Superscript) // ink.ui.structures.elements/FormattedText.Span.Superscript.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.FormattedText.Span.Superscript){}[0]
+            }
+
+            final object Companion { // ink.ui.structures.elements/FormattedText.Span.Superscript.Companion|null[0]
+                final val $childSerializers // ink.ui.structures.elements/FormattedText.Span.Superscript.Companion.$childSerializers|{}$childSerializers[0]
+
+                final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span.Superscript> // ink.ui.structures.elements/FormattedText.Span.Superscript.Companion.serializer|serializer(){}[0]
+            }
+        }
+
+        final class Text : ink.ui.structures.elements/FormattedText.Span { // ink.ui.structures.elements/FormattedText.Span.Text|null[0]
+            constructor <init>(kotlin/String) // ink.ui.structures.elements/FormattedText.Span.Text.<init>|<init>(kotlin.String){}[0]
+
+            final val text // ink.ui.structures.elements/FormattedText.Span.Text.text|{}text[0]
+                final fun <get-text>(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Text.text.<get-text>|<get-text>(){}[0]
+
+            final fun component1(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Text.component1|component1(){}[0]
+            final fun copy(kotlin/String = ...): ink.ui.structures.elements/FormattedText.Span.Text // ink.ui.structures.elements/FormattedText.Span.Text.copy|copy(kotlin.String){}[0]
+            final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Text.equals|equals(kotlin.Any?){}[0]
+            final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Span.Text.hashCode|hashCode(){}[0]
+            final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Text.toString|toString(){}[0]
+
+            final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/FormattedText.Span.Text> { // ink.ui.structures.elements/FormattedText.Span.Text.$serializer|null[0]
+                final val descriptor // ink.ui.structures.elements/FormattedText.Span.Text.$serializer.descriptor|{}descriptor[0]
+                    final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/FormattedText.Span.Text.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+                final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/FormattedText.Span.Text.$serializer.childSerializers|childSerializers(){}[0]
+                final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/FormattedText.Span.Text // ink.ui.structures.elements/FormattedText.Span.Text.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+                final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/FormattedText.Span.Text) // ink.ui.structures.elements/FormattedText.Span.Text.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.FormattedText.Span.Text){}[0]
+            }
+
+            final object Companion { // ink.ui.structures.elements/FormattedText.Span.Text.Companion|null[0]
+                final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span.Text> // ink.ui.structures.elements/FormattedText.Span.Text.Companion.serializer|serializer(){}[0]
+            }
+        }
+
+        final object Break : ink.ui.structures.elements/FormattedText.Span, kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures.elements/FormattedText.Span.Break|null[0]
+            final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Span.Break.equals|equals(kotlin.Any?){}[0]
+            final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Span.Break.hashCode|hashCode(){}[0]
+            final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span.Break> // ink.ui.structures.elements/FormattedText.Span.Break.serializer|serializer(){}[0]
+            final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures.elements/FormattedText.Span.Break.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+            final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Span.Break.toString|toString(){}[0]
+        }
+
+        final object Companion : kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures.elements/FormattedText.Span.Companion|null[0]
+            final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Span.Companion.serializer|serializer(){}[0]
+            final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures.elements/FormattedText.Span.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+        }
+    }
+
+    final class Builder { // ink.ui.structures.elements/FormattedText.Builder|null[0]
+        constructor <init>(kotlin.collections/MutableList<ink.ui.structures.elements/FormattedText.Span> = ...) // ink.ui.structures.elements/FormattedText.Builder.<init>|<init>(kotlin.collections.MutableList<ink.ui.structures.elements.FormattedText.Span>){}[0]
+
+        final var spans // ink.ui.structures.elements/FormattedText.Builder.spans|{}spans[0]
+            final fun <get-spans>(): kotlin.collections/MutableList<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Builder.spans.<get-spans>|<get-spans>(){}[0]
+            final fun <set-spans>(kotlin.collections/MutableList<ink.ui.structures.elements/FormattedText.Span>) // ink.ui.structures.elements/FormattedText.Builder.spans.<set-spans>|<set-spans>(kotlin.collections.MutableList<ink.ui.structures.elements.FormattedText.Span>){}[0]
+
+        final fun br() // ink.ui.structures.elements/FormattedText.Builder.br|br(){}[0]
+        final fun code(kotlin/Boolean = ..., kotlin/Function1<ink.ui.structures.elements/FormattedText.Builder, kotlin/Unit>) // ink.ui.structures.elements/FormattedText.Builder.code|code(kotlin.Boolean;kotlin.Function1<ink.ui.structures.elements.FormattedText.Builder,kotlin.Unit>){}[0]
+        final fun code(kotlin/String, kotlin/Boolean = ...) // ink.ui.structures.elements/FormattedText.Builder.code|code(kotlin.String;kotlin.Boolean){}[0]
+        final fun component1(): kotlin.collections/MutableList<ink.ui.structures.elements/FormattedText.Span> // ink.ui.structures.elements/FormattedText.Builder.component1|component1(){}[0]
+        final fun copy(kotlin.collections/MutableList<ink.ui.structures.elements/FormattedText.Span> = ...): ink.ui.structures.elements/FormattedText.Builder // ink.ui.structures.elements/FormattedText.Builder.copy|copy(kotlin.collections.MutableList<ink.ui.structures.elements.FormattedText.Span>){}[0]
+        final fun emphasis(kotlin/Function1<ink.ui.structures.elements/FormattedText.Builder, kotlin/Unit>) // ink.ui.structures.elements/FormattedText.Builder.emphasis|emphasis(kotlin.Function1<ink.ui.structures.elements.FormattedText.Builder,kotlin.Unit>){}[0]
+        final fun emphasis(kotlin/String) // ink.ui.structures.elements/FormattedText.Builder.emphasis|emphasis(kotlin.String){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/FormattedText.Builder.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/FormattedText.Builder.hashCode|hashCode(){}[0]
+        final fun link(kotlin/String, kotlin/Function1<ink.ui.structures.elements/FormattedText.Builder, kotlin/Unit>) // ink.ui.structures.elements/FormattedText.Builder.link|link(kotlin.String;kotlin.Function1<ink.ui.structures.elements.FormattedText.Builder,kotlin.Unit>){}[0]
+        final fun space() // ink.ui.structures.elements/FormattedText.Builder.space|space(){}[0]
+        final fun strong(kotlin/Function1<ink.ui.structures.elements/FormattedText.Builder, kotlin/Unit>) // ink.ui.structures.elements/FormattedText.Builder.strong|strong(kotlin.Function1<ink.ui.structures.elements.FormattedText.Builder,kotlin.Unit>){}[0]
+        final fun strong(kotlin/String) // ink.ui.structures.elements/FormattedText.Builder.strong|strong(kotlin.String){}[0]
+        final fun sub(kotlin/Function1<ink.ui.structures.elements/FormattedText.Builder, kotlin/Unit>) // ink.ui.structures.elements/FormattedText.Builder.sub|sub(kotlin.Function1<ink.ui.structures.elements.FormattedText.Builder,kotlin.Unit>){}[0]
+        final fun sub(kotlin/String) // ink.ui.structures.elements/FormattedText.Builder.sub|sub(kotlin.String){}[0]
+        final fun sup(kotlin/Function1<ink.ui.structures.elements/FormattedText.Builder, kotlin/Unit>) // ink.ui.structures.elements/FormattedText.Builder.sup|sup(kotlin.Function1<ink.ui.structures.elements.FormattedText.Builder,kotlin.Unit>){}[0]
+        final fun sup(kotlin/String) // ink.ui.structures.elements/FormattedText.Builder.sup|sup(kotlin.String){}[0]
+        final fun text(kotlin/String) // ink.ui.structures.elements/FormattedText.Builder.text|text(kotlin.String){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/FormattedText.Builder.toString|toString(){}[0]
+    }
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/FormattedText> { // ink.ui.structures.elements/FormattedText.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/FormattedText.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/FormattedText.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/FormattedText.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/FormattedText // ink.ui.structures.elements/FormattedText.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/FormattedText) // ink.ui.structures.elements/FormattedText.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.FormattedText){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/FormattedText.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/FormattedText.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/FormattedText> // ink.ui.structures.elements/FormattedText.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.elements/IconElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/IconElement|null[0]
+    constructor <init>(ink.ui.structures/Symbol, ink.ui.structures/Sentiment = ..., ink.ui.structures/IconSizing = ...) // ink.ui.structures.elements/IconElement.<init>|<init>(ink.ui.structures.Symbol;ink.ui.structures.Sentiment;ink.ui.structures.IconSizing){}[0]
+
+    final val sentiment // ink.ui.structures.elements/IconElement.sentiment|{}sentiment[0]
+        final fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.structures.elements/IconElement.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
+    final val sizing // ink.ui.structures.elements/IconElement.sizing|{}sizing[0]
+        final fun <get-sizing>(): ink.ui.structures/IconSizing // ink.ui.structures.elements/IconElement.sizing.<get-sizing>|<get-sizing>(){}[0]
+    final val symbol // ink.ui.structures.elements/IconElement.symbol|{}symbol[0]
+        final fun <get-symbol>(): ink.ui.structures/Symbol // ink.ui.structures.elements/IconElement.symbol.<get-symbol>|<get-symbol>(){}[0]
+
+    final fun component1(): ink.ui.structures/Symbol // ink.ui.structures.elements/IconElement.component1|component1(){}[0]
+    final fun component2(): ink.ui.structures/Sentiment // ink.ui.structures.elements/IconElement.component2|component2(){}[0]
+    final fun component3(): ink.ui.structures/IconSizing // ink.ui.structures.elements/IconElement.component3|component3(){}[0]
+    final fun copy(ink.ui.structures/Symbol = ..., ink.ui.structures/Sentiment = ..., ink.ui.structures/IconSizing = ...): ink.ui.structures.elements/IconElement // ink.ui.structures.elements/IconElement.copy|copy(ink.ui.structures.Symbol;ink.ui.structures.Sentiment;ink.ui.structures.IconSizing){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/IconElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/IconElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/IconElement.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/IconElement> { // ink.ui.structures.elements/IconElement.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/IconElement.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/IconElement.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/IconElement.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/IconElement // ink.ui.structures.elements/IconElement.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/IconElement) // ink.ui.structures.elements/IconElement.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.IconElement){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/IconElement.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/IconElement.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/IconElement> // ink.ui.structures.elements/IconElement.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.elements/MenuRowElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/MenuRowElement|null[0]
+    constructor <init>(kotlin/String, kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures.elements/UiElement? = ...) // ink.ui.structures.elements/MenuRowElement.<init>|<init>(kotlin.String;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.elements.UiElement?){}[0]
+
+    final val onClick // ink.ui.structures.elements/MenuRowElement.onClick|{}onClick[0]
+        final fun <get-onClick>(): kotlin/Function0<kotlin/Unit>? // ink.ui.structures.elements/MenuRowElement.onClick.<get-onClick>|<get-onClick>(){}[0]
+    final val rightElement // ink.ui.structures.elements/MenuRowElement.rightElement|{}rightElement[0]
+        final fun <get-rightElement>(): ink.ui.structures.elements/UiElement? // ink.ui.structures.elements/MenuRowElement.rightElement.<get-rightElement>|<get-rightElement>(){}[0]
+    final val text // ink.ui.structures.elements/MenuRowElement.text|{}text[0]
+        final fun <get-text>(): kotlin/String // ink.ui.structures.elements/MenuRowElement.text.<get-text>|<get-text>(){}[0]
+
+    final fun component1(): kotlin/String // ink.ui.structures.elements/MenuRowElement.component1|component1(){}[0]
+    final fun component2(): kotlin/Function0<kotlin/Unit>? // ink.ui.structures.elements/MenuRowElement.component2|component2(){}[0]
+    final fun component3(): ink.ui.structures.elements/UiElement? // ink.ui.structures.elements/MenuRowElement.component3|component3(){}[0]
+    final fun copy(kotlin/String = ..., kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures.elements/UiElement? = ...): ink.ui.structures.elements/MenuRowElement // ink.ui.structures.elements/MenuRowElement.copy|copy(kotlin.String;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.elements.UiElement?){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/MenuRowElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/MenuRowElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/MenuRowElement.toString|toString(){}[0]
+}
+
+final class ink.ui.structures.elements/SpinnerElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/SpinnerElement|null[0]
+    constructor <init>(kotlin/String, kotlin/Function0<kotlin/Unit>, kotlin/Function0<kotlin/Unit>, kotlin/Boolean = ..., kotlin/Boolean = ...) // ink.ui.structures.elements/SpinnerElement.<init>|<init>(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>;kotlin.Boolean;kotlin.Boolean){}[0]
+
+    final val hasNextValue // ink.ui.structures.elements/SpinnerElement.hasNextValue|{}hasNextValue[0]
+        final fun <get-hasNextValue>(): kotlin/Boolean // ink.ui.structures.elements/SpinnerElement.hasNextValue.<get-hasNextValue>|<get-hasNextValue>(){}[0]
+    final val hasPreviousValue // ink.ui.structures.elements/SpinnerElement.hasPreviousValue|{}hasPreviousValue[0]
+        final fun <get-hasPreviousValue>(): kotlin/Boolean // ink.ui.structures.elements/SpinnerElement.hasPreviousValue.<get-hasPreviousValue>|<get-hasPreviousValue>(){}[0]
+    final val onNextValue // ink.ui.structures.elements/SpinnerElement.onNextValue|{}onNextValue[0]
+        final fun <get-onNextValue>(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/SpinnerElement.onNextValue.<get-onNextValue>|<get-onNextValue>(){}[0]
+    final val onPreviousValue // ink.ui.structures.elements/SpinnerElement.onPreviousValue|{}onPreviousValue[0]
+        final fun <get-onPreviousValue>(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/SpinnerElement.onPreviousValue.<get-onPreviousValue>|<get-onPreviousValue>(){}[0]
+    final val value // ink.ui.structures.elements/SpinnerElement.value|{}value[0]
+        final fun <get-value>(): kotlin/String // ink.ui.structures.elements/SpinnerElement.value.<get-value>|<get-value>(){}[0]
+
+    final fun component1(): kotlin/String // ink.ui.structures.elements/SpinnerElement.component1|component1(){}[0]
+    final fun component2(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/SpinnerElement.component2|component2(){}[0]
+    final fun component3(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/SpinnerElement.component3|component3(){}[0]
+    final fun component4(): kotlin/Boolean // ink.ui.structures.elements/SpinnerElement.component4|component4(){}[0]
+    final fun component5(): kotlin/Boolean // ink.ui.structures.elements/SpinnerElement.component5|component5(){}[0]
+    final fun copy(kotlin/String = ..., kotlin/Function0<kotlin/Unit> = ..., kotlin/Function0<kotlin/Unit> = ..., kotlin/Boolean = ..., kotlin/Boolean = ...): ink.ui.structures.elements/SpinnerElement // ink.ui.structures.elements/SpinnerElement.copy|copy(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>;kotlin.Boolean;kotlin.Boolean){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/SpinnerElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/SpinnerElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/SpinnerElement.toString|toString(){}[0]
+}
+
+final class ink.ui.structures.elements/StackElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/StackElement|null[0]
+    constructor <init>(kotlin/Boolean = ...) // ink.ui.structures.elements/StackElement.<init>|<init>(kotlin.Boolean){}[0]
+
+    final val queue // ink.ui.structures.elements/StackElement.queue|{}queue[0]
+        final fun <get-queue>(): kotlinx.coroutines.flow/Flow<ink.ui.structures.elements/UiElement> // ink.ui.structures.elements/StackElement.queue.<get-queue>|<get-queue>(){}[0]
+    final val requireDistinct // ink.ui.structures.elements/StackElement.requireDistinct|{}requireDistinct[0]
+        final fun <get-requireDistinct>(): kotlin/Boolean // ink.ui.structures.elements/StackElement.requireDistinct.<get-requireDistinct>|<get-requireDistinct>(){}[0]
+
+    final fun component1(): kotlin/Boolean // ink.ui.structures.elements/StackElement.component1|component1(){}[0]
+    final fun copy(kotlin/Boolean = ...): ink.ui.structures.elements/StackElement // ink.ui.structures.elements/StackElement.copy|copy(kotlin.Boolean){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/StackElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/StackElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/StackElement.toString|toString(){}[0]
+    final suspend fun close() // ink.ui.structures.elements/StackElement.close|close(){}[0]
+    final suspend fun print(ink.ui.structures.elements/UiElement) // ink.ui.structures.elements/StackElement.print|print(ink.ui.structures.elements.UiElement){}[0]
+}
+
+final class ink.ui.structures.elements/StatusIndicatorElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/StatusIndicatorElement|null[0]
+    constructor <init>(kotlin/String, ink.ui.structures/Sentiment) // ink.ui.structures.elements/StatusIndicatorElement.<init>|<init>(kotlin.String;ink.ui.structures.Sentiment){}[0]
+
+    final val sentiment // ink.ui.structures.elements/StatusIndicatorElement.sentiment|{}sentiment[0]
+        final fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.structures.elements/StatusIndicatorElement.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
+    final val text // ink.ui.structures.elements/StatusIndicatorElement.text|{}text[0]
+        final fun <get-text>(): kotlin/String // ink.ui.structures.elements/StatusIndicatorElement.text.<get-text>|<get-text>(){}[0]
+
+    final fun component1(): kotlin/String // ink.ui.structures.elements/StatusIndicatorElement.component1|component1(){}[0]
+    final fun component2(): ink.ui.structures/Sentiment // ink.ui.structures.elements/StatusIndicatorElement.component2|component2(){}[0]
+    final fun copy(kotlin/String = ..., ink.ui.structures/Sentiment = ...): ink.ui.structures.elements/StatusIndicatorElement // ink.ui.structures.elements/StatusIndicatorElement.copy|copy(kotlin.String;ink.ui.structures.Sentiment){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/StatusIndicatorElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/StatusIndicatorElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/StatusIndicatorElement.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/StatusIndicatorElement> { // ink.ui.structures.elements/StatusIndicatorElement.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/StatusIndicatorElement.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/StatusIndicatorElement.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/StatusIndicatorElement.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/StatusIndicatorElement // ink.ui.structures.elements/StatusIndicatorElement.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/StatusIndicatorElement) // ink.ui.structures.elements/StatusIndicatorElement.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.StatusIndicatorElement){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/StatusIndicatorElement.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/StatusIndicatorElement.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/StatusIndicatorElement> // ink.ui.structures.elements/StatusIndicatorElement.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.elements/TextElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/TextElement|null[0]
+    constructor <init>(kotlin/String, ink.ui.structures/TextStyle = ...) // ink.ui.structures.elements/TextElement.<init>|<init>(kotlin.String;ink.ui.structures.TextStyle){}[0]
+
+    final val style // ink.ui.structures.elements/TextElement.style|{}style[0]
+        final fun <get-style>(): ink.ui.structures/TextStyle // ink.ui.structures.elements/TextElement.style.<get-style>|<get-style>(){}[0]
+    final val text // ink.ui.structures.elements/TextElement.text|{}text[0]
+        final fun <get-text>(): kotlin/String // ink.ui.structures.elements/TextElement.text.<get-text>|<get-text>(){}[0]
+
+    final fun component1(): kotlin/String // ink.ui.structures.elements/TextElement.component1|component1(){}[0]
+    final fun component2(): ink.ui.structures/TextStyle // ink.ui.structures.elements/TextElement.component2|component2(){}[0]
+    final fun copy(kotlin/String = ..., ink.ui.structures/TextStyle = ...): ink.ui.structures.elements/TextElement // ink.ui.structures.elements/TextElement.copy|copy(kotlin.String;ink.ui.structures.TextStyle){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/TextElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/TextElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/TextElement.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/TextElement> { // ink.ui.structures.elements/TextElement.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/TextElement.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/TextElement.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/TextElement.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/TextElement // ink.ui.structures.elements/TextElement.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/TextElement) // ink.ui.structures.elements/TextElement.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.TextElement){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/TextElement.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/TextElement.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/TextElement> // ink.ui.structures.elements/TextElement.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.elements/TextListElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/TextListElement|null[0]
+    constructor <init>(kotlin.collections/List<ink.ui.structures.elements/FormattedText>, kotlin/Boolean = ...) // ink.ui.structures.elements/TextListElement.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.FormattedText>;kotlin.Boolean){}[0]
+    constructor <init>(kotlin/Array<out ink.ui.structures.elements/FormattedText>...) // ink.ui.structures.elements/TextListElement.<init>|<init>(kotlin.Array<out|ink.ui.structures.elements.FormattedText>...){}[0]
+
+    final val items // ink.ui.structures.elements/TextListElement.items|{}items[0]
+        final fun <get-items>(): kotlin.collections/List<ink.ui.structures.elements/FormattedText> // ink.ui.structures.elements/TextListElement.items.<get-items>|<get-items>(){}[0]
+    final val ordered // ink.ui.structures.elements/TextListElement.ordered|{}ordered[0]
+        final fun <get-ordered>(): kotlin/Boolean // ink.ui.structures.elements/TextListElement.ordered.<get-ordered>|<get-ordered>(){}[0]
+
+    final fun component1(): kotlin.collections/List<ink.ui.structures.elements/FormattedText> // ink.ui.structures.elements/TextListElement.component1|component1(){}[0]
+    final fun component2(): kotlin/Boolean // ink.ui.structures.elements/TextListElement.component2|component2(){}[0]
+    final fun copy(kotlin.collections/List<ink.ui.structures.elements/FormattedText> = ..., kotlin/Boolean = ...): ink.ui.structures.elements/TextListElement // ink.ui.structures.elements/TextListElement.copy|copy(kotlin.collections.List<ink.ui.structures.elements.FormattedText>;kotlin.Boolean){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/TextListElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/TextListElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/TextListElement.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/TextListElement> { // ink.ui.structures.elements/TextListElement.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/TextListElement.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/TextListElement.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/TextListElement.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/TextListElement // ink.ui.structures.elements/TextListElement.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/TextListElement) // ink.ui.structures.elements/TextListElement.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.TextListElement){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/TextListElement.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/TextListElement.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/TextListElement> // ink.ui.structures.elements/TextListElement.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.elements/ThrobberElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/ThrobberElement|null[0]
+    constructor <init>(kotlin/String? = ..., ink.ui.structures/Sentiment = ...) // ink.ui.structures.elements/ThrobberElement.<init>|<init>(kotlin.String?;ink.ui.structures.Sentiment){}[0]
+
+    final val caption // ink.ui.structures.elements/ThrobberElement.caption|{}caption[0]
+        final fun <get-caption>(): kotlin/String? // ink.ui.structures.elements/ThrobberElement.caption.<get-caption>|<get-caption>(){}[0]
+    final val sentiment // ink.ui.structures.elements/ThrobberElement.sentiment|{}sentiment[0]
+        final fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ThrobberElement.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
+
+    final fun component1(): kotlin/String? // ink.ui.structures.elements/ThrobberElement.component1|component1(){}[0]
+    final fun component2(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ThrobberElement.component2|component2(){}[0]
+    final fun copy(kotlin/String? = ..., ink.ui.structures/Sentiment = ...): ink.ui.structures.elements/ThrobberElement // ink.ui.structures.elements/ThrobberElement.copy|copy(kotlin.String?;ink.ui.structures.Sentiment){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/ThrobberElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/ThrobberElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/ThrobberElement.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/ThrobberElement> { // ink.ui.structures.elements/ThrobberElement.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/ThrobberElement.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/ThrobberElement.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/ThrobberElement.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/ThrobberElement // ink.ui.structures.elements/ThrobberElement.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/ThrobberElement) // ink.ui.structures.elements/ThrobberElement.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.ThrobberElement){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/ThrobberElement.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/ThrobberElement.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/ThrobberElement> // ink.ui.structures.elements/ThrobberElement.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.layouts/CenteredElementLayout : ink.ui.structures.layouts/UiLayout { // ink.ui.structures.layouts/CenteredElementLayout|null[0]
+    constructor <init>(ink.ui.structures.elements/UiElement) // ink.ui.structures.layouts/CenteredElementLayout.<init>|<init>(ink.ui.structures.elements.UiElement){}[0]
+
+    final val body // ink.ui.structures.layouts/CenteredElementLayout.body|{}body[0]
+        final fun <get-body>(): ink.ui.structures.elements/UiElement // ink.ui.structures.layouts/CenteredElementLayout.body.<get-body>|<get-body>(){}[0]
+
+    final fun component1(): ink.ui.structures.elements/UiElement // ink.ui.structures.layouts/CenteredElementLayout.component1|component1(){}[0]
+    final fun copy(ink.ui.structures.elements/UiElement = ...): ink.ui.structures.layouts/CenteredElementLayout // ink.ui.structures.layouts/CenteredElementLayout.copy|copy(ink.ui.structures.elements.UiElement){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.layouts/CenteredElementLayout.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.layouts/CenteredElementLayout.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.layouts/CenteredElementLayout.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.layouts/CenteredElementLayout> { // ink.ui.structures.layouts/CenteredElementLayout.$serializer|null[0]
+        final val descriptor // ink.ui.structures.layouts/CenteredElementLayout.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.layouts/CenteredElementLayout.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.layouts/CenteredElementLayout.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.layouts/CenteredElementLayout // ink.ui.structures.layouts/CenteredElementLayout.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.layouts/CenteredElementLayout) // ink.ui.structures.layouts/CenteredElementLayout.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.layouts.CenteredElementLayout){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.layouts/CenteredElementLayout.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.layouts/CenteredElementLayout.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.layouts/CenteredElementLayout> // ink.ui.structures.layouts/CenteredElementLayout.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.layouts/FixedGridLayout : ink.ui.structures.layouts/UiLayout { // ink.ui.structures.layouts/FixedGridLayout|null[0]
+    constructor <init>(kotlin/Array<out ink.ui.structures.layouts/FixedGridLayout.GridItem>..., kotlin/Int) // ink.ui.structures.layouts/FixedGridLayout.<init>|<init>(kotlin.Array<out|ink.ui.structures.layouts.FixedGridLayout.GridItem>...;kotlin.Int){}[0]
+    constructor <init>(kotlin/Int, kotlin.collections/List<ink.ui.structures.layouts/FixedGridLayout.GridItem>) // ink.ui.structures.layouts/FixedGridLayout.<init>|<init>(kotlin.Int;kotlin.collections.List<ink.ui.structures.layouts.FixedGridLayout.GridItem>){}[0]
+
+    final val columns // ink.ui.structures.layouts/FixedGridLayout.columns|{}columns[0]
+        final fun <get-columns>(): kotlin/Int // ink.ui.structures.layouts/FixedGridLayout.columns.<get-columns>|<get-columns>(){}[0]
+    final val items // ink.ui.structures.layouts/FixedGridLayout.items|{}items[0]
+        final fun <get-items>(): kotlin.collections/List<ink.ui.structures.layouts/FixedGridLayout.GridItem> // ink.ui.structures.layouts/FixedGridLayout.items.<get-items>|<get-items>(){}[0]
+
+    final fun component1(): kotlin/Int // ink.ui.structures.layouts/FixedGridLayout.component1|component1(){}[0]
+    final fun component2(): kotlin.collections/List<ink.ui.structures.layouts/FixedGridLayout.GridItem> // ink.ui.structures.layouts/FixedGridLayout.component2|component2(){}[0]
+    final fun copy(kotlin/Int = ..., kotlin.collections/List<ink.ui.structures.layouts/FixedGridLayout.GridItem> = ...): ink.ui.structures.layouts/FixedGridLayout // ink.ui.structures.layouts/FixedGridLayout.copy|copy(kotlin.Int;kotlin.collections.List<ink.ui.structures.layouts.FixedGridLayout.GridItem>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.layouts/FixedGridLayout.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.layouts/FixedGridLayout.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.layouts/FixedGridLayout.toString|toString(){}[0]
+
+    final class GridItem { // ink.ui.structures.layouts/FixedGridLayout.GridItem|null[0]
+        constructor <init>(kotlin/Int, ink.ui.structures.elements/UiElement, ink.ui.structures/Positioning = ..., ink.ui.structures/Positioning = ...) // ink.ui.structures.layouts/FixedGridLayout.GridItem.<init>|<init>(kotlin.Int;ink.ui.structures.elements.UiElement;ink.ui.structures.Positioning;ink.ui.structures.Positioning){}[0]
+
+        final val body // ink.ui.structures.layouts/FixedGridLayout.GridItem.body|{}body[0]
+            final fun <get-body>(): ink.ui.structures.elements/UiElement // ink.ui.structures.layouts/FixedGridLayout.GridItem.body.<get-body>|<get-body>(){}[0]
+        final val horizontalPositioning // ink.ui.structures.layouts/FixedGridLayout.GridItem.horizontalPositioning|{}horizontalPositioning[0]
+            final fun <get-horizontalPositioning>(): ink.ui.structures/Positioning // ink.ui.structures.layouts/FixedGridLayout.GridItem.horizontalPositioning.<get-horizontalPositioning>|<get-horizontalPositioning>(){}[0]
+        final val span // ink.ui.structures.layouts/FixedGridLayout.GridItem.span|{}span[0]
+            final fun <get-span>(): kotlin/Int // ink.ui.structures.layouts/FixedGridLayout.GridItem.span.<get-span>|<get-span>(){}[0]
+        final val verticalPositioning // ink.ui.structures.layouts/FixedGridLayout.GridItem.verticalPositioning|{}verticalPositioning[0]
+            final fun <get-verticalPositioning>(): ink.ui.structures/Positioning // ink.ui.structures.layouts/FixedGridLayout.GridItem.verticalPositioning.<get-verticalPositioning>|<get-verticalPositioning>(){}[0]
+
+        final fun component1(): kotlin/Int // ink.ui.structures.layouts/FixedGridLayout.GridItem.component1|component1(){}[0]
+        final fun component2(): ink.ui.structures.elements/UiElement // ink.ui.structures.layouts/FixedGridLayout.GridItem.component2|component2(){}[0]
+        final fun component3(): ink.ui.structures/Positioning // ink.ui.structures.layouts/FixedGridLayout.GridItem.component3|component3(){}[0]
+        final fun component4(): ink.ui.structures/Positioning // ink.ui.structures.layouts/FixedGridLayout.GridItem.component4|component4(){}[0]
+        final fun copy(kotlin/Int = ..., ink.ui.structures.elements/UiElement = ..., ink.ui.structures/Positioning = ..., ink.ui.structures/Positioning = ...): ink.ui.structures.layouts/FixedGridLayout.GridItem // ink.ui.structures.layouts/FixedGridLayout.GridItem.copy|copy(kotlin.Int;ink.ui.structures.elements.UiElement;ink.ui.structures.Positioning;ink.ui.structures.Positioning){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.layouts/FixedGridLayout.GridItem.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.layouts/FixedGridLayout.GridItem.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.layouts/FixedGridLayout.GridItem.toString|toString(){}[0]
+
+        final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.layouts/FixedGridLayout.GridItem> { // ink.ui.structures.layouts/FixedGridLayout.GridItem.$serializer|null[0]
+            final val descriptor // ink.ui.structures.layouts/FixedGridLayout.GridItem.$serializer.descriptor|{}descriptor[0]
+                final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.layouts/FixedGridLayout.GridItem.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+            final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.layouts/FixedGridLayout.GridItem.$serializer.childSerializers|childSerializers(){}[0]
+            final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.layouts/FixedGridLayout.GridItem // ink.ui.structures.layouts/FixedGridLayout.GridItem.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+            final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.layouts/FixedGridLayout.GridItem) // ink.ui.structures.layouts/FixedGridLayout.GridItem.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.layouts.FixedGridLayout.GridItem){}[0]
+        }
+
+        final object Companion { // ink.ui.structures.layouts/FixedGridLayout.GridItem.Companion|null[0]
+            final val $childSerializers // ink.ui.structures.layouts/FixedGridLayout.GridItem.Companion.$childSerializers|{}$childSerializers[0]
+
+            final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.layouts/FixedGridLayout.GridItem> // ink.ui.structures.layouts/FixedGridLayout.GridItem.Companion.serializer|serializer(){}[0]
+        }
+    }
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.layouts/FixedGridLayout> { // ink.ui.structures.layouts/FixedGridLayout.$serializer|null[0]
+        final val descriptor // ink.ui.structures.layouts/FixedGridLayout.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.layouts/FixedGridLayout.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.layouts/FixedGridLayout.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.layouts/FixedGridLayout // ink.ui.structures.layouts/FixedGridLayout.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.layouts/FixedGridLayout) // ink.ui.structures.layouts/FixedGridLayout.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.layouts.FixedGridLayout){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.layouts/FixedGridLayout.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.layouts/FixedGridLayout.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.layouts/FixedGridLayout> // ink.ui.structures.layouts/FixedGridLayout.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class ink.ui.structures.layouts/ScrollingListLayout : ink.ui.structures.layouts/UiLayout { // ink.ui.structures.layouts/ScrollingListLayout|null[0]
+    constructor <init>(kotlin.collections/List<ink.ui.structures.elements/UiElement>, ink.ui.structures/GroupingStyle = ...) // ink.ui.structures.layouts/ScrollingListLayout.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.UiElement>;ink.ui.structures.GroupingStyle){}[0]
+    constructor <init>(kotlin/Array<out ink.ui.structures.elements/UiElement>..., ink.ui.structures/GroupingStyle = ...) // ink.ui.structures.layouts/ScrollingListLayout.<init>|<init>(kotlin.Array<out|ink.ui.structures.elements.UiElement>...;ink.ui.structures.GroupingStyle){}[0]
+
+    final val groupingStyle // ink.ui.structures.layouts/ScrollingListLayout.groupingStyle|{}groupingStyle[0]
+        final fun <get-groupingStyle>(): ink.ui.structures/GroupingStyle // ink.ui.structures.layouts/ScrollingListLayout.groupingStyle.<get-groupingStyle>|<get-groupingStyle>(){}[0]
+    final val items // ink.ui.structures.layouts/ScrollingListLayout.items|{}items[0]
+        final fun <get-items>(): kotlin.collections/List<ink.ui.structures.elements/UiElement> // ink.ui.structures.layouts/ScrollingListLayout.items.<get-items>|<get-items>(){}[0]
+
+    final fun component1(): kotlin.collections/List<ink.ui.structures.elements/UiElement> // ink.ui.structures.layouts/ScrollingListLayout.component1|component1(){}[0]
+    final fun component2(): ink.ui.structures/GroupingStyle // ink.ui.structures.layouts/ScrollingListLayout.component2|component2(){}[0]
+    final fun copy(kotlin.collections/List<ink.ui.structures.elements/UiElement> = ..., ink.ui.structures/GroupingStyle = ...): ink.ui.structures.layouts/ScrollingListLayout // ink.ui.structures.layouts/ScrollingListLayout.copy|copy(kotlin.collections.List<ink.ui.structures.elements.UiElement>;ink.ui.structures.GroupingStyle){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.layouts/ScrollingListLayout.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.layouts/ScrollingListLayout.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.layouts/ScrollingListLayout.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.layouts/ScrollingListLayout> { // ink.ui.structures.layouts/ScrollingListLayout.$serializer|null[0]
+        final val descriptor // ink.ui.structures.layouts/ScrollingListLayout.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.layouts/ScrollingListLayout.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.layouts/ScrollingListLayout.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.layouts/ScrollingListLayout // ink.ui.structures.layouts/ScrollingListLayout.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.layouts/ScrollingListLayout) // ink.ui.structures.layouts/ScrollingListLayout.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.layouts.ScrollingListLayout){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.layouts/ScrollingListLayout.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.layouts/ScrollingListLayout.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.layouts/ScrollingListLayout> // ink.ui.structures.layouts/ScrollingListLayout.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final value class ink.ui.structures/Symbol { // ink.ui.structures/Symbol|null[0]
+    constructor <init>(kotlin/String) // ink.ui.structures/Symbol.<init>|<init>(kotlin.String){}[0]
+
+    final val key // ink.ui.structures/Symbol.key|{}key[0]
+        final fun <get-key>(): kotlin/String // ink.ui.structures/Symbol.key.<get-key>|<get-key>(){}[0]
+
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures/Symbol.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures/Symbol.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures/Symbol.toString|toString(){}[0]
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures/Symbol> { // ink.ui.structures/Symbol.$serializer|null[0]
+        final val descriptor // ink.ui.structures/Symbol.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures/Symbol.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures/Symbol.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures/Symbol // ink.ui.structures/Symbol.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures/Symbol) // ink.ui.structures/Symbol.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.Symbol){}[0]
+    }
+
+    final object Companion { // ink.ui.structures/Symbol.Companion|null[0]
+        final val Add // ink.ui.structures/Symbol.Companion.Add|{}Add[0]
+            final fun <get-Add>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Add.<get-Add>|<get-Add>(){}[0]
+        final val Alarm // ink.ui.structures/Symbol.Companion.Alarm|{}Alarm[0]
+            final fun <get-Alarm>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Alarm.<get-Alarm>|<get-Alarm>(){}[0]
+        final val AlarmOff // ink.ui.structures/Symbol.Companion.AlarmOff|{}AlarmOff[0]
+            final fun <get-AlarmOff>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.AlarmOff.<get-AlarmOff>|<get-AlarmOff>(){}[0]
+        final val ArrowBackward // ink.ui.structures/Symbol.Companion.ArrowBackward|{}ArrowBackward[0]
+            final fun <get-ArrowBackward>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.ArrowBackward.<get-ArrowBackward>|<get-ArrowBackward>(){}[0]
+        final val ArrowForward // ink.ui.structures/Symbol.Companion.ArrowForward|{}ArrowForward[0]
+            final fun <get-ArrowForward>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.ArrowForward.<get-ArrowForward>|<get-ArrowForward>(){}[0]
+        final val Bed // ink.ui.structures/Symbol.Companion.Bed|{}Bed[0]
+            final fun <get-Bed>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Bed.<get-Bed>|<get-Bed>(){}[0]
+        final val Caution // ink.ui.structures/Symbol.Companion.Caution|{}Caution[0]
+            final fun <get-Caution>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Caution.<get-Caution>|<get-Caution>(){}[0]
+        final val Close // ink.ui.structures/Symbol.Companion.Close|{}Close[0]
+            final fun <get-Close>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Close.<get-Close>|<get-Close>(){}[0]
+        final val Cloud // ink.ui.structures/Symbol.Companion.Cloud|{}Cloud[0]
+            final fun <get-Cloud>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Cloud.<get-Cloud>|<get-Cloud>(){}[0]
+        final val Done // ink.ui.structures/Symbol.Companion.Done|{}Done[0]
+            final fun <get-Done>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Done.<get-Done>|<get-Done>(){}[0]
+        final val Edit // ink.ui.structures/Symbol.Companion.Edit|{}Edit[0]
+            final fun <get-Edit>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Edit.<get-Edit>|<get-Edit>(){}[0]
+        final val Error // ink.ui.structures/Symbol.Companion.Error|{}Error[0]
+            final fun <get-Error>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Error.<get-Error>|<get-Error>(){}[0]
+        final val Group // ink.ui.structures/Symbol.Companion.Group|{}Group[0]
+            final fun <get-Group>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Group.<get-Group>|<get-Group>(){}[0]
+        final val House // ink.ui.structures/Symbol.Companion.House|{}House[0]
+            final fun <get-House>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.House.<get-House>|<get-House>(){}[0]
+        final val Lock // ink.ui.structures/Symbol.Companion.Lock|{}Lock[0]
+            final fun <get-Lock>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Lock.<get-Lock>|<get-Lock>(){}[0]
+        final val LockOpen // ink.ui.structures/Symbol.Companion.LockOpen|{}LockOpen[0]
+            final fun <get-LockOpen>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.LockOpen.<get-LockOpen>|<get-LockOpen>(){}[0]
+        final val Moon // ink.ui.structures/Symbol.Companion.Moon|{}Moon[0]
+            final fun <get-Moon>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Moon.<get-Moon>|<get-Moon>(){}[0]
+        final val Movie // ink.ui.structures/Symbol.Companion.Movie|{}Movie[0]
+            final fun <get-Movie>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Movie.<get-Movie>|<get-Movie>(){}[0]
+        final val Person // ink.ui.structures/Symbol.Companion.Person|{}Person[0]
+            final fun <get-Person>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Person.<get-Person>|<get-Person>(){}[0]
+        final val Rain // ink.ui.structures/Symbol.Companion.Rain|{}Rain[0]
+            final fun <get-Rain>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Rain.<get-Rain>|<get-Rain>(){}[0]
+        final val Remove // ink.ui.structures/Symbol.Companion.Remove|{}Remove[0]
+            final fun <get-Remove>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Remove.<get-Remove>|<get-Remove>(){}[0]
+        final val Snow // ink.ui.structures/Symbol.Companion.Snow|{}Snow[0]
+            final fun <get-Snow>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Snow.<get-Snow>|<get-Snow>(){}[0]
+        final val Sunshine // ink.ui.structures/Symbol.Companion.Sunshine|{}Sunshine[0]
+            final fun <get-Sunshine>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Sunshine.<get-Sunshine>|<get-Sunshine>(){}[0]
+        final val Temperature // ink.ui.structures/Symbol.Companion.Temperature|{}Temperature[0]
+            final fun <get-Temperature>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Temperature.<get-Temperature>|<get-Temperature>(){}[0]
+        final val Water // ink.ui.structures/Symbol.Companion.Water|{}Water[0]
+            final fun <get-Water>(): ink.ui.structures/Symbol // ink.ui.structures/Symbol.Companion.Water.<get-Water>|<get-Water>(){}[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures/Symbol> // ink.ui.structures/Symbol.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final object ink.ui.structures.elements/DividerElement : ink.ui.structures.elements/UiElement.Static, kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures.elements/DividerElement|null[0]
+    final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/DividerElement> // ink.ui.structures.elements/DividerElement.serializer|serializer(){}[0]
+    final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures.elements/DividerElement.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+}
+
+final object ink.ui.structures.elements/EmptyElement : ink.ui.structures.elements/UiElement.Static, kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures.elements/EmptyElement|null[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/EmptyElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/EmptyElement.hashCode|hashCode(){}[0]
+    final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/EmptyElement> // ink.ui.structures.elements/EmptyElement.serializer|serializer(){}[0]
+    final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures.elements/EmptyElement.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/EmptyElement.toString|toString(){}[0]
+}
+
+final object ink.ui.structures.layouts/EmptyLayout : ink.ui.structures.layouts/UiLayout, kotlinx.serialization.internal/SerializerFactory { // ink.ui.structures.layouts/EmptyLayout|null[0]
+    final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.layouts/EmptyLayout> // ink.ui.structures.layouts/EmptyLayout.serializer|serializer(){}[0]
+    final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // ink.ui.structures.layouts/EmptyLayout.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+}
+
+final fun (ink.ui.structures.render/Presenter).ink.ui.structures.render/onUpdate(kotlin/Function1<ink.ui.structures.layouts/UiLayout, kotlin/Unit>): ink.ui.structures.render/Presenter // ink.ui.structures.render/onUpdate|onUpdate@ink.ui.structures.render.Presenter(kotlin.Function1<ink.ui.structures.layouts.UiLayout,kotlin.Unit>){}[0]
+final fun (ink.ui.structures.render/Presenter).ink.ui.structures.render/then(ink.ui.structures.render/Presenter): ink.ui.structures.render/Presenter // ink.ui.structures.render/then|then@ink.ui.structures.render.Presenter(ink.ui.structures.render.Presenter){}[0]
+final fun ink.ui.structures.elements/inline(kotlin/Array<out ink.ui.structures.elements/UiElement>...): ink.ui.structures.elements/ElementList // ink.ui.structures.elements/inline|inline(kotlin.Array<out|ink.ui.structures.elements.UiElement>...){}[0]
+final fun ink.ui.structures.elements/items(kotlin/Array<out ink.ui.structures.elements/UiElement>...): ink.ui.structures.elements/ElementList // ink.ui.structures.elements/items|items(kotlin.Array<out|ink.ui.structures.elements.UiElement>...){}[0]
+final fun ink.ui.structures.elements/sections(kotlin/Array<out ink.ui.structures.elements/UiElement>...): ink.ui.structures.elements/ElementList // ink.ui.structures.elements/sections|sections(kotlin.Array<out|ink.ui.structures.elements.UiElement>...){}[0]
+final fun ink.ui.structures.elements/unified(kotlin/Array<out ink.ui.structures.elements/UiElement>...): ink.ui.structures.elements/ElementList // ink.ui.structures.elements/unified|unified(kotlin.Array<out|ink.ui.structures.elements.UiElement>...){}[0]
+final inline fun <#A: reified ink.ui.structures.elements/UiElement> (ink.ui.structures.elements/UiElement).ink.ui.structures.render/renderWithType(kotlin/Function1<#A, kotlin/Unit>): ink.ui.structures.render/RenderResult // ink.ui.structures.render/renderWithType|renderWithType@ink.ui.structures.elements.UiElement(kotlin.Function1<0:0,kotlin.Unit>){0§<ink.ui.structures.elements.UiElement>}[0]
+final inline fun ink.ui.structures.render/renderCatching(kotlin/Function0<ink.ui.structures.render/RenderResult>): ink.ui.structures.render/RenderResult // ink.ui.structures.render/renderCatching|renderCatching(kotlin.Function0<ink.ui.structures.render.RenderResult>){}[0]
+final suspend fun (ink.ui.structures.elements/StackElement).ink.ui.structures.elements/println(kotlin/String, ink.ui.structures/TextStyle = ...) // ink.ui.structures.elements/println|println@ink.ui.structures.elements.StackElement(kotlin.String;ink.ui.structures.TextStyle){}[0]
