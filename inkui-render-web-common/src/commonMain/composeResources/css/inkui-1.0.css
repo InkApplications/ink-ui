@@ -163,7 +163,7 @@ span.glyph
 }
 a
 {
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--color-primary);
 }
 ul,
@@ -291,7 +291,7 @@ header
     }
     a
     {
-        color: var(--color-foreground)
+        color: var(--color-foreground);
     }
     ul,
     ol
@@ -401,10 +401,6 @@ section nav ul > li::before
 {
     flex-direction: row;
     flex-wrap: wrap;
-}
-.section-list
-{
-    gap: var(--section-gap-spacing);
 }
 .item-list
 {

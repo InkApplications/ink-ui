@@ -22,4 +22,5 @@ repositories {
 
 dependencies {
     implementation(libs.inkui.render.web.static)
+    implementation(libs.inkui.sample.common)
 }

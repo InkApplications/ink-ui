@@ -1,10 +1,10 @@
 package ink.ui.render.statichtml
 
 import ink.ui.render.statichtml.renderer.ElementRenderer
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.GroupingStyle
-import ink.ui.structures.elements.UiElement
-import ink.ui.structures.layouts.ScrollingListLayout
-import ink.ui.structures.layouts.UiLayout
+import ink.ui.structures.MutableListElementContainer
+import ink.ui.structures.elements.ElementList
 import kotlinx.html.*
 import kotlinx.html.dom.*
 import java.io.File
@@ -43,23 +43,51 @@ abstract class InkUiScript(
         }
     private var presenter = StaticHtmlDocumentPresenter(resourceBaseUrl, customRenderers)
 
-    override fun addHead(block: HEAD.() -> Unit)
+    override fun head(builder: HEAD.() -> Unit)
     {
-        heads.add(block)
+        heads.add(builder)
     }
 
-    override fun setHeader(layout: UiLayout)
+    override fun header(builder: ElementContainer.() -> Unit)
     {
-        presenter.presentHeader(layout)
+        MutableListElementContainer()
+            .apply(builder)
+            .build()
+            .let {
+                ElementList(
+                    items = it,
+                    groupingStyle = GroupingStyle.Inline,
+                )
+            }
+            .also { presenter.presentHeader(it) }
     }
 
-    override fun setFooter(layout: UiLayout)
+    override fun footer(builder: ElementContainer.() -> Unit)
     {
-        presenter.presentFooter(layout)
+        MutableListElementContainer()
+            .apply(builder)
+            .build()
+            .let {
+                ElementList(
+                    items = it,
+                    groupingStyle = GroupingStyle.Inline,
+                )
+            }
+            .also { presenter.presentFooter(it) }
     }
 
-    override fun setBody(layout: UiLayout) {
-        presenter.presentBody(layout)
+    override fun body(builder: ElementContainer.() -> Unit)
+    {
+        MutableListElementContainer()
+            .apply(builder)
+            .build()
+            .let {
+                ElementList(
+                    items = it,
+                    groupingStyle = GroupingStyle.Inline,
+                )
+            }
+            .also { presenter.presentBody(it) }
     }
 
     override fun addStyle(stylesheet: String) {

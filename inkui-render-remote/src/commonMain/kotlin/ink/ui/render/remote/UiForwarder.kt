@@ -1,6 +1,6 @@
 package ink.ui.render.remote
 
-import ink.ui.structures.layouts.UiLayout
+import ink.ui.structures.elements.UiElement
 
 /**
  * Sends UI messages to a remote destination.
@@ -11,5 +11,5 @@ import ink.ui.structures.layouts.UiLayout
  */
 interface UiForwarder
 {
-    suspend fun forwardLayout(layout: UiLayout)
+    suspend fun forwardElement(element: UiElement)
 }

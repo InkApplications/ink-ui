@@ -1,7 +1,7 @@
 package ink.ui.render.statichtml
 
 import ink.ui.render.statichtml.renderer.ElementRenderer
-import ink.ui.structures.layouts.UiLayout
+import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.MissingRendererBehavior
 import ink.ui.structures.render.Presenter
 import kotlinx.html.*
@@ -16,10 +16,10 @@ class StaticHtmlDocumentPresenter(
     internal val footerPresenter = HtmlPartialPresenter(resourceBaseUrl, customRenderers, missingRendererBehavior)
     internal val bodyPresenter = HtmlPartialPresenter(resourceBaseUrl, customRenderers, missingRendererBehavior)
 
-    fun presentHeader(layout: UiLayout) = headerPresenter.presentLayout(layout)
-    fun presentFooter(layout: UiLayout) = footerPresenter.presentLayout(layout)
-    fun presentBody(layout: UiLayout) = bodyPresenter.presentLayout(layout)
-    override fun presentLayout(layout: UiLayout) = bodyPresenter.presentLayout(layout)
+    fun presentHeader(element: UiElement) = headerPresenter.presentElement(element)
+    fun presentFooter(element: UiElement) = footerPresenter.presentElement(element)
+    fun presentBody(element: UiElement) = bodyPresenter.presentElement(element)
+    override fun presentElement(element: UiElement) = bodyPresenter.presentElement(element)
 
     fun renderDocument(
         pageProperties: PageProperties,

@@ -42,6 +42,9 @@ object ListRenderer: ElementRenderer {
             element.items.forEach { item ->
                 when (element.groupingStyle) {
                     GroupingStyle.Unified -> renderWith(item, consumer, parent)
+                    GroupingStyle.Sections -> section {
+                        renderWith(item, consumer, parent)
+                    }
                     else -> div {
                         renderWith(item, consumer, parent)
                     }

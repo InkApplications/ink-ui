@@ -1,6 +1,8 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.GroupingStyle
+import ink.ui.structures.MutableListElementContainer
 import ink.ui.structures.Positioning
 import kotlinx.serialization.Contextual
 import kotlinx.serialization.SerialName
@@ -43,21 +45,54 @@ data class ElementList(
         groupingStyle = groupingStyle,
         orientation = orientation,
     )
+
+    companion object
+    {
+        fun build(
+            positioning: Positioning = Positioning.Start,
+            groupingStyle: GroupingStyle = GroupingStyle.Items,
+            orientation: Orientation = Orientation.Vertical,
+            builder: ElementContainer.() -> Unit,
+        ): ElementList {
+            return ElementList(
+                items = MutableListElementContainer().apply(builder).build(),
+                positioning = positioning,
+                groupingStyle = groupingStyle,
+                orientation = orientation,
+            )
+        }
+    }
 }
 
-fun inline(vararg items: UiElement) = ElementList(
-    items = items.toList(),
-    groupingStyle = GroupingStyle.Inline,
-)
-fun unified(vararg items: UiElement) = ElementList(
-    items = items.toList(),
-    groupingStyle = GroupingStyle.Unified,
-)
-fun sections(vararg items: UiElement) = ElementList(
-    items = items.toList(),
-    groupingStyle = GroupingStyle.Sections,
-)
-fun items(vararg items: UiElement) = ElementList(
-    items = items.toList(),
-    groupingStyle = GroupingStyle.Items,
-)
+fun ElementContainer.inline(builder: ElementContainer.() -> Unit)
+{
+    ElementList.build(
+        builder = builder,
+        groupingStyle = GroupingStyle.Inline,
+    ).also(::appendElement)
+}
+
+fun ElementContainer.unified(builder: ElementContainer.() -> Unit)
+{
+    ElementList.build(
+        builder = builder,
+        groupingStyle = GroupingStyle.Unified,
+    ).also(::appendElement)
+}
+
+fun ElementContainer.sections(builder: ElementContainer.() -> Unit)
+{
+    ElementList.build(
+        builder = builder,
+        groupingStyle = GroupingStyle.Sections,
+    ).also(::appendElement)
+}
+
+fun ElementContainer.items(builder: ElementContainer.() -> Unit)
+{
+    ElementList.build(
+        builder = builder,
+        groupingStyle = GroupingStyle.Sections,
+    ).also(::appendElement)
+}
+

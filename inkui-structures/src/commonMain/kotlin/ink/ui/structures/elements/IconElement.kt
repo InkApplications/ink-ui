@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.IconSizing
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
@@ -16,3 +17,15 @@ data class IconElement(
     val sentiment: Sentiment = Sentiment.Nominal,
     val sizing: IconSizing = IconSizing.Medium,
 ): UiElement.Static
+
+fun ElementContainer.icon(
+    symbol: Symbol,
+    sentiment: Sentiment = Sentiment.Nominal,
+    sizing: IconSizing = IconSizing.Medium,
+) {
+    IconElement(
+        symbol = symbol,
+        sentiment = sentiment,
+        sizing = sizing,
+    ).apply(::appendElement)
+}

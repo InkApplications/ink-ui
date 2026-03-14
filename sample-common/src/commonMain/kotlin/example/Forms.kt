@@ -1,15 +1,16 @@
 package example
 
-import ink.ui.structures.elements.CheckBoxElement
-import ink.ui.structures.elements.items
+import ink.ui.structures.GroupingStyle.Items
+import ink.ui.structures.elements.ElementList
+import ink.ui.structures.elements.checkBox
 
-val Forms = items(
-    CheckBoxElement(
+val Forms = ElementList.build(groupingStyle = Items) {
+    checkBox(
         checked = false,
         onClick = {},
-    ),
-    CheckBoxElement(
+    )
+    checkBox(
         checked = true,
         onClick = {},
-    ),
-)
+    )
+}

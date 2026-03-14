@@ -14,7 +14,7 @@ final class ink.ui.render.compose.html/ComposeHtmlPresenter : ink.ui.structures.
     constructor <init>(kotlin.collections/List<ink.ui.render.compose.html.renderer/ElementRenderer> = ..., ink.ui.structures.render/MissingRendererBehavior = ...) // ink.ui.render.compose.html/ComposeHtmlPresenter.<init>|<init>(kotlin.collections.List<ink.ui.render.compose.html.renderer.ElementRenderer>;ink.ui.structures.render.MissingRendererBehavior){}[0]
 
     final fun bind(androidx.compose.runtime/Composer?, kotlin/Int) // ink.ui.render.compose.html/ComposeHtmlPresenter.bind|bind(androidx.compose.runtime.Composer?;kotlin.Int){}[0]
-    final fun presentLayout(ink.ui.structures.layouts/UiLayout) // ink.ui.render.compose.html/ComposeHtmlPresenter.presentLayout|presentLayout(ink.ui.structures.layouts.UiLayout){}[0]
+    final fun presentElement(ink.ui.structures.elements/UiElement) // ink.ui.render.compose.html/ComposeHtmlPresenter.presentElement|presentElement(ink.ui.structures.elements.UiElement){}[0]
 }
 
 final object ink.ui.render.compose.html.renderer/ActivityRenderer : ink.ui.render.compose.html.renderer/ElementRenderer { // ink.ui.render.compose.html.renderer/ActivityRenderer|null[0]
@@ -62,7 +62,7 @@ final val ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_rendere
 final val ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_TextListRenderer$stableprop // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_TextListRenderer$stableprop|#static{}ink_ui_render_compose_html_renderer_TextListRenderer$stableprop[0]
 final val ink.ui.render.compose.html/ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop // ink.ui.render.compose.html/ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop|#static{}ink_ui_render_compose_html_ComposeHtmlPresenter$stableprop[0]
 
-final fun (ink.ui.render.compose.html/ComposeHtmlPresenter).ink.ui.render.compose.html/bindAndPresent(ink.ui.structures.layouts/UiLayout, androidx.compose.runtime/Composer?, kotlin/Int) // ink.ui.render.compose.html/bindAndPresent|bindAndPresent@ink.ui.render.compose.html.ComposeHtmlPresenter(ink.ui.structures.layouts.UiLayout;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
+final fun (ink.ui.render.compose.html/ComposeHtmlPresenter).ink.ui.render.compose.html/bindAndPresent(ink.ui.structures.elements/UiElement, androidx.compose.runtime/Composer?, kotlin/Int) // ink.ui.render.compose.html/bindAndPresent|bindAndPresent@ink.ui.render.compose.html.ComposeHtmlPresenter(ink.ui.structures.elements.UiElement;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
 final fun ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop_getter|ink_ui_render_compose_html_renderer_ActivityRenderer$stableprop_getter(){}[0]
 final fun ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop_getter|ink_ui_render_compose_html_renderer_EmptyRenderer$stableprop_getter(){}[0]
 final fun ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ListRenderer$stableprop_getter(): kotlin/Int // ink.ui.render.compose.html.renderer/ink_ui_render_compose_html_renderer_ListRenderer$stableprop_getter|ink_ui_render_compose_html_renderer_ListRenderer$stableprop_getter(){}[0]

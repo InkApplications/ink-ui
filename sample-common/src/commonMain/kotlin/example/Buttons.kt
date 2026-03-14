@@ -1,24 +1,24 @@
 package example
 
+import ink.ui.structures.GroupingStyle.Items
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
-import ink.ui.structures.elements.ButtonElement
-import ink.ui.structures.elements.items
+import ink.ui.structures.elements.*
 
-val Buttons = items(
-    ButtonElement(
+val Buttons = ElementList.build(groupingStyle = Items) {
+    button(
         text = "Button",
         onClick = { println("Clicked") },
         leadingSymbol = Symbol.LockOpen,
         sentiment = Sentiment.Primary,
         latchOnPress = true,
-    ),
-    ButtonElement(
+    )
+    button(
         text = "Button w/Context",
         onClick = { println("Clicked") },
         onContextClick = { println("Context Clicked") },
         leadingSymbol = Symbol("test"),
         sentiment = Sentiment.Caution,
         latchOnPress = true,
-    ),
-)
+    )
+}

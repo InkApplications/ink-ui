@@ -1,6 +1,6 @@
 package ink.ui.render.remote
 
-import ink.ui.render.remote.serialization.LayoutMessage
+import ink.ui.render.remote.serialization.ElementMessage
 import ink.ui.render.remote.serialization.event.UiEvent
 import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.structures.render.Presenter
@@ -33,15 +33,15 @@ internal class WebPresenterServer(
         embeddedServer(CIO, port) {
             install(WebSockets.Plugin)
             routing {
-                route("/layout", method = HttpMethod.Companion.Put) {
+                route("/layout", method = HttpMethod.Put) {
                     handle {
-                        val layout = try {
-                            serializer.decodeFromString<LayoutMessage>(call.receiveText())
+                        val message = try {
+                            serializer.decodeFromString<ElementMessage>(call.receiveText())
                         } catch (e: Throwable) {
                             e.printStackTrace()
                             throw e
                         }
-                        presenter.presentLayout(layout.layout!!)
+                        presenter.presentElement(message.element!!)
                         call.respond(HttpStatusCode.NoContent)
                     }
                 }

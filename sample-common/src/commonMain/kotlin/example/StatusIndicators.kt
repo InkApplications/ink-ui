@@ -1,32 +1,33 @@
 package example
 
+import ink.ui.structures.GroupingStyle.Items
 import ink.ui.structures.Sentiment
-import ink.ui.structures.elements.StatusIndicatorElement
-import ink.ui.structures.elements.items
+import ink.ui.structures.elements.ElementList
+import ink.ui.structures.elements.statusIndicator
 
-val StatusIndicators = items(
-    StatusIndicatorElement(
+val StatusIndicators = ElementList.build(groupingStyle = Items) {
+    statusIndicator(
         text = "Nominal Status",
         sentiment = Sentiment.Nominal,
-    ),
-    StatusIndicatorElement(
+    )
+    statusIndicator(
         text = "Primary Status",
         sentiment = Sentiment.Primary,
-    ),
-    StatusIndicatorElement(
+    )
+    statusIndicator(
         text = "Positive Status",
         sentiment = Sentiment.Positive,
-    ),
-    StatusIndicatorElement(
+    )
+    statusIndicator(
         text = "Negative Status",
         sentiment = Sentiment.Negative,
-    ),
-    StatusIndicatorElement(
+    )
+    statusIndicator(
         text = "Caution Status",
         sentiment = Sentiment.Caution,
-    ),
-    StatusIndicatorElement(
+    )
+    statusIndicator(
         text = "Idle Status",
         sentiment = Sentiment.Idle,
-    ),
-)
+    )
+}

@@ -1,13 +1,13 @@
 package ink.ui.structures.render
 
-import ink.ui.structures.layouts.UiLayout
+import ink.ui.structures.elements.UiElement
 
 internal class CompositePresenter(
     private val presenters: List<Presenter>,
 ) : Presenter {
-    override fun presentLayout(layout: UiLayout)
+    override fun presentElement(element: UiElement)
     {
-        presenters.forEach { it.presentLayout(layout) }
+        presenters.forEach { it.presentElement(element) }
     }
 }
 
@@ -16,9 +16,9 @@ fun Presenter.then(other: Presenter): Presenter
     return CompositePresenter(listOf(this, other))
 }
 
-fun Presenter.onUpdate(update: (UiLayout) -> Unit) = object: Presenter {
-    override fun presentLayout(layout: UiLayout)
+fun Presenter.onUpdate(update: (UiElement) -> Unit) = object: Presenter {
+    override fun presentElement(element: UiElement)
     {
-        update(layout)
+        update(element)
     }
 }.then(this)

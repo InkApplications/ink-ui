@@ -1,5 +1,7 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
+
 /**
  * A clickable element in a list of related actions.
  */
@@ -19,3 +21,11 @@ data class MenuRowElement(
      */
     val rightElement: UiElement? = null,
 ): UiElement.Interactive
+
+fun ElementContainer.menuRow(
+    text: String,
+    onClick: (() -> Unit)? = null,
+    rightElement: UiElement? = null,
+) {
+    MenuRowElement(text, onClick, rightElement).also(::appendElement)
+}

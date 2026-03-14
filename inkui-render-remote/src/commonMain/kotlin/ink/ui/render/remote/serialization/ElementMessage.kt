@@ -1,6 +1,6 @@
 package ink.ui.render.remote.serialization
 
-import ink.ui.structures.layouts.UiLayout
+import ink.ui.structures.elements.UiElement
 import kotlinx.serialization.Contextual
 import kotlinx.serialization.Serializable
 
@@ -8,8 +8,8 @@ import kotlinx.serialization.Serializable
  * Wraps a serialized layout with extra metadata.
  */
 @Serializable
-data class LayoutMessage(
+data class ElementMessage(
     @Contextual
-    val layout: UiLayout? = null,
+    val element: UiElement? = null,
     val encoding: LayoutEncoding = LayoutEncoding.Plain,
 )

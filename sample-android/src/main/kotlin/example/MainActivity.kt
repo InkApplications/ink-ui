@@ -8,6 +8,7 @@ import ink.ui.render.compose.ComposePresenter
 import ink.ui.render.compose.renderer.FormattedTextRenderer
 import ink.ui.render.compose.theme.defaultTheme
 import androidx.core.net.toUri
+import ink.ui.render.compose.bindAndPresent
 
 class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +24,10 @@ class MainActivity: ComponentActivity() {
                     )
                 )
             )
-            presenter.bind(defaultTheme())
-
-            presenter.presentLayout(Examples.Defaults.layout)
+            presenter.bindAndPresent(
+                theme = defaultTheme(),
+                element = Examples.Defaults.groupedElements,
+            )
         }
     }
 }

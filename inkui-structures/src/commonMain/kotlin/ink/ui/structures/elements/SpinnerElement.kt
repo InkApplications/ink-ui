@@ -1,5 +1,7 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
+
 /**
  * An element that can be cycled through values for.
  */
@@ -29,3 +31,19 @@ data class SpinnerElement(
      */
     val hasNextValue: Boolean = true,
 ): UiElement.Interactive
+
+fun ElementContainer.spinner(
+    value: String,
+    onNextValue: () -> Unit,
+    onPreviousValue: () -> Unit,
+    hasPreviousValue: Boolean = true,
+    hasNextValue: Boolean = true,
+) {
+    SpinnerElement(
+        value = value,
+        onNextValue = onNextValue,
+        onPreviousValue = onPreviousValue,
+        hasPreviousValue = hasPreviousValue,
+        hasNextValue = hasNextValue,
+    ).also(::appendElement)
+}

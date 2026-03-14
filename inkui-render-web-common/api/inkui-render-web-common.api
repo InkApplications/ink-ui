@@ -1,7 +1,3 @@
-public final class ink/ui/render/web/FixedGridLayoutsKt {
-	public static final fun getGridTemplateColumns (Link/ui/structures/layouts/FixedGridLayout;)Ljava/lang/String;
-}
-
 public final class ink/ui/render/web/SentimentsKt {
 	public static final fun toCssClass (Link/ui/structures/Sentiment;)Ljava/lang/String;
 }

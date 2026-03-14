@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.TextStyle
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -10,15 +11,7 @@ data class FormattedText(
     val spans: List<Span>,
     val paragraph: Boolean = true,
 ): UiElement.Static {
-    constructor(
-        paragraph: Boolean = true,
-        builder: Builder.() -> Unit,
-    ): this(
-        spans = Builder().apply(builder).spans,
-        paragraph = paragraph,
-    )
-
-    fun toPlainTextElement(style: TextStyle, ): TextElement
+    fun toPlainTextElement(style: TextStyle): TextElement
     {
         return TextElement(
             text = spans.joinToString("") { span ->
@@ -139,4 +132,29 @@ data class FormattedText(
             spans.add(Span.Break)
         }
     }
+
+    companion object
+    {
+        fun build(
+            paragraph: Boolean = true,
+            builder: Builder.() -> Unit,
+        ) = FormattedText(
+            spans = Builder().apply(builder).spans,
+            paragraph = paragraph,
+        )
+    }
+}
+
+fun ElementContainer.formattedText(
+    paragraph: Boolean = true,
+    builder: FormattedText.Builder.() -> Unit,
+) {
+    FormattedText.Builder().apply(builder).spans
+        .let {
+            FormattedText(
+                spans = it,
+                paragraph = paragraph,
+            )
+        }
+        .also(::appendElement)
 }

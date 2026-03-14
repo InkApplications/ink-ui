@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -10,3 +11,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 @SerialName("empty")
 data object EmptyElement: UiElement.Static
+
+fun ElementContainer.empty()
+{
+    appendElement(EmptyElement)
+}

@@ -1,15 +1,11 @@
 package ink.ui.render.remote
 
 import ink.ui.render.remote.serialization.ElementId
-import ink.ui.render.remote.serialization.LayoutMessage
-import ink.ui.render.remote.serialization.event.OnClickEvent
-import ink.ui.render.remote.serialization.event.OnContextClickEvent
+import ink.ui.render.remote.serialization.ElementMessage
 import ink.ui.render.remote.serialization.event.UiEvent
 import ink.ui.render.remote.serialization.event.UiEventListener
 import ink.ui.render.remote.serialization.event.UiEvents
-import ink.ui.structures.elements.ButtonElement
 import ink.ui.structures.elements.UiElement
-import ink.ui.structures.layouts.UiLayout
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.websocket.WebSockets
@@ -60,10 +56,10 @@ internal class WebForwarder(
         install(WebSockets)
     }
 
-    override suspend fun forwardLayout(layout: UiLayout)
+    override suspend fun forwardElement(element: UiElement)
     {
-        val message = LayoutMessage(
-            layout = layout,
+        val message = ElementMessage(
+            element = element,
         )
         val pairs = MutableStateFlow<Map<ElementId, UiElement>>(emptyMap())
         coroutineScope {

@@ -1,28 +1,27 @@
 package example
 
+import ink.ui.structures.GroupingStyle.Items
 import ink.ui.structures.Sentiment
-import ink.ui.structures.elements.ProgressElement
-import ink.ui.structures.elements.ThrobberElement
-import ink.ui.structures.elements.items
+import ink.ui.structures.elements.*
 
-val ProgressIndicators = items(
-    ProgressElement.Determinate(
+val ProgressIndicators = ElementList.build(groupingStyle = Items) {
+    determinateProgress(
         progress = 0.5f,
         caption = "Progress",
         sentiment = Sentiment.Positive
-    ),
-    ProgressElement.Indeterminate(
+    )
+    indeterminateProgress(
         caption = "Indeterminate Progress",
-    ),
-    ProgressElement.Indeterminate(
+    )
+    indeterminateProgress(
         caption = "Indeterminate Caution",
         sentiment = Sentiment.Caution
-    ),
-    ThrobberElement(
+    )
+    throbber(
         caption = "Throbber",
-    ),
-    ThrobberElement(
+    )
+    throbber(
         caption = "Error Throbber",
         sentiment = Sentiment.Negative,
-    ),
-)
+    )
+}

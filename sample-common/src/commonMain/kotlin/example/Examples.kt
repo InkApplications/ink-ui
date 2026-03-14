@@ -3,20 +3,23 @@ package example
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.TextStyle
 import ink.ui.structures.elements.*
-import ink.ui.structures.layouts.ScrollingListLayout
 
 data class Examples(
     val elements: List<Pair<ElementCategory, UiElement>>
 ) {
-    val layout get() = ScrollingListLayout(
-        items = elements
-            .groupBy { it.first }
-            .map { it.key to it.value.map { it.second } }
-            .map { (category, elements) ->
-                items(TextElement(category.name, TextStyle.H1), *elements.toTypedArray())
-            },
-        groupingStyle = GroupingStyle.Sections,
-    )
+    val groupedElements get() = elements
+        .groupBy { it.first }
+        .map { it.key to it.value.map { it.second } }
+        .map { (category, elements) ->
+            ElementList(
+                items = listOf(
+                    TextElement(category.name, TextStyle.H1),
+                    *elements.toTypedArray()
+                ),
+                groupingStyle = GroupingStyle.Items
+            )
+        }
+        .let { ElementList(it, groupingStyle = GroupingStyle.Sections) }
 
     fun withDefaults(): Examples
     {

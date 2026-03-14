@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.Sentiment
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -20,3 +21,10 @@ data class StatusIndicatorElement(
      */
     val sentiment: Sentiment,
 ): UiElement.Static
+
+fun ElementContainer.statusIndicator(
+    text: String,
+    sentiment : Sentiment
+) {
+    StatusIndicatorElement(text, sentiment).also(::appendElement)
+}

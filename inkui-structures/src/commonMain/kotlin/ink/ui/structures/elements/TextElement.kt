@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.TextStyle
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -20,3 +21,16 @@ data class TextElement(
      */
     val style: TextStyle = TextStyle.Body,
 ): UiElement.Static
+
+fun ElementContainer.text(text: String, style: TextStyle = TextStyle.Body)
+{
+    TextElement(
+        text = text,
+        style = style,
+    ).also(::appendElement)
+}
+
+fun ElementContainer.h1(text: String) = text(text, TextStyle.H1)
+fun ElementContainer.h2(text: String) = text(text, TextStyle.H2)
+fun ElementContainer.h3(text: String) = text(text, TextStyle.H3)
+fun ElementContainer.caption(text: String) = text(text, TextStyle.Caption)

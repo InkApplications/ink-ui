@@ -1,8 +1,8 @@
 package ink.ui.structures.render
 
-import ink.ui.structures.layouts.UiLayout
+import ink.ui.structures.elements.UiElement
 
 interface Presenter
 {
-    fun presentLayout(layout: UiLayout)
+    fun presentElement(element: UiElement)
 }

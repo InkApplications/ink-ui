@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.TextStyle
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
@@ -37,4 +38,10 @@ suspend fun StackElement.println(
     textStyle: TextStyle = TextStyle.Body
 ) {
     print(TextElement(message, textStyle))
+}
+
+fun ElementContainer.stack(
+    requireDistinct: Boolean = true,
+): StackElement {
+    return StackElement(requireDistinct = requireDistinct).also(::appendElement)
 }

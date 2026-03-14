@@ -5,7 +5,7 @@ public abstract interface class ink/ui/render/remote/LayoutServer {
 public final class ink/ui/render/remote/RemotePresenter : ink/ui/structures/render/Presenter {
 	public fun <init> (Link/ui/render/remote/UiForwarder;)V
 	public final fun bind (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public fun presentLayout (Link/ui/structures/layouts/UiLayout;)V
+	public fun presentElement (Link/ui/structures/elements/UiElement;)V
 }
 
 public final class ink/ui/render/remote/RemoteRenderModule {
@@ -19,7 +19,7 @@ public final class ink/ui/render/remote/RemoteRenderModule {
 }
 
 public abstract interface class ink/ui/render/remote/UiForwarder {
-	public abstract fun forwardLayout (Link/ui/structures/layouts/UiLayout;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun forwardElement (Link/ui/structures/elements/UiElement;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class ink/ui/render/remote/serialization/ElementId {
@@ -39,6 +39,36 @@ public final class ink/ui/render/remote/serialization/ElementId {
 }
 
 public final class ink/ui/render/remote/serialization/ElementId$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class ink/ui/render/remote/serialization/ElementMessage {
+	public static final field Companion Link/ui/render/remote/serialization/ElementMessage$Companion;
+	public synthetic fun <init> (Link/ui/structures/elements/UiElement;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Link/ui/structures/elements/UiElement;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Link/ui/structures/elements/UiElement;
+	public final fun component2-U26GjT0 ()Ljava/lang/String;
+	public final fun copy-j_Cso2g (Link/ui/structures/elements/UiElement;Ljava/lang/String;)Link/ui/render/remote/serialization/ElementMessage;
+	public static synthetic fun copy-j_Cso2g$default (Link/ui/render/remote/serialization/ElementMessage;Link/ui/structures/elements/UiElement;Ljava/lang/String;ILjava/lang/Object;)Link/ui/render/remote/serialization/ElementMessage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getElement ()Link/ui/structures/elements/UiElement;
+	public final fun getEncoding-U26GjT0 ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class ink/ui/render/remote/serialization/ElementMessage$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Link/ui/render/remote/serialization/ElementMessage$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/render/remote/serialization/ElementMessage;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/render/remote/serialization/ElementMessage;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class ink/ui/render/remote/serialization/ElementMessage$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
@@ -115,36 +145,6 @@ public final synthetic class ink/ui/render/remote/serialization/LayoutEncoding$$
 
 public final class ink/ui/render/remote/serialization/LayoutEncoding$Companion {
 	public final fun getPlain-U26GjT0 ()Ljava/lang/String;
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/render/remote/serialization/LayoutMessage {
-	public static final field Companion Link/ui/render/remote/serialization/LayoutMessage$Companion;
-	public synthetic fun <init> (Link/ui/structures/layouts/UiLayout;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public synthetic fun <init> (Link/ui/structures/layouts/UiLayout;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun component1 ()Link/ui/structures/layouts/UiLayout;
-	public final fun component2-U26GjT0 ()Ljava/lang/String;
-	public final fun copy-j_Cso2g (Link/ui/structures/layouts/UiLayout;Ljava/lang/String;)Link/ui/render/remote/serialization/LayoutMessage;
-	public static synthetic fun copy-j_Cso2g$default (Link/ui/render/remote/serialization/LayoutMessage;Link/ui/structures/layouts/UiLayout;Ljava/lang/String;ILjava/lang/Object;)Link/ui/render/remote/serialization/LayoutMessage;
-	public fun equals (Ljava/lang/Object;)Z
-	public final fun getEncoding-U26GjT0 ()Ljava/lang/String;
-	public final fun getLayout ()Link/ui/structures/layouts/UiLayout;
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
-}
-
-public final synthetic class ink/ui/render/remote/serialization/LayoutMessage$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Link/ui/render/remote/serialization/LayoutMessage$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/render/remote/serialization/LayoutMessage;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/render/remote/serialization/LayoutMessage;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/render/remote/serialization/LayoutMessage$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 

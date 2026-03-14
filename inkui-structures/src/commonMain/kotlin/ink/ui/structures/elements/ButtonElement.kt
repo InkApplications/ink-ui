@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
 
@@ -51,3 +52,25 @@ data class ButtonElement(
      */
     val trailingSymbol: Symbol? = null,
 ): UiElement.Interactive
+
+fun ElementContainer.button(
+    text: String,
+    onClick: () -> Unit,
+    onContextClick: (() -> Unit)? = null,
+    sentiment: Sentiment = Sentiment.Nominal,
+    enabled: Boolean = true,
+    latchOnPress: Boolean = false,
+    leadingSymbol: Symbol? = null,
+    trailingSymbol: Symbol? = null,
+) {
+    ButtonElement(
+        text = text,
+        onClick = onClick,
+        onContextClick = onContextClick,
+        sentiment = sentiment,
+        enabled = enabled,
+        latchOnPress = latchOnPress,
+        leadingSymbol = leadingSymbol,
+        trailingSymbol = trailingSymbol,
+    ).apply(::appendElement)
+}

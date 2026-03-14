@@ -14,7 +14,7 @@ fun main()
         val examples = Examples(listOf(
             ElementCategory.Navigation to Breadcrumbs,
         ))
-        presenter.bindAndPresent(examples.withDefaults().layout)
+        presenter.bindAndPresent(examples.withDefaults().groupedElements)
         job.cancelAndJoin()
     }
 }

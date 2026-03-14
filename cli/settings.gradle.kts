@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "cli"
 
 includeBuild("../inkui-render-web-static")
+includeBuild("../sample-common")

@@ -1,50 +1,53 @@
 package example
 
+import ink.ui.structures.GroupingStyle.Items
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
 import ink.ui.structures.elements.ElementList
-import ink.ui.structures.elements.IconElement
 import ink.ui.structures.elements.Orientation
+import ink.ui.structures.elements.icon
 
-val Symbols = ElementList(
-    IconElement(
+val Symbols = ElementList.build(
+    groupingStyle = Items,
+    orientation = Orientation.Horizontal,
+) {
+    icon(
         symbol = Symbol.Add,
         sentiment = Sentiment.Primary,
-    ),
-    IconElement(
+    )
+    icon(
         symbol = Symbol.Alarm,
         sentiment = Sentiment.Positive,
-    ),
-    IconElement(
+    )
+    icon(
         symbol = Symbol.AlarmOff,
         sentiment = Sentiment.Negative,
-    ),
-    IconElement(
+    )
+    icon(
         symbol = Symbol.ArrowBackward,
         sentiment = Sentiment.Caution,
-    ),
-    IconElement(
+    )
+    icon(
         symbol = Symbol.ArrowForward,
         sentiment = Sentiment.Idle,
-    ),
-    IconElement(Symbol.Bed),
-    IconElement(Symbol.Caution),
-    IconElement(Symbol.Close),
-    IconElement(Symbol.Cloud),
-    IconElement(Symbol.Done),
-    IconElement(Symbol.Edit),
-    IconElement(Symbol.Error),
-    IconElement(Symbol.Group),
-    IconElement(Symbol.House),
-    IconElement(Symbol.Lock),
-    IconElement(Symbol.LockOpen),
-    IconElement(Symbol.Moon),
-    IconElement(Symbol.Movie),
-    IconElement(Symbol.Person),
-    IconElement(Symbol.Rain),
-    IconElement(Symbol.Remove),
-    IconElement(Symbol.Sunshine),
-    IconElement(Symbol.Temperature),
-    IconElement(Symbol.Water),
-    orientation = Orientation.Horizontal,
-)
+    )
+    icon(Symbol.Bed)
+    icon(Symbol.Caution)
+    icon(Symbol.Close)
+    icon(Symbol.Cloud)
+    icon(Symbol.Done)
+    icon(Symbol.Edit)
+    icon(Symbol.Error)
+    icon(Symbol.Group)
+    icon(Symbol.House)
+    icon(Symbol.Lock)
+    icon(Symbol.LockOpen)
+    icon(Symbol.Moon)
+    icon(Symbol.Movie)
+    icon(Symbol.Person)
+    icon(Symbol.Rain)
+    icon(Symbol.Remove)
+    icon(Symbol.Sunshine)
+    icon(Symbol.Temperature)
+    icon(Symbol.Water)
+}

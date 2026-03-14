@@ -128,8 +128,6 @@ final val ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_B
 final val ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop // ink.ui.render.web.elements/ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop|#static{}ink_ui_render_web_elements_LinkNavigation_NavigationItem$stableprop[0]
 final val ink.ui.render.web/composePath // ink.ui.render.web/composePath|@ink.ui.structures.Symbol{}composePath[0]
     final fun (ink.ui.structures/Symbol).<get-composePath>(): kotlin/String // ink.ui.render.web/composePath.<get-composePath>|<get-composePath>@ink.ui.structures.Symbol(){}[0]
-final val ink.ui.render.web/gridTemplateColumns // ink.ui.render.web/gridTemplateColumns|@ink.ui.structures.layouts.FixedGridLayout{}gridTemplateColumns[0]
-    final fun (ink.ui.structures.layouts/FixedGridLayout).<get-gridTemplateColumns>(): kotlin/String // ink.ui.render.web/gridTemplateColumns.<get-gridTemplateColumns>|<get-gridTemplateColumns>@ink.ui.structures.layouts.FixedGridLayout(){}[0]
 final val ink.ui.render.web/svgSrc // ink.ui.render.web/svgSrc|@ink.ui.structures.Symbol{}svgSrc[0]
     final fun (ink.ui.structures/Symbol).<get-svgSrc>(): kotlin/String // ink.ui.render.web/svgSrc.<get-svgSrc>|<get-svgSrc>@ink.ui.structures.Symbol(){}[0]
 

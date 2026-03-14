@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.Sentiment
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -47,4 +48,26 @@ sealed interface ProgressElement: UiElement.Static
         override val caption: String? = null,
         override val sentiment: Sentiment = Sentiment.Nominal,
     ): ProgressElement
+}
+
+fun ElementContainer.indeterminateProgress(
+    caption: String? = null,
+    sentiment: Sentiment = Sentiment.Nominal,
+) {
+    ProgressElement.Indeterminate(
+        caption = caption,
+        sentiment = sentiment,
+    ).also(::appendElement)
+}
+
+fun ElementContainer.determinateProgress(
+    progress: Float,
+    caption: String? = null,
+    sentiment: Sentiment = Sentiment.Nominal,
+) {
+    ProgressElement.Determinate(
+        progress = progress,
+        caption = caption,
+        sentiment = sentiment,
+    )
 }

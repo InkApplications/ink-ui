@@ -1,3 +1,7 @@
+public abstract interface class ink/ui/structures/ElementContainer {
+	public abstract fun appendElement (Link/ui/structures/elements/UiElement;)V
+}
+
 public final class ink/ui/structures/GroupingStyle : java/lang/Enum {
 	public static final field Companion Link/ui/structures/GroupingStyle$Companion;
 	public static final field Inline Link/ui/structures/GroupingStyle;
@@ -25,6 +29,12 @@ public final class ink/ui/structures/IconSizing : java/lang/Enum {
 
 public final class ink/ui/structures/IconSizing$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class ink/ui/structures/MutableListElementContainer : ink/ui/structures/ElementContainer {
+	public fun <init> ()V
+	public fun appendElement (Link/ui/structures/elements/UiElement;)V
+	public final fun build ()Ljava/util/List;
 }
 
 public final class ink/ui/structures/Positioning : java/lang/Enum {
@@ -131,7 +141,6 @@ public final class ink/ui/structures/TextStyle$Companion {
 public final class ink/ui/structures/elements/BreadcrumbElement : ink/ui/structures/elements/UiElement$Static {
 	public static final field Companion Link/ui/structures/elements/BreadcrumbElement$Companion;
 	public fun <init> (Ljava/util/List;)V
-	public fun <init> (Lkotlin/jvm/functions/Function1;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun copy (Ljava/util/List;)Link/ui/structures/elements/BreadcrumbElement;
 	public static synthetic fun copy$default (Link/ui/structures/elements/BreadcrumbElement;Ljava/util/List;ILjava/lang/Object;)Link/ui/structures/elements/BreadcrumbElement;
@@ -198,7 +207,12 @@ public final class ink/ui/structures/elements/BreadcrumbElement$Builder {
 }
 
 public final class ink/ui/structures/elements/BreadcrumbElement$Companion {
+	public final fun build (Lkotlin/jvm/functions/Function1;)Link/ui/structures/elements/BreadcrumbElement;
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class ink/ui/structures/elements/BreadcrumbElementKt {
+	public static final fun breadcrumbs (Link/ui/structures/ElementContainer;Lkotlin/jvm/functions/Function1;)V
 }
 
 public final class ink/ui/structures/elements/ButtonElement : ink/ui/structures/elements/UiElement$Interactive {
@@ -227,6 +241,11 @@ public final class ink/ui/structures/elements/ButtonElement : ink/ui/structures/
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/elements/ButtonElementKt {
+	public static final fun button-qcX99xI (Link/ui/structures/ElementContainer;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;)V
+	public static synthetic fun button-qcX99xI$default (Link/ui/structures/ElementContainer;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Link/ui/structures/Sentiment;ZZLjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+}
+
 public final class ink/ui/structures/elements/CheckBoxElement : ink/ui/structures/elements/UiElement$Interactive {
 	public fun <init> (ZLkotlin/jvm/functions/Function0;)V
 	public final fun component1 ()Z
@@ -240,9 +259,20 @@ public final class ink/ui/structures/elements/CheckBoxElement : ink/ui/structure
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/elements/CheckBoxElementKt {
+	public static final fun checkBox (Link/ui/structures/ElementContainer;ZLkotlin/jvm/functions/Function0;)V
+}
+
 public final class ink/ui/structures/elements/DividerElement : ink/ui/structures/elements/UiElement$Static {
 	public static final field INSTANCE Link/ui/structures/elements/DividerElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/DividerElementKt {
+	public static final fun divider (Link/ui/structures/ElementContainer;)V
 }
 
 public final class ink/ui/structures/elements/ElementList : ink/ui/structures/elements/UiElement$Static {
@@ -278,14 +308,16 @@ public final synthetic class ink/ui/structures/elements/ElementList$$serializer 
 }
 
 public final class ink/ui/structures/elements/ElementList$Companion {
+	public final fun build (Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;Lkotlin/jvm/functions/Function1;)Link/ui/structures/elements/ElementList;
+	public static synthetic fun build$default (Link/ui/structures/elements/ElementList$Companion;Link/ui/structures/Positioning;Link/ui/structures/GroupingStyle;Link/ui/structures/elements/Orientation;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Link/ui/structures/elements/ElementList;
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
 public final class ink/ui/structures/elements/ElementListKt {
-	public static final fun inline ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
-	public static final fun items ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
-	public static final fun sections ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
-	public static final fun unified ([Link/ui/structures/elements/UiElement;)Link/ui/structures/elements/ElementList;
+	public static final fun inline (Link/ui/structures/ElementContainer;Lkotlin/jvm/functions/Function1;)V
+	public static final fun items (Link/ui/structures/ElementContainer;Lkotlin/jvm/functions/Function1;)V
+	public static final fun sections (Link/ui/structures/ElementContainer;Lkotlin/jvm/functions/Function1;)V
+	public static final fun unified (Link/ui/structures/ElementContainer;Lkotlin/jvm/functions/Function1;)V
 }
 
 public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/elements/UiElement$Static {
@@ -296,12 +328,14 @@ public final class ink/ui/structures/elements/EmptyElement : ink/ui/structures/e
 	public fun toString ()Ljava/lang/String;
 }
 
+public final class ink/ui/structures/elements/EmptyElementKt {
+	public static final fun empty (Link/ui/structures/ElementContainer;)V
+}
+
 public final class ink/ui/structures/elements/FormattedText : ink/ui/structures/elements/UiElement$Static {
 	public static final field Companion Link/ui/structures/elements/FormattedText$Companion;
 	public fun <init> (Ljava/util/List;Z)V
 	public synthetic fun <init> (Ljava/util/List;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public fun <init> (ZLkotlin/jvm/functions/Function1;)V
-	public synthetic fun <init> (ZLkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()Z
 	public final fun copy (Ljava/util/List;Z)Link/ui/structures/elements/FormattedText;
@@ -356,6 +390,8 @@ public final class ink/ui/structures/elements/FormattedText$Builder {
 }
 
 public final class ink/ui/structures/elements/FormattedText$Companion {
+	public final fun build (ZLkotlin/jvm/functions/Function1;)Link/ui/structures/elements/FormattedText;
+	public static synthetic fun build$default (Link/ui/structures/elements/FormattedText$Companion;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Link/ui/structures/elements/FormattedText;
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
@@ -590,6 +626,11 @@ public final class ink/ui/structures/elements/FormattedText$Span$Text$Companion 
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class ink/ui/structures/elements/FormattedTextKt {
+	public static final fun formattedText (Link/ui/structures/ElementContainer;ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun formattedText$default (Link/ui/structures/ElementContainer;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
 public final class ink/ui/structures/elements/IconElement : ink/ui/structures/elements/UiElement$Static {
 	public static final field Companion Link/ui/structures/elements/IconElement$Companion;
 	public synthetic fun <init> (Ljava/lang/String;Link/ui/structures/Sentiment;Link/ui/structures/IconSizing;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -622,6 +663,11 @@ public final class ink/ui/structures/elements/IconElement$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class ink/ui/structures/elements/IconElementKt {
+	public static final fun icon-6enAaY4 (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/Sentiment;Link/ui/structures/IconSizing;)V
+	public static synthetic fun icon-6enAaY4$default (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/Sentiment;Link/ui/structures/IconSizing;ILjava/lang/Object;)V
+}
+
 public final class ink/ui/structures/elements/MenuRowElement : ink/ui/structures/elements/UiElement$Interactive {
 	public fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/elements/UiElement;)V
 	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/elements/UiElement;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -636,6 +682,11 @@ public final class ink/ui/structures/elements/MenuRowElement : ink/ui/structures
 	public final fun getText ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/MenuRowElementKt {
+	public static final fun menuRow (Link/ui/structures/ElementContainer;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/elements/UiElement;)V
+	public static synthetic fun menuRow$default (Link/ui/structures/ElementContainer;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Link/ui/structures/elements/UiElement;ILjava/lang/Object;)V
 }
 
 public final class ink/ui/structures/elements/Orientation : java/lang/Enum {
@@ -724,6 +775,13 @@ public final class ink/ui/structures/elements/ProgressElement$Indeterminate$Comp
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class ink/ui/structures/elements/ProgressElementKt {
+	public static final fun determinateProgress (Link/ui/structures/ElementContainer;FLjava/lang/String;Link/ui/structures/Sentiment;)V
+	public static synthetic fun determinateProgress$default (Link/ui/structures/ElementContainer;FLjava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)V
+	public static final fun indeterminateProgress (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/Sentiment;)V
+	public static synthetic fun indeterminateProgress$default (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)V
+}
+
 public final class ink/ui/structures/elements/SpinnerElement : ink/ui/structures/elements/UiElement$Interactive {
 	public fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZZ)V
 	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -742,6 +800,11 @@ public final class ink/ui/structures/elements/SpinnerElement : ink/ui/structures
 	public final fun getValue ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
+}
+
+public final class ink/ui/structures/elements/SpinnerElementKt {
+	public static final fun spinner (Link/ui/structures/ElementContainer;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZZ)V
+	public static synthetic fun spinner$default (Link/ui/structures/ElementContainer;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZZILjava/lang/Object;)V
 }
 
 public final class ink/ui/structures/elements/StackElement : ink/ui/structures/elements/UiElement$Interactive {
@@ -763,6 +826,8 @@ public final class ink/ui/structures/elements/StackElement : ink/ui/structures/e
 public final class ink/ui/structures/elements/StackElementKt {
 	public static final fun println (Link/ui/structures/elements/StackElement;Ljava/lang/String;Link/ui/structures/TextStyle;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static synthetic fun println$default (Link/ui/structures/elements/StackElement;Ljava/lang/String;Link/ui/structures/TextStyle;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static final fun stack (Link/ui/structures/ElementContainer;Z)Link/ui/structures/elements/StackElement;
+	public static synthetic fun stack$default (Link/ui/structures/ElementContainer;ZILjava/lang/Object;)Link/ui/structures/elements/StackElement;
 }
 
 public final class ink/ui/structures/elements/StatusIndicatorElement : ink/ui/structures/elements/UiElement$Static {
@@ -792,6 +857,10 @@ public final synthetic class ink/ui/structures/elements/StatusIndicatorElement$$
 
 public final class ink/ui/structures/elements/StatusIndicatorElement$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class ink/ui/structures/elements/StatusIndicatorElementKt {
+	public static final fun statusIndicator (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/Sentiment;)V
 }
 
 public final class ink/ui/structures/elements/TextElement : ink/ui/structures/elements/UiElement$Static {
@@ -824,6 +893,15 @@ public final class ink/ui/structures/elements/TextElement$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class ink/ui/structures/elements/TextElementKt {
+	public static final fun caption (Link/ui/structures/ElementContainer;Ljava/lang/String;)V
+	public static final fun h1 (Link/ui/structures/ElementContainer;Ljava/lang/String;)V
+	public static final fun h2 (Link/ui/structures/ElementContainer;Ljava/lang/String;)V
+	public static final fun h3 (Link/ui/structures/ElementContainer;Ljava/lang/String;)V
+	public static final fun text (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/TextStyle;)V
+	public static synthetic fun text$default (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/TextStyle;ILjava/lang/Object;)V
+}
+
 public final class ink/ui/structures/elements/TextListElement : ink/ui/structures/elements/UiElement$Static {
 	public static final field Companion Link/ui/structures/elements/TextListElement$Companion;
 	public fun <init> (Ljava/util/List;Z)V
@@ -851,8 +929,32 @@ public final synthetic class ink/ui/structures/elements/TextListElement$$seriali
 	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
+public final class ink/ui/structures/elements/TextListElement$Builder {
+	public fun <init> ()V
+	public fun <init> (Ljava/util/List;Z)V
+	public synthetic fun <init> (Ljava/util/List;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Z
+	public final fun copy (Ljava/util/List;Z)Link/ui/structures/elements/TextListElement$Builder;
+	public static synthetic fun copy$default (Link/ui/structures/elements/TextListElement$Builder;Ljava/util/List;ZILjava/lang/Object;)Link/ui/structures/elements/TextListElement$Builder;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun formattedText (ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun formattedText$default (Link/ui/structures/elements/TextListElement$Builder;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public final fun getItems ()Ljava/util/List;
+	public final fun getOrdered ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
 public final class ink/ui/structures/elements/TextListElement$Companion {
+	public final fun build (ZLkotlin/jvm/functions/Function1;)Link/ui/structures/elements/TextListElement;
+	public static synthetic fun build$default (Link/ui/structures/elements/TextListElement$Companion;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Link/ui/structures/elements/TextListElement;
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class ink/ui/structures/elements/TextListElementKt {
+	public static final fun textList (Link/ui/structures/ElementContainer;ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun textList$default (Link/ui/structures/ElementContainer;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 }
 
 public final class ink/ui/structures/elements/ThrobberElement : ink/ui/structures/elements/UiElement$Static {
@@ -886,6 +988,11 @@ public final class ink/ui/structures/elements/ThrobberElement$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class ink/ui/structures/elements/ThrobberElementKt {
+	public static final fun throbber (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/Sentiment;)V
+	public static synthetic fun throbber$default (Link/ui/structures/ElementContainer;Ljava/lang/String;Link/ui/structures/Sentiment;ILjava/lang/Object;)V
+}
+
 public abstract interface class ink/ui/structures/elements/UiElement {
 }
 
@@ -893,142 +1000,6 @@ public abstract interface class ink/ui/structures/elements/UiElement$Interactive
 }
 
 public abstract interface class ink/ui/structures/elements/UiElement$Static : ink/ui/structures/elements/UiElement {
-}
-
-public final class ink/ui/structures/layouts/CenteredElementLayout : ink/ui/structures/layouts/UiLayout {
-	public static final field Companion Link/ui/structures/layouts/CenteredElementLayout$Companion;
-	public fun <init> (Link/ui/structures/elements/UiElement;)V
-	public final fun component1 ()Link/ui/structures/elements/UiElement;
-	public final fun copy (Link/ui/structures/elements/UiElement;)Link/ui/structures/layouts/CenteredElementLayout;
-	public static synthetic fun copy$default (Link/ui/structures/layouts/CenteredElementLayout;Link/ui/structures/elements/UiElement;ILjava/lang/Object;)Link/ui/structures/layouts/CenteredElementLayout;
-	public fun equals (Ljava/lang/Object;)Z
-	public final fun getBody ()Link/ui/structures/elements/UiElement;
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
-}
-
-public final synthetic class ink/ui/structures/layouts/CenteredElementLayout$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Link/ui/structures/layouts/CenteredElementLayout$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/structures/layouts/CenteredElementLayout;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/structures/layouts/CenteredElementLayout;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/structures/layouts/CenteredElementLayout$Companion {
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/structures/layouts/EmptyLayout : ink/ui/structures/layouts/UiLayout {
-	public static final field INSTANCE Link/ui/structures/layouts/EmptyLayout;
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/structures/layouts/FixedGridLayout : ink/ui/structures/layouts/UiLayout {
-	public static final field Companion Link/ui/structures/layouts/FixedGridLayout$Companion;
-	public fun <init> (ILjava/util/List;)V
-	public fun <init> ([Link/ui/structures/layouts/FixedGridLayout$GridItem;I)V
-	public final fun component1 ()I
-	public final fun component2 ()Ljava/util/List;
-	public final fun copy (ILjava/util/List;)Link/ui/structures/layouts/FixedGridLayout;
-	public static synthetic fun copy$default (Link/ui/structures/layouts/FixedGridLayout;ILjava/util/List;ILjava/lang/Object;)Link/ui/structures/layouts/FixedGridLayout;
-	public fun equals (Ljava/lang/Object;)Z
-	public final fun getColumns ()I
-	public final fun getItems ()Ljava/util/List;
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
-}
-
-public final synthetic class ink/ui/structures/layouts/FixedGridLayout$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Link/ui/structures/layouts/FixedGridLayout$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/structures/layouts/FixedGridLayout;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/structures/layouts/FixedGridLayout;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/structures/layouts/FixedGridLayout$Companion {
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/structures/layouts/FixedGridLayout$GridItem {
-	public static final field Companion Link/ui/structures/layouts/FixedGridLayout$GridItem$Companion;
-	public fun <init> (ILink/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/Positioning;)V
-	public synthetic fun <init> (ILink/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/Positioning;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun component1 ()I
-	public final fun component2 ()Link/ui/structures/elements/UiElement;
-	public final fun component3 ()Link/ui/structures/Positioning;
-	public final fun component4 ()Link/ui/structures/Positioning;
-	public final fun copy (ILink/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/Positioning;)Link/ui/structures/layouts/FixedGridLayout$GridItem;
-	public static synthetic fun copy$default (Link/ui/structures/layouts/FixedGridLayout$GridItem;ILink/ui/structures/elements/UiElement;Link/ui/structures/Positioning;Link/ui/structures/Positioning;ILjava/lang/Object;)Link/ui/structures/layouts/FixedGridLayout$GridItem;
-	public fun equals (Ljava/lang/Object;)Z
-	public final fun getBody ()Link/ui/structures/elements/UiElement;
-	public final fun getHorizontalPositioning ()Link/ui/structures/Positioning;
-	public final fun getSpan ()I
-	public final fun getVerticalPositioning ()Link/ui/structures/Positioning;
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
-}
-
-public final synthetic class ink/ui/structures/layouts/FixedGridLayout$GridItem$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Link/ui/structures/layouts/FixedGridLayout$GridItem$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/structures/layouts/FixedGridLayout$GridItem;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/structures/layouts/FixedGridLayout$GridItem;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/structures/layouts/FixedGridLayout$GridItem$Companion {
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/structures/layouts/ScrollingListLayout : ink/ui/structures/layouts/UiLayout {
-	public static final field Companion Link/ui/structures/layouts/ScrollingListLayout$Companion;
-	public fun <init> (Ljava/util/List;Link/ui/structures/GroupingStyle;)V
-	public synthetic fun <init> (Ljava/util/List;Link/ui/structures/GroupingStyle;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public fun <init> ([Link/ui/structures/elements/UiElement;Link/ui/structures/GroupingStyle;)V
-	public synthetic fun <init> ([Link/ui/structures/elements/UiElement;Link/ui/structures/GroupingStyle;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun component1 ()Ljava/util/List;
-	public final fun component2 ()Link/ui/structures/GroupingStyle;
-	public final fun copy (Ljava/util/List;Link/ui/structures/GroupingStyle;)Link/ui/structures/layouts/ScrollingListLayout;
-	public static synthetic fun copy$default (Link/ui/structures/layouts/ScrollingListLayout;Ljava/util/List;Link/ui/structures/GroupingStyle;ILjava/lang/Object;)Link/ui/structures/layouts/ScrollingListLayout;
-	public fun equals (Ljava/lang/Object;)Z
-	public final fun getGroupingStyle ()Link/ui/structures/GroupingStyle;
-	public final fun getItems ()Ljava/util/List;
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
-}
-
-public final synthetic class ink/ui/structures/layouts/ScrollingListLayout$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Link/ui/structures/layouts/ScrollingListLayout$$serializer;
-	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Link/ui/structures/layouts/ScrollingListLayout;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Link/ui/structures/layouts/ScrollingListLayout;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
-public final class ink/ui/structures/layouts/ScrollingListLayout$Companion {
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
-}
-
-public abstract interface class ink/ui/structures/layouts/UiLayout {
-	public static final field Companion Link/ui/structures/layouts/UiLayout$Companion;
-}
-
-public final class ink/ui/structures/layouts/UiLayout$Companion {
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
 public final class ink/ui/structures/render/CompositePresenterKt {
@@ -1077,7 +1048,7 @@ public final class ink/ui/structures/render/MissingRendererBehavior$Placeholder 
 }
 
 public abstract interface class ink/ui/structures/render/Presenter {
-	public abstract fun presentLayout (Link/ui/structures/layouts/UiLayout;)V
+	public abstract fun presentElement (Link/ui/structures/elements/UiElement;)V
 }
 
 public abstract interface class ink/ui/structures/render/RenderResult {

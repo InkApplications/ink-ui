@@ -1,11 +1,12 @@
 package example
 
-import ink.ui.structures.elements.BreadcrumbElement
-import ink.ui.structures.elements.items
+import ink.ui.structures.GroupingStyle.Items
+import ink.ui.structures.elements.ElementList
+import ink.ui.structures.elements.breadcrumbs
 
-val Breadcrumbs = items(
-    BreadcrumbElement {
+val Breadcrumbs = ElementList.build(groupingStyle = Items) {
+    breadcrumbs {
         link("Home", "https://asdf.com")
         text("Breadcrumbs")
     }
-)
+}

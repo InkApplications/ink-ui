@@ -1,9 +1,9 @@
 package ink.ui.render.terminal
 
 import ink.ui.render.terminal.renderer.*
+import ink.ui.structures.GroupingStyle
 import ink.ui.structures.elements.Orientation
-import ink.ui.structures.layouts.ScrollingListLayout
-import ink.ui.structures.layouts.UiLayout
+import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.MissingRendererBehavior
 import ink.ui.structures.render.Presenter
 import kotlinx.coroutines.*
@@ -28,37 +28,32 @@ class TerminalPresenter(
         ProgressRenderer,
         BreadCrumbRenderer,
     )
-    private val renderQueue = Channel<UiLayout>()
+    private val renderQueue = Channel<UiElement>()
     private val compositeRenderer = CompositeElementRenderer(renderers + builtInRenderers, missingRendererBehavior)
 
     fun bind(): Job
     {
         return renderScope.launch {
-            renderQueue.consumeEach { layout ->
-                when (layout) {
-                    is ScrollingListLayout -> layout.items.forEachIndexed { index, item ->
-                        compositeRenderer.render(item, compositeRenderer)
-                        spacing(
-                            orientation = Orientation.Vertical,
-                            groupingStyle = layout.groupingStyle,
-                            isLast = index == layout.items.lastIndex
-                        )
-                    }.also { print("\n") }
-                    else -> TODO("Layout not implemented")
-                }
+            renderQueue.consumeEach { item ->
+                compositeRenderer.render(item, compositeRenderer)
+                spacing(
+                    orientation = Orientation.Vertical,
+                    groupingStyle = GroupingStyle.Items,
+                    isLast = true,
+                )
             }
         }
     }
 
-    override fun presentLayout(layout: UiLayout)
+    override fun presentElement(element: UiElement)
     {
-        renderQueue.trySendBlocking(layout)
+        renderQueue.trySendBlocking(element)
     }
 }
 
-fun TerminalPresenter.bindAndPresent(layout: UiLayout): Job
+fun TerminalPresenter.bindAndPresent(element: UiElement): Job
 {
     return bind().also {
-        presentLayout(layout)
+        presentElement(element)
     }
 }

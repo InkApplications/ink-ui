@@ -1,20 +1,18 @@
 package example
 
-import ink.ui.structures.TextStyle
-import ink.ui.structures.elements.DividerElement
-import ink.ui.structures.elements.FormattedText
-import ink.ui.structures.elements.TextElement
-import ink.ui.structures.elements.TextListElement
-import ink.ui.structures.elements.items
+import ink.ui.structures.GroupingStyle.Items
+import ink.ui.structures.elements.*
 
-val Typography = items(
-    TextElement("Heading 1", TextStyle.H1),
-    TextElement("Heading 2", TextStyle.H2),
-    TextElement("Heading 3", TextStyle.H3),
-    TextElement("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", TextStyle.Body),
-    TextElement("This is a caption", TextStyle.Caption),
-    DividerElement,
-    FormattedText {
+val Typography = ElementList.build(groupingStyle = Items) {
+    h1("Heading 1")
+    h2("Heading 2")
+    h3("Heading 3")
+    text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+    caption("This is a caption")
+
+    divider()
+
+    formattedText {
         link(url = "https://inkapplications.com") {
             text("Formatted")
         }
@@ -34,14 +32,14 @@ val Typography = items(
             text("grouped")
             text("references")
         }
-    },
-    TextListElement(
-        FormattedText {
+    }
+    textList {
+        formattedText {
             text("This is a ")
             strong("text list")
-        },
-        FormattedText {
+        }
+        formattedText {
             text("with multiple items")
         }
-    ),
-)
+    }
+}

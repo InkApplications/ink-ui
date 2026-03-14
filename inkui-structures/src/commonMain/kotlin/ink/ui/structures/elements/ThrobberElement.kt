@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import ink.ui.structures.Sentiment
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -20,3 +21,10 @@ data class ThrobberElement(
      */
     val sentiment: Sentiment = Sentiment.Nominal,
 ): UiElement.Static
+
+fun ElementContainer.throbber(
+    caption: String? = null,
+    sentiment: Sentiment = Sentiment.Nominal,
+) {
+    ThrobberElement(caption, sentiment).also(::appendElement)
+}

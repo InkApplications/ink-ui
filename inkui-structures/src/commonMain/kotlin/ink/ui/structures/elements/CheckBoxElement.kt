@@ -1,5 +1,7 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
+
 /**
  * Checkbox form element.
  */
@@ -17,3 +19,13 @@ data class CheckBoxElement(
      */
     val onClick: () -> Unit,
 ): UiElement.Interactive
+
+fun ElementContainer.checkBox(
+    checked: Boolean,
+    onClick: () -> Unit,
+) {
+    CheckBoxElement(
+        checked = checked,
+        onClick = onClick,
+    ).also(::appendElement)
+}

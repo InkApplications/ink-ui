@@ -1,5 +1,6 @@
 package ink.ui.structures.elements
 
+import ink.ui.structures.ElementContainer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -8,12 +9,6 @@ import kotlinx.serialization.Serializable
 data class BreadcrumbElement(
     val items: List<Breadcrumb>,
 ): UiElement.Static {
-    constructor(
-        builder: Builder.() -> Unit,
-    ): this(
-        items = Builder().apply(builder).breadcrumbs,
-    )
-
     @Serializable
     data class Breadcrumb(
         val text: String,
@@ -31,4 +26,17 @@ data class BreadcrumbElement(
             breadcrumbs.add(Breadcrumb(text = text, url = url))
         }
     }
+
+    companion object
+    {
+        fun build(builder: Builder.() -> Unit): BreadcrumbElement
+        {
+            return BreadcrumbElement(Builder().apply(builder).breadcrumbs)
+        }
+    }
+}
+
+fun ElementContainer.breadcrumbs(builder: BreadcrumbElement.Builder.() -> Unit)
+{
+    BreadcrumbElement.build(builder).also(::appendElement)
 }

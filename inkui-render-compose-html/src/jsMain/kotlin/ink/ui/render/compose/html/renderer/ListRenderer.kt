@@ -10,6 +10,7 @@ import ink.ui.structures.render.RenderResult
 import org.jetbrains.compose.web.css.JustifyContent
 import org.jetbrains.compose.web.css.justifyContent
 import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Section
 
 object ListRenderer: ElementRenderer {
     @Composable
@@ -59,6 +60,9 @@ object ListRenderer: ElementRenderer {
             element.items.forEach {
                 when (element.groupingStyle) {
                     GroupingStyle.Unified -> parent.render(it, parent)
+                    GroupingStyle.Sections -> Section {
+                        parent.render(it, parent)
+                    }
                     else -> Div {
                         parent.render(it, parent)
                     }
