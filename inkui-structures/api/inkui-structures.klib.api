@@ -747,25 +747,6 @@ final class ink.ui.structures.elements/IconElement : ink.ui.structures.elements/
     }
 }
 
-final class ink.ui.structures.elements/MenuRowElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/MenuRowElement|null[0]
-    constructor <init>(kotlin/String, kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures.elements/UiElement? = ...) // ink.ui.structures.elements/MenuRowElement.<init>|<init>(kotlin.String;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.elements.UiElement?){}[0]
-
-    final val onClick // ink.ui.structures.elements/MenuRowElement.onClick|{}onClick[0]
-        final fun <get-onClick>(): kotlin/Function0<kotlin/Unit>? // ink.ui.structures.elements/MenuRowElement.onClick.<get-onClick>|<get-onClick>(){}[0]
-    final val rightElement // ink.ui.structures.elements/MenuRowElement.rightElement|{}rightElement[0]
-        final fun <get-rightElement>(): ink.ui.structures.elements/UiElement? // ink.ui.structures.elements/MenuRowElement.rightElement.<get-rightElement>|<get-rightElement>(){}[0]
-    final val text // ink.ui.structures.elements/MenuRowElement.text|{}text[0]
-        final fun <get-text>(): kotlin/String // ink.ui.structures.elements/MenuRowElement.text.<get-text>|<get-text>(){}[0]
-
-    final fun component1(): kotlin/String // ink.ui.structures.elements/MenuRowElement.component1|component1(){}[0]
-    final fun component2(): kotlin/Function0<kotlin/Unit>? // ink.ui.structures.elements/MenuRowElement.component2|component2(){}[0]
-    final fun component3(): ink.ui.structures.elements/UiElement? // ink.ui.structures.elements/MenuRowElement.component3|component3(){}[0]
-    final fun copy(kotlin/String = ..., kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures.elements/UiElement? = ...): ink.ui.structures.elements/MenuRowElement // ink.ui.structures.elements/MenuRowElement.copy|copy(kotlin.String;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.elements.UiElement?){}[0]
-    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/MenuRowElement.equals|equals(kotlin.Any?){}[0]
-    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/MenuRowElement.hashCode|hashCode(){}[0]
-    final fun toString(): kotlin/String // ink.ui.structures.elements/MenuRowElement.toString|toString(){}[0]
-}
-
 final class ink.ui.structures.elements/SpinnerElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/SpinnerElement|null[0]
     constructor <init>(kotlin/String, kotlin/Function0<kotlin/Unit>, kotlin/Function0<kotlin/Unit>, kotlin/Boolean = ..., kotlin/Boolean = ...) // ink.ui.structures.elements/SpinnerElement.<init>|<init>(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>;kotlin.Boolean;kotlin.Boolean){}[0]
 
@@ -1066,7 +1047,6 @@ final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/icon(i
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/indeterminateProgress(kotlin/String? = ..., ink.ui.structures/Sentiment = ...) // ink.ui.structures.elements/indeterminateProgress|indeterminateProgress@ink.ui.structures.ElementContainer(kotlin.String?;ink.ui.structures.Sentiment){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/inline(kotlin/Function1<ink.ui.structures/ElementContainer, kotlin/Unit>) // ink.ui.structures.elements/inline|inline@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.ElementContainer,kotlin.Unit>){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/items(kotlin/Function1<ink.ui.structures/ElementContainer, kotlin/Unit>) // ink.ui.structures.elements/items|items@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.ElementContainer,kotlin.Unit>){}[0]
-final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/menuRow(kotlin/String, kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures.elements/UiElement? = ...) // ink.ui.structures.elements/menuRow|menuRow@ink.ui.structures.ElementContainer(kotlin.String;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.elements.UiElement?){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/sections(kotlin/Function1<ink.ui.structures/ElementContainer, kotlin/Unit>) // ink.ui.structures.elements/sections|sections@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.ElementContainer,kotlin.Unit>){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/spinner(kotlin/String, kotlin/Function0<kotlin/Unit>, kotlin/Function0<kotlin/Unit>, kotlin/Boolean = ..., kotlin/Boolean = ...) // ink.ui.structures.elements/spinner|spinner@ink.ui.structures.ElementContainer(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>;kotlin.Boolean;kotlin.Boolean){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/stack(kotlin/Boolean = ...): ink.ui.structures.elements/StackElement // ink.ui.structures.elements/stack|stack@ink.ui.structures.ElementContainer(kotlin.Boolean){}[0]

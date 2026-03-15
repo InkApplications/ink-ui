@@ -24,7 +24,6 @@ class ComposeHtmlPresenter(
         SpinnerRenderer,
         IconRenderer,
         CheckBoxRenderer,
-        MenuRowRenderer,
         DividerRenderer,
         FormattedTextRenderer,
         TextListRenderer,

@@ -59,7 +59,7 @@ class FormattedTextRenderer(
                 FormattedText.Span.Break -> append("\n")
                 is FormattedText.Span.Code -> withStyle(
                     style = SpanStyle(
-                        background = theme.colors.surfaceInteraction,
+                        background = theme.colors.surface,
                     )
                 ) {
                     appendSpans(theme, span.inner)
@@ -74,6 +74,7 @@ class FormattedTextRenderer(
                 is FormattedText.Span.Link -> withStyle(
                     style = SpanStyle(
                         color = theme.colors.primary,
+                        textDecoration = TextDecoration.Underline,
                     )
                 ) {
                     withAnnotation(
@@ -84,7 +85,7 @@ class FormattedTextRenderer(
                 }
                 is FormattedText.Span.Strong -> withStyle(
                     style = SpanStyle(
-                        fontWeight = FontWeight.Companion.Bold,
+                        fontWeight = FontWeight.Medium,
                     )
                 ) {
                     appendSpans(theme, span.inner)

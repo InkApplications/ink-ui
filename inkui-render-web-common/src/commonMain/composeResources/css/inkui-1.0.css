@@ -22,7 +22,6 @@
     --color-surface-depressed: #e0e0e0;
     --color-surface-item: #f5f5f5;
     --color-surface-hover: #F5F5F5;
-    --color-shadow: #f0f0f0;
 
     --color-primary: #008DA9;
     --filter-primary: invert(42%) sepia(44%) saturate(7311%) hue-rotate(167deg) brightness(93%) contrast(102%);
@@ -48,7 +47,6 @@
         --color-surface-depressed: #2c2c2c;
         --color-surface-item: #3b3b3b;
         --color-surface-hover: #393939;
-        --color-shadow: #121212;
     }
 }
 
@@ -163,7 +161,7 @@ span.glyph
 }
 a
 {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--color-primary);
 }
 ul,
@@ -291,7 +289,7 @@ header
     }
     a
     {
-        color: var(--color-foreground);
+        color: var(--color-foreground)
     }
     ul,
     ol
@@ -401,6 +399,10 @@ section nav ul > li::before
 {
     flex-direction: row;
     flex-wrap: wrap;
+}
+.section-list
+{
+    gap: var(--section-gap-spacing);
 }
 .item-list
 {
@@ -589,7 +591,7 @@ code.grouped
     code.grouped,
     code.grouped > span
     {
-        border: none;    
+        border: none;
     }
 }
 
@@ -623,7 +625,7 @@ button,
 input,
 textarea
 {
-    background: linear-gradient(to bottom, var(--color-surface), var(--color-shadow));
+    background: none;
     border: none;
     border-bottom: 1px solid var(--color-primary);
     padding: .5rem;
@@ -650,22 +652,21 @@ input[type=button]
     background-color: var(--color-surface);
     border-radius: var(--corner-radius);
     border: 1px solid var(--color-foreground-subtle);
-    background: linear-gradient(to bottom, var(--color-surface), var(--color-shadow));
 }
 button:hover:not(:disabled),
 .button:hover:not(:disabled),
 input[type=submit]:hover:not(:disabled),
 input[type=button]:hover:not(:disabled)
 {
-    transition: background .3s;
-    background: linear-gradient(to bottom, var(--color-surface), var(--color-shadow));
+    transition: background-color .3s;
+    background-color: var(--color-surface-hover);
 }
 button:active:not(:disabled),
 .button:active:not(:disabled),
 input[type=submit]:active:not(:disabled),
 input[type=button]:active:not(:disabled)
 {
-    background: linear-gradient(to bottom, var(--color-shadow), var(--color-surface));
+    background-color: var(--color-surface-depressed);
 }
 @media print {
     form,

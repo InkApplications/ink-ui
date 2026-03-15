@@ -12,7 +12,6 @@ import ink.ui.render.remote.serialization.event.UiEventListener
 import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.render.remote.serialization.event.plus
 import ink.ui.render.remote.serializer.CheckBoxElementSerializer
-import ink.ui.render.remote.serializer.MenuRowElementSerializer
 import ink.ui.render.remote.serializer.SpinnerElementSerializer
 import ink.ui.structures.elements.BreadcrumbElement
 import ink.ui.structures.elements.DividerElement
@@ -47,7 +46,6 @@ class RemoteRenderModule(
         addElementSerializer(ElementList.serializer())
         addElementSerializer(FormattedText.serializer())
         addElementSerializer(IconElement.serializer())
-        addElementSerializer(MenuRowElementSerializer(uiEvents))
         addElementSerializer(SpinnerElementSerializer(uiEvents))
         addElementSerializer(StatusIndicatorElement.serializer())
         addElementSerializer(TextElement.serializer())

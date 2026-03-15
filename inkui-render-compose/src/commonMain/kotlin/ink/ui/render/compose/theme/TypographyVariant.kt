@@ -10,12 +10,12 @@ import androidx.compose.ui.unit.sp
  */
 data class TypographyVariant(
     val h1: TextStyle = TextStyle(
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Medium,
         fontSize = 34.sp,
         letterSpacing = 0.25.sp,
     ),
     val h2: TextStyle = TextStyle(
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Medium,
         fontSize = 24.sp,
         letterSpacing = 0.sp,
     ),
@@ -25,12 +25,12 @@ data class TypographyVariant(
         letterSpacing = 0.15.sp,
     ),
     val body: TextStyle = TextStyle(
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Light,
         fontSize = 16.sp,
         letterSpacing = 0.5.sp,
     ),
     val caption: TextStyle = TextStyle(
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Light,
         fontSize = 12.sp,
         letterSpacing = 0.4.sp,
     ),

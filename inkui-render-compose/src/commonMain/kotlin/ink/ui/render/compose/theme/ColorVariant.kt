@@ -8,6 +8,7 @@ import ink.ui.structures.Sentiment
  */
 data class ColorVariant(
     val foreground: Color,
+    val foregroundSubtle: Color,
     val background: Color,
     val surface: Color,
     val primary: Color,
@@ -15,10 +16,11 @@ data class ColorVariant(
     val negative: Color,
     val caution: Color,
     val idle: Color,
-    val surfaceInteraction: Color = surface,
+    val highlight: Color,
+    val heavyHighlight: Color,
+    val shadow: Color,
+    val heavyShadow: Color,
 ) {
-    val inactive = foreground.copy(alpha = 0.5f)
-
     fun forSentiment(sentiment: Sentiment): Color = when (sentiment) {
         Sentiment.Positive -> positive
         Sentiment.Negative -> negative
@@ -37,38 +39,47 @@ data class ColorVariant(
             val SOFT_WHITE = Color(0xFFF8F8F8)
             val SOFT_BLACK = Color(0xFF212121)
             val GRAY = Color(0xFF90A4AE)
+            val SUBTLE_GRAY = Color(0xFF9E9E9E)
             val SOFT_GRAY = Color(0xFF323232)
-            val RED = Color(0xFFe82a70)
+            val RED = Color(0xFFf92772)
             val GREEN = Color(0xFF00a600)
             val ORANGE = Color(0xFFfe9720)
             val YELLOW = Color(0xFFe3c52d)
             val BLUE = Color(0xFF008DA9)
+            val DARK_BLUE = Color(0xFF00A6C7)
             val PURPLE = Color(0xFFa175c9)
         }
 
         val light = ColorVariant(
             foreground = Colors.SOFT_BLACK,
+            foregroundSubtle = Colors.SUBTLE_GRAY,
             background = Colors.WHITE,
-            surface = Colors.WHITE,
+            surface = Colors.SOFT_WHITE,
             primary = Colors.BLUE,
             positive = Colors.GREEN,
             negative = Colors.RED,
             caution = Colors.ORANGE,
             idle = Colors.GRAY,
-        ).let {
-            it.copy(
-                surfaceInteraction = it.surface.darken(0.1f),
-            )
-        }
+            highlight = Color(0xBFFFFFFF),
+            heavyHighlight = Color(0xF2FFFFFF),
+            shadow = Color(0x08000000),
+            heavyShadow = Color(0x33000000),
+        )
 
-        val dark = light.copy(
+        val dark = ColorVariant(
             foreground = Colors.WHITE,
+            foregroundSubtle = Color(0xFF808080),
             background = Colors.SOFT_BLACK,
             surface = Colors.SOFT_GRAY,
-        ).let {
-            it.copy(
-                surfaceInteraction = it.surface.brighten(0.1f),
-            )
-        }
+            primary = Colors.DARK_BLUE,
+            positive = Colors.GREEN,
+            negative = Colors.RED,
+            caution = Colors.ORANGE,
+            idle = Colors.GRAY,
+            highlight = Color(0x0AFFFFFF),
+            heavyHighlight = Color(0x1AFFFFFF),
+            shadow = Color(0x4D000000),
+            heavyShadow = Color(0x99000000),
+        )
     }
 }

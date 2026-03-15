@@ -20,7 +20,7 @@ val DividerRenderer = renderer<DividerElement> { theme, element ->
         val gap = dotRadius.times(2)
         var x = 0f
         while (x < size.width) {
-            drawCircle(theme.colors.inactive, dotRadius, center = Offset(x + dotRadius, size.height / 2))
+            drawCircle(theme.colors.foregroundSubtle, dotRadius, center = Offset(x + dotRadius, size.height / 2))
             x += dotRadius * 2 + gap
         }
     }

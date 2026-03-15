@@ -1,8 +1,6 @@
 package ink.ui.render.terminal
 
 import ink.ui.render.terminal.renderer.*
-import ink.ui.structures.GroupingStyle
-import ink.ui.structures.elements.Orientation
 import ink.ui.structures.elements.UiElement
 import ink.ui.structures.render.MissingRendererBehavior
 import ink.ui.structures.render.Presenter
@@ -36,11 +34,7 @@ class TerminalPresenter(
         return renderScope.launch {
             renderQueue.consumeEach { item ->
                 compositeRenderer.render(item, compositeRenderer)
-                spacing(
-                    orientation = Orientation.Vertical,
-                    groupingStyle = GroupingStyle.Items,
-                    isLast = true,
-                )
+                println()
             }
         }
     }

@@ -22,7 +22,6 @@ class ComposePresenter(
         EmptyRenderer,
         ListRenderer,
         CheckboxRenderer,
-        MenuRowRenderer,
         SpinnerRenderer,
         IconRenderer,
         DividerRenderer,

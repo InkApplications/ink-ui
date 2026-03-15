@@ -9,6 +9,11 @@ val Buttons = ElementList.build(groupingStyle = Items) {
     button(
         text = "Button",
         onClick = { println("Clicked") },
+        sentiment = Sentiment.Primary,
+    )
+    button(
+        text = "Button",
+        onClick = { println("Clicked") },
         leadingSymbol = Symbol.LockOpen,
         sentiment = Sentiment.Primary,
         latchOnPress = true,

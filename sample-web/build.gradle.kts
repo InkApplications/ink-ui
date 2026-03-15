@@ -42,7 +42,10 @@ private fun renderTo(input: String, output: String) {
     val process = ProcessBuilder("sh", "-c", "$app $script > \"$output\"")
         .inheritIO()
         .start()
-    process.waitFor()
+    val exitCode = process.waitFor()
+    if (exitCode != 0) {
+        throw GradleException("renderTo failed (exit code $exitCode).")
+    }
 }
 
 tasks.register("buildStatic") {
@@ -50,8 +53,6 @@ tasks.register("buildStatic") {
     doLast {
         staticOutputDir.mkdirs()
         renderTo("src/staticMain/index.inkui.kts", "${staticOutputDir.path}/index.html")
-        renderTo("src/staticMain/typography.inkui.kts", "${staticOutputDir.path}/typography.html")
-        renderTo("src/staticMain/elements.inkui.kts", "${staticOutputDir.path}/elements.html")
         copy {
             staticResDir.mkdirs()
             from(gradle.includedBuild("inkui-render-web-common").projectDir.resolve("src/commonMain/composeResources"))

@@ -49,8 +49,7 @@ internal object ListRenderer: ElementRenderer {
         parent: ElementRenderer
     ) {
         element.items.forEachIndexed { index, item ->
-            parent.render(item, theme, parent)
-            if (element.groupingStyle !in setOf(Unified, Inline) && index != 0 && index != element.items.size - 1) {
+            if (element.groupingStyle !in setOf(Unified, Inline) && index != 0) {
                 val spacing = when (element.groupingStyle) {
                     Items -> theme.spacing.item
                     Sections -> theme.spacing.sectionSpacing
@@ -58,6 +57,7 @@ internal object ListRenderer: ElementRenderer {
                 }
                 Spacer(modifier = Modifier.height(spacing))
             }
+            parent.render(item, theme, parent)
         }
     }
 }

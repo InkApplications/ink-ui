@@ -69,5 +69,5 @@ fun ElementContainer.determinateProgress(
         progress = progress,
         caption = caption,
         sentiment = sentiment,
-    )
+    ).also(::appendElement)
 }
