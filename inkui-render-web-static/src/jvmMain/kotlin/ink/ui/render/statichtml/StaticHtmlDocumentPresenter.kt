@@ -27,10 +27,6 @@ class StaticHtmlDocumentPresenter(
         stylesheets: List<String>,
         scripts: List<String>,
         jsInit: String?,
-        // TODO: Remove these in 2.x
-        pageHeaderCompat: List<TagConsumer<*>.() -> Unit> = emptyList(),
-        pageFooterCompat: List<TagConsumer<*>.() -> Unit> = emptyList(),
-        bodyCompat: List<TagConsumer<*>.() -> Unit> = emptyList(),
     ): String {
         return createHTMLDocument().html {
             attributes["lang"] = "en"
@@ -70,18 +66,15 @@ class StaticHtmlDocumentPresenter(
                 "anchored-footer".takeIf { pageProperties.inkFooter },
             ).joinToString(" ")
             body(classes = bodyClasses) {
-                if (!headerPresenter.isEmpty || pageHeaderCompat.isNotEmpty()) {
+                if (!headerPresenter.isEmpty) {
                     header {
                         headerPresenter.getPartialRenderer().invoke(consumer)
-                        pageHeaderCompat.forEach { it(consumer) }
                     }
                 }
                 bodyPresenter.getPartialRenderer().invoke(consumer)
-                bodyCompat.forEach { it(consumer) }
-                if (!footerPresenter.isEmpty || pageFooterCompat.isNotEmpty()) {
+                if (!footerPresenter.isEmpty) {
                     footer {
                         footerPresenter.getPartialRenderer().invoke(consumer)
-                        pageFooterCompat.forEach { it(consumer) }
                     }
                 }
                 if (pageProperties.inkFooter) {

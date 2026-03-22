@@ -28,10 +28,6 @@ abstract class InkUiScript(
     )
     override val meta: PageProperties.Meta = page.meta
     private var heads: MutableList<HEAD.() -> Unit> = mutableListOf()
-    // TODO: These compat fields are just here to support the cumulative rendering API, remove in 2.x
-    private var pageHeadersCompat: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
-    private var pageFootersCompat: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
-    private var bodiesCompat: MutableList<TagConsumer<*>.() -> Unit> = mutableListOf()
     private var styles: MutableList<String> = mutableListOf()
     private var scripts: MutableList<String> = mutableListOf()
     private val document = createHTMLDocument()
@@ -134,10 +130,6 @@ abstract class InkUiScript(
             ),
             jsInit = "hljs.initHighlightingOnLoad();".takeIf { useCodeBlocks },
             heads = heads,
-            // TODO: Remove these in 2.x
-            pageHeaderCompat = pageHeadersCompat,
-            pageFooterCompat = pageFootersCompat,
-            bodyCompat = bodiesCompat,
         )
     }
 

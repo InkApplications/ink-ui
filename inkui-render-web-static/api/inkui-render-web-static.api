@@ -126,8 +126,7 @@ public final class ink/ui/render/statichtml/StaticHtmlDocumentPresenter : ink/ui
 	public fun presentElement (Link/ui/structures/elements/UiElement;)V
 	public final fun presentFooter (Link/ui/structures/elements/UiElement;)V
 	public final fun presentHeader (Link/ui/structures/elements/UiElement;)V
-	public final fun renderDocument (Link/ui/render/statichtml/PageProperties;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ljava/lang/String;
-	public static synthetic fun renderDocument$default (Link/ui/render/statichtml/StaticHtmlDocumentPresenter;Link/ui/render/statichtml/PageProperties;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Ljava/lang/String;
+	public final fun renderDocument (Link/ui/render/statichtml/PageProperties;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
 	public final fun withRenderer (Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/render/statichtml/StaticHtmlDocumentPresenter;
 	public final fun withResourceBaseUrl (Ljava/lang/String;)Link/ui/render/statichtml/StaticHtmlDocumentPresenter;
 }
