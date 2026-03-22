@@ -1,9 +1,9 @@
 package ink.ui.render.statichtml.renderer
 
-import ink.ui.render.web.elements.LinkNavigation
+import ink.ui.structures.elements.NavigationElement
 import kotlinx.html.*
 
-val LinkNavigationRenderer = renderer<LinkNavigation> { element ->
+val NavigationElementRenderer = renderer<NavigationElement> { element ->
     nav {
         ul {
             element.items.forEach { navigationItem ->

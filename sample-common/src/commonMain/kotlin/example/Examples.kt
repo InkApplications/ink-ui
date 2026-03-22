@@ -25,7 +25,9 @@ data class Examples(
     {
         return copy(
             elements = elements + listOf(
+                Pair(ElementCategory.Breadcrumbs, Breadcrumbs),
                 Pair(ElementCategory.Typography, Typography),
+                Pair(ElementCategory.Navigation, Navigation),
                 Pair(ElementCategory.Buttons, Buttons),
                 Pair(ElementCategory.ProgressIndicators, ProgressIndicators),
                 Pair(ElementCategory.StatusIndicators, StatusIndicators),

@@ -2,6 +2,7 @@ package example
 
 import ink.ui.structures.GroupingStyle.Items
 import ink.ui.structures.elements.*
+import ink.ui.structures.elements.CodeBlock.Language
 
 val Typography = ElementList.build(groupingStyle = Items) {
     h1("Heading 1")
@@ -42,4 +43,12 @@ val Typography = ElementList.build(groupingStyle = Items) {
             text("with multiple items")
         }
     }
+    codeBlock(
+        code = """
+            fun main() {
+                println("Hello, World!")
+            }
+        """.trimIndent(),
+        language = Language.Kotlin,
+    )
 }

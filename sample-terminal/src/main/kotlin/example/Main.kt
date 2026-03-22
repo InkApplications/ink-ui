@@ -11,10 +11,7 @@ fun main()
 
     runBlocking {
         val job = presenter.bind()
-        val examples = Examples(listOf(
-            ElementCategory.Navigation to Breadcrumbs,
-        ))
-        presenter.bindAndPresent(examples.withDefaults().groupedElements)
+        presenter.bindAndPresent(Examples.Defaults.groupedElements)
         job.cancelAndJoin()
     }
 }

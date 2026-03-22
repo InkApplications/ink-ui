@@ -15,6 +15,11 @@ public final class ink/ui/render/terminal/renderer/BreadcrumbRendererKt {
 	public static final fun getBreadCrumbRenderer ()Link/ui/render/terminal/renderer/ElementRenderer;
 }
 
+public final class ink/ui/render/terminal/renderer/ButtonRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
+	public static final field INSTANCE Link/ui/render/terminal/renderer/ButtonRenderer;
+	public fun render (Link/ui/structures/elements/UiElement;Link/ui/render/terminal/renderer/ElementRenderer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
 public final class ink/ui/render/terminal/renderer/CompositeElementRenderer : ink/ui/render/terminal/renderer/ElementRenderer {
 	public fun <init> ()V
 	public fun <init> (Ljava/util/List;Link/ui/structures/render/MissingRendererBehavior;)V

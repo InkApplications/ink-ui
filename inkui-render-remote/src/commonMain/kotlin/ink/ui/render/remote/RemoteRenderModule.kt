@@ -23,6 +23,7 @@ import ink.ui.structures.elements.TextElement
 import ink.ui.structures.elements.TextListElement
 import ink.ui.structures.elements.ThrobberElement
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.elements.UrlHandler
 import ink.ui.structures.render.Presenter
 import io.ktor.http.URLProtocol
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,6 +35,7 @@ import kotlinx.serialization.modules.subclass
 
 class RemoteRenderModule(
     serializationConfig: ElementSerializerConfigContext.() -> Unit = {},
+    urlHandler: UrlHandler? = null,
 ) {
     private val uiEvents: UiEvents = UiEvents()
     private val uiListener: MutableStateFlow<UiEventListener> = MutableStateFlow(EmptyUiEventListener)
@@ -54,10 +56,10 @@ class RemoteRenderModule(
 
         addEventSerializer(
             subclass = OnClickEvent::class,
-            listener = ButtonElementSerializer.Listeners.OnClickListener
+            listener = ButtonElementSerializer.Listeners.OnClickListener(urlHandler)
                 .plus(CheckBoxElementSerializer.Listeners.OnClickListener)
         )
-        addEventSerializer(OnContextClickEvent::class, ButtonElementSerializer.Listeners.OnContextClickListener)
+        addEventSerializer(OnContextClickEvent::class, ButtonElementSerializer.Listeners.OnContextClickListener(urlHandler))
         addEventSerializer(OnNextValue::class, SpinnerElementSerializer.Listeners.OnNextValueListener)
         addEventSerializer(OnPreviousValue::class, SpinnerElementSerializer.Listeners.OnPreviousValueListener)
     }

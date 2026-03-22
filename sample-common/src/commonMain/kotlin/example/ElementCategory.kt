@@ -6,6 +6,7 @@ import kotlin.jvm.JvmInline
 value class ElementCategory(val name: String)
 {
     companion object {
+        val Breadcrumbs = ElementCategory("Breadcrumbs")
         val Navigation = ElementCategory("Navigation")
         val Typography = ElementCategory("Typography")
         val StatusIndicators = ElementCategory("Status Indicators")

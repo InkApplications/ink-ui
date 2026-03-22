@@ -112,12 +112,44 @@ final enum class ink.ui.structures/TextStyle : kotlin/Enum<ink.ui.structures/Tex
     }
 }
 
+abstract fun interface ink.ui.structures.elements/UrlHandler { // ink.ui.structures.elements/UrlHandler|null[0]
+    abstract fun openUrl(kotlin/String) // ink.ui.structures.elements/UrlHandler.openUrl|openUrl(kotlin.String){}[0]
+}
+
 abstract interface ink.ui.structures.render/Presenter { // ink.ui.structures.render/Presenter|null[0]
     abstract fun presentElement(ink.ui.structures.elements/UiElement) // ink.ui.structures.render/Presenter.presentElement|presentElement(ink.ui.structures.elements.UiElement){}[0]
 }
 
 abstract interface ink.ui.structures/ElementContainer { // ink.ui.structures/ElementContainer|null[0]
     abstract fun appendElement(ink.ui.structures.elements/UiElement) // ink.ui.structures/ElementContainer.appendElement|appendElement(ink.ui.structures.elements.UiElement){}[0]
+}
+
+sealed interface ink.ui.structures.elements/Action { // ink.ui.structures.elements/Action|null[0]
+    final class Handler : ink.ui.structures.elements/Action { // ink.ui.structures.elements/Action.Handler|null[0]
+        constructor <init>(kotlin/Function0<kotlin/Unit>) // ink.ui.structures.elements/Action.Handler.<init>|<init>(kotlin.Function0<kotlin.Unit>){}[0]
+
+        final val onInvoke // ink.ui.structures.elements/Action.Handler.onInvoke|{}onInvoke[0]
+            final fun <get-onInvoke>(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/Action.Handler.onInvoke.<get-onInvoke>|<get-onInvoke>(){}[0]
+
+        final fun component1(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/Action.Handler.component1|component1(){}[0]
+        final fun copy(kotlin/Function0<kotlin/Unit> = ...): ink.ui.structures.elements/Action.Handler // ink.ui.structures.elements/Action.Handler.copy|copy(kotlin.Function0<kotlin.Unit>){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/Action.Handler.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/Action.Handler.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/Action.Handler.toString|toString(){}[0]
+    }
+
+    final class Link : ink.ui.structures.elements/Action { // ink.ui.structures.elements/Action.Link|null[0]
+        constructor <init>(kotlin/String) // ink.ui.structures.elements/Action.Link.<init>|<init>(kotlin.String){}[0]
+
+        final val url // ink.ui.structures.elements/Action.Link.url|{}url[0]
+            final fun <get-url>(): kotlin/String // ink.ui.structures.elements/Action.Link.url.<get-url>|<get-url>(){}[0]
+
+        final fun component1(): kotlin/String // ink.ui.structures.elements/Action.Link.component1|component1(){}[0]
+        final fun copy(kotlin/String = ...): ink.ui.structures.elements/Action.Link // ink.ui.structures.elements/Action.Link.copy|copy(kotlin.String){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/Action.Link.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/Action.Link.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/Action.Link.toString|toString(){}[0]
+    }
 }
 
 sealed interface ink.ui.structures.elements/ProgressElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/ProgressElement|null[0]
@@ -342,7 +374,7 @@ final class ink.ui.structures.elements/BreadcrumbElement : ink.ui.structures.ele
 }
 
 final class ink.ui.structures.elements/ButtonElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/ButtonElement|null[0]
-    constructor <init>(kotlin/String, kotlin/Function0<kotlin/Unit>, kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...) // ink.ui.structures.elements/ButtonElement.<init>|<init>(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
+    constructor <init>(kotlin/String, ink.ui.structures.elements/Action? = ..., ink.ui.structures.elements/Action? = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...) // ink.ui.structures.elements/ButtonElement.<init>|<init>(kotlin.String;ink.ui.structures.elements.Action?;ink.ui.structures.elements.Action?;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
 
     final val enabled // ink.ui.structures.elements/ButtonElement.enabled|{}enabled[0]
         final fun <get-enabled>(): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.enabled.<get-enabled>|<get-enabled>(){}[0]
@@ -351,9 +383,9 @@ final class ink.ui.structures.elements/ButtonElement : ink.ui.structures.element
     final val leadingSymbol // ink.ui.structures.elements/ButtonElement.leadingSymbol|{}leadingSymbol[0]
         final fun <get-leadingSymbol>(): ink.ui.structures/Symbol? // ink.ui.structures.elements/ButtonElement.leadingSymbol.<get-leadingSymbol>|<get-leadingSymbol>(){}[0]
     final val onClick // ink.ui.structures.elements/ButtonElement.onClick|{}onClick[0]
-        final fun <get-onClick>(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/ButtonElement.onClick.<get-onClick>|<get-onClick>(){}[0]
+        final fun <get-onClick>(): ink.ui.structures.elements/Action? // ink.ui.structures.elements/ButtonElement.onClick.<get-onClick>|<get-onClick>(){}[0]
     final val onContextClick // ink.ui.structures.elements/ButtonElement.onContextClick|{}onContextClick[0]
-        final fun <get-onContextClick>(): kotlin/Function0<kotlin/Unit>? // ink.ui.structures.elements/ButtonElement.onContextClick.<get-onContextClick>|<get-onContextClick>(){}[0]
+        final fun <get-onContextClick>(): ink.ui.structures.elements/Action? // ink.ui.structures.elements/ButtonElement.onContextClick.<get-onContextClick>|<get-onContextClick>(){}[0]
     final val sentiment // ink.ui.structures.elements/ButtonElement.sentiment|{}sentiment[0]
         final fun <get-sentiment>(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ButtonElement.sentiment.<get-sentiment>|<get-sentiment>(){}[0]
     final val text // ink.ui.structures.elements/ButtonElement.text|{}text[0]
@@ -362,14 +394,14 @@ final class ink.ui.structures.elements/ButtonElement : ink.ui.structures.element
         final fun <get-trailingSymbol>(): ink.ui.structures/Symbol? // ink.ui.structures.elements/ButtonElement.trailingSymbol.<get-trailingSymbol>|<get-trailingSymbol>(){}[0]
 
     final fun component1(): kotlin/String // ink.ui.structures.elements/ButtonElement.component1|component1(){}[0]
-    final fun component2(): kotlin/Function0<kotlin/Unit> // ink.ui.structures.elements/ButtonElement.component2|component2(){}[0]
-    final fun component3(): kotlin/Function0<kotlin/Unit>? // ink.ui.structures.elements/ButtonElement.component3|component3(){}[0]
+    final fun component2(): ink.ui.structures.elements/Action? // ink.ui.structures.elements/ButtonElement.component2|component2(){}[0]
+    final fun component3(): ink.ui.structures.elements/Action? // ink.ui.structures.elements/ButtonElement.component3|component3(){}[0]
     final fun component4(): ink.ui.structures/Sentiment // ink.ui.structures.elements/ButtonElement.component4|component4(){}[0]
     final fun component5(): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.component5|component5(){}[0]
     final fun component6(): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.component6|component6(){}[0]
     final fun component7(): ink.ui.structures/Symbol? // ink.ui.structures.elements/ButtonElement.component7|component7(){}[0]
     final fun component8(): ink.ui.structures/Symbol? // ink.ui.structures.elements/ButtonElement.component8|component8(){}[0]
-    final fun copy(kotlin/String = ..., kotlin/Function0<kotlin/Unit> = ..., kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...): ink.ui.structures.elements/ButtonElement // ink.ui.structures.elements/ButtonElement.copy|copy(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
+    final fun copy(kotlin/String = ..., ink.ui.structures.elements/Action? = ..., ink.ui.structures.elements/Action? = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...): ink.ui.structures.elements/ButtonElement // ink.ui.structures.elements/ButtonElement.copy|copy(kotlin.String;ink.ui.structures.elements.Action?;ink.ui.structures.elements.Action?;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
     final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/ButtonElement.equals|equals(kotlin.Any?){}[0]
     final fun hashCode(): kotlin/Int // ink.ui.structures.elements/ButtonElement.hashCode|hashCode(){}[0]
     final fun toString(): kotlin/String // ink.ui.structures.elements/ButtonElement.toString|toString(){}[0]
@@ -389,6 +421,42 @@ final class ink.ui.structures.elements/CheckBoxElement : ink.ui.structures.eleme
     final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/CheckBoxElement.equals|equals(kotlin.Any?){}[0]
     final fun hashCode(): kotlin/Int // ink.ui.structures.elements/CheckBoxElement.hashCode|hashCode(){}[0]
     final fun toString(): kotlin/String // ink.ui.structures.elements/CheckBoxElement.toString|toString(){}[0]
+}
+
+final class ink.ui.structures.elements/CodeBlock : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/CodeBlock|null[0]
+    constructor <init>(kotlin/String, ink.ui.structures.elements/CodeBlock.Language? = ...) // ink.ui.structures.elements/CodeBlock.<init>|<init>(kotlin.String;ink.ui.structures.elements.CodeBlock.Language?){}[0]
+
+    final val code // ink.ui.structures.elements/CodeBlock.code|{}code[0]
+        final fun <get-code>(): kotlin/String // ink.ui.structures.elements/CodeBlock.code.<get-code>|<get-code>(){}[0]
+    final val language // ink.ui.structures.elements/CodeBlock.language|{}language[0]
+        final fun <get-language>(): ink.ui.structures.elements/CodeBlock.Language? // ink.ui.structures.elements/CodeBlock.language.<get-language>|<get-language>(){}[0]
+
+    final fun component1(): kotlin/String // ink.ui.structures.elements/CodeBlock.component1|component1(){}[0]
+    final fun component2(): ink.ui.structures.elements/CodeBlock.Language? // ink.ui.structures.elements/CodeBlock.component2|component2(){}[0]
+    final fun copy(kotlin/String = ..., ink.ui.structures.elements/CodeBlock.Language? = ...): ink.ui.structures.elements/CodeBlock // ink.ui.structures.elements/CodeBlock.copy|copy(kotlin.String;ink.ui.structures.elements.CodeBlock.Language?){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/CodeBlock.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/CodeBlock.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/CodeBlock.toString|toString(){}[0]
+
+    final value class Language { // ink.ui.structures.elements/CodeBlock.Language|null[0]
+        constructor <init>(kotlin/String) // ink.ui.structures.elements/CodeBlock.Language.<init>|<init>(kotlin.String){}[0]
+
+        final val key // ink.ui.structures.elements/CodeBlock.Language.key|{}key[0]
+            final fun <get-key>(): kotlin/String // ink.ui.structures.elements/CodeBlock.Language.key.<get-key>|<get-key>(){}[0]
+
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/CodeBlock.Language.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/CodeBlock.Language.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/CodeBlock.Language.toString|toString(){}[0]
+
+        final object Companion { // ink.ui.structures.elements/CodeBlock.Language.Companion|null[0]
+            final val Bash // ink.ui.structures.elements/CodeBlock.Language.Companion.Bash|{}Bash[0]
+                final fun <get-Bash>(): ink.ui.structures.elements/CodeBlock.Language // ink.ui.structures.elements/CodeBlock.Language.Companion.Bash.<get-Bash>|<get-Bash>(){}[0]
+            final val Kotlin // ink.ui.structures.elements/CodeBlock.Language.Companion.Kotlin|{}Kotlin[0]
+                final fun <get-Kotlin>(): ink.ui.structures.elements/CodeBlock.Language // ink.ui.structures.elements/CodeBlock.Language.Companion.Kotlin.<get-Kotlin>|<get-Kotlin>(){}[0]
+            final val Shell // ink.ui.structures.elements/CodeBlock.Language.Companion.Shell|{}Shell[0]
+                final fun <get-Shell>(): ink.ui.structures.elements/CodeBlock.Language // ink.ui.structures.elements/CodeBlock.Language.Companion.Shell.<get-Shell>|<get-Shell>(){}[0]
+        }
+    }
 }
 
 final class ink.ui.structures.elements/ElementList : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/ElementList|null[0]
@@ -747,6 +815,79 @@ final class ink.ui.structures.elements/IconElement : ink.ui.structures.elements/
     }
 }
 
+final class ink.ui.structures.elements/NavigationElement : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/NavigationElement|null[0]
+    constructor <init>(kotlin.collections/List<ink.ui.structures.elements/NavigationElement.NavigationItem>) // ink.ui.structures.elements/NavigationElement.<init>|<init>(kotlin.collections.List<ink.ui.structures.elements.NavigationElement.NavigationItem>){}[0]
+    constructor <init>(kotlin/Array<out ink.ui.structures.elements/NavigationElement.NavigationItem>...) // ink.ui.structures.elements/NavigationElement.<init>|<init>(kotlin.Array<out|ink.ui.structures.elements.NavigationElement.NavigationItem>...){}[0]
+    constructor <init>(kotlin/Function1<ink.ui.structures.elements/NavigationElement.Builder, kotlin/Unit>) // ink.ui.structures.elements/NavigationElement.<init>|<init>(kotlin.Function1<ink.ui.structures.elements.NavigationElement.Builder,kotlin.Unit>){}[0]
+
+    final val items // ink.ui.structures.elements/NavigationElement.items|{}items[0]
+        final fun <get-items>(): kotlin.collections/List<ink.ui.structures.elements/NavigationElement.NavigationItem> // ink.ui.structures.elements/NavigationElement.items.<get-items>|<get-items>(){}[0]
+
+    final fun component1(): kotlin.collections/List<ink.ui.structures.elements/NavigationElement.NavigationItem> // ink.ui.structures.elements/NavigationElement.component1|component1(){}[0]
+    final fun copy(kotlin.collections/List<ink.ui.structures.elements/NavigationElement.NavigationItem> = ...): ink.ui.structures.elements/NavigationElement // ink.ui.structures.elements/NavigationElement.copy|copy(kotlin.collections.List<ink.ui.structures.elements.NavigationElement.NavigationItem>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/NavigationElement.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/NavigationElement.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/NavigationElement.toString|toString(){}[0]
+
+    final class Builder { // ink.ui.structures.elements/NavigationElement.Builder|null[0]
+        constructor <init>(kotlin.collections/MutableList<ink.ui.structures.elements/NavigationElement.NavigationItem> = ...) // ink.ui.structures.elements/NavigationElement.Builder.<init>|<init>(kotlin.collections.MutableList<ink.ui.structures.elements.NavigationElement.NavigationItem>){}[0]
+
+        final val items // ink.ui.structures.elements/NavigationElement.Builder.items|{}items[0]
+            final fun <get-items>(): kotlin.collections/MutableList<ink.ui.structures.elements/NavigationElement.NavigationItem> // ink.ui.structures.elements/NavigationElement.Builder.items.<get-items>|<get-items>(){}[0]
+
+        final fun component1(): kotlin.collections/MutableList<ink.ui.structures.elements/NavigationElement.NavigationItem> // ink.ui.structures.elements/NavigationElement.Builder.component1|component1(){}[0]
+        final fun copy(kotlin.collections/MutableList<ink.ui.structures.elements/NavigationElement.NavigationItem> = ...): ink.ui.structures.elements/NavigationElement.Builder // ink.ui.structures.elements/NavigationElement.Builder.copy|copy(kotlin.collections.MutableList<ink.ui.structures.elements.NavigationElement.NavigationItem>){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/NavigationElement.Builder.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/NavigationElement.Builder.hashCode|hashCode(){}[0]
+        final fun link(kotlin/String, kotlin/String) // ink.ui.structures.elements/NavigationElement.Builder.link|link(kotlin.String;kotlin.String){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/NavigationElement.Builder.toString|toString(){}[0]
+    }
+
+    final class NavigationItem { // ink.ui.structures.elements/NavigationElement.NavigationItem|null[0]
+        constructor <init>(kotlin/String, kotlin/String) // ink.ui.structures.elements/NavigationElement.NavigationItem.<init>|<init>(kotlin.String;kotlin.String){}[0]
+
+        final val text // ink.ui.structures.elements/NavigationElement.NavigationItem.text|{}text[0]
+            final fun <get-text>(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.text.<get-text>|<get-text>(){}[0]
+        final val url // ink.ui.structures.elements/NavigationElement.NavigationItem.url|{}url[0]
+            final fun <get-url>(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.url.<get-url>|<get-url>(){}[0]
+
+        final fun component1(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.component1|component1(){}[0]
+        final fun component2(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.component2|component2(){}[0]
+        final fun copy(kotlin/String = ..., kotlin/String = ...): ink.ui.structures.elements/NavigationElement.NavigationItem // ink.ui.structures.elements/NavigationElement.NavigationItem.copy|copy(kotlin.String;kotlin.String){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/NavigationElement.NavigationItem.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/NavigationElement.NavigationItem.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.toString|toString(){}[0]
+
+        final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/NavigationElement.NavigationItem> { // ink.ui.structures.elements/NavigationElement.NavigationItem.$serializer|null[0]
+            final val descriptor // ink.ui.structures.elements/NavigationElement.NavigationItem.$serializer.descriptor|{}descriptor[0]
+                final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/NavigationElement.NavigationItem.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+            final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/NavigationElement.NavigationItem.$serializer.childSerializers|childSerializers(){}[0]
+            final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/NavigationElement.NavigationItem // ink.ui.structures.elements/NavigationElement.NavigationItem.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+            final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/NavigationElement.NavigationItem) // ink.ui.structures.elements/NavigationElement.NavigationItem.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.NavigationElement.NavigationItem){}[0]
+        }
+
+        final object Companion { // ink.ui.structures.elements/NavigationElement.NavigationItem.Companion|null[0]
+            final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/NavigationElement.NavigationItem> // ink.ui.structures.elements/NavigationElement.NavigationItem.Companion.serializer|serializer(){}[0]
+        }
+    }
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/NavigationElement> { // ink.ui.structures.elements/NavigationElement.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/NavigationElement.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/NavigationElement.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/NavigationElement.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/NavigationElement // ink.ui.structures.elements/NavigationElement.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/NavigationElement) // ink.ui.structures.elements/NavigationElement.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.NavigationElement){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/NavigationElement.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/NavigationElement.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/NavigationElement> // ink.ui.structures.elements/NavigationElement.Companion.serializer|serializer(){}[0]
+    }
+}
+
 final class ink.ui.structures.elements/SpinnerElement : ink.ui.structures.elements/UiElement.Interactive { // ink.ui.structures.elements/SpinnerElement|null[0]
     constructor <init>(kotlin/String, kotlin/Function0<kotlin/Unit>, kotlin/Function0<kotlin/Unit>, kotlin/Boolean = ..., kotlin/Boolean = ...) // ink.ui.structures.elements/SpinnerElement.<init>|<init>(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>;kotlin.Boolean;kotlin.Boolean){}[0]
 
@@ -1033,9 +1174,10 @@ final object ink.ui.structures.elements/EmptyElement : ink.ui.structures.element
 final fun (ink.ui.structures.render/Presenter).ink.ui.structures.render/onUpdate(kotlin/Function1<ink.ui.structures.elements/UiElement, kotlin/Unit>): ink.ui.structures.render/Presenter // ink.ui.structures.render/onUpdate|onUpdate@ink.ui.structures.render.Presenter(kotlin.Function1<ink.ui.structures.elements.UiElement,kotlin.Unit>){}[0]
 final fun (ink.ui.structures.render/Presenter).ink.ui.structures.render/then(ink.ui.structures.render/Presenter): ink.ui.structures.render/Presenter // ink.ui.structures.render/then|then@ink.ui.structures.render.Presenter(ink.ui.structures.render.Presenter){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/breadcrumbs(kotlin/Function1<ink.ui.structures.elements/BreadcrumbElement.Builder, kotlin/Unit>) // ink.ui.structures.elements/breadcrumbs|breadcrumbs@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.elements.BreadcrumbElement.Builder,kotlin.Unit>){}[0]
-final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/button(kotlin/String, kotlin/Function0<kotlin/Unit>, kotlin/Function0<kotlin/Unit>? = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...) // ink.ui.structures.elements/button|button@ink.ui.structures.ElementContainer(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>?;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
+final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/button(kotlin/String, ink.ui.structures.elements/Action? = ..., ink.ui.structures.elements/Action? = ..., ink.ui.structures/Sentiment = ..., kotlin/Boolean = ..., kotlin/Boolean = ..., ink.ui.structures/Symbol? = ..., ink.ui.structures/Symbol? = ...) // ink.ui.structures.elements/button|button@ink.ui.structures.ElementContainer(kotlin.String;ink.ui.structures.elements.Action?;ink.ui.structures.elements.Action?;ink.ui.structures.Sentiment;kotlin.Boolean;kotlin.Boolean;ink.ui.structures.Symbol?;ink.ui.structures.Symbol?){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/caption(kotlin/String) // ink.ui.structures.elements/caption|caption@ink.ui.structures.ElementContainer(kotlin.String){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/checkBox(kotlin/Boolean, kotlin/Function0<kotlin/Unit>) // ink.ui.structures.elements/checkBox|checkBox@ink.ui.structures.ElementContainer(kotlin.Boolean;kotlin.Function0<kotlin.Unit>){}[0]
+final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/codeBlock(kotlin/String, ink.ui.structures.elements/CodeBlock.Language? = ...) // ink.ui.structures.elements/codeBlock|codeBlock@ink.ui.structures.ElementContainer(kotlin.String;ink.ui.structures.elements.CodeBlock.Language?){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/determinateProgress(kotlin/Float, kotlin/String? = ..., ink.ui.structures/Sentiment = ...) // ink.ui.structures.elements/determinateProgress|determinateProgress@ink.ui.structures.ElementContainer(kotlin.Float;kotlin.String?;ink.ui.structures.Sentiment){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/divider() // ink.ui.structures.elements/divider|divider@ink.ui.structures.ElementContainer(){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/empty() // ink.ui.structures.elements/empty|empty@ink.ui.structures.ElementContainer(){}[0]
@@ -1047,6 +1189,7 @@ final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/icon(i
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/indeterminateProgress(kotlin/String? = ..., ink.ui.structures/Sentiment = ...) // ink.ui.structures.elements/indeterminateProgress|indeterminateProgress@ink.ui.structures.ElementContainer(kotlin.String?;ink.ui.structures.Sentiment){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/inline(kotlin/Function1<ink.ui.structures/ElementContainer, kotlin/Unit>) // ink.ui.structures.elements/inline|inline@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.ElementContainer,kotlin.Unit>){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/items(kotlin/Function1<ink.ui.structures/ElementContainer, kotlin/Unit>) // ink.ui.structures.elements/items|items@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.ElementContainer,kotlin.Unit>){}[0]
+final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/navigation(kotlin/Function1<ink.ui.structures.elements/NavigationElement.Builder, kotlin/Unit>) // ink.ui.structures.elements/navigation|navigation@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.elements.NavigationElement.Builder,kotlin.Unit>){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/sections(kotlin/Function1<ink.ui.structures/ElementContainer, kotlin/Unit>) // ink.ui.structures.elements/sections|sections@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.ElementContainer,kotlin.Unit>){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/spinner(kotlin/String, kotlin/Function0<kotlin/Unit>, kotlin/Function0<kotlin/Unit>, kotlin/Boolean = ..., kotlin/Boolean = ...) // ink.ui.structures.elements/spinner|spinner@ink.ui.structures.ElementContainer(kotlin.String;kotlin.Function0<kotlin.Unit>;kotlin.Function0<kotlin.Unit>;kotlin.Boolean;kotlin.Boolean){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/stack(kotlin/Boolean = ...): ink.ui.structures.elements/StackElement // ink.ui.structures.elements/stack|stack@ink.ui.structures.ElementContainer(kotlin.Boolean){}[0]

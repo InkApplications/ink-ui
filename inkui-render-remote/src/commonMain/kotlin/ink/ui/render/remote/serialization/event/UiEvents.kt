@@ -18,7 +18,7 @@ class UiEvents
         onBufferOverflow = BufferOverflow.DROP_OLDEST,
     )
     private val idRegistrations = Channel<Pair<ElementId, UiElement>>(
-        capacity = Channel.Factory.UNLIMITED,
+        capacity = Channel.UNLIMITED,
     )
 
     /**

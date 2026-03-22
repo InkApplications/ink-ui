@@ -4,7 +4,7 @@ import ink.ui.structures.elements.BreadcrumbElement
 import kotlinx.html.*
 
 val BreadcrumbRenderer = renderer<BreadcrumbElement> { element ->
-    nav {
+    nav("breadcrumbs") {
         ul {
             element.items.forEach { breadcrumb ->
                 li {

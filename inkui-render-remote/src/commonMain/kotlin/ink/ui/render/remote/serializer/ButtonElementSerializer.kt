@@ -1,13 +1,19 @@
 package ink.ui.render.remote.serializer
 
 import ink.ui.render.remote.serialization.ElementId
+import ink.ui.render.remote.serialization.event.EventResult
 import ink.ui.render.remote.serialization.event.OnClickEvent
 import ink.ui.render.remote.serialization.event.OnContextClickEvent
+import ink.ui.render.remote.serialization.event.UiEvent
+import ink.ui.render.remote.serialization.event.UiEventListener
 import ink.ui.render.remote.serialization.event.UiEvents
 import ink.ui.render.remote.serialization.event.typedListener
 import ink.ui.structures.Sentiment
 import ink.ui.structures.Symbol
+import ink.ui.structures.elements.Action
 import ink.ui.structures.elements.ButtonElement
+import ink.ui.structures.elements.UiElement
+import ink.ui.structures.elements.UrlHandler
 import kotlinx.serialization.Contextual
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SerialName
@@ -48,10 +54,10 @@ internal class ButtonElementSerializer(
             latchOnPress = surrogate.latchOnPress,
             leadingSymbol = surrogate.leadingSymbol,
             trailingSymbol = surrogate.trailingSymbol,
-            onClick = {
+            onClick = Action.Handler {
                 events.onEvent(OnClickEvent(surrogate.id))
             },
-            onContextClick = {
+            onContextClick = Action.Handler {
                 events.onEvent(OnContextClickEvent(surrogate.id))
             },
         )
@@ -76,11 +82,46 @@ internal class ButtonElementSerializer(
 
     object Listeners
     {
-        val OnClickListener = typedListener<ButtonElement, OnClickEvent> { element, event ->
-            element.onClick()
+        class OnClickListener(
+            private val urlHandler: UrlHandler?,
+        ): UiEventListener {
+            override suspend fun handleEvent(
+                element: UiElement,
+                event: UiEvent,
+            ): EventResult {
+                if (element !is ButtonElement || event !is OnClickEvent) {
+                    return EventResult.Continue
+                }
+
+                when (val onClick = element.onClick) {
+                    is Action.Handler -> onClick.onInvoke()
+                    is Action.Link if urlHandler != null -> urlHandler.openUrl(onClick.url)
+                    else -> return EventResult.Continue
+                }
+
+                return EventResult.Consume
+            }
         }
-        val OnContextClickListener = typedListener<ButtonElement, OnContextClickEvent> { element, event ->
-            element.onContextClick?.invoke()
+
+        class OnContextClickListener(
+            private val urlHandler: UrlHandler?,
+        ): UiEventListener {
+            override suspend fun handleEvent(
+                element: UiElement,
+                event: UiEvent,
+            ): EventResult {
+                if (element !is ButtonElement || event !is OnContextClickEvent) {
+                    return EventResult.Continue
+                }
+
+                when (val onContextClick = element.onContextClick) {
+                    is Action.Handler -> onContextClick.onInvoke()
+                    is Action.Link if urlHandler != null -> urlHandler.openUrl(onContextClick.url)
+                    else -> return EventResult.Continue
+                }
+
+                return EventResult.Consume
+            }
         }
     }
 }

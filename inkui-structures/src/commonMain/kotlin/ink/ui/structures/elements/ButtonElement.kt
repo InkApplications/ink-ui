@@ -16,14 +16,14 @@ data class ButtonElement(
     /**
      * Action to be invoked when the button is clicked.
      */
-    val onClick: () -> Unit,
+    val onClick: Action? = null,
 
     /**
      * Action to be invoked when the button has an alternate click.
      *
      * This may be a long-click or a right click depending on the platform.
      */
-    val onContextClick: (() -> Unit)? = null,
+    val onContextClick: Action? = null,
 
     /**
      * Signifier of the button's action or current state.
@@ -55,8 +55,8 @@ data class ButtonElement(
 
 fun ElementContainer.button(
     text: String,
-    onClick: () -> Unit,
-    onContextClick: (() -> Unit)? = null,
+    onClick: Action? = null,
+    onContextClick: Action? = null,
     sentiment: Sentiment = Sentiment.Nominal,
     enabled: Boolean = true,
     latchOnPress: Boolean = false,

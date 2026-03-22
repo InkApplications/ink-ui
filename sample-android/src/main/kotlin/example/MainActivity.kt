@@ -20,6 +20,7 @@ import ink.ui.render.compose.theme.defaultTheme
 import androidx.core.net.toUri
 import ink.ui.structures.GroupingStyle
 import ink.ui.structures.elements.ElementList
+import ink.ui.structures.elements.UrlHandler
 
 class MainActivity: ComponentActivity() {
     private val presenter = ComposePresenter(
@@ -30,7 +31,14 @@ class MainActivity: ComponentActivity() {
                     startActivity(intent)
                 }
             )
-        )
+        ),
+        urlHandler = UrlHandler { url ->
+            val httpUrl = if (url.startsWith("http://") || url.startsWith("https://")) {
+                url
+            } else "http://$url"
+            val intent = Intent(Intent.ACTION_VIEW, httpUrl.toUri())
+            startActivity(intent)
+        }
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

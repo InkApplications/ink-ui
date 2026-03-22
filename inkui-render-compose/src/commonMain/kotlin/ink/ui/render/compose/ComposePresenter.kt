@@ -6,6 +6,7 @@ import ink.ui.render.compose.renderer.*
 import ink.ui.render.compose.theme.ComposeRenderTheme
 import ink.ui.structures.elements.EmptyElement
 import ink.ui.structures.elements.UiElement
+import ink.ui.structures.elements.UrlHandler
 import ink.ui.structures.render.MissingRendererBehavior
 import ink.ui.structures.render.Presenter
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,10 +14,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 class ComposePresenter(
     renderers: List<ElementRenderer> = emptyList(),
     missingRendererBehavior: MissingRendererBehavior = MissingRendererBehavior.Placeholder(),
+    urlHandler: UrlHandler? = null,
 ): Presenter {
     private val builtInRenderers = listOf(
         ActivityRenderer,
-        ButtonRenderer,
+        ButtonRenderer(urlHandler = urlHandler),
         TextRenderer,
         StatusIndicatorRenderer,
         EmptyRenderer,

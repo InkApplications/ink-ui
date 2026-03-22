@@ -105,10 +105,7 @@ internal fun Throbber(
 
     Div(
         attrs = {
-            style {
-                display(DisplayStyle.LegacyInlineFlex)
-                alignItems(AlignItems.Center)
-            }
+            classes("throbber")
         }
     ) {
         Span(

@@ -25,11 +25,11 @@ class HtmlPartialPresenter(
         DividerRenderer,
         FormattedTextRenderer,
         BreadcrumbRenderer,
-        LinkNavigationRenderer,
+        NavigationElementRenderer,
         TextListRenderer,
         StatusRenderer(iconUrl),
         IconRenderer(iconUrl),
-        LinkButtonRenderer(iconUrl)
+        ButtonRenderer(iconUrl),
     )
     private val renderer = CompositeElementRenderer(builtInRenderers, missingRendererBehavior)
     private val currentElement = MutableStateFlow<UiElement>(EmptyElement)

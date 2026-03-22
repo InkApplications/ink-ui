@@ -10,8 +10,8 @@ public final class ink/ui/render/remote/RemotePresenter : ink/ui/structures/rend
 
 public final class ink/ui/render/remote/RemoteRenderModule {
 	public fun <init> ()V
-	public fun <init> (Lkotlin/jvm/functions/Function1;)V
-	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Lkotlin/jvm/functions/Function1;Link/ui/structures/elements/UrlHandler;)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;Link/ui/structures/elements/UrlHandler;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun createForwarder (Ljava/lang/String;ILjava/lang/String;Lio/ktor/http/URLProtocol;)Link/ui/render/remote/UiForwarder;
 	public static synthetic fun createForwarder$default (Link/ui/render/remote/RemoteRenderModule;Ljava/lang/String;ILjava/lang/String;Lio/ktor/http/URLProtocol;ILjava/lang/Object;)Link/ui/render/remote/UiForwarder;
 	public final fun createServer (Link/ui/structures/render/Presenter;I)Link/ui/render/remote/LayoutServer;

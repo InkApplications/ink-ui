@@ -32,7 +32,17 @@ import ink.ui.structures.Symbol.Companion.Water
 import ink.ui.structures.elements.IconElement
 
 val IconRenderer = renderer<IconElement> {
-    val glyph = when (element.symbol) {
+    print(getAnsiGlyph(
+        symbol = element.symbol,
+        sentiment = element.sentiment
+    ))
+}
+
+internal fun getAnsiGlyph(
+    symbol: Symbol,
+    sentiment: Sentiment = Sentiment.Nominal,
+): String {
+    val glyph = when (symbol) {
         Add -> " + "
         Alarm -> "(!)"
         AlarmOff -> "(\\)"
@@ -61,7 +71,7 @@ val IconRenderer = renderer<IconElement> {
         else -> "███"
     }
 
-    val style = when (element.sentiment) {
+    val style = when (sentiment) {
         Sentiment.Nominal -> TextStyle(
             color = TextColors.brightWhite.color,
             bgColor = TextColors.gray.color
@@ -88,5 +98,5 @@ val IconRenderer = renderer<IconElement> {
         )
     }
 
-    print(style(glyph))
+    return style(glyph)
 }

@@ -1,6 +1,6 @@
-package ink.ui.render.web.elements
+package ink.ui.structures.elements
 
-import ink.ui.structures.elements.UiElement
+import ink.ui.structures.ElementContainer
 import kotlin.jvm.JvmInline
 
 data class CodeBlock(
@@ -15,4 +15,14 @@ data class CodeBlock(
             val Shell = Language("shell")
         }
     }
+}
+
+fun ElementContainer.codeBlock(
+    code: String,
+    language: CodeBlock.Language? = null,
+) {
+    CodeBlock(
+        code = code,
+        language = language,
+    ).also(::appendElement)
 }

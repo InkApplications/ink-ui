@@ -43,8 +43,6 @@ final val ink.ui.render.compose.html.renderer/FormattedTextRenderer // ink.ui.re
     final fun <get-FormattedTextRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/FormattedTextRenderer.<get-FormattedTextRenderer>|<get-FormattedTextRenderer>(){}[0]
 final val ink.ui.render.compose.html.renderer/IconRenderer // ink.ui.render.compose.html.renderer/IconRenderer|{}IconRenderer[0]
     final fun <get-IconRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/IconRenderer.<get-IconRenderer>|<get-IconRenderer>(){}[0]
-final val ink.ui.render.compose.html.renderer/LinkButtonRenderer // ink.ui.render.compose.html.renderer/LinkButtonRenderer|{}LinkButtonRenderer[0]
-    final fun <get-LinkButtonRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/LinkButtonRenderer.<get-LinkButtonRenderer>|<get-LinkButtonRenderer>(){}[0]
 final val ink.ui.render.compose.html.renderer/SpinnerRenderer // ink.ui.render.compose.html.renderer/SpinnerRenderer|{}SpinnerRenderer[0]
     final fun <get-SpinnerRenderer>(): ink.ui.render.compose.html.renderer/ElementRenderer // ink.ui.render.compose.html.renderer/SpinnerRenderer.<get-SpinnerRenderer>|<get-SpinnerRenderer>(){}[0]
 final val ink.ui.render.compose.html.renderer/StatusRenderer // ink.ui.render.compose.html.renderer/StatusRenderer|{}StatusRenderer[0]
