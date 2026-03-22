@@ -3,6 +3,7 @@ package ink
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.publish.maven.MavenPublication
+import org.gradle.api.publish.maven.tasks.PublishToMavenLocal
 import org.gradle.api.publish.maven.tasks.PublishToMavenRepository
 import org.gradle.jvm.tasks.Jar
 import org.gradle.plugins.signing.Sign
@@ -68,18 +69,20 @@ class InkPublishPlugin: Plugin<Project>
         }
 
         project.extensions.configure(org.gradle.plugins.signing.SigningExtension::class.java) {
-            val key = project.findProperty("signingKey") as String?
             val keyId = project.findProperty("signingKeyId") as String?
-            val password = project.findProperty("signingPassword") as String?
-            if (key != null && keyId != null && password != null) {
-                useInMemoryPgpKeys(keyId, key, password)
+            if (keyId != null) {
+                useGpgCmd()
+                project.extensions.extraProperties.set("signing.gnupg.keyName", keyId)
                 sign(project.extensions.getByType(org.gradle.api.publish.PublishingExtension::class.java).publications)
             }
         }
 
         val signingTasks = project.tasks.withType(Sign::class.java)
         project.tasks.withType(PublishToMavenRepository::class.java).configureEach {
-            mustRunAfter(signingTasks)
+            dependsOn(signingTasks)
+        }
+        project.tasks.withType(PublishToMavenLocal::class.java).configureEach {
+            dependsOn(signingTasks)
         }
     }
 }

@@ -47,3 +47,12 @@ tasks.register("updateAbi") {
     dependsOn(gradle.includedBuild("inkui-render-terminal").task(":updateLegacyAbi"))
     dependsOn(gradle.includedBuild("inkui-structures").task(":updateLegacyAbi"))
 }
+tasks.register("publishLocal") {
+    dependsOn(gradle.includedBuild("inkui-render-compose").task(":publishToMavenLocal"))
+    dependsOn(gradle.includedBuild("inkui-render-web-common").task(":publishToMavenLocal"))
+    dependsOn(gradle.includedBuild("inkui-render-compose-html").task(":publishToMavenLocal"))
+    dependsOn(gradle.includedBuild("inkui-render-remote").task(":publishToMavenLocal"))
+    dependsOn(gradle.includedBuild("inkui-render-web-static").task(":publishToMavenLocal"))
+    dependsOn(gradle.includedBuild("inkui-render-terminal").task(":publishToMavenLocal"))
+    dependsOn(gradle.includedBuild("inkui-structures").task(":publishToMavenLocal"))
+}
