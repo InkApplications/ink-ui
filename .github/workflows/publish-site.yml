@@ -1,0 +1,32 @@
+name: Publish Site
+on:
+    push:
+        tags: ['*']
+jobs:
+    publish-site:
+        name: Publish Site
+        runs-on: ubuntu-latest
+        permissions:
+            id-token: write
+            pages: write
+        steps:
+            -
+                name: Checkout
+                uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+            -
+                name: Configure Java
+                uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
+                with:
+                    java-version: 25
+                    distribution: temurin
+            -
+                name: Build Static Sample
+                run: bin/gradlew sample-web:distWeb
+            -
+                name: Upload Pages Artifact
+                uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+                with:
+                    path: sample-web/build/dist/web
+            -
+                name: Deploy to GitHub Pages
+                uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128
