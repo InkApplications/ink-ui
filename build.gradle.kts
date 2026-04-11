@@ -56,3 +56,12 @@ tasks.register("publishLocal") {
     dependsOn(gradle.includedBuild("inkui-render-terminal").task(":publishToMavenLocal"))
     dependsOn(gradle.includedBuild("inkui-structures").task(":publishToMavenLocal"))
 }
+tasks.register("publishMaven") {
+    dependsOn(gradle.includedBuild("inkui-render-compose").task(":publishAllPublicationsToMavenCentralRepository"))
+    dependsOn(gradle.includedBuild("inkui-render-web-common").task(":publishAllPublicationsToMavenCentralRepository"))
+    dependsOn(gradle.includedBuild("inkui-render-compose-html").task(":publishAllPublicationsToMavenCentralRepository"))
+    dependsOn(gradle.includedBuild("inkui-render-remote").task(":publishAllPublicationsToMavenCentralRepository"))
+    dependsOn(gradle.includedBuild("inkui-render-web-static").task(":publishAllPublicationsToMavenCentralRepository"))
+    dependsOn(gradle.includedBuild("inkui-render-terminal").task(":publishAllPublicationsToMavenCentralRepository"))
+    dependsOn(gradle.includedBuild("inkui-structures").task(":publishAllPublicationsToMavenCentralRepository"))
+}

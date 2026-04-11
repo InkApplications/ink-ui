@@ -2,9 +2,21 @@
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 KEYID="$1"
-
+MAVENUSER="$2"
 if [[ "$KEYID" == "" ]]; then
     read -p "PGP Key ID: " KEYID
 fi
+if [[ "$MAVENUSER" == "" ]]; then
+    read -p "Maven Username (optional): " MAVENUSER
+fi
+if [[ "$MAVENUSER" != "" ]]; then
+    read -sp "Maven Password (optional): " MAVENPASSWORD
+fi
 
 "$DIR"/gradlew publishLocal -PsigningKeyId="$KEYID" || exit $?
+
+if [[ "$MAVENUSER" == "" || "$MAVENPASSWORD" == "" ]]; then
+    echo "Maven credentials unspecified. Skipping maven publish"
+else
+    "$DIR"/gradlew publishMaven -PsigningKeyId="$KEYID" -PmavenUser="$MAVENUSER" -PmavenPassword="$MAVENPASSWORD" || exit $?
+fi
