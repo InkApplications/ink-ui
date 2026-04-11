@@ -67,8 +67,8 @@ class MainActivity: ComponentActivity() {
 
         presenter.presentElement(
             element = ElementList.build(groupingStyle = GroupingStyle.Inline) {
-                appendElement(Breadcrumbs)
-                appendElement(Examples.Defaults.groupedElements)
+                append(Breadcrumbs)
+                append(Examples.Defaults.groupedElements)
             },
         )
     }

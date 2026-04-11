@@ -31,14 +31,14 @@ object ListRenderer: ElementRenderer {
             Orientation.Horizontal -> "horizontal"
             Orientation.Vertical -> "vertical"
         }
+        val positioning = when (element.positioning) {
+            Positioning.Start -> "items-start"
+            Positioning.Center -> "items-center"
+        }
 
         div(
-            classes = setOf(listStyle, orientation).joinToString(" "),
+            classes = setOf(listStyle, orientation, positioning).joinToString(" "),
         ) {
-            attributes["style"] = when (element.positioning) {
-                Positioning.Start -> "justify-content: start"
-                Positioning.Center -> "justify-content: center"
-            }
             element.items.forEach { item ->
                 when (element.groupingStyle) {
                     GroupingStyle.Unified -> renderWith(item, consumer, parent)

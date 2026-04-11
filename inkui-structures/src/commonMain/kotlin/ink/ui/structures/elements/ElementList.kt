@@ -69,7 +69,7 @@ fun ElementContainer.inline(builder: ElementContainer.() -> Unit)
     ElementList.build(
         builder = builder,
         groupingStyle = GroupingStyle.Inline,
-    ).also(::appendElement)
+    ).also(::append)
 }
 
 fun ElementContainer.unified(builder: ElementContainer.() -> Unit)
@@ -77,7 +77,7 @@ fun ElementContainer.unified(builder: ElementContainer.() -> Unit)
     ElementList.build(
         builder = builder,
         groupingStyle = GroupingStyle.Unified,
-    ).also(::appendElement)
+    ).also(::append)
 }
 
 fun ElementContainer.sections(builder: ElementContainer.() -> Unit)
@@ -85,7 +85,7 @@ fun ElementContainer.sections(builder: ElementContainer.() -> Unit)
     ElementList.build(
         builder = builder,
         groupingStyle = GroupingStyle.Sections,
-    ).also(::appendElement)
+    ).also(::append)
 }
 
 fun ElementContainer.items(builder: ElementContainer.() -> Unit)
@@ -93,6 +93,6 @@ fun ElementContainer.items(builder: ElementContainer.() -> Unit)
     ElementList.build(
         builder = builder,
         groupingStyle = GroupingStyle.Sections,
-    ).also(::appendElement)
+    ).also(::append)
 }
 

@@ -57,7 +57,7 @@ fun ElementContainer.indeterminateProgress(
     ProgressElement.Indeterminate(
         caption = caption,
         sentiment = sentiment,
-    ).also(::appendElement)
+    ).also(::append)
 }
 
 fun ElementContainer.determinateProgress(
@@ -69,5 +69,5 @@ fun ElementContainer.determinateProgress(
         progress = progress,
         caption = caption,
         sentiment = sentiment,
-    ).also(::appendElement)
+    ).also(::append)
 }

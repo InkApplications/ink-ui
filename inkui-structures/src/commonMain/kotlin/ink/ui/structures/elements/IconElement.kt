@@ -27,5 +27,5 @@ fun ElementContainer.icon(
         symbol = symbol,
         sentiment = sentiment,
         sizing = sizing,
-    ).apply(::appendElement)
+    ).apply(::append)
 }

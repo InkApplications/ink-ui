@@ -27,5 +27,5 @@ fun ElementContainer.checkBox(
     CheckBoxElement(
         checked = checked,
         onClick = onClick,
-    ).also(::appendElement)
+    ).also(::append)
 }

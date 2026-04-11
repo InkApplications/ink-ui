@@ -148,6 +148,11 @@ public final class ink/ui/render/statichtml/renderer/DividerRendererKt {
 	public static final fun getDividerRenderer ()Link/ui/render/statichtml/renderer/ElementRenderer;
 }
 
+public final class ink/ui/render/statichtml/renderer/ElementGridRenderer : ink/ui/render/statichtml/renderer/ElementRenderer {
+	public static final field INSTANCE Link/ui/render/statichtml/renderer/ElementGridRenderer;
+	public fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
+}
+
 public abstract interface class ink/ui/render/statichtml/renderer/ElementRenderer {
 	public abstract fun render (Lkotlinx/html/TagConsumer;Link/ui/structures/elements/UiElement;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
 }
@@ -155,6 +160,10 @@ public abstract interface class ink/ui/render/statichtml/renderer/ElementRendere
 public final class ink/ui/render/statichtml/renderer/ElementRendererKt {
 	public static final fun renderWith (Link/ui/structures/elements/UiElement;Lkotlinx/html/TagConsumer;Link/ui/render/statichtml/renderer/ElementRenderer;Link/ui/render/statichtml/renderer/ElementRenderer;)Link/ui/structures/render/RenderResult;
 	public static synthetic fun renderWith$default (Link/ui/structures/elements/UiElement;Lkotlinx/html/TagConsumer;Link/ui/render/statichtml/renderer/ElementRenderer;Link/ui/render/statichtml/renderer/ElementRenderer;ILjava/lang/Object;)Link/ui/structures/render/RenderResult;
+}
+
+public final class ink/ui/render/statichtml/renderer/EmptyElementRendererKt {
+	public static final fun getEmptyElementRenderer ()Link/ui/render/statichtml/renderer/ElementRenderer;
 }
 
 public final class ink/ui/render/statichtml/renderer/FormattedTextRendererKt {

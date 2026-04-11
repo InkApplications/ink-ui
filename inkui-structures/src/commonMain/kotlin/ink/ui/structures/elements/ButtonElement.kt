@@ -72,5 +72,5 @@ fun ElementContainer.button(
         latchOnPress = latchOnPress,
         leadingSymbol = leadingSymbol,
         trailingSymbol = trailingSymbol,
-    ).apply(::appendElement)
+    ).apply(::append)
 }

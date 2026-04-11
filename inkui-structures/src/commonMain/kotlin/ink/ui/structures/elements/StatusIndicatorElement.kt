@@ -26,5 +26,5 @@ fun ElementContainer.statusIndicator(
     text: String,
     sentiment : Sentiment
 ) {
-    StatusIndicatorElement(text, sentiment).also(::appendElement)
+    StatusIndicatorElement(text, sentiment).also(::append)
 }

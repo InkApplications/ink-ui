@@ -244,7 +244,7 @@ header
 @media print {
     html
     {
-        background-color: none;
+        background-color: unset;
         height: fit-content;
     }
     body
@@ -335,7 +335,6 @@ section nav ul > li > a
     display: inline-block;
     line-height: 1.25rem;
     border-radius: 1.25rem;
-    color: var(--color-foreground);
     border: 1px solid var(--color-foreground-subtle);
     padding: .25rem .5rem;
     color: var(--color-primary);
@@ -444,7 +443,7 @@ section nav ul > li::before
 .spinner > button
 {
     display: inline-flex;
-    line-height: 0rem
+    line-height: 0;
     font-size: .8rem;
     height: 1.25rem;
     width: 1.25rem;
@@ -630,7 +629,7 @@ textarea
     border-bottom: 1px solid var(--color-primary);
     padding: .5rem;
     color: var(--color-foreground);
-    font-family: 'Roboto Mono';
+    font-family: 'Roboto Mono', monospace;
     font-weight: 300;
     font-size: 1rem;
     display: inline-block;
@@ -682,7 +681,7 @@ input[type=submit]:disabled,
 input[type=button]:disabled
 {
     color: var(--color-idle);
-    border-color: var(--color-idle)
+    border-color: var(--color-idle);
     background: none;
 }
 

@@ -27,7 +27,7 @@ fun ElementContainer.text(text: String, style: TextStyle = TextStyle.Body)
     TextElement(
         text = text,
         style = style,
-    ).also(::appendElement)
+    ).also(::append)
 }
 
 fun ElementContainer.h1(text: String) = text(text, TextStyle.H1)

@@ -20,11 +20,13 @@ class HtmlPartialPresenter(
     private val builtInRenderers = listOf(
         *customRenderers,
         ListRenderer,
+        ElementGridRenderer,
         TextRenderer,
         CodeBlockRenderer,
         DividerRenderer,
         FormattedTextRenderer,
         BreadcrumbRenderer,
+        EmptyElementRenderer,
         NavigationElementRenderer,
         TextListRenderer,
         StatusRenderer(iconUrl),

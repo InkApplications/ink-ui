@@ -14,6 +14,7 @@ data class NavigationElement(
     data class NavigationItem(
         val text: String,
         val url: String,
+        val before: String? = null,
     )
 
     data class Builder(
@@ -22,13 +23,17 @@ data class NavigationElement(
         fun link(text: String, url: String) {
             items.add(NavigationItem(text = text, url = url))
         }
+        fun link(before: String, text: String, url: String) {
+            items.add(NavigationItem(text = text, url = url, before = before))
+        }
     }
 }
 
-fun ElementContainer.navigation(builder: NavigationElement.Builder.() -> Unit) {
+fun ElementContainer.navigation(builder: NavigationElement.Builder.() -> Unit)
+{
     NavigationElement.Builder()
         .also { builder(it) }
         .items
         .let(::NavigationElement)
-        .also(::appendElement)
+        .also(::append)
 }

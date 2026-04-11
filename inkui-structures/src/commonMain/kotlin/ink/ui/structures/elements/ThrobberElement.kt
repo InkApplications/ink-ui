@@ -26,5 +26,5 @@ fun ElementContainer.throbber(
     caption: String? = null,
     sentiment: Sentiment = Sentiment.Nominal,
 ) {
-    ThrobberElement(caption, sentiment).also(::appendElement)
+    ThrobberElement(caption, sentiment).also(::append)
 }

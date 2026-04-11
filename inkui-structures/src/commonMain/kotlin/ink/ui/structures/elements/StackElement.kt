@@ -43,5 +43,5 @@ suspend fun StackElement.println(
 fun ElementContainer.stack(
     requireDistinct: Boolean = true,
 ): StackElement {
-    return StackElement(requireDistinct = requireDistinct).also(::appendElement)
+    return StackElement(requireDistinct = requireDistinct).also(::append)
 }

@@ -8,3 +8,7 @@ public final class ink/ui/render/web/SymbolsKt {
 	public static final fun getSvgSrc-TN8vZ0Q (Ljava/lang/String;)Ljava/lang/String;
 }
 
+public final class ink/ui/render/web/elements/ElementGridsKt {
+	public static final fun getGridTemplateColumns (Link/ui/structures/elements/ElementGrid;)Ljava/lang/String;
+}
+

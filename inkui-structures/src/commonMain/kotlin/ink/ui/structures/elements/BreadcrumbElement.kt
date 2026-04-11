@@ -38,5 +38,5 @@ data class BreadcrumbElement(
 
 fun ElementContainer.breadcrumbs(builder: BreadcrumbElement.Builder.() -> Unit)
 {
-    BreadcrumbElement.build(builder).also(::appendElement)
+    BreadcrumbElement.build(builder).also(::append)
 }

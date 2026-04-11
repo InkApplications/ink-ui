@@ -33,6 +33,7 @@ data class Examples(
                 Pair(ElementCategory.StatusIndicators, StatusIndicators),
                 Pair(ElementCategory.Symbols, Symbols),
                 Pair(ElementCategory.Forms, Forms),
+                Pair(ElementCategory.Grids, Grids)
             )
         )
     }

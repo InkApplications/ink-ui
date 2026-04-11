@@ -61,5 +61,5 @@ fun ElementContainer.textList(
     TextListElement.build(
         ordered = ordered,
         builder = builder,
-    ).also(::appendElement)
+    ).also(::append)
 }

@@ -121,7 +121,7 @@ abstract interface ink.ui.structures.render/Presenter { // ink.ui.structures.ren
 }
 
 abstract interface ink.ui.structures/ElementContainer { // ink.ui.structures/ElementContainer|null[0]
-    abstract fun appendElement(ink.ui.structures.elements/UiElement) // ink.ui.structures/ElementContainer.appendElement|appendElement(ink.ui.structures.elements.UiElement){}[0]
+    abstract fun append(ink.ui.structures.elements/UiElement) // ink.ui.structures/ElementContainer.append|append(ink.ui.structures.elements.UiElement){}[0]
 }
 
 sealed interface ink.ui.structures.elements/Action { // ink.ui.structures.elements/Action|null[0]
@@ -456,6 +456,81 @@ final class ink.ui.structures.elements/CodeBlock : ink.ui.structures.elements/Ui
             final val Shell // ink.ui.structures.elements/CodeBlock.Language.Companion.Shell|{}Shell[0]
                 final fun <get-Shell>(): ink.ui.structures.elements/CodeBlock.Language // ink.ui.structures.elements/CodeBlock.Language.Companion.Shell.<get-Shell>|<get-Shell>(){}[0]
         }
+    }
+}
+
+final class ink.ui.structures.elements/ElementGrid : ink.ui.structures.elements/UiElement.Static { // ink.ui.structures.elements/ElementGrid|null[0]
+    constructor <init>(kotlin/Int, kotlin.collections/List<ink.ui.structures.elements/ElementGrid.GridItem>) // ink.ui.structures.elements/ElementGrid.<init>|<init>(kotlin.Int;kotlin.collections.List<ink.ui.structures.elements.ElementGrid.GridItem>){}[0]
+
+    final val columns // ink.ui.structures.elements/ElementGrid.columns|{}columns[0]
+        final fun <get-columns>(): kotlin/Int // ink.ui.structures.elements/ElementGrid.columns.<get-columns>|<get-columns>(){}[0]
+    final val items // ink.ui.structures.elements/ElementGrid.items|{}items[0]
+        final fun <get-items>(): kotlin.collections/List<ink.ui.structures.elements/ElementGrid.GridItem> // ink.ui.structures.elements/ElementGrid.items.<get-items>|<get-items>(){}[0]
+
+    final fun component1(): kotlin/Int // ink.ui.structures.elements/ElementGrid.component1|component1(){}[0]
+    final fun component2(): kotlin.collections/List<ink.ui.structures.elements/ElementGrid.GridItem> // ink.ui.structures.elements/ElementGrid.component2|component2(){}[0]
+    final fun copy(kotlin/Int = ..., kotlin.collections/List<ink.ui.structures.elements/ElementGrid.GridItem> = ...): ink.ui.structures.elements/ElementGrid // ink.ui.structures.elements/ElementGrid.copy|copy(kotlin.Int;kotlin.collections.List<ink.ui.structures.elements.ElementGrid.GridItem>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/ElementGrid.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // ink.ui.structures.elements/ElementGrid.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // ink.ui.structures.elements/ElementGrid.toString|toString(){}[0]
+
+    final class Builder { // ink.ui.structures.elements/ElementGrid.Builder|null[0]
+        constructor <init>(kotlin/Int) // ink.ui.structures.elements/ElementGrid.Builder.<init>|<init>(kotlin.Int){}[0]
+
+        final fun build(): ink.ui.structures.elements/ElementGrid // ink.ui.structures.elements/ElementGrid.Builder.build|build(){}[0]
+        final fun gridItem(kotlin/Int = ..., ink.ui.structures/Positioning = ..., ink.ui.structures/Positioning = ..., kotlin/Function1<ink.ui.structures/ElementContainer, kotlin/Unit>) // ink.ui.structures.elements/ElementGrid.Builder.gridItem|gridItem(kotlin.Int;ink.ui.structures.Positioning;ink.ui.structures.Positioning;kotlin.Function1<ink.ui.structures.ElementContainer,kotlin.Unit>){}[0]
+    }
+
+    final class GridItem { // ink.ui.structures.elements/ElementGrid.GridItem|null[0]
+        constructor <init>(kotlin/Int, ink.ui.structures.elements/UiElement, ink.ui.structures/Positioning = ..., ink.ui.structures/Positioning = ...) // ink.ui.structures.elements/ElementGrid.GridItem.<init>|<init>(kotlin.Int;ink.ui.structures.elements.UiElement;ink.ui.structures.Positioning;ink.ui.structures.Positioning){}[0]
+
+        final val body // ink.ui.structures.elements/ElementGrid.GridItem.body|{}body[0]
+            final fun <get-body>(): ink.ui.structures.elements/UiElement // ink.ui.structures.elements/ElementGrid.GridItem.body.<get-body>|<get-body>(){}[0]
+        final val horizontalPositioning // ink.ui.structures.elements/ElementGrid.GridItem.horizontalPositioning|{}horizontalPositioning[0]
+            final fun <get-horizontalPositioning>(): ink.ui.structures/Positioning // ink.ui.structures.elements/ElementGrid.GridItem.horizontalPositioning.<get-horizontalPositioning>|<get-horizontalPositioning>(){}[0]
+        final val span // ink.ui.structures.elements/ElementGrid.GridItem.span|{}span[0]
+            final fun <get-span>(): kotlin/Int // ink.ui.structures.elements/ElementGrid.GridItem.span.<get-span>|<get-span>(){}[0]
+        final val verticalPositioning // ink.ui.structures.elements/ElementGrid.GridItem.verticalPositioning|{}verticalPositioning[0]
+            final fun <get-verticalPositioning>(): ink.ui.structures/Positioning // ink.ui.structures.elements/ElementGrid.GridItem.verticalPositioning.<get-verticalPositioning>|<get-verticalPositioning>(){}[0]
+
+        final fun component1(): kotlin/Int // ink.ui.structures.elements/ElementGrid.GridItem.component1|component1(){}[0]
+        final fun component2(): ink.ui.structures.elements/UiElement // ink.ui.structures.elements/ElementGrid.GridItem.component2|component2(){}[0]
+        final fun component3(): ink.ui.structures/Positioning // ink.ui.structures.elements/ElementGrid.GridItem.component3|component3(){}[0]
+        final fun component4(): ink.ui.structures/Positioning // ink.ui.structures.elements/ElementGrid.GridItem.component4|component4(){}[0]
+        final fun copy(kotlin/Int = ..., ink.ui.structures.elements/UiElement = ..., ink.ui.structures/Positioning = ..., ink.ui.structures/Positioning = ...): ink.ui.structures.elements/ElementGrid.GridItem // ink.ui.structures.elements/ElementGrid.GridItem.copy|copy(kotlin.Int;ink.ui.structures.elements.UiElement;ink.ui.structures.Positioning;ink.ui.structures.Positioning){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/ElementGrid.GridItem.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // ink.ui.structures.elements/ElementGrid.GridItem.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // ink.ui.structures.elements/ElementGrid.GridItem.toString|toString(){}[0]
+
+        final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/ElementGrid.GridItem> { // ink.ui.structures.elements/ElementGrid.GridItem.$serializer|null[0]
+            final val descriptor // ink.ui.structures.elements/ElementGrid.GridItem.$serializer.descriptor|{}descriptor[0]
+                final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/ElementGrid.GridItem.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+            final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/ElementGrid.GridItem.$serializer.childSerializers|childSerializers(){}[0]
+            final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/ElementGrid.GridItem // ink.ui.structures.elements/ElementGrid.GridItem.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+            final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/ElementGrid.GridItem) // ink.ui.structures.elements/ElementGrid.GridItem.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.ElementGrid.GridItem){}[0]
+        }
+
+        final object Companion { // ink.ui.structures.elements/ElementGrid.GridItem.Companion|null[0]
+            final val $childSerializers // ink.ui.structures.elements/ElementGrid.GridItem.Companion.$childSerializers|{}$childSerializers[0]
+
+            final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/ElementGrid.GridItem> // ink.ui.structures.elements/ElementGrid.GridItem.Companion.serializer|serializer(){}[0]
+        }
+    }
+
+    final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<ink.ui.structures.elements/ElementGrid> { // ink.ui.structures.elements/ElementGrid.$serializer|null[0]
+        final val descriptor // ink.ui.structures.elements/ElementGrid.$serializer.descriptor|{}descriptor[0]
+            final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // ink.ui.structures.elements/ElementGrid.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+        final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // ink.ui.structures.elements/ElementGrid.$serializer.childSerializers|childSerializers(){}[0]
+        final fun deserialize(kotlinx.serialization.encoding/Decoder): ink.ui.structures.elements/ElementGrid // ink.ui.structures.elements/ElementGrid.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+        final fun serialize(kotlinx.serialization.encoding/Encoder, ink.ui.structures.elements/ElementGrid) // ink.ui.structures.elements/ElementGrid.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;ink.ui.structures.elements.ElementGrid){}[0]
+    }
+
+    final object Companion { // ink.ui.structures.elements/ElementGrid.Companion|null[0]
+        final val $childSerializers // ink.ui.structures.elements/ElementGrid.Companion.$childSerializers|{}$childSerializers[0]
+
+        final fun serializer(): kotlinx.serialization/KSerializer<ink.ui.structures.elements/ElementGrid> // ink.ui.structures.elements/ElementGrid.Companion.serializer|serializer(){}[0]
     }
 }
 
@@ -840,12 +915,15 @@ final class ink.ui.structures.elements/NavigationElement : ink.ui.structures.ele
         final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/NavigationElement.Builder.equals|equals(kotlin.Any?){}[0]
         final fun hashCode(): kotlin/Int // ink.ui.structures.elements/NavigationElement.Builder.hashCode|hashCode(){}[0]
         final fun link(kotlin/String, kotlin/String) // ink.ui.structures.elements/NavigationElement.Builder.link|link(kotlin.String;kotlin.String){}[0]
+        final fun link(kotlin/String, kotlin/String, kotlin/String) // ink.ui.structures.elements/NavigationElement.Builder.link|link(kotlin.String;kotlin.String;kotlin.String){}[0]
         final fun toString(): kotlin/String // ink.ui.structures.elements/NavigationElement.Builder.toString|toString(){}[0]
     }
 
     final class NavigationItem { // ink.ui.structures.elements/NavigationElement.NavigationItem|null[0]
-        constructor <init>(kotlin/String, kotlin/String) // ink.ui.structures.elements/NavigationElement.NavigationItem.<init>|<init>(kotlin.String;kotlin.String){}[0]
+        constructor <init>(kotlin/String, kotlin/String, kotlin/String? = ...) // ink.ui.structures.elements/NavigationElement.NavigationItem.<init>|<init>(kotlin.String;kotlin.String;kotlin.String?){}[0]
 
+        final val before // ink.ui.structures.elements/NavigationElement.NavigationItem.before|{}before[0]
+            final fun <get-before>(): kotlin/String? // ink.ui.structures.elements/NavigationElement.NavigationItem.before.<get-before>|<get-before>(){}[0]
         final val text // ink.ui.structures.elements/NavigationElement.NavigationItem.text|{}text[0]
             final fun <get-text>(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.text.<get-text>|<get-text>(){}[0]
         final val url // ink.ui.structures.elements/NavigationElement.NavigationItem.url|{}url[0]
@@ -853,7 +931,8 @@ final class ink.ui.structures.elements/NavigationElement : ink.ui.structures.ele
 
         final fun component1(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.component1|component1(){}[0]
         final fun component2(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.component2|component2(){}[0]
-        final fun copy(kotlin/String = ..., kotlin/String = ...): ink.ui.structures.elements/NavigationElement.NavigationItem // ink.ui.structures.elements/NavigationElement.NavigationItem.copy|copy(kotlin.String;kotlin.String){}[0]
+        final fun component3(): kotlin/String? // ink.ui.structures.elements/NavigationElement.NavigationItem.component3|component3(){}[0]
+        final fun copy(kotlin/String = ..., kotlin/String = ..., kotlin/String? = ...): ink.ui.structures.elements/NavigationElement.NavigationItem // ink.ui.structures.elements/NavigationElement.NavigationItem.copy|copy(kotlin.String;kotlin.String;kotlin.String?){}[0]
         final fun equals(kotlin/Any?): kotlin/Boolean // ink.ui.structures.elements/NavigationElement.NavigationItem.equals|equals(kotlin.Any?){}[0]
         final fun hashCode(): kotlin/Int // ink.ui.structures.elements/NavigationElement.NavigationItem.hashCode|hashCode(){}[0]
         final fun toString(): kotlin/String // ink.ui.structures.elements/NavigationElement.NavigationItem.toString|toString(){}[0]
@@ -1076,7 +1155,7 @@ final class ink.ui.structures.elements/ThrobberElement : ink.ui.structures.eleme
 final class ink.ui.structures/MutableListElementContainer : ink.ui.structures/ElementContainer { // ink.ui.structures/MutableListElementContainer|null[0]
     constructor <init>() // ink.ui.structures/MutableListElementContainer.<init>|<init>(){}[0]
 
-    final fun appendElement(ink.ui.structures.elements/UiElement) // ink.ui.structures/MutableListElementContainer.appendElement|appendElement(ink.ui.structures.elements.UiElement){}[0]
+    final fun append(ink.ui.structures.elements/UiElement) // ink.ui.structures/MutableListElementContainer.append|append(ink.ui.structures.elements.UiElement){}[0]
     final fun build(): kotlin.collections/List<ink.ui.structures.elements/UiElement> // ink.ui.structures/MutableListElementContainer.build|build(){}[0]
 }
 
@@ -1180,6 +1259,7 @@ final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/checkB
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/codeBlock(kotlin/String, ink.ui.structures.elements/CodeBlock.Language? = ...) // ink.ui.structures.elements/codeBlock|codeBlock@ink.ui.structures.ElementContainer(kotlin.String;ink.ui.structures.elements.CodeBlock.Language?){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/determinateProgress(kotlin/Float, kotlin/String? = ..., ink.ui.structures/Sentiment = ...) // ink.ui.structures.elements/determinateProgress|determinateProgress@ink.ui.structures.ElementContainer(kotlin.Float;kotlin.String?;ink.ui.structures.Sentiment){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/divider() // ink.ui.structures.elements/divider|divider@ink.ui.structures.ElementContainer(){}[0]
+final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/elementGrid(kotlin/Int, kotlin/Function1<ink.ui.structures.elements/ElementGrid.Builder, kotlin/Unit>) // ink.ui.structures.elements/elementGrid|elementGrid@ink.ui.structures.ElementContainer(kotlin.Int;kotlin.Function1<ink.ui.structures.elements.ElementGrid.Builder,kotlin.Unit>){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/empty() // ink.ui.structures.elements/empty|empty@ink.ui.structures.ElementContainer(){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/formattedText(kotlin/Boolean = ..., kotlin/Function1<ink.ui.structures.elements/FormattedText.Builder, kotlin/Unit>) // ink.ui.structures.elements/formattedText|formattedText@ink.ui.structures.ElementContainer(kotlin.Boolean;kotlin.Function1<ink.ui.structures.elements.FormattedText.Builder,kotlin.Unit>){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/h1(kotlin/String) // ink.ui.structures.elements/h1|h1@ink.ui.structures.ElementContainer(kotlin.String){}[0]
@@ -1198,6 +1278,7 @@ final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/text(k
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/textList(kotlin/Boolean = ..., kotlin/Function1<ink.ui.structures.elements/TextListElement.Builder, kotlin/Unit>) // ink.ui.structures.elements/textList|textList@ink.ui.structures.ElementContainer(kotlin.Boolean;kotlin.Function1<ink.ui.structures.elements.TextListElement.Builder,kotlin.Unit>){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/throbber(kotlin/String? = ..., ink.ui.structures/Sentiment = ...) // ink.ui.structures.elements/throbber|throbber@ink.ui.structures.ElementContainer(kotlin.String?;ink.ui.structures.Sentiment){}[0]
 final fun (ink.ui.structures/ElementContainer).ink.ui.structures.elements/unified(kotlin/Function1<ink.ui.structures/ElementContainer, kotlin/Unit>) // ink.ui.structures.elements/unified|unified@ink.ui.structures.ElementContainer(kotlin.Function1<ink.ui.structures.ElementContainer,kotlin.Unit>){}[0]
+final fun (ink.ui.structures/ElementContainer).ink.ui.structures/append(kotlin.collections/List<ink.ui.structures.elements/UiElement>) // ink.ui.structures/append|append@ink.ui.structures.ElementContainer(kotlin.collections.List<ink.ui.structures.elements.UiElement>){}[0]
 final inline fun <#A: reified ink.ui.structures.elements/UiElement> (ink.ui.structures.elements/UiElement).ink.ui.structures.render/renderWithType(kotlin/Function1<#A, kotlin/Unit>): ink.ui.structures.render/RenderResult // ink.ui.structures.render/renderWithType|renderWithType@ink.ui.structures.elements.UiElement(kotlin.Function1<0:0,kotlin.Unit>){0§<ink.ui.structures.elements.UiElement>}[0]
 final inline fun ink.ui.structures.render/renderCatching(kotlin/Function0<ink.ui.structures.render/RenderResult>): ink.ui.structures.render/RenderResult // ink.ui.structures.render/renderCatching|renderCatching(kotlin.Function0<ink.ui.structures.render.RenderResult>){}[0]
 final suspend fun (ink.ui.structures.elements/StackElement).ink.ui.structures.elements/println(kotlin/String, ink.ui.structures/TextStyle = ...) // ink.ui.structures.elements/println|println@ink.ui.structures.elements.StackElement(kotlin.String;ink.ui.structures.TextStyle){}[0]

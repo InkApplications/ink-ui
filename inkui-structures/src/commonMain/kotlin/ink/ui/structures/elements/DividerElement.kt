@@ -12,5 +12,5 @@ data object DividerElement: UiElement.Static
 
 fun ElementContainer.divider()
 {
-    appendElement(DividerElement)
+    append(DividerElement)
 }

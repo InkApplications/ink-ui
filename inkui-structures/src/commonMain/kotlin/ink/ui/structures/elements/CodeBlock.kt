@@ -24,5 +24,5 @@ fun ElementContainer.codeBlock(
     CodeBlock(
         code = code,
         language = language,
-    ).also(::appendElement)
+    ).also(::append)
 }

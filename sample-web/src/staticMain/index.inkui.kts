@@ -10,9 +10,9 @@ header {
         link(text = "Google", url = "https://www.google.com")
         link(text = "GitHub", url = "https://www.github.com")
     }
-    appendElement(Breadcrumbs)
+    append(Breadcrumbs)
 }
 
 body {
-    appendElement(Examples.Defaults.groupedElements)
+    append(Examples.Defaults.groupedElements)
 }

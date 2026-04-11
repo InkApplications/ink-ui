@@ -14,5 +14,5 @@ data object EmptyElement: UiElement.Static
 
 fun ElementContainer.empty()
 {
-    appendElement(EmptyElement)
+    append(EmptyElement)
 }

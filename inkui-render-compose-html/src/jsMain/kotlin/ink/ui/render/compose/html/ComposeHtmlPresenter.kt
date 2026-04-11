@@ -19,6 +19,7 @@ class ComposeHtmlPresenter(
         TextRenderer,
         ButtonRenderer,
         StatusRenderer,
+        ElementGridRenderer,
         EmptyRenderer,
         SpinnerRenderer,
         IconRenderer,

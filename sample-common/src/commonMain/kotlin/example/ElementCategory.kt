@@ -14,5 +14,6 @@ value class ElementCategory(val name: String)
         val Symbols = ElementCategory("Symbols")
         val Buttons = ElementCategory("Buttons")
         val Forms = ElementCategory("Forms")
+        val Grids = ElementCategory("Grids")
     }
 }

@@ -9,6 +9,8 @@
 final const val ink.ui.render.web/COMPOSE_RESOURCE_SVG_PATH // ink.ui.render.web/COMPOSE_RESOURCE_SVG_PATH|{}COMPOSE_RESOURCE_SVG_PATH[0]
     final fun <get-COMPOSE_RESOURCE_SVG_PATH>(): kotlin/String // ink.ui.render.web/COMPOSE_RESOURCE_SVG_PATH.<get-COMPOSE_RESOURCE_SVG_PATH>|<get-COMPOSE_RESOURCE_SVG_PATH>(){}[0]
 
+final val ink.ui.render.web.elements/gridTemplateColumns // ink.ui.render.web.elements/gridTemplateColumns|@ink.ui.structures.elements.ElementGrid{}gridTemplateColumns[0]
+    final fun (ink.ui.structures.elements/ElementGrid).<get-gridTemplateColumns>(): kotlin/String // ink.ui.render.web.elements/gridTemplateColumns.<get-gridTemplateColumns>|<get-gridTemplateColumns>@ink.ui.structures.elements.ElementGrid(){}[0]
 final val ink.ui.render.web/composePath // ink.ui.render.web/composePath|@ink.ui.structures.Symbol{}composePath[0]
     final fun (ink.ui.structures/Symbol).<get-composePath>(): kotlin/String // ink.ui.render.web/composePath.<get-composePath>|<get-composePath>@ink.ui.structures.Symbol(){}[0]
 final val ink.ui.render.web/svgSrc // ink.ui.render.web/svgSrc|@ink.ui.structures.Symbol{}svgSrc[0]

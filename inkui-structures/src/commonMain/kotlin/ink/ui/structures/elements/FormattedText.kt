@@ -156,5 +156,5 @@ fun ElementContainer.formattedText(
                 paragraph = paragraph,
             )
         }
-        .also(::appendElement)
+        .also(::append)
 }

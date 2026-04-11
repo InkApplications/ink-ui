@@ -8,6 +8,9 @@ val NavigationElementRenderer = renderer<NavigationElement> { element ->
         ul {
             element.items.forEach { navigationItem ->
                 li {
+                    navigationItem.before?.run {
+                        +"$this "
+                    }
                     a(href = navigationItem.url) { +navigationItem.text }
                 }
             }

@@ -45,5 +45,5 @@ fun ElementContainer.spinner(
         onPreviousValue = onPreviousValue,
         hasPreviousValue = hasPreviousValue,
         hasNextValue = hasNextValue,
-    ).also(::appendElement)
+    ).also(::append)
 }

@@ -4,14 +4,19 @@ import ink.ui.structures.elements.UiElement
 
 interface ElementContainer
 {
-    fun appendElement(element: UiElement)
+    fun append(element: UiElement)
+}
+
+fun ElementContainer.append(elements: List<UiElement>)
+{
+    elements.forEach(::append)
 }
 
 class MutableListElementContainer: ElementContainer
 {
     private val elements = mutableListOf<UiElement>()
 
-    override fun appendElement(element: UiElement)
+    override fun append(element: UiElement)
     {
         elements += element
     }
